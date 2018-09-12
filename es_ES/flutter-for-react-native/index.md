@@ -9,7 +9,7 @@ Este documento es para desarrolladores de React Native (RN) que buscan aplicar s
 Este documento puede usarse como un cookbook recorriéndolo aleatoriamente y encontrando las preguntas que son más relevantes a tus necesidades.
 
 
-*****  
+*****
 
 * TOC Placeholder
 {:toc}
@@ -544,7 +544,7 @@ Cuando creas un nuevo proyecto en Flutter, se construye la siguiente estructura 
   ├ android      - Contiene archivos específicos de Android.
   ├ build        - Almacena archivos build de iOS y Android.
   ├ ios          - Contiene archivos específicos de iOS.
-  ├ lib          - ontiene archivos de origen Dart accesibles externamente.
+  ├ lib          - Contiene archivos de origen Dart accesibles externamente.
     ┬
     └ src        - Contiene archivos fuente adicionales.
     └ main.dart  - El punto de entrada de Flutter y el inicio de una nueva app.
@@ -995,7 +995,7 @@ class SampleApp extends StatelessWidget {
 
 ### ¿Cómo añado themes de estilo?
 
-En React Native, se definen themes comunes para componentes en hojas de estilo y
+En React Native, se definen themes comunes para componentes en hojas de estilo 
 y luego se utiliza en los componentes.
 
 En Flutter, crea un estilo uniforme para casi todo definiendo el estilo en la clase [`ThemeData`](https://docs.flutter.io/flutter/material/ThemeData-class.html) y pasándolo a la propiedad theme en el widget
@@ -1048,7 +1048,7 @@ Un `StatelessWidget` en Flutter es un widget que no requiere un cambio de estado
 
  Los widgets sin estado son útiles cuando la parte de la interfaz de usuario que estás describiendo no depende de nada más que de la información de configuración del propio objeto y del [`BuildContext`](https://docs.flutter.io/flutter/widgets/BuildContext-class.html) en el cual se eleva el widget.
 
-[AboutDialog](https://docs.flutter.io/flutter/material/AboutDialog-class.html), [CircleAvator](https://docs.flutter.io/flutter/material/CircleAvatar-class.html), y [Text](https://docs.flutter.io/flutter/widgets/Text-class.html) son ejemplos de widgets sin estado que subclasifican el [StatelessWidget](https://docs.flutter.io/flutter/widgets/StatelessWidget-class.html).
+[AboutDialog](https://docs.flutter.io/flutter/material/AboutDialog-class.html), [CircleAvatar](https://docs.flutter.io/flutter/material/CircleAvatar-class.html), y [Text](https://docs.flutter.io/flutter/widgets/Text-class.html) son ejemplos de widgets sin estado que subclasifican el [StatelessWidget](https://docs.flutter.io/flutter/widgets/StatelessWidget-class.html).
 
 
 <!-- skip -->
