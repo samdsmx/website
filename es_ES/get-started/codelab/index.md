@@ -1,6 +1,6 @@
 ---
 layout: tutorial
-title: Escribe tu primer app en Flutter, parte 1
+title: Escribe tu primera app en Flutter, parte 1
 permalink: /get-started/codelab/
 image: /get-started/codelab/images/step7-themes.png
 ---
@@ -11,9 +11,9 @@ image: /get-started/codelab/images/step7-themes.png
          style="border: margin-bottom: 10px" >
 </figure>
 
-Esta es una guía para crear tu primera app en Flutter. Si está familiarizado con la 
-programación orientada a objetos y conceptos básicos
-de programación como variables, ciclos y condicionales
+Esta es una guía para crear tu primera app en Flutter. Si estás familiarizado con la 
+programación orientada a objetos y con conceptos básicos
+de programación como variables, bucles y condicionales
 podrás completar este tutorial. No se necesita
 experiencia previa con Dart o programación móvil.
 
@@ -55,7 +55,7 @@ El GIF animado muestra como trabaja la app al completar la parte 1.
   [SDK de Flutter](/get-started/install/) y [un editor](/get-started/editor/).
   Este codelab presupone Android Studio, pero puedes usar el editor que prefieras.
 
-  Puede ejecutar este codelab usando cualquiera de los siguientes dispositivos:
+  Puedes ejecutar este codelab usando cualquiera de los siguientes dispositivos:
   * Un dispositivo físico ([Android](/setup-macos/#set-up-your-android-device)
     o [iOS](/setup-macos/#deploy-to-ios-devices)) conectado a tu ordenador 
     y configurado en modo desarrollo.
@@ -121,7 +121,7 @@ donde se encuentra el código Dart.
     <center>Android (izquierda) y iOS (derecha)</center>
      {{site.alert.tip}}
       La primera vez que ejecutas en un dispositivo físico, tomará un poco la carga.
-      Después de esto, puees usar hot reload para actualizaciones rápidas. **Save** también
+      Después de esto, puedes usar hot reload para actualizaciones rápidas. **Save** también
       realiza un hot reload si la app esta en ejecución.
     {{site.alert.end}}
 
@@ -133,7 +133,7 @@ donde se encuentra el código Dart.
   [Material](https://material.io/guidelines/) es un lenguaje de diseño visual
   el cual es un estándar en web y móvil. Flutter ofrece un gran conjunto
   de "Material widgets".
-* El método main usa la anotación flat arrow (`=>`).
+* El método main usa la anotación fat arrow (`=>`).
   Usa anotación fat arrow para funciones o métodos de una sola linea.
 * La app hereda de `StatelessWidget` el cual hace la app un widget en sí misma.
   En Flutter, casi todo es un widget, incluido alineaciónes, padding y layouts.
@@ -141,9 +141,8 @@ donde se encuentra el código Dart.
   provee una AppBar por defecto, "title", y una propiedad "body" el cual
   soporta el árbol de widget para la pantalla de inicio. El subárbol de widget
   puede ser bastante complejo.
-* El trabajo principal de un widget es proveer un método `build()`
-  el cual describe como mostrar un widget en termino de otro,
-  widgets de bajo nivel.
+* El trabajo principal de un widget es proporcionar un método build()
+  que describa cómo mostrar el widget en términos de otros widgets de nivel inferior.
 * El body en este ejemplo consiste en un widget `Center` conteniendo un 
   widget `Text` hijo. El widget Center alinea su sub-árbol de wigets 
   en el centro de la pantalla.
@@ -153,7 +152,7 @@ donde se encuentra el código Dart.
 
 En este paso, empezarás utilizando un paquete de código libre llamado
 [english_words](https://pub.dartlang.org/packages/english_words),
-el cual contiene uno cuantos de miles de las palabras
+el cual contiene unos cuantos de miles de las palabras
 en Inglés más utilizadas, además de otras funciones de utilidad.
 
 Puedes encontrar el paquete english_words package, así como muchos otros paquetes
@@ -238,12 +237,12 @@ open source, en [pub.dartlang.org](https://pub.dartlang.org/flutter/).
       "UpperCamelCase".
     {{site.alert.end}}
 
- 5. Si la app esta ejecutándose, utilice el botón de hot reload
+ 5. Si la app esta ejecutándose, utiliza el botón de hot reload
     (<img src="images/hot-reload-button.png" alt="lightning bolt icon">)
-    para actualizar el app. Cada vez que se presione hot reload
-    o se guarde el proyecto, deberá verse una diferente palabra,
-    elegida aleatoria mente, en la app.
-    Esto es debido a que las palabras generadas dentro de el método "build",
+    para actualizar la app. Cada vez que se presione hot reload
+    o se guarde el proyecto, deberá verse una palabra diferente,
+    elegida aleatoriamente, en la app.
+    Esto es debido a que las palabras generadas dentro del método "build",
     el cual se ejecuta cada vez que la MaterialApp requiere renderizar
     o al alternar la plataforma en el inspector de Flutter .
 
@@ -254,8 +253,8 @@ open source, en [pub.dartlang.org](https://pub.dartlang.org/flutter/).
 ## ¿Problemas?
 {:.no_toc}
 
-Si tu app no esta ejecutando correctamente, busque por errores al teclear. De ser necesario,
-use el código en el siguiente enlace y continuar.
+Si tu app no esta ejecutando correctamente, busca por errores al teclear. De ser necesario,
+usa el código en el siguiente enlace y continuar.
 
 * [pubspec.yaml](https://raw.githubusercontent.com/chalin/flutter-codelabs/master/startup_namer/2_end_of_use_package/pubspec.yaml)
 * [lib/main.dart](https://raw.githubusercontent.com/chalin/flutter-codelabs/master/startup_namer/2_end_of_use_package/lib/main.dart)
@@ -264,12 +263,12 @@ use el código en el siguiente enlace y continuar.
 
 # Paso 3: Agregar un Stateful widget
 
-State<em>less</em> widgets son inmutables, esto quiere decir que
+Los widgets State<em>less</em> son inmutables, esto quiere decir que
 sus propiedades no puedes cambiar&mdash;todos sus valores son finales.
 
-State<em>ful</em> widgets mantienes un estado que puede cambiar
+Con widgets State<em>ful</em> mantienes un estado que puede cambiar
 durante el tiempo de vida del widget. Implementar un stateful
-widget necesitara al menos dos clases: 1) una clase StatefulWidget
+widget requerirá al menos dos clases: 1) una clase StatefulWidget
 la cual crea la instancia 2) una clase State. La clase StatefulWidget es,
 a si misma, inmutable, pero la clase State persiste sobre el tiempo de
 vida de el widget.
@@ -288,10 +287,10 @@ un hijo dentro del existentea stateless widget `MyApp`.
       }
     {% endprettify %}
 
-    Note la declaración `State<RandomWords>`. Esto indica que estamos 
+    Nota la declaración `State<RandomWords>`. Esto indica que estamos 
     usando una clase 
     [State](https://docs.flutter.io/flutter/widgets/State-class.html)
-    genérica especializada para usar `RandomWords`. La mayoría de la lógica y el estaado 
+    genérica especializada para usar `RandomWords`. La mayoría de la lógica y el estado 
     de la app residen aquí&mdash;esto mantiene el estado para el widget `RandomWords`.
     Esta clase guarda el par de palabras generados, que crecen infinitamente cuando el 
     usuario hace scrolls, y los pares de palabras favoritos (en la
@@ -344,8 +343,8 @@ un hijo dentro del existentea stateless widget `MyApp`.
             title: Text('Welcome to Flutter'),
           ),
           body: Center(
-            //child: [[highlight]]Text(wordPair.asPascalCase),[[/highlight]] // cambia el texto remarcado por ...
-                    child: [[highlight]]RandomWords(),[[/highlight]] // ... este texto remarcado
+            //child: [[highlight]]Text(wordPair.asPascalCase),[[/highlight]] // reemplazar el texto resaltado por ...
+                    child: [[highlight]]RandomWords(),[[/highlight]] // ... este texto resaltado
                   ),
                 ),
               );
@@ -358,7 +357,7 @@ un hijo dentro del existentea stateless widget `MyApp`.
     emparejada cada vez que haces hot reload o guardas la app.
 
 {{site.alert.tip}}
-  Si ves la siguiente advertencia en el hot reloadIf, considera reiniciar la app:
+  Si ves la siguiente advertencia en el hot reload, considera reiniciar la app:
    **Reloading...<br>
   Some program elements were changed during reload but did not run when
   the view was reassembled; you may need to restart the app (by pressing "R")
@@ -373,8 +372,8 @@ cambios sean reflejados en la UI de la app.
 ## ¿Problemas?
 {:.no_toc}
 
-Si tu app no esta corriendo correctamente, puede utilizar este código
-de el siguiente enlace y continuar.
+Si tu app no esta corriendo correctamente, puedes utilizar este código
+del siguiente enlace y continuar.
 
 * [lib/main.dart](https://raw.githubusercontent.com/chalin/flutter-codelabs/master/startup_namer/3_end_of_add_stateful_widget/lib/main.dart)
 
@@ -385,15 +384,15 @@ de el siguiente enlace y continuar.
 En este paso, extenderemos la clase `RandomWordsState` para generar
 y desplegar una lista de palabras. Mientras el usuario se desplaza, la lista
 lo desplegara en un widget `ListView`, que crecerá infinitamente. El `builder` factory 
-constructor del  `ListView` permite construir un una lista de carga retrasada, a petición.
+constructor del  `ListView` permite construir una lista de carga retrasada, a petición.
 
- 1. Añae una lista `_suggestions` a la clase `RandomWordsState`
+ 1. Añade una lista `_suggestions` a la clase `RandomWordsState`
     para guardar pares de palabras sugeridas.
 
-    También, agrega una variable `biggerFont` para hacer el tamaño de la fuente mas grande.
+    También, agrega una variable `biggerFont` para hacer el tamaño de la fuente más grande.
     
     {{site.alert.tip}}
-      Prefijando un identificadosr con un guión bajo [fuerzas su privacidad](https://www.dartlang.org/guides/language/language-tour)
+      Prefijando un identificador con un guión bajo [fuerzas su privacidad](https://www.dartlang.org/guides/language/language-tour)
       en el lenguaje Dart.
     {{site.alert.end}}
 
@@ -411,8 +410,8 @@ constructor del  `ListView` permite construir un una lista de carga retrasada, a
     Este método construirá el `ListView` que muestra las palabras sugeridas.
 
     La clase `ListView` provee una propiedad builder, `itemBuilder`,
-    un facory builder y un función callback especificada como función anónima,
-    Dos parámetros se pasan a la función&mdash;el `BuildContext`, 
+    un factory builder y un función callback especificada como función anónima,
+    dos parámetros se pasan a la función&mdash;el `BuildContext`, 
     y un fila de iteración , `i`. El iterador empieza desde 0 e incrementa
     cada vez que la función es llamada, un vez cada que un juego de palabras es llamado.
     Este modelo permite que la lista sugerida crezca infinítamente mientras el hace scroll.
@@ -498,7 +497,7 @@ constructor del  `ListView` permite construir un una lista de carga retrasada, a
     {% endprettify %}
 
  5. Actualiza el método `build` de `MyApp`, cambiando el title,
-    y cambiando la home para ser el widget `RandomWords`.
+    y cambiando home para ser el widget `RandomWords`.
 
     Reemplaza el método original con el método `build` remarcado abajo:
       
@@ -551,15 +550,15 @@ En este laboratorio, tu has:
 * Creado una app de Flutter desde cero.
 * Escrito código Dart.
 * Utilizado una libreía externa de terceros.
-* Usado hot reload para un ciclo de desarrollo mas rápido.
+* Usado hot reload para un ciclo de desarrollo más rápido.
 * Impementado un widget stateful.
 * Creado una lista de scroll infinito, de carga retrasada.
- Si desear extender esta app, procede con la
+ Si deseas extender esta app, procede con la
 [parte 2](https://codelabs.developers.google.com/codelabs/first-flutter-app-pt2)
-en
-[Google Developers Codelabs](https://codelabs.developers.google.com/) site,
+en el sitio 
+[Google Developers Codelabs](https://codelabs.developers.google.com/),
 donde añadiras la siguiente funcionalidad:
- * Implementar interactividad añadiendo un icono corazón pulsable para guardar tus parejas favoritas.
+ * Implementar interactividad añadiendo un icono corazón pulsable para guardar tus parejas de palabras favoritas.
 * Implementar navegación a una nueva ruta añadiendo una nueva pantalla conteniendo los favoritos guardados.
 * Modificar el color del tema, fabricando una app todo-blanco.
  [Aprender más](/get-started/learn-more/)
