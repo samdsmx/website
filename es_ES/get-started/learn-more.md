@@ -10,7 +10,7 @@ Aprender más acerca del framework de Flutter:
 * [Flutter para iOS](/flutter-for-ios/)
 * [Flutter para React Native](/flutter-for-react-native/)
 * [Flutter para Xamarin.Forms](/flutter-for-xamarin-forms/)
-* [Contruyendo Layouts en Flutter](/tutorials/layout/) tutorial
+* [Construyendo Layouts en Flutter](/tutorials/layout/) tutorial
 * [Agregar Interactividad](/tutorials/interactive/) tutorial
 * [Un Tour de widgets en Flutter](/widgets-intro/)
 
@@ -25,4 +25,4 @@ Por favor contáctanos a nuestra [lista de correo][]. Nos gustaría saber de ti.
 
 Happy Fluttering!
 
-[correo]: mailto:flutter-devs-es@googlegroups.com
+[lista de correo]: mailto:flutter-devs-es@googlegroups.com
