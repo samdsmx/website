@@ -120,7 +120,7 @@ y almacenan su estado mutable en una subclase de [State](https://docs.flutter.io
 
 Cada vez que se muta un objeto State (p.ej., incrementando el contador), debes llamar a
 [setState](https://docs.flutter.io/flutter/widgets/State/setState.html)() para indicar al framework que actualice la interfaz de usuario llamando al método build de State 
-de nuevo. Para ver un ejemplo de la gestión del estado, consulta el [template MyApp](https://github.com/flutter/flutter/blob/master/packages/flutter_tools/templates/create/lib/main.dart.tmpl) que es creado con cada nuevo proyecto de Flutter.
+de nuevo. Para ver un ejemplo de la gestión del estado, consulta el [template MyApp](https://github.com/flutter/flutter/blob/master/packages/flutter_tools/templates/app/lib/main.dart.tmpl) que es creado con cada nuevo proyecto de Flutter.
 
 El hecho de tener objetos state y widget separados permite que otros widgets traten de la misma manera a los widgets stateless y stateful, sin preocuparse por perder estado.
 En lugar de tener que aferrarse a un hijo para preservar su estado, el padre es libre de crear una nueva instancia del hijo sin perder el estado persistente del mismo. El framework hace todo el trabajo de encontrar y reutilizar los objetos de estado existentes cuando sea apropiado.
