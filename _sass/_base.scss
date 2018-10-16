@@ -263,6 +263,10 @@ code {
   .btn.text-muted { cursor: inherit; }
 }
 
+.text-muted {
+    color: #6c757d !important;
+}
+
 .noselect {
   -webkit-touch-callout: none; /* iOS Safari */
   -webkit-user-select: none; /* Safari */
