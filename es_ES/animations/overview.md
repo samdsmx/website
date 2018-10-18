@@ -49,7 +49,7 @@ Por sí mismo, una Tween sólo define cómo interpolar entre dos valores. Para o
 
 también necesitas una animación para determinar el estado actual. Hay dos maneras de combinar un Tween con una animación para obtener un valor concreto:
 
-1. Puedes [`evaluar`](https://docs.flutter.io/flutter/animation/Tween/evaluate.html) el Tween en el valor actual de una animación. Este enfoque es muy útil para los widgets que ya están escuchando la animación y por lo tanto reconstruyendo cada vez que la animación cambia de valor.
+1. Puedes [`evaluar`](https://docs.flutter.io/flutter/animation/Animatable/evaluate.html) el Tween en el valor actual de una animación. Este enfoque es muy útil para los widgets que ya están escuchando la animación y por lo tanto reconstruyendo cada vez que la animación cambia de valor.
 
 2. Puedes [`animar`](https://docs.flutter.io/flutter/animation/Animatable/animate.html) el tween basado en la animación. En lugar de devolver un único valor, la función animada devuelve una nueva `Animación` que incorpora el tween. Este enfoque es más útil cuando se desea dar la animación recién creada a otro widget, que puede leer el valor actual que incorpora el tween así como escuchar los cambios en el valor.
 
