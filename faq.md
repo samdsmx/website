@@ -123,7 +123,7 @@ are completed are generally of high-quality and ready for use.
 
 Our APIs are stabilizing, and we continue to improve
 parts of the system based on user feedback.
-We email [flutter-dev@googlegroups.com](mailto:flutter-dev@googlegroups.com)
+We email [{{site.email}}](mailto:{{site.email}})
 when we make a change that might impact our users.
 
 So really, it is up to you. The features you need may be
@@ -190,7 +190,7 @@ on every commit.
 ### Does Flutter come with a dependency injection framework or solution?
 
 Not at this time. Please share your ideas at
-[flutter-dev@googlegroups.com](mailto:flutter-dev@googlegroups.com).
+[{{site.email}}](mailto:{{site.email}}).
 
 ## Technology
 
@@ -348,20 +348,22 @@ or directly) dart:mirrors or dart:html.
 
 ### How big is the Flutter engine?
 
-In June 2017, we measured the size of a minimal Flutter app
+In October 2018, we measured the size of a
+[minimal Flutter app](https://github.com/flutter/flutter/tree/60d223c20c44424e3c8031d019270d22bab35df6/examples/hello_world)
 (no Material Components, just a single `Center` widget, built with
-`flutter build apk`), bundled and
-compressed as a release APK, to be approximately 6.7MB.
+`flutter build apk`), bundled and compressed as a release APK, to be
+approximately 4.28 MB.
 
 For this simple app,
-the core engine is approximately 3.3MB (compressed),
-the framework + app code is approximately 1.25MB (compressed),
-the LICENSE file (contained in app.flx) is 55k (compressed),
-necessary Java code (classes.dex) is 40k (compressed),
-and there is approximately 2.1MB of (compressed) ICU data.
+the core engine is approximately 2.86 MB (compressed),
+the framework + app code is approximately 818 KB (compressed),
+the LICENSE file is 54 KB (compressed),
+necessary Java code (classes.dex) is 62 KB (compressed),
+and there is approximately 449 KB of (compressed) ICU data.
 
 Of course, YMMV, and we recommend that you measure your own app,
-by running `flutter build apk` and looking at `app/outputs/apk/app-release.apk`.
+by running `flutter build apk` and looking at
+`build/app/outputs/apk/release/app-release.apk`.
 
 ## Capabilities
 
@@ -522,7 +524,7 @@ iOS and Android.
 Not at this time. Because Flutter apps are pre-compiled for iOS, and binary size
 is always a concern with mobile apps, we disabled dart:mirrors. We are curious
 what you might need reflection/mirrors for – please let us know at
-[flutter-dev@googlegroups.com](mailto:flutter-dev@googlegroups.com).
+[{{site.email}}](mailto:{{site.email}}).
 
 ### How do I do internationalization (i18n), localization (l10n), and accessibility (a11y) in Flutter?
 
@@ -788,7 +790,7 @@ encourage you to use
 [Stack Overflow](https://stackoverflow.com/tags/flutter) for "HOWTO"
 type questions. For discussions,
 please join our mailing list at
-[flutter-dev@googlegroups.com](mailto:flutter-dev@googlegroups.com).
+[{{site.email}}](mailto:{{site.email}}).
 
 ### How do I get involved?
 
@@ -797,7 +799,7 @@ simply filing issues for feature requests and bugs in our
 [issue tracker](https://github.com/flutter/flutter/issues).
 
 We recommend that you join our mailing list at
-[flutter-dev@googlegroups.com](mailto:flutter-dev@googlegroups.com) and let us
+[{{site.email}}](mailto:{{site.email}}) and let us
 know how you're using Flutter and what you'd like to do with it.
 
 If you're

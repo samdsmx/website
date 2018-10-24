@@ -1,14 +1,12 @@
 {% if site.show_banner -%}
-  {% assign fl_url = 'https://developers.google.com/events/flutter-live' -%}
-  {% assign invite_url = 'https://www.google.com/url?q=https://events.withgoogle.com/flutter-live/registrations/new' -%}
-  <div class="alert alert-info alert__banner" role="alert">
-    {% comment %} For headings use <h3> elements. {% endcomment -%}
-    Apunta la fecha para <strong><a href="{{fl_url}}" target="_blank" rel="noopener">Flutter Live</a></strong>!
-    Las plazas están limitadas pare este evento especial de dos horas.
-    ¡No esperes para apuntarte! Reservas abiertas a las 18:00 GMT +1 (10:00am PDT) el Martes,
-    23 de Octubre.
-    {%- comment %}
+{% assign fl_url = 'https://developers.google.com/events/flutter-live' -%}
+{% assign reg_url = 'https://events.withgoogle.com/flutter-live/registrations' -%}
+<div class="alert alert-info alert__banner" role="alert">
+  {% comment %} For headings use <h3> elements. {% endcomment -%}
+    El registro está abierto para el 
+    ¡<strong><a href="{{fl_url}}" target="_blank" rel="noopener">Flutter Live</a></strong>!
+    Las plazas están muy limitados para este evento especial de dos horas, no esperes para registrate.
     <a href="{{invite_url}}" target="_blank" rel="noopener">Pide una invitación personal</a>.
-    {% endcomment -%}
-  </div>
+</div>
 {% endif -%}
+
