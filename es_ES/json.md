@@ -243,12 +243,12 @@ en el ejemplo de serialización JSON.
 ```yaml
 dependencies:
   # Tus otras dependencias regulares aquí
-  json_annotation: ^0.2.3
+  json_annotation: ^2.0.0
 
 dev_dependencies:
   # Tus otras dev_dependencies aquí
-  build_runner: ^0.9.0
-  json_serializable: ^0.5.4
+  build_runner: ^1.0.0
+  json_serializable: ^2.0.0
 ```
 
 Ejecuta `flutter packages get` dentro de la carpeta raíz de tu proyecto (o haz clic
@@ -276,19 +276,20 @@ part '[[highlight]]user[[/highlight]].g.dart';
 /// necesita generarse lógica de serialización JSON.
 [[highlight]]@JsonSerializable()[[/highlight]]
 
-/// Todas las clases json_serializable deben tener el serializer mixin.
-/// Esto hace que sea usable el método toJson() para la clase.
-/// Los nombres de los mixin siguen al de la clase fuente, en este caso, User.
-class User extends Object with _$[[highlight]]User[[/highlight]]SerializerMixin {
+class User {
   User(this.name, this.email);
 
   String name;
   String email;
 
   /// Un método constructor de tipo factory es necesario para crear una nueva instancia User
-  /// desde un mapa. Pasa el mapa al constructor auto-generado _$UserFromJson.
+  /// desde un mapa. Pasa el mapa al constructor auto-generado `_$UserFromJson`.
   /// El constructor es nombrado después de la clase fuente, en este caso User.
   factory User.fromJson(Map<String, dynamic> json) => _$[[highlight]]User[[/highlight]]FromJson(json);
+  /// `toJson` es la convención para una clase declarar que soporta serialización
+  /// a JSON. La implementación simplemente llama al método de ayuda privado 
+  /// `_$UserToJson`.
+  Map<String, dynamic> toJson() => _$[[highlight]]User[[/highlight]]ToJson(this);
 }
 {% endprettify %}
 
