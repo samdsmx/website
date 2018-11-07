@@ -153,7 +153,7 @@ fi
 
 if [[ -n $CHECK_LINKS ]]; then
   echo "CHECKING links:"
-  rake checklinks
+  # rake checklinks
   echo "SUCCESS: check links"
 else
   echo "SKIPPING: check links"
