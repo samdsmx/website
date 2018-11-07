@@ -24,11 +24,11 @@ SDK](/sdk-archive/) page.):
     {% endcommandline %}
 
 El comando de arriba configurara el PATH en la variable temporal, para la ventana actual de terminal. para
-agregar de manera permanente Flutter a tu "path", vea [Actualiza el path](#update-your-path).
+agregar de manera permanente Flutter a tu "path", mira [Actualiza el path](#actualiza-tu-path).
 
 Ahora esta todo listo para ejecutar los comando de Flutter en la consola de Flutter!
 
-Para actualizar una versión existente de Flutter, vea [Actualizando Flutter](/upgrading/).
+Para actualizar una versión existente de Flutter, mira [Actualizando Flutter](/upgrading/).
 
 ### Ejecutar Flutter doctor
 
@@ -65,5 +65,5 @@ Analytics no envía cada ejecución o cualquier ejecución dentro del `flutter c
 por lo que puede optar por no participar en los análisis antes de enviar los datos. 
 Para deshabilitar los reportes, teclee `flutter config --no-analytics` y para desplegar la
 configuración actual, teclee `flutter config`. 
-Vea la política de privacidad de Google: [www.google.com/intl/en/policies/privacy](https://www.google.com/intl/en/policies/privacy/).
+Mira la política de privacidad de Google: [www.google.com/intl/en/policies/privacy](https://www.google.com/intl/en/policies/privacy/).
 {: .alert-warning}
