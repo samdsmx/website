@@ -25,7 +25,7 @@ Los widgets de Flutter son ligeros, en parte debido a su inmutabilidad. Porque n
 
 Flutter incluye la biblioteca [Material Components](https://material.io/develop/flutter/). Estos son los widgets que implementan las
 [Guías de Material Design](https://material.io/design/). Material Design es un
-sistema de diseño flexible [optimizado para todas las 
+sistema de layout flexible [optimizado para todas las 
 plataformas](https://material.io/design/platform-guidance/cross-platform-adaptation.html#cross-platform-guidelines),
 incluyendo iOS.
 
@@ -129,9 +129,9 @@ class _SampleAppPageState extends State<SampleAppPage> {
 }
 {% endprettify %}
 
-## ¿Cómo puedo diseñar mis widgets? ¿Dónde está mi archivo de diseño XML?
+## ¿Cómo puedo diseñar mis widgets? ¿Dónde está mi archivo de layout XML?
 
-En Android, los diseños se escriben en XML, pero en Flutter se escriben con un árbol de widgets.
+En Android, los layouts se escriben en XML, pero en Flutter se escriben con un árbol de widgets.
 
 El siguiente ejemplo muestra cómo desplegar un widget simple con padding:
 
@@ -154,9 +154,9 @@ El siguiente ejemplo muestra cómo desplegar un widget simple con padding:
   }
 {% endprettify %}
 
-Puedes ver los diseños que Flutter tiene para ofrecer en el [Catálogo de Widgets](/widgets/layout/).
+Puedes ver los layouts que Flutter tiene para ofrecer en el [Catálogo de Widgets](/widgets/layout/).
 
-## ¿Cómo agrego o elimino un componente de mi diseño?
+## ¿Cómo agrego o elimino un componente de mi layout?
 
 En Android, puedes llamar a `addChild()` o `removeChild()` en un padre para añadir o eliminar dinámicamente las vistas hijas. En Flutter, dado que los widgets son inmutables no hay equivalente directo a `addChild()`.
 En su lugar, puedes pasar una función al padre que devuelva un widget, y
@@ -1220,11 +1220,11 @@ void main() {
 }
 {% endprettify %}
 
-# Diseños
+# Layouts
 
 ## ¿Cuál es el equivalente de un LinearLayout?
 
-En Android, se utiliza un diseño lineal para distribuir los widgets de forma lineal, ya sea horizontal o vertical. En Flutter, utiliza el widget Row o Column para conseguir el mismo resultado.
+En Android, se utiliza un layout lineal para distribuir los widgets de forma lineal, ya sea horizontal o vertical. En Flutter, utiliza el widget Row o Column para conseguir el mismo resultado.
 
 Si lo notas, los dos ejemplos de código son idénticos con la excepción del widget "Row" y "Column". Los hijos son los mismos y esta característica puede ser explotada para desarrollar layouts detallados que pueden cambiar con los mismos hijos.
 

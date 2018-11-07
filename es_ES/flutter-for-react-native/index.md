@@ -391,7 +391,7 @@ Un widget puede definir:
 
 * Un elemento estructural como un botón o menú   
 * Un elemento estilístico, como un font o un esquema de color  
-* Un aspecto de diseño como el padding o el alignment  
+* Un aspecto de layout como el padding o el alignment  
 
 El siguiente ejemplo muestra la app "¡Hola, mundo!" utilizando widgets de la biblioteca 
  Material. En este ejemplo, el árbol de widgets está encajado dentro del widget raíz de 
@@ -646,10 +646,10 @@ Puedes encontrar muchos paquetes compartidos por los desarrolladores de Flutter 
 
 En Flutter, construyes tu interfaz de usuario a partir de widgets que describen cómo debería ser su apariencia dada su configuración y estado actual.
 
-Los widgets a menudo se componen de muchos widgets pequeños, de un solo propósito que están anidados para producir efectos poderosos. Por ejemplo, el widget Container consta de varios widgets responsables del diseño, el pintado, el posicionamiento y el dimensionado. Específicamente, el widget `Container` incluye los widgets `LimitedBox`, `ConstrainedBox`, `Align`, `Padding`, `DecoratedBox`, y `Transform`. En lugar de subclasificar `Container` para producir un efecto personalizado, puedes
+Los widgets a menudo se componen de muchos widgets pequeños, de un solo propósito que están anidados para producir efectos poderosos. Por ejemplo, el widget Container consta de varios widgets responsables del layout, el pintado, el posicionamiento y el dimensionado. Específicamente, el widget `Container` incluye los widgets `LimitedBox`, `ConstrainedBox`, `Align`, `Padding`, `DecoratedBox`, y `Transform`. En lugar de subclasificar `Container` para producir un efecto personalizado, puedes
 componer estos y otros widgets simples de formas nuevas y únicas.
 
-El widget `Center` es otro ejemplo de cómo puedes controlar el diseño. Para centrar un widget, envuélvelo en un widget `Center` y luego usa widgets de diseño para alinear, filas, columnas y cuadrículas. Estos widgets de diseño no tienen una representación visual propia. Al contrario, su único propósito es controlar algún aspecto del diseño de otro widget. Para entender por qué un widget se renderiza de cierta manera, a menudo es útil inspeccionar los widgets vecinos.
+El widget `Center` es otro ejemplo de cómo puedes controlar el layout. Para centrar un widget, envuélvelo en un widget `Center` y luego usa widgets de layout para alinear, filas, columnas y cuadrículas. Estos widgets de layout no tienen una representación visual propia. Al contrario, su único propósito es controlar algún aspecto del layout de otro widget. Para entender por qué un widget se renderiza de cierta manera, a menudo es útil inspeccionar los widgets vecinos.
 
 Para más información, consulta la [Descripción técnica general de Flutter](/technical-overview/).
 
@@ -659,11 +659,11 @@ Para más información sobre los widgets principales del paquete Widgets, consul
 ## Vistas
 ### ¿Cuál es el equivalente del contenedor `View`?
 
-En React Native, `View` es un contenedor que soporta el diseño con `Flexbox`, estilo, manejo táctil y controles de accesibilidad.
+En React Native, `View` es un contenedor que soporta el layout con `Flexbox`, estilo, manejo táctil y controles de accesibilidad.
 
 En Flutter, puedes utilizar los widgets de la biblioteca Widgets, tales como [Container](https://docs.flutter.io/flutter/widgets/Container-class.html), [Column](https://docs.flutter.io/flutter/widgets/Column-class.html), [Row](https://docs.flutter.io/flutter/widgets/Row-class.html), y [Center](https://docs.flutter.io/flutter/widgets/Center-class.html).
 
-Para más información, consulta el catálogo de [Widgets de Diseño](/widgets/layout/).
+Para más información, consulta el catálogo de [Widgets de Layout](/widgets/layout/).
 
 ### ¿Cuál es el equivalente de `FlatList` o `SectionList`?
 
@@ -777,10 +777,10 @@ class _MyCanvasState extends State<MyCanvas> {
 
 <br>
 
-## Diseños
-### ¿Cómo utilizo los widgets para definir las propiedades del diseño?
+## Layouts
+### ¿Cómo utilizo los widgets para definir las propiedades del layout?
 
-En React Native, la mayor parte del diseño se puede hacer con las props que se pasan.
+En React Native, la mayor parte del layout se puede hacer con las props que se pasan.
 a un componente específico. Por ejemplo, puede utilizar el `style` en el componente `View` para especificar las propiedades flexbox. Para ordenar los componentes en una columna, se deben especificar propiedades como: 
 `flexDirection: “column”`.
 
@@ -797,10 +797,10 @@ a un componente específico. Por ejemplo, puede utilizar el `style` en el compon
 >
 ```
 
-En Flutter, el diseño se define principalmente por widgets específicamente diseñados para proporcionar diseño, combinado con widgets de control y sus propiedades style.
+En Flutter, el layout se define principalmente por widgets específicamente diseñados para proporcionar layout, combinado con widgets de control y sus propiedades style.
 
 Por ejemplo, los widgets [Column](https://docs.flutter.io/flutter/widgets/Column-class.html) y [Row](https://docs.flutter.io/flutter/widgets/Row-class.html) toman un array de hijos y los alinean vertical y horizontalmente respectivamente. Un widget [Container](https://docs.flutter.io/flutter/widgets/Container-class.html) toma una
-combinación de propiedades de diseño y estilo, y un widget [`Center`](https://docs.flutter.io/flutter/widgets/Center-class.html) que centra sus widgets hijos.
+combinación de propiedades de layout y estilo, y un widget [`Center`](https://docs.flutter.io/flutter/widgets/Center-class.html) que centra sus widgets hijos.
 
 
 
@@ -829,7 +829,7 @@ Center(
   ),
 )
 ```
-Flutter proporciona una variedad de widgets de diseño en su biblioteca principal de widgets. Por ejemplo, [`Padding`](https://docs.flutter.io/flutter/widgets/Padding-class.html), [`Align`](https://docs.flutter.io/flutter/widgets/Align-class.html), y [`Stack`](https://docs.flutter.io/flutter/widgets/Stack-class.html).
+Flutter proporciona una variedad de widgets de layout en su biblioteca principal de widgets. Por ejemplo, [`Padding`](https://docs.flutter.io/flutter/widgets/Padding-class.html), [`Align`](https://docs.flutter.io/flutter/widgets/Align-class.html), y [`Stack`](https://docs.flutter.io/flutter/widgets/Stack-class.html).
 
 Para obtener una lista completa, consulta [Layout Widgets](/widgets/layout/).
 
@@ -1566,7 +1566,7 @@ export default (MyApp1 = DrawerNavigator({
 }));
 ```
 
-En Flutter, podemos usar el widget `Drawer` en combinación con un `Scaffold` para crear un diseño con un drawer de Material Design. Para añadir un `Drawer` a una aplicación, envuélvelo en un widget `Scaffold`. El widget `Scaffold` proporciona una estructura visual consistente a las aplicaciones que siguen las pautas de [Material Design](https://material.io/design/). También soporta componentes especiales de Material Design, tales como `Drawers`, `AppBars`, y `SnackBars`.
+En Flutter, podemos usar el widget `Drawer` en combinación con un `Scaffold` para crear un layout con un drawer de Material Design. Para añadir un `Drawer` a una aplicación, envuélvelo en un widget `Scaffold`. El widget `Scaffold` proporciona una estructura visual consistente a las aplicaciones que siguen las pautas de [Material Design](https://material.io/design/). También soporta componentes especiales de Material Design, tales como `Drawers`, `AppBars`, y `SnackBars`.
 
 El widget `Drawer` es un panel de Material Design que se desliza horizontalmente desde
  el borde de un `Scaffold` para mostrar enlaces de navegación en una aplicación. Puedes proporcionar un widget [`Button`](https://docs.flutter.io/flutter/material/RaisedButton-class.html), un widget [`Text`](https://docs.flutter.io/flutter/widgets/Text-class.html), o una lista de elementos que se mostrarán como el hijo del Widget `Drawer`. En el siguiente ejemplo, el widget [`ListTile`](https://docs.flutter.io/flutter/material/ListTile-class.html) proporciona la navegación con tap.
@@ -1979,7 +1979,7 @@ Si utilizas IntelliJ y Android Studio, puedes utilizar el Flutter Inspector.
 * Ver la estructura de la UI de tu aplicación como un árbol de widgets
 * Selecciona un punto en tu dispositivo o simulador y encuentra el widget correspondiente que renderizó dichos píxeles.
 * Ver las propiedades de widgets específicos
-* Identificar rápidamente los problemas de diseño y determinar su causa
+* Identificar rápidamente los problemas de layout y determinar su causa
 
 La vista del Inspector de Flutter puede abrirse desde View > Tool Windows > Flutter > Inspector. El contenido se muestra únicamente cuando una aplicación está en ejecución.
 
