@@ -221,8 +221,8 @@ open source, en [pub.dartlang.org](https://pub.dartlang.org/flutter/).
                 title: Text('Welcome to Flutter'),
               ),
               body: Center(
-                //child: Text([[highlight]]'Hello World'[[/highlight]]), // Replace the highlighted text...
-                child: Text([[highlight]]wordPair.asPascalCase[[/highlight]]),  // With this highlighted text.
+                //child: Text([[highlight]]'Hello World'[[/highlight]]), // reemplazar el texto resaltado por ...
+                child: Text([[highlight]]wordPair.asPascalCase[[/highlight]]),  // con este texto resaltado.
               ),
             ),
           );
@@ -283,7 +283,7 @@ un hijo dentro del existentea stateless widget `MyApp`.
     <!-- skip -->
     {% prettify dart %}
      class RandomWordsState extends State<RandomWords> {
-        // TODO Add build method
+        // TODO Añadir método de construcción
       }
     {% endprettify %}
 
@@ -425,23 +425,23 @@ constructor del  `ListView` permite construir una lista de carga retrasada, a pe
         [[highlight]]Widget _buildSuggestions() {[[/highlight]]
           [[highlight]]return ListView.builder([[/highlight]]
             [[highlight]]padding: const EdgeInsets.all(16.0),[[/highlight]]
-            // The itemBuilder callback is called once per suggested word pairing,
-            // and places each suggestion into a ListTile row.
-            // For even rows, the function adds a ListTile row for the word pairing.
-            // For odd rows, the function adds a Divider widget to visually
-            // separate the entries. Note that the divider may be difficult
-            // to see on smaller devices.
+            // El callbabck de itemBuilder se llama una vez por cada par de palabras sugerido, 
+            // y coloca cada sugerencia en una fila de ListTile. 
+            // Para las filas pares, la función añade una fila ListTile para el par de palabras.
+            // Para filas impares, la función añade un widget Divider 
+            // para separar visualmente las entradas. Ten en cuenta que el divisor puede ser difícil 
+            // de ver en dispositivos más pequeños.
             [[highlight]]itemBuilder: (context, i) {[[/highlight]]
-              // Add a one-pixel-high divider widget before each row in theListView.
+              // Añade un widget divisor de un píxel de alto antes de cada fila en theListView
               [[highlight]]if (i.isOdd) return Divider();[[/highlight]]
-               // The syntax "i ~/ 2" divides i by 2 and returns an integer result.
-              // For example: 1, 2, 3, 4, 5 becomes 0, 1, 1, 2, 2.
-              // This calculates the actual number of word pairings in the ListView,
-              // minus the divider widgets.
+              // La sintaxis "i ~/ 2" divide i entre 2 y devuelve un resultado entero. 
+              // Por ejemplo: 1, 2, 3, 4, 5 se convierte en 0, 1, 1, 1, 2, 2.
+              // Esto calcula el número real de pares de palabras en el ListView,
+              // menos los widgets del divisor.
               [[highlight]]final index = i ~/ 2;[[/highlight]]
-              // If you've reached the end of the available word pairings...
+              // Si ha llegado al final de los pares de palabras disponibles....
               [[highlight]]if (index >= _suggestions.length) {[[/highlight]]
-                // ...then generate 10 more and add them to the suggestions list.
+                // ... luego generar 10 más y agregarlos a la lista de sugerencias.
                 [[highlight]]_suggestions.addAll(generateWordPairs().take(10));[[/highlight]]
               [[highlight]]}[[/highlight]]
               [[highlight]]return _buildRow(_suggestions[index]);[[/highlight]]
@@ -483,7 +483,7 @@ constructor del  `ListView` permite construir una lista de carga retrasada, a pe
         ...
         @override
         Widget build(BuildContext context) {
-          [[strike]]final wordPair = WordPair.random();[[/strike]] // Delete these two lines.
+          [[strike]]final wordPair = WordPair.random();[[/strike]] // Eliminar estas dos lineas
           [[strike]]return Text(wordPair.asPascalCase);[[/strike]]
           [[highlight]]return Scaffold ([[/highlight]]
             [[highlight]]appBar: AppBar([[/highlight]]
@@ -549,9 +549,9 @@ En este laboratorio, tu has:
 
 * Creado una app de Flutter desde cero.
 * Escrito código Dart.
-* Utilizado una libreía externa de terceros.
+* Utilizado una librería externa de terceros.
 * Usado hot reload para un ciclo de desarrollo más rápido.
-* Impementado un widget stateful.
+* Implementado un widget stateful.
 * Creado una lista de scroll infinito, de carga retrasada.
  Si deseas extender esta app, procede con la
 [parte 2](https://codelabs.developers.google.com/codelabs/first-flutter-app-pt2)
