@@ -432,12 +432,12 @@ constructor del  `ListView` permite construir una lista de carga retrasada, a pe
             // para separar visualmente las entradas. Ten en cuenta que el divisor puede ser difícil 
             // de ver en dispositivos más pequeños.
             [[highlight]]itemBuilder: (context, i) {[[/highlight]]
-              // Añade un widget divisor de un píxel de alto antes de cada fila en theListView
+              // Añade un widget divisor de un píxel de alto antes de cada fila en theListView.
               [[highlight]]if (i.isOdd) return Divider();[[/highlight]]
               // La sintaxis "i ~/ 2" divide i entre 2 y devuelve un resultado entero. 
-              // Por ejemplo: 1, 2, 3, 4, 5 se convierte en 0, 1, 1, 1, 2, 2.
+              // Por ejemplo: 1, 2, 3, 4, 5 se convierte en 0, 1, 1, 2, 2.
               // Esto calcula el número real de pares de palabras en el ListView,
-              // menos los widgets del divisor.
+              // menos los widgets divider.
               [[highlight]]final index = i ~/ 2;[[/highlight]]
               // Si ha llegado al final de los pares de palabras disponibles....
               [[highlight]]if (index >= _suggestions.length) {[[/highlight]]
