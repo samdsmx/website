@@ -1,15 +1,19 @@
 #!/bin/bash
+#
+# FIXME(chalin): this script really needs to be split into multiple scripts.
 
 # Fast fail the script on failures.
 set -e
 
 BUILD=1
+CHECK_CODE=1
 CHECK_LINKS=1
 PUB_CMD="get"
 
 while [[ "$1" == -* ]]; do
   case "$1" in
     --no-build) BUILD=; shift;;
+    --no-check-code)  CHECK_CODE=; shift;;
     --no-check-links) CHECK_LINKS=; shift;;
     --no-get)   PUB_CMD=""; shift;;
     --up*)      PUB_CMD="upgrade"; shift;;
@@ -63,7 +67,7 @@ function deploy() {
   local project="$2"
   while [[ "$remaining_tries" > 0 ]]; do
     # FIREBASE_TOKEN is set in the .cirrus.yml file.
-    firebase deploy --token "$FIREBASE_TOKEN" --non-interactive --project "$project" && break
+    npx firebase deploy --token "$FIREBASE_TOKEN" --non-interactive --project "$project" && break
     remaining_tries=$(($remaining_tries - 1))
     error "Error: Unable to deploy project $project to Firebase. Retrying in five seconds... ($remaining_tries tries left)"
     sleep 5
@@ -119,30 +123,44 @@ echo "Using Dart SDK: $dart"
 "$dart" --version
 
 if [[ -n $PUB_CMD ]]; then
+  (
+    set -x;
+    rm -Rf example.g
+    mkdir -pv example.g
+    cp example/* example.g/
+  )
+
+  pushd example.g > /dev/null
   "$flutter" packages $PUB_CMD
 
   # Analyze the stand-alone sample code files
-  for sample in _includes/code/*/*; do
+  for sample in ../src/_includes/code/*/*; do
     if [[ -d "${sample}" ]]; then
       echo "Run flutter packages $PUB_CMD on ${sample}"
       "$flutter" packages $PUB_CMD ${sample}
     fi
   done
+  popd > /dev/null
 fi
 
-echo "ANALYZING _includes/code/*:"
-"$flutter" analyze --no-current-package _includes/code/
+if [[ -n $CHECK_CODE ]]; then
+  echo "ANALYZING _includes/code/*:"
+  (
+    cd example.g;
+    "$flutter" analyze --no-current-package ../src/_includes/code/*/
+  )
 
-#Evito la comprobacion de códigos insertados provisionalmente
+  echo "EXTRACTING code snippets from the markdown:"
+  "$dart" tool/extract.dart
 
-# echo "EXTRACTING code snippets from the markdown:"
-# "$dart" --preview-dart-2 tool/extract.dart
+  echo "ANALYZING extracted code snippets:"
+  (cd example.g; "$flutter" analyze --no-current-package .)
 
-# echo "ANALYZING extracted code snippets:"
-# "$flutter" analyze --no-current-package example/
-
-# echo "DARTFMT check of extracted code snippets:"
-# check_formatting example/*.dart
+  echo "DARTFMT check of extracted code snippets:"
+  check_formatting example.g/*.dart
+else
+  echo "SKIPPING: code checks"
+fi
 
 if [[ -n $BUILD ]]; then
   echo "BUILDING site:"
@@ -159,13 +177,11 @@ else
   echo "SKIPPING: check links"
 fi
 
-if [ "$TRAVIS_EVENT_TYPE" = "push" ] && [ "$TRAVIS_BRANCH" = "master" ]; then
-  # Deploy pushes to master to Firebase hosting.
-  echo "Deploying to Firebase."
-
-  npm install --global firebase-tools
-  firebase -P flutter-es --token "$FIREBASE_TOKEN" --non-interactive deploy
-
+# Deploy on all non-PR master branch builds.
+if [[ -z "$CIRRUS_PR" && "$CIRRUS_BRANCH" == "master" ]]; then
+  echo "Deploying website to Firebase:"
+  deploy 5 sweltering-fire-2088
+  echo "SUCCESS: Website deployed"
 fi
 
 exit 0
