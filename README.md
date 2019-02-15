@@ -1,3 +1,14 @@
+# Adaptación a nuevo estilo de flutter.io
+
+La tarea consiste en :
+1. Asígnate un issue para que lo demás sepamos que estas trabajando en él.
+1. Obtener los textos traducidos que correspondan al fichero en que hayas cojido master carpeta es_ES (se recomienda copiarse esta carpeta en un directorio aparte fuera del repo)
+1. Crea una rama nueva con el nombre del fichero que hayas cogido y el prefijo dash-
+1. Sustituir los textos en ingles por la su traducción respetando la nueva maquetación.
+1. Cuando este completo haz commit con la referencia "close #ID_DEL_ISSUE"
+
+
+
 # [Flutter][]'s website <img src="https://flutter.io/images/flutter-mark-square-100.png" width="5%">
 
 [![Build Status][]][Repo on Travis]
