@@ -18,7 +18,7 @@ Siga los siguientes pasos para agregar un complemento al editor para Androind St
 o VS Code. Si quiere utilizar un editor diferente, está bien, simplemente salte al 
 [siguiente paso: crear y ejecutar tu primer app](/get-started/test-drive/).
 
-% comment %} Nav tabs {% endcomment -%}
+{% comment %} Nav tabs {% endcomment -%}
 <ul class="nav nav-tabs" id="editor-setup" role="tablist">
   <li class="nav-item">
     <a class="nav-link active" id="androidstudio-tab" href="#androidstudio" role="tab" aria-controls="androidstudio" aria-selected="true">Android Studio / IntelliJ</a>
