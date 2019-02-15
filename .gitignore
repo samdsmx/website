@@ -23,4 +23,4 @@ src/_includes/code/**/ios/
 .vscode/
 vendor/
 .bundle/config
-.jekyll-cache∫
+.jekyll-cache/
