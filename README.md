@@ -6,6 +6,7 @@ La tarea consiste en :
 1. Crea una rama nueva con el nombre del fichero que hayas cogido y el prefijo dash-
 1. Sustituir los textos en ingles por la su traducción respetando la nueva maquetación.
 1. Cuando este completo haz commit con la referencia "close #ID_DEL_ISSUE"
+1. Crea un PR para hacer merge en la rama dash
 
 
 
