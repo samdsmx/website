@@ -1,201 +1,219 @@
-- title: Get started
+- title: Empezar
   children:
-    - title: 1. Install
+    - title: 1. Instalación
       permalink: /docs/get-started/install
-    - title: 2. Set up an editor
+    - title: 2. Configura un editor
       permalink: /docs/get-started/editor
-    - title: 3. Test drive
+    - title: 3. Test inicial
       permalink: /docs/get-started/test-drive
-    - title: 4. Write your first app
+    - title: 4. Escribe tu primera app
       permalink: /docs/get-started/codelab
-    - title: 5. Learn more
+    - title: 5. Aprende más
       permalink: /docs/get-started/learn-more
     - divider
-    - title: From another platform?
+    - title: ¿Desde otra plataforma?
       expanded: true
       children:
-        - title: Flutter for Android devs
+        - title: Flutter para Android devs
           permalink: /docs/get-started/flutter-for/android-devs
-        - title: Flutter for iOS devs
+        - title: Flutter para iOS devs
           permalink: /docs/get-started/flutter-for/ios-devs
-        - title: Flutter for React Native devs
+        - title: Flutter para React Native devs
           permalink: /docs/get-started/flutter-for/react-native-devs
-        - title: Flutter for web devs
+        - title: Flutter para web devs
           permalink: /docs/get-started/flutter-for/web-devs
-        - title: Flutter for Xamarin.Forms devs
+        - title: Flutter para Xamarin.Forms devs
           permalink: /docs/get-started/flutter-for/xamarin-forms-devs
-    - title: "Dart language overview"
+    - title: "Dart vision general"
       permalink: https://www.dartlang.org/guides/language
 
-- title: Samples & codelabs
+- title: Ejemplos & tutoriales
   children:
-    - title: Sample apps on GitHub
+    - title: Apps de ejemplo en GitHub
       permalink: https://github.com/flutter/samples/blob/master/INDEX.md
     - title: Cookbook
       permalink: /docs/cookbook
     - title: Codelabs
       permalink: /docs/codelabs
+    - title: Tutoriales
+      permalink: /docs/reference/tutorials
 
-- title: Development
+- title: Desarrollo
   expanded: true
   permalink: /docs/development
   children:
-    - title: User interface
+    - title: Interfaz de Usuario
       permalink: /docs/development/ui
       children:
-        - title: Introduction to Widgets
+        - title: Introducción a los Widgets
           permalink: /docs/development/ui/widgets-intro
-        - title: Building layouts
+        - title: Construyendo layouts
           permalink: /docs/development/ui/layout
-        - title: Adding interactivity
+          children:
+            - title: Layouts en Flutter
+              permalink: /docs/development/ui/layout
+              match-page-url-exactly: true
+            - title: Tutorial
+              permalink: /docs/development/ui/layout/tutorial
+            - title: Box constraints
+              permalink: /docs/development/ui/layout/box-constraints
+        - title: Añadir interactividad
           permalink: /docs/development/ui/interactive
-        - title: Assets and images
+        - title: Assets e imágenes
           permalink: /docs/development/ui/assets-and-images
-        - title: Navigation & routing
+        - title: Navegación & enrutado
           permalink: /docs/development/ui/navigation
         # Commenting out the following entry per
         # https://github.com/flutter/website/issues/1496#issuecomment-431455211
         # - title: Inspect an app's UI
         #   permalink: /docs/development/ui/inspector
-        - title: Animations
+        - title: Animaciones
           permalink: /docs/development/ui/animations
           children:
-            - title: Introduction
+            - title: Introducción
               permalink: /docs/development/ui/animations
               match-page-url-exactly: true
-            - title: Animations overview
+            - title: Vision general
               permalink: /docs/development/ui/animations/overview
-            - title: Animations tutorial
+            - title: Tutorial
               permalink: /docs/development/ui/animations/tutorial
-            - title: Hero animations
+            - title: Animaciones Hero
               permalink: /docs/development/ui/animations/hero-animations
-            - title: Staggered animations
+            - title: Animaciones Escalonadas
               permalink: /docs/development/ui/animations/staggered-animations
-        - title: Advanced UI
+        - title: UI Avanzado
           permalink: /docs/development/ui/advanced
           children:
             - title: Focus handling system # Where did this go?
             - title: Slivers
               permalink: /docs/development/ui/advanced/slivers
-            - title: Gestures
+            - title: Gestos
               permalink: /docs/development/ui/advanced/gestures
-        - title: Platform-specific theming
-        - title: Widget catalog
+        - title: Tema específico por plataforma
+        - title: Catálogo de Widgets
           permalink: /docs/development/ui/widgets
-    - title: Data & backend
+    - title: Datos & backend
       permalink: /docs/development/data-and-backend
       children:
-        - title: State management
+        - title: Administrar el Estado
           permalink: /docs/development/data-and-backend/state-mgmt
-        - title: JSON and serialization
+          children:
+            - title: Introducción
+              permalink: /docs/development/data-and-backend/state-mgmt/intro
+            - title: Piensa declarativamente
+              permalink: /docs/development/data-and-backend/state-mgmt/declarative
+            - title: Efímero vs estado de la app
+              permalink: /docs/development/data-and-backend/state-mgmt/ephemeral-vs-app
+            - title: Admnistración Simple del estado
+              permalink: /docs/development/data-and-backend/state-mgmt/simple
+            - title: Opciones
+              permalink: /docs/development/data-and-backend/state-mgmt/options
+        - title: JSON y serialización
           permalink: /docs/development/data-and-backend/json
         - title: Back-end services
         - title: Firebase
           permalink: /docs/development/data-and-backend/firebase
-    - title: Accessibility & internationalization # TODO: use: Accessibility & localization
+    - title: Accesibilidad & internacionalización # TODO: use: Accessibility & localization
       permalink: /docs/development/accessibility-and-localization
       children:
-        - title: Accessibility
+        - title: Accesibilidad
           permalink: /docs/development/accessibility-and-localization/accessibility
-        - title: Internationalization
+        - title: Internacionalización
           permalink: /docs/development/accessibility-and-localization/internationalization
-    - title: Platform integration
+    - title: Integración en la plataforma
       permalink: /docs/development/platform-integration
       children:
-        - title: Embedding Flutter views in non-Flutter apps
-        - title: Writing platform-specific code
+        - title: Incrustar vistas Flutter en no-Flutter app
+        - title: Escribir código específico de plataforma
           permalink: /docs/development/platform-integration/platform-channels
-    - title: Packages & plugins
+    - title: Paquetes & plugins
       permalink: /docs/development/packages-and-plugins
       children:
-        - title: Using packages
+        - title: Usar paquetes
           permalink: /docs/development/packages-and-plugins/using-packages
-        - title: Developing packages & plugins
+        - title: Desarrollar paquetes & plugins
           permalink: /docs/development/packages-and-plugins/developing-packages
-        - title: Background processes
+        - title: Procesos en segundo plano
           permalink: /docs/development/packages-and-plugins/background-processes
-        - title: Package site
+        - title: Repositorio de paquetes
           permalink: http://pub.dartlang.org/flutter
-    - title: Tools & techniques
+    - title: Herramientas & técnicas
       permalink: /docs/development/tools
       children:
-        - title: IDEs
-          expanded: true
-          permalink: /docs/development/tools/ide
-          children:
-            - title: Android Studio / IntelliJ
-              permalink: /docs/development/tools/ide/android-studio
-            - title: Visual Studio Code
-              permalink: /docs/development/tools/ide/vs-code
+        - title: Android Studio / IntelliJ
+          permalink: /docs/development/tools/android-studio
+        - title: Visual Studio Code
+          permalink: /docs/development/tools/vs-code
         - title: Flutter SDK
           permalink: /docs/development/tools/sdk
           children:
-            - title: Upgrading
+            - title: Actualizar
               permalink: /docs/development/tools/sdk/upgrading
-            - title: Archive
+            - title: Archivo
               permalink: /docs/development/tools/sdk/archive
         - title: Hot reload
           permalink: /docs/development/tools/hot-reload
-        - title: Code formatting
+        - title: Formatear el código
           permalink: /docs/development/tools/formatting
         - title: Widget inspector
           permalink: /docs/development/tools/inspector
 
-- title: Testing & optimization
+- title: Pruebas & optimización
   permalink: /docs/testing
   children:
-    - title: Debugging
+    - title: Depurar
       permalink: /docs/testing/debugging
-    - title: Using OEM debuggers
+    - title: Usar depuradores OEM
       permalink: /docs/testing/oem-debuggers
-    - title: Flutter's build modes
+    - title: Modos de compilación en Flutter
       permalink: /docs/testing/build-modes
-    - title: Testing
+    - title: Pruebas
       permalink: /docs/testing
       match-page-url-exactly: true
-    - title: Performance profiling
+    - title: Mejores prácticas para rendimiento
+      permalink: /docs/testing/best-practices
+    - title: Perfil de rendimiento
       permalink: /docs/testing/ui-performance
-    # TODO(chalin): The following entry is not in the IA, so I'm commenting it out for now. Should it be here?
-    # We don't have this page yet, so that's fine.
+    # We don't have this page yet.
     # - title: Making your compiled app smaller
 
-- title: Deployment
+- title: Desarrollo
   children:
-    - title: Creating flavors for Flutter
+    - title: Crear sabores para Flutter
       permalink:  /docs/deployment/flavors
-    - title: Build and release for Android
+    - title: Build y release para Android
       permalink: /docs/deployment/android
-    - title: Build and release for iOS
+    - title: Build y release para iOS
       permalink: /docs/deployment/ios
-    - title: Continuous deployment with fastlane
+    - title: Despliegue continuo con fastlane
       permalink: /docs/deployment/fastlane-cd
 
-- title: Resources
+- title: Recursos
   children:
-    - title: Dart resources
+    - title: Recursos Dart
       permalink: /docs/resources/bootstrap-into-dart
     - title: Inside Flutter
       permalink: /docs/resources/inside-flutter
-    - title: Technical overview
+    - title: Visión general técnica
       permalink: /docs/resources/technical-overview
-    - title: Development philosophy
+    - title: Filosofía de desarrollo
       permalink: /docs/resources/design-principles
     # - title: Flutter best practices # TODO
-    - title: Technical videos for learning Flutter
+    - title: Videos técnicos para aprender Flutter
       permalink: /docs/resources/videos
     # - title: Flutter developer communities # TODO
     # - title: Flutter learning resources # TODO
     - title: FAQ
       permalink: /docs/resources/faq
 
-- title: Reference
+- title: Referencia
   expanded: true
   children:
-    - title: Tutorials
+    - title: Tutoriales
       permalink: /docs/reference/tutorials
-    - title: Widget index
+    - title: Indice de Widgets
       permalink: /docs/reference/widgets
-    - title: API reference
+    - title: Referencia de la API
       permalink: https://docs.flutter.io
-    - title: Package site
+    - title: Repositorio de paquetes
       permalink: https://pub.dartlang.org/flutter
