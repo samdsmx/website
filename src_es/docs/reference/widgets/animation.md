@@ -1,5 +1,5 @@
 ---
-title: Animation and motion widgets
-short-title: Animation
+title: Wigets de animación y movimiento
+short-title: Animación
 ---
-{% include catalogpage.html category="Animation and Motion" %}
+{% include catalogpage.html category="Animación y Movimiento" %}

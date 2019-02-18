@@ -1,13 +1,13 @@
 ---
-title: Flutter widget index
+title: Índice de widgets Flutter
 short-title: Widgets
 show_breadcrumbs: false
 ---
 
 {% assign sorted = site.data.catalog.widgets | sort:'name' -%}
 
-This is an alphabetical list of nearly every widget that is bundled with
-Flutter. You can also [browse widgets by category][catalog].
+Este es un listado alfabético de casi todos los widgets que vienen con 
+Flutter. También puedes [navegar por el catálogo por categorías][catalog].
 
 <div class="card-deck card-deck--responsive">
 {% for comp in sorted %}
@@ -22,7 +22,7 @@ Flutter. You can also [browse widgets by category][catalog].
             <p class="card-text">{{comp.description}}</p>
         </div>
         <div class="card-footer card-footer--transparent">
-            <a href="{{comp.link}}">Documentation</a>
+            <a href="{{comp.link}}">Documentación</a>
         </div>
     </div>
 {% endfor %}

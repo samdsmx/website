@@ -1,5 +1,5 @@
 ---
-title: Painting and effect widgets
-short-title: Painting
+title: Widgets de pintado y efectos
+short-title: Pintado
 ---
-{% include catalogpage.html category="Painting and effects" %}
+{% include catalogpage.html category="Pintado y efectos" %}

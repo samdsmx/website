@@ -1,5 +1,5 @@
 ---
-title: Text widgets
-short-title: Text
+title: Widgets de Texto
+short-title: Texto
 ---
-{% include catalogpage.html category="Text" %}
+{% include catalogpage.html category="Texto" %}

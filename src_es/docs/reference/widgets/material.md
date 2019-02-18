@@ -1,5 +1,5 @@
 ---
-title: Material Components widgets
+title: Widgets de Componentes Material
 short-title: Material
 ---
-{% include catalogpage.html category="Material Components" %}
+{% include catalogpage.html category="Componentes Material" %}

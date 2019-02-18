@@ -1,12 +1,12 @@
 ---
-title: Widget catalog
-short-title: Catalog
+title: Catálogo de Widgets
+short-title: Catálogo
 toc: false
 ---
 
-Create beautiful apps faster with Flutter's collection of visual, structural,
-platform, and interactive widgets. In addition to browsing widgets by category,
-you can also see all the widgets in the [widget index](/docs/reference/widgets).
+Crea hermosas apps más rápido con la colección de widgets visuales, estructurales,
+de plataforma, e interactivos de Flutter. Además de navegar por los widgets por categoría,
+también puedes ver todos los widgets en el [índice de widgets](/docs/reference/widgets).
 
 <div class="card-deck card-deck--responsive">
 {% for section in site.data.catalog.index %}
@@ -16,7 +16,7 @@ you can also see all the widgets in the [widget index](/docs/reference/widgets).
             <p class="card-text">{{section.description}}</p>
         </div>
         <div class="card-footer card-footer--transparent">
-            <a href="{{section.id}}">Visit</a>
+            <a href="{{section.id}}">Visitar</a>
         </div>
     </div>
 {% endfor %}

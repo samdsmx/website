@@ -1,6 +1,6 @@
 ---
-title: Basic widgets
-short-title: Basics
+title: Widgets básicos
+short-title: Básicos
 ---
 
-{% include catalogpage.html category="Basics" %}
+{% include catalogpage.html category="Básicos" %}

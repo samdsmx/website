@@ -1,5 +1,5 @@
 ---
-title: Cupertino (iOS-style) widgets
+title: Cupertino (widgets estilo iOS)
 short-title: Cupertino
 ---
-{% include catalogpage.html category="Cupertino (iOS-style widgets)" %}
+{% include catalogpage.html category="Cupertino (widgets estilo iOS)" %}

@@ -1,5 +1,5 @@
 ---
-title: Interaction model widgets
-short-title: Interaction
+title: Widgets de modelo de interacción
+short-title: Interacción
 ---
-{% include catalogpage.html category="Interaction Models" %}
+{% include catalogpage.html category="Modelos de interacción" %}

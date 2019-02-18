@@ -1,115 +1,115 @@
 [
   {
-    "name": "Basics",
-    "description": "Widgets you absolutely need to know before building your first Flutter app.",
+    "name": "Básicos",
+    "description": "Widgets imprescindibles que debes conocer antes de construir tu primera app Flutter.",
     "priority": "high",
     "id":"basics"
   },
   {
-    "name": "Material Components",
-    "description": "Visual, behavioral, and motion-rich widgets implementing the <a href=\"https://material.io/guidelines/material-design/introduction.html\">Material Design guidelines</a>.",
+    "name": "Componentes Material",
+    "description": "Widgets visuales, de comportamiento, ricos en movimientomo implementando las guías <a href=\"https://material.io/guidelines/material-design/introduction.html\">Material Design</a>.",
     "subcategories": [
       {
-        "name": "App structure and navigation"
+        "name": "Estructura de la app y navegación"
       },
       {
-        "name": "Buttons"
+        "name": "Botones"
       },
       {
-        "name": "Input and selections"
+        "name": "Entradas y selecciones"
       },
       {
-        "name": "Dialogs, alerts, and panels"
+        "name": "Dialogs, alerts, y panels"
       },
       {
-        "name": "Information displays"
+        "name": "Mostrando información"
       },
       {
         "name": "Layout",
-        "description": "See also Flutter's <a href=\"/widgets/catalog/layout/\">general layout widgets</a> (such as row, column, and more)."
+        "description": "Ver también los <a href=\"/widgets/catalog/layout/\">widgets de layout general</a> de Flutter (como row, column, y más)."
       }
     ],
     "id":"material"
   },
   {
-    "name": "Cupertino (iOS-style widgets)",
-    "description": "Beautiful and high-fidelity widgets for current iOS design language.",
+    "name": "Cupertino (widgets estilo iOS)",
+    "description": "Widgets para el actual lenguaje de diseño iOS, hermosos y de alta fidelidad.",
     "id":"cupertino"
   },
   {
     "name": "Layout",
-    "description": "Arrange other widgets columns, rows, grids, and many other layouts.",
+    "description": "Organiza otros widgets en columnas, filas, grids, y muchos otros layouts.",
     "subcategories": [
       {
-        "name": "Single-child layout widgets",
-        "description": "These widgets take a single child and manipulate the layout of the child."
+        "name": "Widgets de un solo hijo",
+        "description": "Estos widgets toman un solo hijo y manipulan el layout del hijo."
       },
       {
-        "name": "Multi-child layout widgets",
-        "description":"These widgets take multiple children and arrange them in different ways."
+        "name": "Widgets de múltiples hijos",
+        "description":"Estos widgets toman múltiples hijos y los organizan en diferentes maneras."
       },
       {
-        "name": "Layout helpers"
+        "name": "Ayudas a layouts"
       }
     ],
     "id":"layout"
   },
   {
-    "name": "Text",
-    "description": "Display and style text.",
+    "name": "Texto",
+    "description": "Muestra y da estilo a textos.",
     "id":"text"
   },
   {
-    "name": "Assets, Images, and Icons",
-    "description": "Manage assets, display images, and show icons.",
+    "name": "Assets, Imágenes, e Iconos",
+    "description": "Administra assets, muestra imágenes, e iconos.",
     "id":"assets"
   },
   {
     "name": "Input",
-    "description": "Take user input in addition to input widgets in Material Components and Cupertino.",
+    "description": "Toma las entradas del usuario ademas de con los widgets de entrada en Componentes Material y Cupertino.",
     "id":"input"
   },
   {
-    "name": "Animation and Motion",
-    "description": "Bring animations to your app.",
+    "name": "Animación y Movimiento",
+    "description": "Brinda animaciones a tu app.",
     "id":"animation"
   },
   {
-    "name": "Interaction Models",
-    "description": "Respond to touch events and route users to different views.",
+    "name": "Modelos de interacción",
+    "description": "Responde a eventos touch y envia a los usuarios diferentes vistas.",
     "subcategories": [
       {
-        "name": "Touch interactions"
+        "name": "Interacciones Touch"
       },
       {
-        "name": "Routing"
+        "name": "Rutas"
       }
     ],
     "id":"interaction"
   },
   {
-    "name": "Styling",
-    "description": "Manage the theme of your app, makes your app responsive to screen sizes, or add padding.",
+    "name": "Estilos",
+    "description": "Administra el theme de tu app, haz tu app resposiva al tamaño de la pantalla, o añade padding.",
     "id":"styling"
   },
   {
-    "name": "Painting and effects",
-    "description": "These widgets apply visual effects to the children without changing their layout, size, or position.",
+    "name": "Pintado y efectos",
+    "description": "Estos widgets aplican efectos visuales a los hijos sin cambiar su layout, tamaño o posición.",
     "id":"painting"
   },
   {
-    "name": "Async",
-    "description": "Async patterns to your Flutter application.",
+    "name": "Asincronía",
+    "description": "Patrones asíncronos para tus aplicaciones Flutter.",
     "id":"async"
   },
   {
     "name": "Scrolling",
-    "description": "Scroll multiple widgets as children of the parent.",
+    "description": "Haz scroll de múltiples widgets como hijos del padre.",
     "id":"scrolling"
   },
   {
-    "name": "Accessibility",
-    "description": "Make your app accessible.",
+    "name": "Accesibilidad",
+    "description": "Haz tu app accesible.",
     "id":"accessibility"
-  },
+  }
 ]
