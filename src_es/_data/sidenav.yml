@@ -177,7 +177,7 @@
     # We don't have this page yet.
     # - title: Making your compiled app smaller
 
-- title: Desarrollo
+- title: Lanzamiento
   children:
     - title: Crear sabores para Flutter
       permalink:  /docs/deployment/flavors
