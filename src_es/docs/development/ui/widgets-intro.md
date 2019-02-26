@@ -46,7 +46,7 @@ La función [runApp()][] toma el
 árbol de widgets. En este ejemplo, el árbol de widgets consiste de dos widgets, el widget
 [Center]({{api}}/widgets/Center-class.html) y su hijo, el widget
 [Text]({{api}}/widgets/Text-class.html).El framework obliga al widget raíz a 
-cubrir la pantalla, lo que significa que el texto "Hola, mundo" termina centrado 
+cubrir la pantalla, lo que significa que el texto "Hello, world!" termina centrado 
 en la pantalla. La dirección del texto debe especificarse en esta instancia; cuando se 
 usa el widget MaterialApp, este lo hace por ti, como se demuestra más 
 adelante.
@@ -72,7 +72,7 @@ son de uso muy común:
 
  * [Row]({{api}}/widgets/Row-class.html),
    [Column]({{api}}/widgets/Column-class.html): Estos widgets flexibles te 
-   permiten crear layout flexibles tanto en la dirección horizontal
+   permiten crear layouts flexibles tanto en la dirección horizontal
    ([Row]({{api}}/widgets/Row-class.html)) como en la vertical 
    ([Column]({{api}}/widgets/Column-class.html)). Su diseño se basa 
    en el modelo de layout flexbox de la web.
@@ -171,9 +171,9 @@ void main() {
 }
 ```
 
-Asegúrate de tener una entrada `uses-material-design: true` en la sección `flutter`
+Asegúrate de tener una línea `uses-material-design: true` en la sección `flutter`
 de tu archivo `pubspec.yaml`. Permite utilizar el conjunto predefinido de
-[Iconos de Material](https://design.google.com/icons/).
+[Iconos de Material Design](https://design.google.com/icons/).
 
 ```yaml
 name: my_app
@@ -324,7 +324,7 @@ Cuando el usuario pulsa en
 [Container]({{api}}/widgets/Container-class.html), el
 [GestureDetector]({{api}}/widgets/GestureDetector-class.html) llama a su callback
 [onTap]({{api}}/widgets/GestureDetector-class.html#onTap)
-en este caso imprimiendo un mensaje a la consola. Puede utilizar
+en este caso imprimiendo un mensaje en la consola. Puede utilizar
 [GestureDetector]({{api}}/widgets/GestureDetector-class.html) para detectar 
 una variedad de gestos de entrada, incluidos taps, drags y scales.
 
