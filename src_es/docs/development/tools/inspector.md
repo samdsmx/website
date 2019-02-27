@@ -1,47 +1,47 @@
 ---
-title: Widget inspector
-description: A brief overview of Flutter's widget inspector.
+title: Inspector de widget de Flutter 
+description: Una breve reseña del inspector de widgets de Flutter.
 ---
 
-The Flutter widget inspector is powerful tool for visualizing and exploring
-Flutter widget trees.
+El Inspector de Widget de Flutter es una poderosa herramienta para visualizar y explorar 
+el árbol de widgets en Flutter.
 
-The Flutter framework uses widgets as [the core building
-block](/docs/development/ui/widgets-intro) for anything from controls (text,
-buttons, toggles, etc.) to layout (centering, padding, rows, columns, etc.).
-The inspector is powerful tool for visualizing and exploring Flutter
-these widget trees. It can be helpful when:
+El framework Flutter usa widgets como el [elemento principal de 
+construcción](/docs/development/ui/widgets-intro) para todo, desde controles (text, buttons, 
+toggles, etc.) hasta layouts (centering, padding, rows, columns, etc.). 
+El inspector es una poderosa herramienta de Flutter para visualizar y explorar 
+los árboles de widgets. Puede ser útil para:
 
-* Understanding existing layouts
-* Diagnosing layout issues
+* Comprender los layouts existentes
+* Diagnosticar problemas con layouts 
 
 ![IntelliJ Flutter inspector window]({% asset tools/android-studio/visual-debugging.png @path %})
 
-To start click "Select widget" on the Flutter inspector toolbar, and then click
-on the device to select a widget. The selected widget is then highlighted
-on the device and in the widget tree.
+Para iniciar haz clic en "Select widget" en la barra de herramientas del inspector de Flutter y después haz clic 
+sobre el dispositivo, para seleccionar un widget. El widget seleccionado se resaltará 
+en el dispositivo y en el árbol de widgets.
 
 ![Select Demo]({% asset tools/android-studio/inspector_select_example.gif @path %})
 
-You can then browse around the interactive widget tree in the IDE to view
-nearby widgets and see their field values. If you are trying to debug a layout
-issue, then the Widget layer’s tree may be insufficiently detailed. In that
-case, click the Render Tree tab to view the render tree corresponding to the
-same location in the tree. When debugging layout issues, the key fields to look
-at are the `size` and `constraints` fields. The constraints flow down the tree,
-and the sizes flow back up.
+Luego puedes navegar por el árbol interactivo de widgets en el IDE para ver 
+de cerca los widgets y los valores de sus atributos. Si estas tratando de 
+depurar un problema de layout, en la capa del árbol de widgets los detalles 
+pueden ser insuficientes. En ese caso haz clic sobre la pestaña Render 
+Tree para ver el render tree correspondiente en el mismo lugar del árbol. 
+Cuando depuras problemas, los atributos claves que buscas son `size` y `constraints`. 
+Las restricciones fluyen por el árbol hacia abajo y los tamaños fluyen hacia arriba.
 
 ![Switch Trees]({% asset tools/android-studio/switch_inspector_tree.gif @path %})
 
-For a more complete demonstration of the inspector, see the
-[DartConf 2018 talk](https://www.youtube.com/watch?v=JIcmJNT9DNI).
+Para una demostración más completa del Inspector, por favor vea el reciente 
+[DartConf talk](https://www.youtube.com/watch?v=JIcmJNT9DNI).
 
-## Get Started with the inspector
+## Comenzar con el Inspector
 
-The inspector is currently available in [the Flutter
-plugin](/get-started/editor) for Android Studio, or IntelliJ IDEA.
+El Inspector está disponible actualmente en el [plugin de 
+Flutter](/get-started/editor/) para Android Studio o IntelliJ IDEA.
 
 ## Feedback
 
-If you have suggestions, or encounter issues, please
-[file an issue in our tracker](https://github.com/flutter/flutter-intellij/issues/new?labels=inspector)!
+Si tienes sugerencias, o encuentras problemas, por favor 
+[reporta estos en nuestro issue tracker](https://github.com/flutter/flutter-intellij/issues/new?labels=inspector)!

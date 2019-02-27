@@ -1,63 +1,63 @@
 ---
-title: Code formatting
-description: Flutter's code formatter formats your code along recommended style guidelines.
+title: Formatear el código
+description: Los formateadores de código de Flutter formatean tu código usando las guías de estilo recomendadas.
 ---
 
 
-While your code may follow any preferred style&mdash;in our
-experience&mdash;teams of developers may find it more productive to:
+Aunque el código puede ajustarse a cualquier estilo preferido&mdash;en nuestra 
+experiencia&mdash;los equipos de desarrolladores pueden encontrar más productivo:
 
-* Have a single, shared style, and
-* Enforce this style through automatic formatting.
+* Tener un estilo único y compartido, y
+* Forzar este estilo a través del formateo automático.
 
-The alternative is often tiring formatting debates during code reviews, where
-time may be better spent on code behavior rather than code style.
+La alternativa es a menudo agotadores debates de formato durante las revisiones de código, donde el 
+tiempo puede ser mejor invertido en el funcionamiento del código en lugar de en el estilo de código.
 
-## Automatically formatting code in Android Studio and IntelliJ
+### Formateando código automáticamente en Android Studio e IntelliJ
 
-Install the `Dart` plugin (see [Editor setup](/get-started/editor))
-to get automatic formatting of code in Android Studio and IntelliJ.
+Instala el plugin `Dart` (consulta [Configuración del Editor](/get-started/editor/))
+para obtener un formateo automático del código en Android Studio e IntelliJ.
 
-To automatically format the code in the current source code window, right-click
-in the code window and select `Reformat Code with dartfmt`.
-You can add a keyboard shortcut to this in Keymap section of IntelliJ
-Preferences.
+Para formatear automáticamente el código en la ventana de código fuente actual, haz clic con el botón 
+derecho del ratón en la ventana de código y selecciona `Reformatear Código con dartfmt`. 
+Puedes agregar un shortcut de teclado en la sección Keymap de las 
+Preferencias de IntelliJ.
 
-## Automatically formatting code in VS Code
+### Formateando código automáticamente en VS Code
 
-Install the `Flutter` extension (see [Editor setup](/get-started/editor))
-to get automatic formatting of code in VS Code.
+Instala la extensión `Flutter` (consulta [Configuración del Editor](/get-started/editor/))
+para obtener el formateo automático del código en VS Code.
 
-To automatically format the code in the current source code window, right-click
-in the code window and select `Format Document`. You can add a keyboard
-shortcut to this VS Code Preferences.
+Para formatear automáticamente el código en la ventana de código fuente actual, haz clic con el 
+botón derecho del ratón en la ventana de código y selecciona `Formatear documento`. 
+Puedes agregar un shortcut de teclado en Preferencias de VS Code.
 
-To automatically format code whenever you save a file, set the
-`editor.formatOnSave` setting to `true`.
+Para formatear automáticamente el código cada vez que guarde un archivo, establece la opción 
+`editor.formatOnSave` en `true`.
 
-## Automatically formatting code with the 'flutter' command
+### Formateando código automáticamente con el comando `flutter`
 
-You can also automatically format code in the command line interface (CLI) using
-the `flutter format` command:
+También puedes formatear automáticamente el código en la interfaz de la línea de comando (CLI) 
+usando el comando `flutter format`:
 
 ```terminal
 $ flutter format path1 path2 ...
 ```
 
-## Using trailing commas
+### Usando 'trailing commas'
 
-Flutter code often involves building fairly deep tree-shaped data structures,
-for example in a `build` method. To get good automatic formatting, we recommend
-you adopt the optional *trailing commas*. The guideline for adding a trailing
-comma is simple: Always add a trailing comma at the end of a parameter list in
-functions, methods, and constructors where you care about keeping the formatting
-you crafted. This helps the automatic formatter to insert an appropriate
-amount of line breaks for Flutter-style code.
+El código Flutter a menudo implica la construcción de estructuras de datos en forma de árbol 
+bastante profundas, por ejemplo, en un método `build`. Para obtener un buen formateo automático, 
+te recomendamos que adoptes las *trailing commas* opcionales. La guía para añadir una coma final 
+es simple: Agrega siempre una coma al final de la lista de parámetros en funciones, métodos y 
+constructores donde te preocupes por mantener el formato que hiciste a mano. Esto ayudará al 
+formateador automático a insertar una cantidad apropiada de saltos de línea hacia un estilo 
+de código Flutter.
 
-Here is an example of automatically formatted code *with* trailing commas:
+Aquí hay un ejemplo de código formateado automáticamente *con* comas al final:
 
 ![Automatically formatted code with trailing commas]({% asset tools/android-studio/trailing-comma-with.png @path %})
 
-And the same code automatically formatted code *without* trailing commas:
+Y el mismo código para código formateado automáticamente *sin* comas al final:
 
 ![Automatically formatted code without trailing commas]({% asset tools/android-studio/trailing-comma-without.png @path %})

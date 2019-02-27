@@ -1,5 +1,5 @@
 ---
 layout: toc
-title: Tools & techniques
-short-title: Tools
+title: Herramientas & técnicas
+short-title: Herramientas
 ---

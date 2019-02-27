@@ -1,22 +1,20 @@
 ---
-title: Upgrading Flutter
-short-title: Upgrading
+title: Actualizar Flutter
+short-title: Actualizar
+description: Actualizar Flutter
 ---
 
-We strongly recommend tracking the `beta` branch in the flutter repository,
-which is where we push 'known good builds' of Flutter. If you need to
-view the very latest changes, you can track the `master` branch,
-but note this is where we do our daily development, so stability is much lower.
+No importa cual [canal de release de Flutter][] sigas,
+puedes usar el comando `flutter` para actualizar tu SDK de Flutter
+y los paquetes que dependen de él.
 
-To view your current branch, use `flutter channel`.
 
-To change branch, use `flutter channel beta` / `flutter channel master`.
+## Confiura una sola vez
 
-## Specifying the Flutter SDK for your project
-
-You specify dependencies from the Flutter SDK in the `pubspec.yaml` file.
-For example, the following snippet specifies that the
-`flutter` and `flutter_test` packages use the Flutter SDK.
+Para que el comando `flutter` funciones correctamente,
+el fichero `pubspec.yaml` de tu app debe requerir el SDK de Flutter.
+Por ejemplo, el siguiente snippet especifica que los paquetes 
+`flutter` y `flutter_test` requieren el SDK de Flutter:
 
 ```yaml
 name: hello_world
@@ -28,36 +26,90 @@ dev_dependencies:
     sdk: flutter
 ```
 
-The `sdk: flutter` line tells the `flutter` command-line tool to find the
-correct package for you.
+{{site.alert.warning}}
+No uses los comandos `pub get` o `pub upgrade` para administrar las dependencias 
+de tu apps Flutter.
+En su lugar, usa `flutter packages get` o `flutter packages upgrade`.
+Si quieres usar pub manualmente, puedes ejecutarlo directamente configurando la 
+variable de entorno `FLUTTER_ROOT`.
+{{site.alert.end}}
 
-Do not use the `pub get` or `pub upgrade` commands to manage your dependencies.
-Instead, use `flutter packages get` or `flutter packages upgrade`.
-If you want to use pub manually, you can run it directly by setting the
-`FLUTTER_ROOT` environment variable.
 
-## Upgrading Flutter channel and your packages
+## Actualizando el SDK de Flutter y sus paquetes
 
-To update both the Flutter SDK and your packages, use the `flutter upgrade`
-command from the root of your app (the same directory that contains the
-`pubspec.yaml` file):
+Para actualizar tanto el SDK de Flutter como sus paquetes, 
+usa el comando `flutter upgrade` desde la raíz de tu aplicación 
+(el mismo directorio que contiene el archivo `pubspec.yaml`):
 
 ```terminal
 $ flutter upgrade
 ```
 
-## Upgrading your packages
+Este comando primero obtiene la versión más reciente del SDK de Flutter 
+que esté disponible en tu canal de Flutter.
+Entonces este comando actualiza cada paquete del que dependa tu app 
+a la versión compatible más reciente.
 
-If you've modified your `pubspec.yaml` file, or you want to only update
-the packages your app depends upon instead of both the packages and
-Flutter itself, then use the following commands:
+Si quieres una versión aún mas reciente del SDK de Flutter, 
+cambia a un canal menos estable de Flutter 
+y entonces ejecuta `flutter upgrade`.
 
-* `flutter packages get` retrieves all the dependencies listed
-   in the `pubspec.yaml` file, or
-* `flutter packages upgrade` retrieves the latest versions
-   of all the dependencies listed in the `pubspec.yaml` file
+## Cambiando entre canales de Flutter
 
-We publish breaking change announcements to our
-[mailing list](https://groups.google.com/forum/#!forum/flutter-dev). We
-strongly recommend that you subscribe to get announcements from us.
-Plus, we'd love to hear from you!
+Flutter tiene [cuatro canales de release][Flutter release channel]:
+**stable**, **beta**, **dev**, y **master**.
+Nosotros recomendamos usar el canal **{{site.sdk.channel}}** 
+a no ser que necesites un release más reciente.
+
+Para ver el canal actual, usa el siguiente comando:
+
+```terminal
+$ flutter channel
+```
+
+Para cambiar a otro canal, usa `flutter channel <nombre-canal>`.
+Una vez hayas cambiado tu canal, usa `flutter upgrade`
+para descargar el SDK de Flutter y los paquetes dependientes.
+Por ejemplo:
+
+```terminal
+$ flutter channel dev
+$ flutter upgrade
+```
+
+{{site.alert.note}}
+Si necesitas una versión específica del SDK de Flutter,
+puedes descargar este desde el [Flutter SDK archive][].
+{{site.alert.end}}
+
+## Actualizar solo paquetes
+
+Si has modificado tu fichero `pubspec.yaml` o quieres acutalizar 
+solo los paquetes de los que depende tu app (en lugar de ambos, los paquetes 
+y el propio Flutter), entonces usa uno de los comandos `flutter packages`.
+
+Para obtener todas las dependencias listadas en el fichero `pubspec.yaml`,
+sin actualizaciones innecesarias, usa el comando `get`:
+
+```terminal
+$ flutter packages get
+```
+
+Para actualizar a la _última versión compatibles_ de 
+todas las dependencias listadas en el fichero `pubspec.yaml`,
+usa el comando `upgrade`:
+
+```terminal
+$ flutter packages upgrade
+```
+
+
+## Mantente informado
+
+Publicamos anuncios de cambios de última hora en nuestra 
+[lista de correo][]. Te recomendamos encarecidamente que te suscribas para recibir nuestros anuncios.
+¡Además, nos encantaría saber de ti!
+
+[Flutter SDK archive]: /docs/development/tools/sdk/archive
+[Flutter release channel]: {{site.github}}/flutter/flutter/wiki/Flutter-build-release-channels
+[lista de correo]: {{site.groups}}/forum/#!forum/flutter-dev
