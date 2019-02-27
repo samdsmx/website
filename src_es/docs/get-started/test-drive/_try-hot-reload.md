@@ -1,28 +1,28 @@
-After the app build completes, you'll see the starter app on your device.
+Después de que el compilado de la app se complete, verás la app inicial en tu dispositivo.
 
 {% include app-figure.md img-class="site-mobile-screenshot border" image="starter-app.png" caption="Starter app" platform="iOS" %}
 
-## Try hot reload
+## Probando el hot reload
 
-Flutter offers a fast development cycle with _hot reload_, the ability to reload
-the code of a live running app without restarting or losing app state.
-Make a change to app source, tell your IDE or command-line tool that you
-want to hot reload, and see the change in your simulator, emulator, or device.
+Flutter ofrece un ciclo de desarrollo rápido con _hot reload_, la habilidad de recargar 
+el código en una app ejecutando en vivo sin reiniciar o perder el estado de la app. simplemente
+hace un cambio a tu código fuente, diciéndole a tu IDE o herramienta de línea de comandos que
+quieres recargar, y ver los cambio en tu simulador, emulador, o dispositivo.
 
  1. Open `lib/main.dart`.
- 1. Change the string
+ 1. Cambia el texto
     <code class="text-nowrap">
     'You have <del>pushed</del> the button this many times'
     </code>
-    to
+    a
     <code class="text-nowrap">
       'You have <ins>clicked</ins> the button this many times'
     </code>.
 
     {{site.alert.important}}
-      Do _not_ press the **Stop** button; let your app run.
+      No presione el botón de 'Stop'; permita que su app continué ejecutándose.
     {{site.alert.end}}
 
- 1. Save your changes{{include.save_changes}}
+  1. Guarda tus cambios{{include.save_changes}}
 
-You'll see the updated string in the running app almost immediately.
+  Verás el texto actualizado en la app en ejecución casí inmediatamante.

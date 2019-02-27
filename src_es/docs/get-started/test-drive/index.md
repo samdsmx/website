@@ -1,18 +1,18 @@
 ---
-title: Test drive
+title: Test inicial
 prev:
-  title: Set up an editor
+  title: Configura un editor
   path: /get-started/editor
 next:
-  title: Write your first Flutter app
+  title: Escribe tu primera app Flutter
   path: /get-started/codelab
 toc: false
 ---
 
-This page describes how to create a new Flutter app from templates, run it, and experience "hot reload" after you make changes to the app.
+Esta página describe como crear una app Flutter desde una plantilla, ejecutarla, y experimentar el "hot reload" y despues hacer cambios en la app.
 
-Select your development tool of choice for writing, building, and running
-Flutter apps.
+Selecciona la herramienta de desarrollo que prefieras para escribir, compilar y ejecutar 
+apps Flutter.
 
 {% comment %} Nav tabs {% endcomment -%}
 <ul class="nav nav-tabs" id="editor-setup" role="tablist">
@@ -36,4 +36,4 @@ Flutter apps.
 
 ## Next step
 
-You'll next learn some core Flutter concepts by creating a small app.
+A continuación, aprenderá algunos conceptos básicos de Flutter creando una pequeña aplicación.

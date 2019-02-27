@@ -1,5 +1,5 @@
 ---
-title: Aprender Más
+title: Aprende Más
 description: Más recursos para ayudarte a aprender Flutter.
 prev:
   title: Escribe tu primera app Flutter

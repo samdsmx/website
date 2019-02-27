@@ -1,30 +1,30 @@
 <div class="tab-pane" id="terminal" role="tabpanel" aria-labelledby="terminal-tab" markdown="1">
 
-## Create the app
+## Crea la app
 
-Use the `flutter create` command to create a new project:
+Usa el comando `flutter create` para crear un nuevo proyecto:
 
 ```terminal
 $ flutter create myapp
 $ cd myapp
 ```
 
-The command creates a Flutter project directory called `myapp` that
-contains a simple demo app that uses
+El comando crea un directorio de proyecto Fluuter llamado `myapp` que
+contiene una app simple de demostración que usa 
 [Material Components](https://material.io/guidelines/).
 
-In the project directory, the code for your app is in `lib/main.dart`.
+En el directorio del proyecto, el código de tu está en `lib/main.dart`.
 
-## Run the app
+## Ejecuta la app
 
- 1. Check that an Android device is running. If none are shown, follow the
-    device-specific instructions on the [Install][] page for your OS.
+ 1. Verifica que un dispositivo Android esté ejecutándose. Si no     se muestra ninguno, sigue las instrucciones específicas
+    en la página [Instalar][] para tu SO.
 
     ```terminal
     $ flutter devices
     ```
 
- 2. Run the app with the following command:
+ 2. Ejecuta la app con el siguiente comando:
 
     ```terminal
     $ flutter run
@@ -32,5 +32,5 @@ In the project directory, the code for your app is in `lib/main.dart`.
 
 {% include_relative _try-hot-reload.md %}
 
-[Install]: /get-started/install
+[Instalar]: /get-started/install
 </div>
