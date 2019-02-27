@@ -1,137 +1,137 @@
 ---
-title: Taps, drags, and other gestures
+title: Taps, drags, y otros gestos en Flutter.
 ---
 
-This document explains how to listen for, and respond to,
-_gestures_ in Flutter. Examples of gestures include
-taps, drags, and scaling.
+Este documento explica cómo escuchar y responder a
+_gestos_ en Flutter. Ejemplos de gestos incluyen
+taps, drags y scalling.
 
-The gesture system in Flutter has two separate layers.  The first layer has raw
-pointer events, which describe the location and movement of pointers (e.g.,
-touches, mice, and styli) across the screen. The second layer has _gestures_,
-which describe semantic actions that consist of one or more pointer movements.
+El sistema de gestos en Flutter tiene dos capas separadas. La primera capa tiene eventos 
+de puntero en crudo, que describen la ubicación y el movimiento de los punteros (por ejemplo,
+taps, mice, styli) en la pantalla. La segunda capa tiene _gestos_,
+que describen acciones semánticas que consisten en uno o más movimientos de puntero.
 
-## Pointers
+## Punteros
 
-Pointers represent raw data about the user's interaction with the device's
-screen.  There are four types of pointer events:
+Los punteros representan datos en bruto de la interacción del usuario con la pantalla del dispositivo. 
+Existen cuatro tipos de eventos de punteros:
 
 - [`PointerDownEvent`](https://docs.flutter.io/flutter/gestures/PointerDownEvent-class.html)
-  The pointer has contacted the screen at a particular location.
+  El puntero ha contactado con una ubicación determinada de la pantalla. 
 - [`PointerMoveEvent`](https://docs.flutter.io/flutter/gestures/PointerMoveEvent-class.html)
-  The pointer has moved from one location on the screen to another.
+  El puntero se ha movido de una ubicación de la pantalla a otra.
 - [`PointerUpEvent`](https://docs.flutter.io/flutter/gestures/PointerUpEvent-class.html)
-  The pointer has stopped contacting the screen.
+  El puntero ha dejado  de hacer contacto con la pantalla.
 - [`PointerCancelEvent`](https://docs.flutter.io/flutter/gestures/PointerCancelEvent-class.html)
-  Input from this pointer is no longer directed towards this app.
+  La acción de ese puntero ya no está dirigida hacia esta aplicación.
 
-On pointer down, the framework does a _hit test_ on your app to determine which
-widget exists at the location where the pointer contacted the screen. The
-pointer down event (and subsequent events for that pointer) are then dispatched
-to the innermost widget found by the hit test. From there, the events bubble up
-the tree and are dispatched to all the widgets on the path from the innermost
-widget to the root of the tree. There is no mechanism for canceling or stopping
-pointer events from being dispatched further.
+En el evento pointer down, el framework hace un _hit test_ en tu app para determinar que 
+widget existe en la ubicación donde el puntero entró en contacto con la pantalla. 
+El evento pointer down (y los eventos posteriores para ese puntero) se envían luego al widget 
+más interno encontrado por el hit test.A partir de ahí, los eventos emergen en el árbol y 
+son enviados a todos los widgets en el camino desde el widget más interno a la raíz del árbol. 
+No hay ningún mecanismo para cancelar o detener los eventos de punteros de 
+ser enviados más allá.
 
-To listen to pointer events directly from the widgets layer, use a
-[`Listener`](https://docs.flutter.io/flutter/widgets/Listener-class.html)
-widget. However, generally, consider using gestures (as discussed
-below) instead.
+Para escuchar eventos de puntero directamente desde la capa de widgets, 
+use un widget [`Listener`](https://docs.flutter.io/flutter/widgets/Listener-class.html)
+widget. Sin embargo, en general, considere usar gestos en su lugar 
+(como se discute a continuación).
 
-## Gestures
+## Gestos
 
-Gestures represent semantic actions (e.g., tap, drag, and scale) that are
-recognized from multiple individual pointer events, potentially even multiple
-individual pointers. Gestures can dispatch multiple events, corresponding to the
-lifecycle of the gesture (e.g., drag start, drag update, and drag end):
+Los gestos representan acciones semánticas (por ejemplo, tap, drag, y scale) que son
+reconocido desde múltiples eventos de puntero individuales, potencialmente incluso múltiples
+punteros individuales. Los gestos pueden despachar múltiples eventos, correspondientes al
+ciclo de vida del gesto (por ejemplo, drag start, drag update, y drag end):
 
 - Tap
-  - `onTapDown` A pointer that might cause a tap has contacted the screen at a
-    particular location.
-  - `onTapUp` A pointer that will trigger a tap has stopped contacting the screen
-    at a particular location.
-  - `onTap` A tap has occurred.
-  - `onTapCancel` The pointer that previously triggered the `onTapDown` will not
-    end up causing a tap.
+  - `onTapDown` Un puntero que podría causar un toque ha contactado con la pantalla en un
+    Ubicación particular.
+  - `onTapUp` Un puntero que activará un toque ha dejado de entrar en contacto con la pantalla.
+    en un lugar particular.
+  - `onTap` Se ha producido un toque.
+  - `onTapCancel` El puntero que activó previamente el `onTapDown` no
+    Terminar causando un toque.
 - Double tap
-  - `onDoubleTap` The user has tapped the screen at the same location twice in
-    quick succession.
+  - `onDoubleTap` El usuario ha tocado la pantalla en la misma ubicación dos veces en
+    sucesión rápida
 - Long press
-  - `onLongPress` A pointer has remained in contact with the screen at the same
-    location for a long period of time.
+  - `onLongPress` Un puntero ha permanecido en contacto con la pantalla al mismo tiempo.
+    Ubicación durante un largo período de tiempo.
 - Vertical drag
-  - `onVerticalDragStart` A pointer has contacted the screen and might begin to
-    move vertically.
-  - `onVerticalDragUpdate` A pointer that is in contact with the screen and
-    moving vertically has moved in the vertical direction.
-  - `onVerticalDragEnd` A pointer that was previously in contact with the screen
-    and moving vertically is no longer in contact with the screen and was moving
-    at a specific velocity when it stopped contacting the screen.
+  - `onVerticalDragStart` Un puntero ha contactado con la pantalla y puede comenzar a
+    mover verticalmente
+  - `onVerticalDragUpdate` Un puntero que está en contacto con la pantalla y
+    El movimiento vertical se ha movido en la dirección vertical.
+  - `onVerticalDragEnd` Un puntero que previamente estaba en contacto con la pantalla.
+    y el movimiento vertical ya no está en contacto con la pantalla y se movía
+    a una velocidad específica cuando dejó de tocar la pantalla.
 - Horizontal drag
-  - `onHorizontalDragStart` A pointer has contacted the screen and might begin to
-    move horizontally.
-  - `onHorizontalDragUpdate` A pointer that is in contact with the screen and
-    moving horizontally has moved in the horizontal direction.
-  - `onHorizontalDragEnd` A pointer that was previously in contact with the
-    screen and moving horizontally is no longer in contact with the screen and
-    was moving at a specific velocity when it stopped contacting the screen.
+  - `onHorizontalDragStart` Un puntero ha contactado con la pantalla y puede comenzar a
+    mover horizontalmente
+  - `onHorizontalDragUpdate` Un puntero que está en contacto con la pantalla y
+    El movimiento horizontal se ha movido en la dirección horizontal.
+  - `onHorizontalDragEnd` Un puntero que previamente estaba en contacto con el
+    Pantalla y movimiento horizontal ya no está en contacto con la pantalla y
+    se movía a una velocidad específica cuando dejó de tocar la pantalla.
 - Pan
-  - `onPanStart` A pointer has contacted the screen and might begin to move 
-    horizontally or vertically. This callback causes a crash if 
-    `onHorizontalDragStart` or `onVerticalDragStart` is set.
-  - `onPanUpdate`A pointer that is in contact with the screen and is moving 
-    in the vertical or horizontal direction. This callback causes a crash if 
-    `onHorizontalDragUpdate` or `onVerticalDragUpdate` is set.
-  - `onPanEnd` A pointer that was previously in contact with screen 
-    is no longer in contact with the screen and is moving at a specific velocity
-    when it stopped contacting the screen. This callback causes a crash if 
-    `onHorizontalDragEnd` or `onVerticalDragEnd` is set.
+  - `onPanStart` Un puntero ha contactado con la pantalla y podría comenzar a moverse.
+    horizontal o verticalmente Esta devolución de llamada provoca un bloqueo si 
+    `onHorizontalDragStart` o `onVerticalDragStart` Está establecido.
+  - `onPanUpdate`Un puntero que está en contacto con la pantalla y se está moviendo.
+    En la dirección vertical u horizontal. Esta devolución de llamada provoca un bloqueo si
+    Se establece `onHorizontalDragUpdate` o `onVerticalDragUpdate`.
+  - `onPanEnd` Un puntero que previamente estaba en contacto con la pantalla.
+    ya no está en contacto con la pantalla y se está moviendo a una velocidad específica
+    Cuando se detuvo el contacto con la pantalla. Esta devolución de llamada provoca un bloqueo si
+    Se establece `onHorizontalDragEnd` o `onVerticalDragEnd`.
 
-To listen to gestures from the widgets layer, use a
+Para escuchar gestos desde la capa de widgets, use un
 [`GestureDetector`](https://docs.flutter.io/flutter/widgets/GestureDetector-class.html).
 
-If you're using Material Components, many of those widgets already respond
-to taps or gestures.
-For example,
-[IconButton](https://docs.flutter.io/flutter/material/IconButton-class.html) and
+Si está utilizando Material Components, muchos de esos widgets ya responden
+A los taps o gestos.
+Por ejemplo,
+[IconButton](https://docs.flutter.io/flutter/material/IconButton-class.html) y
 [FlatButton](https://docs.flutter.io/flutter/material/FlatButton-class.html)
-respond to presses (taps), and
+responde a (taps), y
 [`ListView`](https://docs.flutter.io/flutter/widgets/ListView-class.html)
-responds to swipes to trigger scrolling.
-If you are not using those widgets, but you want the "ink splash" effect on a
-tap, you can use
+responde a los swipes para activar el desplazamiento.
+Si no está utilizando esos widgets, pero desea que el efecto de "salpicadura de tinta" en un
+tap, puedes usar
 [`InkWell`](https://docs.flutter.io/flutter/material/InkWell-class.html).
 
-### Gesture disambiguation
+### Desambiguación de gestos
 
-At a given location on screen, there might be multiple gesture detectors. All
-of these gesture detectors listen to the stream of pointer events as they flow
-past and attempt to recognize specific gestures. The
+En una ubicación determinada en la pantalla, puede haber varios detectores de gestos. Todos
+de estos detectores de gestos escuchan el flujo de eventos de puntero a medida que fluyen
+Pasado e intento de reconocer gestos específicos. los
 [`GestureDetector`](https://docs.flutter.io/flutter/widgets/GestureDetector-class.html)
-widget decides which gestures to attempt to recognize based on which of its
-callbacks are non-null.
+widget decide qué gestos intentar reconocer en función de cuál de sus
+Las devoluciones de llamada no son nulas.
 
-When there is more than one gesture recognizer for a given pointer on the
-screen, the framework disambiguates which gesture the user intends by having
-each recognizer join the _gesture arena_. The gesture arena determines which
-gesture wins using the following rules:
+Cuando hay más de un reconocedor de gestos para un puntero dado en la pantalla, 
+el framework desambigua qué gesto pretende el usuario haciendo que cada 
+reconocedor se una a la _arena de gestos_. La arena de gestos 
+determina qué gesto gana usando las siguientes reglas:
 
-- At any time, a recognizer can declare defeat and leave the arena.  If there's
-  only one recognizer left in the arena, that recognizer is the winner.
+- En cualquier momento, un reconocedor puede declarar la derrota y abandonar la arena. Si hay
+  solo queda un reconocedor en la arena, ese reconocedor es el ganador.
 
-- At any time, a recognizer can declare victory, which causes it to win and all
-  the remaining recognizers to lose.
+- En cualquier momento, un reconocedor puede declarar la victoria, lo que hace que gane y todo
+  Los restantes reconocedores a perder.
 
-For example, when disambiguating horizontal and vertical dragging, both
-recognizers enter the arena when they receive the pointer down event.  The
-recognizers observe the pointer move events.  If the user moves the pointer more
-than a certain number of logical pixels horizontally, the horizontal recognizer
-will declare victory and the gesture will be interpreted as a horizontal drag.
-Similarly, if the user moves more than a certain number of logical pixels
-vertically, the vertical recognizer will declare victory.
+Por ejemplo, cuando se desambigua el arrastre horizontal y vertical, ambos 
+reconocedores entran en la arena cuando reciben el evento pointer down. 
+Los reconocedores observan los eventos de movimiento del puntero. Si el usuario mueve 
+el puntero más de un cierto número de píxeles lógicos horizontalmente, 
+el reconocedor horizontal declarará la victoria y el gesto se interpretará 
+como un arrastre horizontal. De forma similar, si el usuario mueve más de un 
+cierto número de píxeles lógicos verticalmente, el reconocedor vertical declarará la victoria.
 
-The gesture arena is beneficial when there is only a horizontal (or vertical)
-drag recognizer.  In that case, there will be only one recognizer in the arena
-and the horizontal drag will be recognized immediately, which means the first
-pixel of horizontal movement can be treated as a drag and the user will not need
-to wait for further gesture disambiguation.
+La arena de gestos es beneficiosa cuando solo hay un reconocedor de arrastre horizontal (o vertical). 
+En ese caso, habrá solo un reconocedor en la arena y la resistencia horizontal será 
+reconocida inmediatamente,lo que significa que el primer píxel del movimiento 
+horizontal se puede tratar como un arrastre y el usuario no tendrá que esperar 
+una desambiguación adicional del gesto.
