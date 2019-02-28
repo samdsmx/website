@@ -4,7 +4,7 @@ short-title: Tutorial
 descripcion: Un tutorial mostrando como construir animaciones explícitas en Flutter
 ---
 
-{site.alert.secondary}}
+{{site.alert.secondary}}
   <h4 class="no_toc">Lo que aprenderás:</h4>
 
   * Como usar clases fundamentales de la biblioteca de animaciones para añadir 
