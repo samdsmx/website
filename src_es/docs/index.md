@@ -34,7 +34,7 @@ los documentos. Algunos de los cambios del sitio web incluyen:
 Algunos de los nuevos contenidos incluyen:
 
 * Inmersión profunda en las interoridades de Flutter,
-  [Inside Flutter](/docs/resources/inside-flutter)
+  [Dentro de Flutter](/docs/resources/inside-flutter)
 * [Videos técnicos](/docs/resources/videos)
 * [Administrar el State](/docs/development/data-and-backend/state-mgmt)
 * [Procesos Dart en Segundo 
