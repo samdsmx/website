@@ -21,7 +21,7 @@ completo, hot restart, mira [Limitaciones](#limitations).
 1.  Si estas trabajando en un IDE/editor que soporta las herramientas para IDE de Flutter,
 selecciona **Save All** (`cmd-s`/`ctrl-s`), o haz clic en el botón Hot Reload en la barra de herramientas:
 
-   ![alt_text](/images/intellij/hot-reload.gif "image_tooltip")
+   ![Hot reload]({% asset tools/android-studio/hot-reload.gif @path %}){:width="735px"}
 
    Si estas ejecutando la app por línea de comandos usando `flutter run`, escribe `r`
    en la ventana del terminal.
