@@ -42,7 +42,7 @@ iOS](/get-started/install/macos#set-up-the-ios-simulator)
 [Construyendo Layouts en Flutter](https://flutter.io/tutorials/layout/)
 mostró como crear el layout de la siguiente captura de pantalla.
 
-<img src="images/lakes.jpg" style="border:1px solid black" alt="La app de inicio Lakes que modificaremos">
+<img src="/docs/development/ui/interactive/images/lakes.jpg" style="border:1px solid black" alt="La app de inicio Lakes que modificaremos">
 
 Cuando la app se lanza por primera vez, la estrella esta rellena de rojo, indicando que este lago 
 ha sido marcado previamente como favorito. El número a continuación de la estrella indica que 
@@ -51,7 +51,7 @@ pulsando la estrella se desmarcará como favorito, reemplazando la estrella rell
 con una sin relleno y decrecerá el contador. Pulsando de nuevo 
 se marca el lago como favorito, dibujando la estrella rellena e incrementando el contador.
 
-<img src="images/favorited-not-favorited.png" alt="el widget custom que crearás">
+<img src="/docs/development/ui/interactive/images/favorited-not-favorited.png" alt="el widget custom que crearás">
 
 Para lograr esto, crearás un widget personalizado que incluye tanto la estrella 
 como el contador, que son a su vez widgets. Como pulsar sobre la estrella 
@@ -377,7 +377,7 @@ cuando es pulsado, alterna entre una caja verde o gris.
 El boolean `_active` determina el color: verede para activo o
 gris para inactivo.
 
-<img src="images/tapbox-active-state.png" style="border:1px solid black" alt="una caja verde grande con el texto, 'Active'">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<img src="images/tapbox-inactive-state.png" style="border:1px solid black" alt="una caja grande gris con el texto, 'Inactive'">
+<img src="/docs/development/ui/interactive/images/tapbox-active-state.png" style="border:1px solid black" alt="una caja verde grande con el texto, 'Active'">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<img src="/docs/development/ui/interactive/images/tapbox-inactive-state.png" style="border:1px solid black" alt="una caja grande gris con el texto, 'Inactive'">
 
 Estos ejemplos usan 
 [GestureDetector](https://docs.flutter.io/flutter/widgets/GestureDetector-class.html)
