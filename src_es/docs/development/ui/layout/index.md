@@ -18,7 +18,7 @@ description: Aprende como trabaja el mecanismo de layouts de Flutter
 Esta es una guía para construir layouts en Flutter.
 Construirás el layout para la siguiente captura de pantalla:
 
-<img src="images/lakes.jpg" style="border:1px solid black" alt="aplicación lagos terminada que construirás en 'Construyendo un Layout'">
+<img src="/docs/development/ui/layout/images/lakes.jpg" style="border:1px solid black" alt="aplicación lagos terminada que construirás en 'Construyendo un Layout'">
 
 Esta guía da un paso atrás para explicar el enfoque de Flutter para los layouts
 y muestra como colocar un solo widget en la pantalla.
@@ -62,7 +62,7 @@ El primer paso es dividir el layout en sus elementos básicos:
 Primero, identifica los elementos más grandes. En este ejemplo, cuatro elementos están
 organizados en una columna: una imagen, dos filas, y un bloque de texto.
 
-<img src="images/lakes-diagram.png" alt="Esquematizando las filas en la captura de pantalla de 'lakes'">
+<img src="/docs/development/ui/layout/images/lakes-diagram.png" alt="Esquematizando las filas en la captura de pantalla de 'lakes'">
 
 Después, esquematiza cada fila. La primera fila, llamada 'Title section',
  tiene 3 hijos: una columna de texto, un icono estrella,
@@ -70,12 +70,12 @@ y un número. Su primer hijo, la columna, contiene 2 líneas de texto.
 Esta primera columna toma mucho espacio, por lo tanto debe ser envuelto en un 
 widget Expanded.
 
-<img src="images/title-section-diagram.png" alt="esquematiza los widgets en la sección Título">
+<img src="/docs/development/ui/layout/images/title-section-diagram.png" alt="esquematiza los widgets en la sección Título">
 
 La segunda fila, llamada la 'Button section', también tiene 
 3 hijos: cada hijo es una columna que contiene un icono y un texto.
 
-<img src="images/button-section-diagram.png" alt="esquematiza los widgets en la sección button">
+<img src="/docs/development/ui/layout/images/button-section-diagram.png" alt="esquematiza los widgets en la sección button">
 
 Cuando el layout ha sido esquematizado, es más fácil tomar un enfoque ascendente 
 para implementarlo. Para reducir la confusión visual
@@ -396,7 +396,7 @@ La segunda captura de pantalla muestra el layout visualmente, mostrando una fila
 
 Aquí está un diagrama del árbol de widgets para este UI:
 
-<img src="images/sample-flutter-layout.png" alt="árbol de nodos representando el ejemplo de layout">
+<img src="/docs/development/ui/layout/images/sample-flutter-layout.png" alt="árbol de nodos representando el ejemplo de layout">
 
 La mayoría de esto debería verse como es de esperar, pero es posible que te preguntes
 sobre los Containers (mostrados en rosa). Container es un widget que te permite
@@ -593,7 +593,7 @@ y el texto a gris oscuro para imitar una app Material.
 
 !Esto es todo¡ Cuando ejecutas la app, deberías ver:
 
-<img src="images/hello-world.png" style="border:1px solid black" alt="captura de pantalla de un fondo blanco con 'Hello World' en gris.">
+<img src="/docs/development/ui/layout/images/hello-world.png" style="border:1px solid black" alt="captura de pantalla de un fondo blanco con 'Hello World' en gris.">
 
 **Código Dart** (Material app): [main.dart](https://raw.githubusercontent.com/flutter/website/master/src/_includes/code/layout/hello-world/main.dart)<br>
 **Código Dart** (widgets-only app): [main.dart](https://raw.githubusercontent.com/flutter/website/master/src/_includes/code/layout/widgets-only/main.dart)
@@ -629,11 +629,11 @@ otras filas o columnas.
 Este layout esta orginzado como un Row. La fila contiene dos hijos:
 una columna en la izquierda, y una imagen en la derecha:
 
-<center><img src="images/pavlova-diagram.png" alt="captura de pantalla con llamadas mostrando la fila conteniendo dos hijos: una columna y una imagen."></center><br>
+<center><img src="/docs/development/ui/layout/images/pavlova-diagram.png" alt="captura de pantalla con llamadas mostrando la fila conteniendo dos hijos: una columna y una imagen."></center><br>
 
 El árbol de widgets de la columna izquierda anida filas y columnas.
 
-<center><img src="images/pavlova-left-column-diagram.png" alt="diagrama mostrando una columna izquierda dividida en sus sub-filas y sub-columnas"></center><br>
+<center><img src="/docs/development/ui/layout/images/pavlova-left-column-diagram.png" alt="diagrama mostrando una columna izquierda dividida en sus sub-filas y sub-columnas"></center><br>
 
 Implementarás algo del código del layout de Pavlova en
 [Anidando filas y columnas](#nesting).
@@ -664,11 +664,11 @@ discurre horizontalmente.
 <div class="row"> <div class="col-md-6" markdown="1">
 
 <p></p>
-<img src="images/row-diagram.png" alt="diagrama mostrando el eje principal y transversal de una fila">
+<img src="/docs/development/ui/layout/images/row-diagram.png" alt="diagrama mostrando el eje principal y transversal de una fila">
 
 </div> <div class="col-md-6" markdown="1">
 
-<img src="images/column-diagram.png" alt="diagrama mostrando el eje principal y transversal de una columna">
+<img src="/docs/development/ui/layout/images/column-diagram.png" alt="diagrama mostrando el eje principal y transversal de una columna">
 
 </div> </div>
 
@@ -698,7 +698,7 @@ libre equitativamente entre, después y antes de cada imagen.
 
 </div> <div class="col-md-3" markdown="1">
 
-<center><img src="images/row-spaceevenly-visual.png" style="border:1px solid black" alt="una fila mostrando 3 imágenes repartidas equitativamente en la fila"></center>
+<center><img src="/docs/development/ui/layout/images/row-spaceevenly-visual.png" style="border:1px solid black" alt="una fila mostrando 3 imágenes repartidas equitativamente en la fila"></center>
 
 **Código Dart:** [main.dart](https://raw.githubusercontent.com/flutter/website/master/src/_includes/code/layout/row/main.dart)<br>
 **Imágenes:** [imágenes](https://github.com/flutter/website/tree/master/src/_includes/code/layout/row/images)<br>
@@ -722,7 +722,7 @@ libre equitativamente entre, por encima, y por debajo de cada imagen.
 
 </div> <div class="col-md-3" markdown="1">
 
-<img src="images/column-visual.png" style="border:1px solid black" alt="una columna mostrando 3 imágenes espaciadas equitativamente en la columna">
+<img src="/docs/development/ui/layout/images/column-visual.png" style="border:1px solid black" alt="una columna mostrando 3 imágenes espaciadas equitativamente en la columna">
 
 </div> </div>
 
@@ -731,7 +731,7 @@ Cuando un layout es demasiado grande para ajustarse al dispositivo, una tira roj
 del borde afectado. Por ejemplo, la fila en la siguiente captura de pantalla es demasiado ancho para 
 la pantalla del dispositivo:
 
-<center><img src="images/layout-too-large.png" style="border:1px solid black" alt="una fila que es demasiado ancha, mostrando una tira roja a lo largo de su borde derecho"></center>
+<center><img src="/docs/development/ui/layout/images/layout-too-large.png" style="border:1px solid black" alt="una fila que es demasiado ancha, mostrando una tira roja a lo largo de su borde derecho"></center>
 
 Los widgets pueden ser dimensionados para caber dentro de una fila o una columna usando un widget Expanded, 
 que es descrito en la sección [Dimensionando widgets](#sizing) más abajo.
@@ -756,7 +756,7 @@ de ancho que los otros dos widgets, establece el factor _flex_ del widget centra
 
 </div> <div class="col-md-3" markdown="1">
 
-<img src="images/row-expanded-visual.png" style="border:1px solid black" alt="una fila de 3 imágenes con la imagen del cenro el doble de ancho que las otras">
+<img src="/docs/development/ui/layout/images/row-expanded-visual.png" style="border:1px solid black" alt="una fila de 3 imágenes con la imagen del cenro el doble de ancho que las otras">
 
 **Código Dart:** [main.dart](https://raw.githubusercontent.com/flutter/website/master/src/_includes/code/layout/row-expanded/main.dart)<br>
 **Imágenes:** [imágenes](https://github.com/flutter/website/tree/master/src/_includes/code/layout/row-expanded/images)<br>
@@ -776,7 +776,7 @@ a cada widget.
 
 </div> <div class="col-md-3" markdown="1">
 
-<img src="images/row-expanded-2-visual.png" style="border:1px solid black" alt="una fila de 3 imágenes que son demasiado anchas, pero cada una está restringida para coger solo 1/3 del espacio disponible de su fila">
+<img src="/docs/development/ui/layout/images/row-expanded-2-visual.png" style="border:1px solid black" alt="una fila de 3 imágenes que son demasiado anchas, pero cada una está restringida para coger solo 1/3 del espacio disponible de su fila">
 
 **Código Dart:** [main.dart](https://raw.githubusercontent.com/flutter/website/master/src/_includes/code/layout/row-expanded-2/main.dart)<br>
 **Imágenes:** [imágenes](https://github.com/flutter/website/tree/master/src/_includes/code/layout/row-expanded-2/images)<br>
@@ -816,7 +816,7 @@ class _MyHomePageState extends State<MyHomePage> {
 
 </div> <div class="col-md-3" markdown="1">
 
-<img src="images/packed.png" style="border:1px solid black" alt="una fila de 5 estrellas, empaquetadas juntas en el medio de una fila">
+<img src="/docs/development/ui/layout/images/packed.png" style="border:1px solid black" alt="una fila de 5 estrellas, empaquetadas juntas en el medio de una fila">
 
 **Código Dart:** [main.dart](https://raw.githubusercontent.com/flutter/website/master/src/_includes/code/layout/packed/main.dart)<br>
 **Iconos:** [Icons class](https://docs.flutter.io/flutter/material/Icons-class.html)<br>
@@ -830,7 +830,7 @@ El framework de layouts te permite anidar filas y columnas dentro de otras filas
 y columnas tan profundamente como necesites. Echa un vistazo al código para la 
 sección enmarcada del siguiente layout:
 
-<img src="images/pavlova-large-annotated.png" style="border:1px solid black" alt="una captura de pantallas de la app pavlova, con las filas de puntuaciones e iconos remarcados en rojo">
+<img src="/docs/development/ui/layout/images/pavlova-large-annotated.png" style="border:1px solid black" alt="una captura de pantallas de la app pavlova, con las filas de puntuaciones e iconos remarcados en rojo">
 
 La sección remarcada está implementada como dos filas. La fila de puntuaciones contiene 
 cinco estrellas y el número de opiniones. La fila de iconos contiene tres columnas 
@@ -838,7 +838,7 @@ de iconos y texto.
 
 El árbol de widgets para la fila de puntuaciones:
 
-<center><img src="images/widget-tree-pavlova-rating-row.png" alt="un árbol de nodos mostrando los widgets en la fila de puntuaciones"></center><br>
+<center><img src="/docs/development/ui/layout/images/widget-tree-pavlova-rating-row.png" alt="un árbol de nodos mostrando los widgets en la fila de puntuaciones"></center><br>
 
 La variable `ratings` crea una fila conteniendo un fila más pequeña de 5 iconos estrella, 
 y texto:
@@ -892,7 +892,7 @@ class _MyHomePageState extends State<MyHomePage> {
 La fila de iconos, bajo la fila de puntuaciones, contiene 3 columnas; cada columna contiene 
 un icono y dos líneas de texto, como puedes ver en el árbol de widgets:
 
-<img src="images/widget-tree-pavlova-icon-row.png" alt="un árbol de nodes para los widgets en la fila de iconos">
+<img src="/docs/development/ui/layout/images/widget-tree-pavlova-icon-row.png" alt="un árbol de nodes para los widgets en la fila de iconos">
 
 La variable `iconList` define la fila de iconos:
 
@@ -1096,7 +1096,7 @@ magen de fondo.
 
 </div> <div class="col-md-6" markdown="1">
 
-<img src="images/margin-padding-border.png" alt="un diagrama que muestra los márgenes, los bordes y el relleno, que rodean el contenido en un contenedor">
+<img src="/docs/development/ui/layout/images/margin-padding-border.png" alt="un diagrama que muestra los márgenes, los bordes y el relleno, que rodean el contenido en un contenedor">
 
 </div> </div>
 
@@ -1115,12 +1115,12 @@ El Column, que contiene las filas de imágenes,
 usa un Container para cambiar el color de fondo a gris claro.
 
 **Código Dart:** [main.dart](https://raw.githubusercontent.com/flutter/website/master/src/_includes/code/layout/container/main.dart), resumido abajo<br>
-**Imágenes:** [imágenes](https://github.com/flutter/website/tree/master/src/_includes/code/layout/container/images)<br>
+**Imágenes:** [imágenes](https://github.com/flutter/website/tree/master/src/_includes/code/layout/container//docs/development/ui/layout/images)<br>
 **Pubspec:** [pubspec.yaml](https://raw.githubusercontent.com/flutter/website/master/src/_includes/code/layout/container/pubspec.yaml)
 
 </div> <div class="col-md-6" markdown="1">
 
-<img src="images/container.png" alt="una captura de pantalla mostrando 2 filas, cada una conteniendo 2 imágenes; las imágenes tienen un borde gris redondeado y un color de fondo gris claro">
+<img src="/docs/development/ui/layout/images/container.png" alt="una captura de pantalla mostrando 2 filas, cada una conteniendo 2 imágenes; las imágenes tienen un borde gris redondeado y un color de fondo gris claro">
 
 </div> </div>
 
@@ -1209,7 +1209,7 @@ es la entrada de la columna "calorías" para la fila de "aguacate"), usa
 
 <div class="row"> <div class="col-md-6" markdown="1">
 
-<img src="images/gridview-extent.png" style="border:1px solid black" alt="un grid de 3 columnas de fotos">
+<img src="/docs/development/ui/layout/images/gridview-extent.png" style="border:1px solid black" alt="un grid de 3 columnas de fotos">
 
 Usa `GridView.extent` para crear un grid con elementos de 150 píxeles de ancho máximo.<br>
 **Código Dart:** [main.dart](https://raw.githubusercontent.com/flutter/website/master/src/_includes/code/layout/grid/main.dart), resumido abajo<br>
@@ -1218,7 +1218,7 @@ Usa `GridView.extent` para crear un grid con elementos de 150 píxeles de ancho 
 
 </div> <div class="col-md-6" markdown="1">
 
-<img src="images/gridview-count-flutter-gallery.png" style="border:1px solid black" alt="un gri de 2 columnas con footers conteniendo títulos en un fondo parcialmente transparente">
+<img src="/docs/development/ui/layout/images/gridview-count-flutter-gallery.png" style="border:1px solid black" alt="un gri de 2 columnas con footers conteniendo títulos en un fondo parcialmente transparente">
 
 Usa `GridView.count` para crear un grid que tiene 2 elementos de ancho en modo portrait, 
 y 3 elementos de ancho en modo landscape. Los títulos son creados asignando la propiedad 
@@ -1287,7 +1287,7 @@ es demasiado largo para su _render box_.
 
 <div class="row"> <div class="col-md-6" markdown="1">
 
-<img src="images/listview.png" style="border:1px solid black" alt="un ListView conteniendo peliculas, teatros y restaurantes">
+<img src="/docs/development/ui/layout/images/listview.png" style="border:1px solid black" alt="un ListView conteniendo peliculas, teatros y restaurantes">
 
 Usa un ListView para mostrar una lista de negocios usando ListTiles.
 Un Divider separa los teatros de los restaurantes.<br>
@@ -1297,7 +1297,7 @@ Un Divider separa los teatros de los restaurantes.<br>
 
 </div> <div class="col-md-6" markdown="1">
 
-<img src="images/listview-flutter-gallery.png" style="border:1px solid black" alt="un ListView conteniendo containing sombras de azul de la paleta de colores de Material Design">
+<img src="/docs/development/ui/layout/images/listview-flutter-gallery.png" style="border:1px solid black" alt="un ListView conteniendo containing sombras de azul de la paleta de colores de Material Design">
 
 Usa un ListView para mostrar 
 [Colors](https://docs.flutter.io/flutter/material/Colors-class.html)
@@ -1372,7 +1372,7 @@ Los widgets pueden solapar completa o parcialmente el widget base.
 
 <div class="row"> <div class="col-md-6" markdown="1">
 
-<img src="images/stack.png" style="border:1px solid black" alt="un avatar cirular conteniendo la etiqueta 'Mia B' en la posicion inferior derecha del círculo">
+<img src="/docs/development/ui/layout/images/stack.png" style="border:1px solid black" alt="un avatar cirular conteniendo la etiqueta 'Mia B' en la posicion inferior derecha del círculo">
 
 Usa Stack para solapar un Container (que muestra su widget Text en un fondo negro 
 tráslucido) encima de un Avatar Circular.
@@ -1385,7 +1385,7 @@ Alignments.<br>
 
 </div> <div class="col-md-6" markdown="1">
 
-<img src="images/stack-flutter-gallery.png" style="border:1px solid black" alt="una imagen con un gradiente gris sobre él encima del gradiente están las herramientas pintadas en blanco">
+<img src="/docs/development/ui/layout/images/stack-flutter-gallery.png" style="border:1px solid black" alt="una imagen con un gradiente gris sobre él encima del gradiente están las herramientas pintadas en blanco">
 
 Usa Stack para sobreponer un gradiente encima de la imagen. El gradiente asegura 
 que el color de los iconos de la barra de herramientas se distinguen de la imagen.<br>
@@ -1467,7 +1467,7 @@ Especificar un valor no soportado deshabilita completamente la sombra.
 
 <div class="row"> <div class="col-md-6" markdown="1">
 
-<img src="images/card.png" style="border:1px solid black" alt="un Card conteniendo 3 ListTiles">
+<img src="/docs/development/ui/layout/images/card.png" style="border:1px solid black" alt="un Card conteniendo 3 ListTiles">
 
 Un Card conteniendo 3 ListTiles y dimensionado envolviéndolo con un SizedBox.
 Un Divider separa el primer y el segundo ListTiles.
@@ -1478,7 +1478,7 @@ Un Divider separa el primer y el segundo ListTiles.
 
 </div> <div class="col-md-6" markdown="1">
 
-<img src="images/card-flutter-gallery.png" style="border:1px solid black" alt="un Card conteniendo una imagen ,un texto y botones bajo la imagen">
+<img src="/docs/development/ui/layout/images/card-flutter-gallery.png" style="border:1px solid black" alt="un Card conteniendo una imagen ,un texto y botones bajo la imagen">
 
 Un Card conteniendo una imagen y texto.<br>
 **Código Dart:** [cards_demo.dart](https://github.com/flutter/flutter/blob/master/examples/flutter_gallery/lib/demo/material/cards_demo.dart)
@@ -1551,14 +1551,14 @@ pero puede ser usado en cualquier parte.
 
 <div class="row"> <div class="col-md-6" markdown="1">
 
-<img src="images/card.png" style="border:1px solid black" alt="un Card conteniendo 3 ListTiles">
+<img src="/docs/development/ui/layout/images/card.png" style="border:1px solid black" alt="un Card conteniendo 3 ListTiles">
 
 Un Card conteniendo 3 ListTiles.<br>
 **Código Dart:** Mira [ejemplos de Card](#card-examples).
 
 </div> <div class="col-md-6" markdown="1">
 
-<img src="images/listtile-flutter-gallery.png" style="border:1px solid black" alt="3 ListTiles, cada uno conteniendo un botón deplegble">
+<img src="/docs/development/ui/layout/images/listtile-flutter-gallery.png" style="border:1px solid black" alt="3 ListTiles, cada uno conteniendo un botón deplegble">
 
 Usa ListTile para listar 3 botones de tipo desplegable.<br>
 **Código Dart:** [buttons_demo.dart](https://github.com/flutter/flutter/blob/master/examples/flutter_gallery/lib/demo/material/buttons_demo.dart)
