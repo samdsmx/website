@@ -1,5 +1,5 @@
 ---
-title: Administrado el Estado
+title: Administrando el Estado
 description: Como estructurar una app para administrar el estado de los datos que fluyen a través de ella.
 ---
 
