@@ -1,5 +1,5 @@
 ---
-title: Crear "flavors" para Flutter
+title: Crear 'flavors' para Flutter
 short-title: Flavors
 description: Como crear "build flavors" especificos para diferentes tipos de entornos de desarrollo.
 ---
