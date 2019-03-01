@@ -157,7 +157,7 @@
         - title: Formatear el código
           permalink: /docs/development/tools/formatting
         - title: Widget inspector
-          permalink: /docs/development/tools/inspector
+          permalink: https://flutter.github.io/devtools/inspector
 
 - title: Pruebas & optimización
   permalink: /docs/testing
