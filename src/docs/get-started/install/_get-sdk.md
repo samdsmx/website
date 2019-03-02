@@ -64,7 +64,7 @@ install or further tasks to perform (shown in **bold** text).
 
 For example:
 
-<pre>∫
+<pre>
 [-] Android toolchain - develop for Android devices
     • Android SDK at /Users/obiwan/Library/Android/sdk
     <strong>✗ Android SDK is missing command line tools; download from https://goo.gl/XxQghQ</strong>

@@ -1,5 +1,11 @@
 ---
 title: "Actualizando el UI basándose en la orientación"
+prev:
+  title: Exportar fuentes desde un paquete
+  path: /docs/cookbook/design/package-fonts
+next:
+  title: Usar Themes para compartir colores y esitlos de fuente
+  path: /docs/cookbook/design/themes
 ---
 
 En ciertos casos, puede ser útil actualizar el diseño de una aplicación cuando el usuario 
@@ -8,7 +14,7 @@ que queramos mostrar un elemento tras otro en modo portrait, pero colocar esos m
 uno al lado del otro en modo landscape.
 
 En Flutter, podemos construir diferentes diseños dependiendo de una
-[`Orientation`](https://docs.flutter.io/flutter/widgets/Orientation-class.html) dada.
+[`Orientation`]({{site.api}}/flutter/widgets/Orientation-class.html) dada.
 En este ejemplo, crearemos una lista que muestre 2 columnas en modo portrait y 
 3 columnas en modo landscape.
 
@@ -38,7 +44,7 @@ Para obtener más información sobre cómo trabajar con `GridViews`, por favor c
 ## 2. Usa un `OrientationBuilder` para cambiar el número de columnas
 
 Para determinar la `Orientation` actual, podemos usar el Widget 
-[`OrientationBuilder`](https://docs.flutter.io/flutter/widgets/OrientationBuilder-class.html) 
+[`OrientationBuilder`]({{site.api}}/flutter/widgets/OrientationBuilder-class.html) 
 . El `OrientationBuilder` calcula la `Orientation` actual comparando 
 la anchura y la altura disponibles para el widget padre, y la reconstruye 
 cuando el tamaño del padre cambia.

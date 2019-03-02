@@ -48,7 +48,9 @@ body_class: landing-page showcase
                 <h2>Hecho con Flutter</h2>
                 <p>
                     Flutter es utilizado por Google y por desarrolladores y organizaciones de todo el mundo para ofrecer increíbles aplicaciones nativas en iOS y Android.
-                    Aquí tienes una pequeña selección de aplicaciones hechas con Flutter.
+                    Aquí tienes una pequeña selección de aplicaciones hechas con Flutter. Mira también 
+                    <a href="#" data-video="REJDzio_h7o"
+                    data-toggle="modal" data-target="#videoModal">Apps Destacadas hechas con Flutter</a>.
                 </p>
             </div>
         </div>
@@ -76,8 +78,8 @@ body_class: landing-page showcase
                                         Descargar
                                     </a>
                                     <div class="dropdown-menu" aria-labelledby="dropdownMenuButton{{ forloop.index }}">
-                                        {% if case.play_store_link %}<a class="dropdown-item" href="{{ case.play_store_link }}" target="_blank">Android</a>{% endif %}
-                                        {% if case.app_store_link %}<a class="dropdown-item" href="{{ case.app_store_link }}" target="_blank">iOS</a>{% endif %}
+                                        {% if case.play_store_link %}<a class="dropdown-item" href="{{ case.play_store_link }}" target="_blank"  rel="noopener">Android</a>{% endif %}
+                                        {% if case.app_store_link %}<a class="dropdown-item" href="{{ case.app_store_link }}" target="_blank"  rel="noopener">iOS</a>{% endif %}
                                     </div>
                                 </span>
                             {% endif %}
@@ -90,7 +92,7 @@ body_class: landing-page showcase
 
         <div class="row">
             <div class="col-12 text-center">
-                <a class="landing-page__cta__button btn btn-primary" href="https://itsallwidgets.com/flutter-apps" target="_blank">Para una lista más larga de aplicaciones, visita itsallwidgets.com</a>
+                <a class="landing-page__cta__button btn btn-primary" href="https://itsallwidgets.com/flutter-apps" target="_blank"  rel="noopener">Para una lista más larga de aplicaciones, visita itsallwidgets.com</a>
             </div>
         </div>
     </div>
@@ -100,7 +102,7 @@ body_class: landing-page showcase
     <div class="card-body">
         <h2 class="landing-page__cta__headline">Prueba Flutter hoy.</h2>
         <p class="landing-page__cta__body">Es gratis y de código abierto..</p>
-        <a class="landing-page__cta__button btn btn-primary btn-cta" href="/get-started/install">Empezar</a>
+        <a class="landing-page__cta__button btn btn-primary btn-cta" href="/docs/get-started/install">Empezar</a>
     </div>
 </section>
 

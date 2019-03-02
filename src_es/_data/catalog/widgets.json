@@ -236,6 +236,16 @@
     "image": "<img alt='' src='https://storage.googleapis.com/material-design/publish/material_v_11/assets/0B_udO5B8pzrzdXVuTlBoOTBjcU0/components_buttons_other1.png'>"
   },
   {
+    "name": "DropdownButton",
+    "description": "Muestra el item seleccionado actualmente y una flecha que abre un menu para seleccionar otro item.",
+    "categories": [],
+    "subcategories": [
+      "Botones"
+    ],
+    "link": "https://docs.flutter.io/flutter/material/DropdownButton-class.html",
+    "image": "<img alt='' src='/images/catalog-widget-placeholder.png'>"
+  },
+  {
     "name": "PopupMenuButton",
     "sample": "PopupMenuButton_index",
     "description": "Muestra un menú cuando se presiona y llama onSelected cuando se descarta el menú porque se seleccionó un elemento.",
@@ -408,7 +418,7 @@
   },
   {
     "name": "LinearProgressIndicator",
-    "description": "Los indicadores de progreso y actividad son indicaciones visuales de la carga de contenido en la aplicación. El widget LinearProgressIndicator implementa este componente. Además, también puede usar el widget CircularProgressIndicator.",
+    "description": "Un indicador de progreso lineal que sigue las guías de Material Design, también conocido como barra de progreso.",
     "categories": [],
     "subcategories": [
       "Mostrando información"
@@ -417,14 +427,14 @@
     "image": "<img alt='' src='https://material-design.storage.googleapis.com/publish/material_v_9/0B7WCemMG6e0VWkJiRjRLbzRNS3M/components_progress_and_activity.png'>"
   },
   {
-    "name": "GridView",
-    "description": "Una lista de cuadrículas consiste en un patrón repetido de celdas dispuestas en un layout vertical y horizontal. El widget GridView implementa este componente.",
+    "name": "CircularProgressIndicator",
+    "description": "Un indicador de progreso circular que sigue la guía de Material Design, el cual gira sobre si mismo para indicar que la app está ocupada.",
     "categories": [],
     "subcategories": [
       "Mostrando información"
     ],
-    "link": "https://docs.flutter.io/flutter/widgets/GridView-class.html",
-    "image": "<img alt='' src='https://material-design.storage.googleapis.com/publish/material_v_9/0B7WCemMG6e0VandQYXpNMG9aQUk/components_grid_lists.png'>"
+    "link": "https://docs.flutter.io/flutter/material/CircularProgressIndicator-class.html",
+    "image": "<img alt='' src='/images/catalog-widget-placeholder.png'>"
   },
   {
     "name": "ListTile",
@@ -567,6 +577,16 @@
     "image": "<img alt='' src='/images/widget-catalog/cupertino-picker.png'>"
   },
   {
+    "name": "CupertinoPopupSurface",
+    "description": "Superfice rectangular redondeada que se ve como una superficie de popup de iOS, como es un diálogo de alerta o un action sheet.",
+    "categories": [
+      "Cupertino (widgets estilo iOS)"
+    ],
+    "subcategories": [],
+    "link": "https://docs.flutter.io/flutter/cupertino/CupertinoPopupSurface-class.html",
+    "image": "<img alt='' src='/images/catalog-widget-placeholder.png'>"
+  },
+  {
     "name": "CupertinoSegmentedControl",
     "description": "Un segmented control estilo iOS. Usado para seleccionar de forma mutuamente exclusiva opciones en una lista horizontal.",
     "categories": [
@@ -634,7 +654,7 @@
     ],
     "subcategories": [],
     "link": "https://docs.flutter.io/flutter/cupertino/CupertinoTabView-class.html",
-    "image": "<img alt='' src='/images/catalog-widget-placeholder.png'>"
+    "image": "<img alt='' src='/images/widget-catalog/cupertino-tab-view.png'>"
   },
   {
     "name": "CupertinoTextField",
@@ -643,8 +663,8 @@
       "Cupertino (iOS-style widgets)"
     ],
     "subcategories": [],
-    "link": "https://docs.flutter.io/flutter/cupertino/CupertinoTabView-class.html",
-    "image": "<img alt='' src='/images/widget-catalog/cupertino-tab-view.png'>"
+    "link": "https://docs.flutter.io/flutter/cupertino/CupertinoTextField-class.html",
+    "image": "<img alt='' src='/images/widget-catalog/cupertino-textfield.png'>"
   },
   {
     "name": "CupertinoTimerPicker",
@@ -826,6 +846,7 @@
     "name": "Transform",
     "description": "Un widget que aplica una transformación antes de pintar a su hijo.",
     "categories": [
+      "Pintado y efectos"
     ],
     "subcategories": [
       "Widgets de un solo hijo"
@@ -857,14 +878,16 @@
   },
   {
     "name": "GridView",
-    "description": "Un array 2D de widgets desplazable.",
+    "description": "Una lista en parrilla consistente en un patrón repetido de celdas alineadas en un layout verical y horizontal. El widget Gridview implementa este componente.",
     "categories": [
+      "Scrolling"
     ],
     "subcategories": [
+      "Mostrando información",
       "Widgets de múltiples hijos"
     ],
     "link": "https://docs.flutter.io/flutter/widgets/GridView-class.html",
-    "image": "<img alt='' src='/images/catalog-widget-placeholder.png'>"
+    "image": "<img alt='' src='https://material-design.storage.googleapis.com/publish/material_v_9/0B7WCemMG6e0VandQYXpNMG9aQUk/components_grid_lists.png'>"
   },
   {
     "name": "Flow",
@@ -911,18 +934,6 @@
     "image": "<img alt='' src='/images/catalog-widget-placeholder.png'>"
   },
   {
-    "name": "ListView",
-    "sample": "ListView_index",
-    "description": "Una lista desplazable y lineal de widgets. ListView es el widget de desplazamiento más comúnmente utilizado. Muestra sus hijos uno tras otro en la dirección de desplazamiento. En el eje transversal, los hijos deben rellenar ListView.",
-    "categories": [
-    ],
-    "subcategories": [
-      "Widgets de múltiples hijos"
-    ],
-    "link": "https://docs.flutter.io/flutter/widgets/ListView-class.html",
-    "image": "<svg viewBox='0 0 100 100'><filter id='inset-shadow-block' x='-50%' y='-50%' width='200%' height='200%'><feComponentTransfer in='SourceAlpha'><feFuncA type='table' tableValues='1 0' /></feComponentTransfer><feGaussianBlur stdDeviation='2' result='Blur'/><feFlood flood-color='#666666' result='color'/><feComposite in2='Blur' operator='in'/><feComposite in2='SourceAlpha' operator='in' /><feMerge><feMergeNode /></feMerge></filter><rect x='0' y='0' width='100' height='100' fill='#3949ab'/><rect x='30' y='10' width='40' height='80' fill='#ffffff'/><rect x='35' y='10' width='30' height='15' fill='#4dd0e1'/><rect x='35' y='30' width='30' height='20' fill='#4dd0e1'/><rect x='35' y='55' width='30' height='5' fill='#4dd0e1'/><rect x='35' y='65' width='30' height='15' fill='#4dd0e1'/><rect x='35' y='85' width='30' height='5' fill='#4dd0e1'/><rect x='30' y='10' width='40' height='80' fill='#ffffff' filter='url(#inset-shadow-block)'/></svg>"
-  },
-  {
     "name": "CustomMultiChildLayout",
     "description": "Un widget que utiliza un delegado para dimensionar y ubicar varios hijos.",
     "categories": [
@@ -939,7 +950,7 @@
     "categories": [
     ],
     "subcategories": [
-      "Ayudas a layouts"
+      "Widgets de múltiples hijos"
     ],
     "link": "https://docs.flutter.io/flutter/widgets/LayoutBuilder-class.html",
     "image": "<img alt='' src='/images/catalog-widget-placeholder.png'>"
@@ -1178,14 +1189,16 @@
   },
   {
     "name": "ListView",
+    "sample": "ListView",
     "description": "Una lista lineal y desplazable de widgets. ListView es el widget de desplazamiento más utilizado. Muestra a sus hijos uno tras otro en la dirección de desplazamiento. En el eje transversal, se requiere que los hijos llenen el ListView.",
     "categories": [
       "Scrolling"
     ],
     "subcategories": [
+      "Widgets de múltiples hijos"
     ],
     "link": "https://docs.flutter.io/flutter/widgets/ListView-class.html",
-    "image": "<img alt='' src='/images/catalog-widget-placeholder.png'>"
+    "image": "<svg viewBox='0 0 100 100'><filter id='inset-shadow-block' x='-50%' y='-50%' width='200%' height='200%'><feComponentTransfer in='SourceAlpha'><feFuncA type='table' tableValues='1 0' /></feComponentTransfer><feGaussianBlur stdDeviation='2' result='Blur'/><feFlood flood-color='#666666' result='color'/><feComposite in2='Blur' operator='in'/><feComposite in2='SourceAlpha' operator='in' /><feMerge><feMergeNode /></feMerge></filter><rect x='0' y='0' width='100' height='100' fill='#3949ab'/><rect x='30' y='10' width='40' height='80' fill='#ffffff'/><rect x='35' y='10' width='30' height='15' fill='#4dd0e1'/><rect x='35' y='30' width='30' height='20' fill='#4dd0e1'/><rect x='35' y='55' width='30' height='5' fill='#4dd0e1'/><rect x='35' y='65' width='30' height='15' fill='#4dd0e1'/><rect x='35' y='85' width='30' height='5' fill='#4dd0e1'/><rect x='30' y='10' width='40' height='80' fill='#ffffff' filter='url(#inset-shadow-block)'/></svg>"
   },
   {
     "name": "NestedScrollView",
@@ -1196,17 +1209,6 @@
     "subcategories": [
     ],
     "link": "https://docs.flutter.io/flutter/widgets/NestedScrollView-class.html",
-    "image": "<img alt='' src='/images/catalog-widget-placeholder.png'>"
-  },
-  {
-    "name": "GridView",
-    "description": "Una matriz de widgets en 2D que se puede desplazar. Los diseños de cuadrícula más utilizados son GridView.count, que crea un diseño con un número fijo de tiles en el eje transversal, y GridView.extent, que crea un diseño con tiles que tienen una extensión máxima en el eje transversal. Un SliverGridDelegate personalizado puede producir un arreglo arbitrario 2D de hijos, incluyendo arreglos que no están alineados o que se superponen.",
-    "categories": [
-      "Scrolling"
-    ],
-    "subcategories": [
-    ],
-    "link": "https://docs.flutter.io/flutter/widgets/GridView-class.html",
     "image": "<img alt='' src='/images/catalog-widget-placeholder.png'>"
   },
   {
@@ -1297,17 +1299,6 @@
     ],
     "link": "https://docs.flutter.io/flutter/widgets/Opacity-class.html",
     "image": "<svg viewBox='0 0 100 100'><rect x='0' y='0' width='100' height='100' fill='#3949ab'/><rect x='10' y='10' width='60' height='60' fill='#3b75ad'/><rect x='20' y='30' width='70' height='50' fill='#ffffff' opacity='0.8'/></svg>"
-  },
-  {
-    "name": "Transform",
-    "description": "Un widget que aplica una transformación antes de pintar su hijo.",
-    "categories": [
-      "Painting and effects"
-    ],
-    "subcategories": [
-    ],
-    "link": "https://docs.flutter.io/flutter/widgets/Transform-class.html",
-    "image": "<img alt='' src='/images/catalog-widget-placeholder.png'>"
   },
   {
     "name": "DecoratedBox",
@@ -1628,5 +1619,38 @@
     ],
     "link": "https://docs.flutter.io/flutter/widgets/AnimatedWidgetBaseState-class.html",
     "image": "<img alt='' src='/images/catalog-widget-placeholder.png'>"
+  },
+  {
+    "name": "Expanded",
+    "categories": [
+    ],
+    "subcategories": [
+      "Widgets de múltiples hijos"
+    ],
+    "description": "Un widget que expande un hijo de un Row, Column, o Flex.",
+    "link": "https://docs.flutter.io/flutter/widgets/Expanded-class.html",
+    "image": "<img alt='' src='/images/catalog-widget-placeholder.png'>"
+  },
+  {
+    "name": "PageView",
+    "description": "Una lista scrollable que funciona página a página.",
+    "categories": [
+      "Scrolling"
+    ],
+    "subcategories": [
+    ],
+    "link": "https://docs.flutter.io/flutter/widgets/PageView-class.html",
+    "image": "<img alt='' src='/images/catalog-widget-placeholder.png'>"
+  },
+  {
+    "name": "SliverAppBar",
+    "description": "Un app bar material design integrada con un CustomScrollView.",
+    "categories": [
+    ],
+    "subcategories": [
+      "Estructura de la app y navegación"
+    ],
+    "link": "https://docs.flutter.io/flutter/material/SliverAppBar-class.html",
+    "image": "<img alt='' src='https://material-design.storage.googleapis.com/publish/material_v_9/0B7WCemMG6e0VclpfSFpuelBGR1k/components_toolbars.png'>"
   }
 ]

@@ -25,8 +25,7 @@
         "name": "Mostrando información"
       },
       {
-        "name": "Layout",
-        "description": "Ver también los <a href=\"/widgets/catalog/layout/\">widgets de layout general</a> de Flutter (como row, column, y más)."
+        "name": "Layout"
       }
     ],
     "id":"material"
@@ -47,9 +46,6 @@
       {
         "name": "Widgets de múltiples hijos",
         "description":"Estos widgets toman múltiples hijos y los organizan en diferentes maneras."
-      },
-      {
-        "name": "Ayudas a layouts"
       }
     ],
     "id":"layout"

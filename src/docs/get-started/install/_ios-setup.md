@@ -34,19 +34,44 @@ To prepare to run and test your Flutter app on the iOS simulator, follow these s
     in the simulator's **Hardware > Device** menu.
  3. Depending on your development machine's screen size, simulated high-screen-density iOS devices
     may overflow your screen. Set the device scale under the **Window > Scale** menu in the simulator.
- 4. Start your app by running `flutter run`.
+
+### Create and run a simple Flutter app
+
+To create your first Flutter app and test your setup, follow these steps:
+
+ 1. Create a new Flutter app by running the following from the command line:
+ 
+    ```terminal
+    $ flutter create my_app
+    ```
+
+ 2. A `my_app` directory is created, containing Flutter's starter app. Enter this directory:
+ 
+    ```terminal
+    $ cd my_app
+    ```
+ 
+ 3. To launch the app in the Simulator, ensure that the Simulator is running and enter:
+
+    ```terminal
+    $ flutter run
+    ```
 
 ### Deploy to iOS devices
 
 To deploy your Flutter app to a physical iOS device, you’ll need some additional tools and an Apple account. You'll also need to set up physical device deployment in Xcode.
 
- 1. Install [homebrew](http://brew.sh/).
- 1. Open the terminal and run these commands to install the tools for deploying Flutter apps to
-    iOS devices.
+ 1. Install [homebrew](https://brew.sh).
+ 1. Ensure that homebrew is up to date:
 
     ```terminal
     $ brew update
-    # The following two steps are a temporary workaround to https://github.com/flutter/flutter/issues/22595
+    ```
+
+ 1. Install the tools for deploying Flutter apps to iOS devices by running the
+    following commands:
+
+    ```terminal
     $ brew install --HEAD usbmuxd
     $ brew link usbmuxd
     $ brew install --HEAD libimobiledevice
@@ -54,13 +79,21 @@ To deploy your Flutter app to a physical iOS device, you’ll need some addition
     $ pod setup
     ```
 
-   If any of these commands fails with an error, run `brew doctor` and follow the instructions
-   for resolving the issue.
+    {{site.alert.note}}
+      The first two commands above are necessary as a temporary workaround until the next
+      release of libusbmuxd, as explained in [libusbmuxd issue #46][] and
+      [Flutter issue #22595][].
+
+      [libusbmuxd issue #46]: {{site.github}}/libimobiledevice/libusbmuxd/issues/46#issuecomment-445502733
+      [Flutter issue #22595]: {{site.github}}/flutter/flutter/issues/22595
+    {{site.alert.end}}
+
+    If any of these commands fail, run `brew doctor` and follow the instructions
+    to resolve any issues.
 
  1. Follow the Xcode signing flow to provision your project:
 
      {: type="a"}
-
      1. Open the default Xcode workspace in your project by running `open
         ios/Runner.xcworkspace` in a terminal window from your Flutter project
         directory.
@@ -72,28 +105,29 @@ To deploy your Flutter app to a physical iOS device, you’ll need some addition
         profile (if needed).
 
         * To start your first iOS development project, you may need to sign into
-          Xcode with your Apple ID.
-          <br>
-          ![Xcode account add](/images/setup/xcode-account.png)
-          <br>
+          Xcode with your Apple ID. ![Xcode account add][]{:.mw-100}
           Development and testing is supported for any Apple ID. Enrolling in the
           Apple Developer Program is required to distribute your app to the App
-          Store. View the [differences between Apple membership][].
+          Store. For details about membership types, see
+          [Choosing a Membership][].
 
         * The first time you use an attached physical device for iOS
           development, you will need to trust both your Mac and the Development
           Certificate on that device. Select `Trust` in the dialog prompt when
           first connecting the iOS device to your Mac.
 
-          ![Trust Mac](/images/setup/trust-computer.png)
+          ![Trust Mac][]{:.mw-100}
 
-          Then, go to the Settings app on the iOS device, select **General > Device Management** and trust your Certificate.
+          Then, go to the Settings app on the iOS device, select **General >
+          Device Management** and trust your Certificate.
 
         * If automatic signing fails in Xcode, verify that the project's
           **General > Identity > Bundle Identifier** value is unique.
-          <br>
-          ![Check the app's Bundle ID](/images/setup/xcode-unique-bundle-id.png)
+          ![Check the app's Bundle ID][]{:.mw-100}
 
  1. Start your app by running `flutter run`.
 
-[differences between Apple membership types]: https://developer.apple.com/support/compare-memberships
+[Check the app's Bundle ID]: /images/setup/xcode-unique-bundle-id.png
+[Choosing a Membership]: https://developer.apple.com/support/compare-memberships
+[Trust Mac]: /images/setup/trust-computer.png
+[Xcode account add]: /images/setup/xcode-account.png

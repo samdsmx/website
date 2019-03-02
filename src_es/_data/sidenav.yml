@@ -53,9 +53,8 @@
             - title: Layouts en Flutter
               permalink: /docs/development/ui/layout
               match-page-url-exactly: true
-              # Corregir assets
-            #- title: Tutorial
-             # permalink: /docs/development/ui/layout/tutorial
+            - title: Tutorial
+              permalink: /docs/development/ui/layout/tutorial
             - title: Box constraints
               permalink: /docs/development/ui/layout/box-constraints
         - title: Añadir interactividad
@@ -64,10 +63,6 @@
           permalink: /docs/development/ui/assets-and-images
         - title: Navegación & enrutado
           permalink: /docs/development/ui/navigation
-        # Commenting out the following entry per
-        # https://github.com/flutter/website/issues/1496#issuecomment-431455211
-        # - title: Inspect an app's UI
-        #   permalink: /docs/development/ui/inspector
         - title: Animaciones
           permalink: /docs/development/ui/animations
           children:
@@ -98,17 +93,17 @@
       children:
         - title: Administrar el Estado
           permalink: /docs/development/data-and-backend/state-mgmt
-          #children:
-          #  - title: Introducción
-          #    permalink: /docs/development/data-and-backend/state-mgmt/intro
-          #  - title: Piensa declarativamente
-          #    permalink: /docs/development/data-and-backend/state-mgmt/declarative
-          #  - title: Efímero vs estado de la app
-          #    permalink: /docs/development/data-and-backend/state-mgmt/ephemeral-vs-app
-          #  - title: Admnistración Simple del estado
-          #    permalink: /docs/development/data-and-backend/state-mgmt/simple
-          #  - title: Opciones
-          #    permalink: /docs/development/data-and-backend/state-mgmt/options
+          children:
+            - title: Introducción
+              permalink: /docs/development/data-and-backend/state-mgmt/intro
+            - title: Piensa declarativamente
+              permalink: /docs/development/data-and-backend/state-mgmt/declarative
+            - title: Efímero vs estado de la app
+              permalink: /docs/development/data-and-backend/state-mgmt/ephemeral-vs-app
+            - title: Admnistración Simple del estado
+              permalink: /docs/development/data-and-backend/state-mgmt/simple
+            - title: Opciones
+              permalink: /docs/development/data-and-backend/state-mgmt/options
         - title: JSON y serialización
           permalink: /docs/development/data-and-backend/json
         - title: Back-end services
@@ -145,6 +140,8 @@
           permalink: /docs/development/tools/android-studio
         - title: Visual Studio Code
           permalink: /docs/development/tools/vs-code
+        - title: Dart DevTools
+          permalink: https://flutter.github.io/devtools/
         - title: Flutter SDK
           permalink: /docs/development/tools/sdk
           children:
@@ -191,16 +188,14 @@
 
 - title: Recursos
   children:
-    - title: Introducción a Dart
+    - title: Recursos Dart
       permalink: /docs/resources/bootstrap-into-dart
     - title: Dento de Flutter
       permalink: /docs/resources/inside-flutter
     - title: Visión general técnica
       permalink: /docs/resources/technical-overview
-    - title: Filosofía de desarrollo
-      permalink: /docs/resources/design-principles
     # - title: Flutter best practices # TODO
-    - title: Videos técnicos para aprender Flutter
+    - title: Videos técnicos
       permalink: /docs/resources/videos
     # - title: Flutter developer communities # TODO
     # - title: Flutter learning resources # TODO
@@ -210,8 +205,6 @@
 - title: Referencia
   expanded: true
   children:
-    - title: Tutoriales
-      permalink: /docs/reference/tutorials
     - title: Indice de Widgets
       permalink: /docs/reference/widgets
     - title: Referencia de la API

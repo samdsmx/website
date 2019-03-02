@@ -1,10 +1,16 @@
 ---
 title: "Trabajando con Pestañas"
+prev:
+  title: Using custom fonts
+  path: /docs/cookbook/design/fonts
+next:
+  title: Building a form with validation
+  path: /docs/cookbook/forms/validation
 ---
 
 Trabajar con pestañas es un patrón común en las aplicaciones siguiendo las pautas de 
 Material Design. Flutter incluye una forma conveniente de crear diseños de pestañas como parte de 
-la [biblioteca Material(https://docs.flutter.io/flutter/material/material-library.html).
+la [biblioteca Material({{site.api}}/flutter/material/material-library.html).
 
 ## Instrucciones
 
@@ -15,10 +21,11 @@ la [biblioteca Material(https://docs.flutter.io/flutter/material/material-librar
 ## 1. Crea un `TabController`
 
 Para que las pestañas funcionen, necesitaremos mantener sincronizadas las secciones de pestañas y contenido 
-seleccionadas. Este es el trabajo de [`TabController`](https://docs.flutter.io/flutter/material/TabController-class.html).
+seleccionadas. Este es el trabajo de 
+[`TabController`]({{site.api}}/flutter/material/TabController-class.html).
 
 Podemos crear manualmente un `TabController` o usar el Widget 
-[`DefaultTabController`](https://docs.flutter.io/flutter/material/DefaultTabController-class.html). 
+[`DefaultTabController`]({{site.api}}/flutter/material/DefaultTabController-class.html). 
 Usar `DefaultTabController` es la opción más simple, ya que creará 
 un `TabController` para nosotros y lo pondrá a disposición de todos los Widgets descendientes.
 
@@ -34,9 +41,11 @@ DefaultTabController(
 ## 2. Crea las pestañas
 
 Ahora que tenemos un `TabController` para trabajar, podemos crear nuestras pestañas usando 
-el Widget [`TabBar`](https://docs.flutter.io/flutter/material/TabController-class.html). 
-En este ejemplo, crearemos un `TabBar` con 3 Widgets [`Tab`](https://docs.flutter.io/flutter/material/Tab-class.html) 
-y lo colocaremos dentro de un [`AppBar`](https://docs.flutter.io/flutter/material/AppBar-class.html).
+el Widget [`TabBar`]({{site.api}}/flutter/material/TabController-class.html). 
+En este ejemplo, crearemos un 
+`TabBar` con 3 Widgets [`Tab`]({{site.api}}/flutter/material/Tab-class.html) 
+y lo colocaremos dentro de un 
+[`AppBar`]({{site.api}}/flutter/material/AppBar-class.html).
 
 <!-- skip -->
 ```dart
@@ -64,7 +73,7 @@ deberás pasarlo al `TabBar`.
 
 Ahora que tenemos pestañas, queremos mostrar el contenido cuando se seleccione una pestaña. 
 Para este propósito, emplearemos el Widget 
-[`TabBarView`](https://docs.flutter.io/flutter/material/TabBarView-class.html).
+[`TabBarView`]({{site.api}}/flutter/material/TabBarView-class.html).
 
 *Nota:* ¡El orden es importante y debe corresponder al orden de las pestañas en el 
 `TabBar`!

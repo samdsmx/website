@@ -2,6 +2,12 @@
 title: Mostrando SnackBars
 short-title: SnackBars
 description: Como implementar un SnackBar para mostrar mensajes
+prev:
+  title: Añadir un Drawer a la pantalla
+  path: /docs/cookbook/design/drawer
+next:
+  title: Exportar fuentes desde un paquete
+  path: /docs/cookbook/design/package-fonts
 ---
 
 En algunos casos, puede ser útil informar brevemente a nuestros usuarios cuando ciertas acciones
@@ -10,7 +16,7 @@ desees informarles que el mensaje ha sido borrado. Puede que incluso queramos da
 una opción para ¡deshacer la acción! 
 
 En Material Design, este es el trabajo de un 
-[SnackBar](https://docs.flutter.io/flutter/material/SnackBar-class.html).
+[SnackBar]({{site.api}}/flutter/material/SnackBar-class.html).
 
 ## Instrucciones
 
@@ -26,8 +32,8 @@ caso, necesitaremos mostrar el SnackBar en la parte inferior de la pantalla,
 ¡sin solapar otros Widgets importantes, como el `FloatingActionButton`!
 
 El Widget 
-[Scaffold](https://docs.flutter.io/flutter/material/Scaffold-class.html)
-de la [biblioteca Material](https://docs.flutter.io/flutter/material/material-library.html) crea esta 
+[Scaffold]({{site.api}}/flutter/material/Scaffold-class.html)
+de la [biblioteca Material]({{site.api}}/flutter/material/material-library.html) crea esta 
 estructura visual para nosotros y asegura que los Widgets importantes 
 ¡no se superpongan!
 

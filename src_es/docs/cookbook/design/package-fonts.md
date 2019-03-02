@@ -1,25 +1,31 @@
 ---
 title: "Exportando fuentes de un paquete"
+prev:
+  title: Displaying SnackBars
+  path: /docs/cookbook/design/snackbars
+next:
+  title: Updating the UI based on orientation
+  path: /docs/cookbook/design/orientation
 ---
 
-En lugar de declarar una fuente como parte de nuestra aplicación, podemos declarar una fuente como parte 
+En lugar de declarar una fuente como parte de una aplicación, podemos declarar una fuente como parte 
 de un paquete separado. Esta es una forma conveniente de compartir la misma fuente a través 
 de varios proyectos diferentes o para desarrolladores que publican sus paquetes en el 
-[sitio web de pub](https://pub.dartlang.org/).  
+[sitio web de pub][].  
 
 ## Instrucciones
 
   1. Agrega una fuente a un paquete
-  2. Agrega el paquete y la fuente a nuestra aplicación
+  2. Agrega el paquete y la fuente a la aplicación
   3. Usa la fuente
   
 ## 1. Agrega una fuente a un paquete
 
-Para exportar una fuente desde un paquete, necesitamos importar los archivos de fuente en la carpeta `lib` 
-de nuestro paquete del proyecto. Podemos colocar los archivos de fuente directamente en la carpeta `lib` 
+Para exportar una fuente desde un paquete, necesitas importar los archivos de fuente en la carpeta `lib` 
+del paquete del proyecto. Puedes colocar los archivos de fuente directamente en la carpeta `lib` 
 o en un subdirectorio, como `lib/fonts`. 
 
-En este ejemplo, asumiremos que tenemos una biblioteca Flutter llamada 
+En este ejemplo, asume que tienes una biblioteca Flutter llamada 
 `awesome_package` con fuentes que viven en una carpeta `lib/fonts`.
 
 ```
@@ -31,10 +37,10 @@ awesome_package/
       Raleway-Italic.ttf
 ```
 
-## 2. Agrega el paquete y la fuente a nuestra aplicación
+## 2. Agrega el paquete y la fuente a la aplicación
 
-Ahora podemos consumir el paquete y usar las fuentes que proporciona. Esto implica 
-actualizar `pubspec.yaml` en el directorio raíz de nuestra *app*. 
+Ahora puedes consumir el paquete y usar las fuentes que proporciona. Esto implica 
+actualizar `pubspec.yaml` en el directorio raíz de la *app*. 
 
 ### Añade el paquete al proyecto
 
@@ -45,11 +51,11 @@ dependencies:
 
 ### Declara los font assets
 
-Ahora que hemos importado el paquete, debemos decirle a Flutter dónde encontrar 
-las fuentes de nuestro `awesome_package`.
+Ahora que has importado el paquete, debes decirle a Flutter dónde encontrar 
+las fuentes del `awesome_package`.
 
-Para declarar las fuentes del paquete, debemos prefijar la ruta a la fuente con 
-`packages/awesome_package`. Esto le indicará a Flutter que busque en la carpeta 
+Para declarar las fuentes del paquete, debes prefijar la ruta a la fuente con 
+`packages/awesome_package`. Esto le indica a Flutter que busque en la carpeta 
 `lib` del paquete para la fuente.
 
 ```yaml
@@ -64,10 +70,9 @@ flutter:
 
 ## 3. Usa la fuente
 
-Podemos usar [`TextStyle`](https://docs.flutter.io/flutter/painting/TextStyle-class.html)
-para cambiar la apariencia del texto. Para usar paquetes de fuentes, necesitamos no sólo 
-declarar qué fuente queremos usar, sino también declarar el `package` al 
-que pertenece la fuente. 
+Puedes usar [`TextStyle`][]
+para cambiar la apariencia del texto. Para usar paquetes de fuentes, necesitas no sólo 
+declarar qué fuente quieres usar, sino también declarar el `package` al que pertenece la fuente. 
 
 <!-- skip -->
 ```dart
@@ -84,7 +89,8 @@ Text(
 
 ### Fuentes
 
-Las fuentes Raleway y RobotoMono se descargaron de [Google Fonts](https://fonts.google.com/).
+Las fuentes Raleway y RobotoMono se descargaron de 
+[Google Fonts](https://fonts.google.com/).
 
 ### `pubspec.yaml`
 
@@ -132,10 +138,10 @@ class MyHomePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      // AppBar utilizará la fuente Raleway predeterminada de la aplicación
+      // AppBar usa la fuente Raleway predeterminada de la aplicación
       appBar: AppBar(title: Text('Package Fonts')),
       body: Center(
-        // Este widget de texto usará la fuente RobotoMono
+        // Este widget de texto usala fuente RobotoMono
         child: Text(
           'Using the Raleway font from the awesome_package',
           style: TextStyle(
@@ -151,3 +157,5 @@ class MyHomePage extends StatelessWidget {
 
 ![Package Fonts Demo](/images/cookbook/package-fonts.png){:.site-mobile-screenshot}
 
+[Pub site]: {{site.pub}} 
+[`TextStyle`]: {{site.api}}/flutter/painting/TextStyle-class.html

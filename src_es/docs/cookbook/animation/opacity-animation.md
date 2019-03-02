@@ -1,14 +1,16 @@
 ---
 title: Efectos Fade in and out en un Widget
+next:
+  title: Añadir un Drawer a la pantalla
+  path: /docs/cookbook/design/drawer
 ---
 
-Como desarrolladores de UI, a menudo necesitamos mostrar y ocultar elementos en pantalla. Sin embargo, 
+Como desarrolladores de UI, a menudo necesitas mostrar y ocultar elementos en pantalla. Sin embargo, 
 los elementos que aparecen y desaparecen rápidamente de la pantalla pueden resultar molestos para los 
-usuarios finales. En su lugar, a los elementos les podemos aplicar un fade con una animación de 
+usuarios finales. En su lugar, a los elementos les puedes aplicar un fade con una animación de 
 opacidad para crear una experiencia suave.
 
-En Flutter, podemos lograr esta tarea usando el widget 
-[`AnimatedOpacity`](https://docs.flutter.io/flutter/widgets/AnimatedOpacity-class.html).
+En Flutter, puedes lograr esta tarea usando el widget[`AnimatedOpacity`][].
 
 ## Instrucciones
 
@@ -19,7 +21,7 @@ En Flutter, podemos lograr esta tarea usando el widget
   
 ## 1. Crea un cuadro para realizar el fade in and out
 
-Primero, necesitaremos algo para realizar el fade in and out! En este ejemplo, dibujaremos un cuadro 
+Primero, necesitarás algo para realizar el fade in and out! En este ejemplo, dibujarás un cuadro 
 verde en la pantalla.
 
 <!-- skip -->
@@ -33,21 +35,21 @@ Container(
 
 ## 2. Define un `StatefulWidget`
 
-Ahora que tenemos un cuadro verde para animar, necesitaremos una forma de saber si el cuadro debe ser 
+Ahora que tienes un cuadro verde para animar, necesitaremos una forma de saber si el cuadro debe ser 
 visible o invisible. Para lograr esto, podemos usar un widget 
-[`StatefulWidget`](https://docs.flutter.io/flutter/widgets/StatefulWidget-class.html).
+[`StatefulWidget`][].
 
 Un `StatefulWidget` es una clase que crea un objeto `State`. El objeto `State` 
-contiene algunos datos sobre nuestra aplicación y proporciona una forma de actualizar esos datos. 
-Cuando actualizamos los datos, también podemos pedirle a Flutter que reconstruya nuestra UI con esos cambios.
+contiene algunos datos sobre tu aplicación y proporciona una forma de actualizar esos datos. 
+Cuando actualizas los datos, también puedes pedirle a Flutter que reconstruya tu UI con esos cambios.
 
-En nuestro caso, tendremos un dato: un booleano que representa si el botón es visible 
+En este caso, tendrás un dato: un booleano que representa si el botón es visible 
 o invisible. 
 
-Para construir un `StatefulWidget`, necesitamos crear dos clases: Una clase 
+Para construir un `StatefulWidget`, necesitas crear dos clases: Una clase 
 `StatefulWidget` y la clase correspondiente `State`. Consejo profesional: Los plugins Flutter para 
 Android Studio y VSCode incluyen el snippet `stful`  para generar rápidamente 
-este código!
+este código.
 
 <!-- skip -->
 ```dart
@@ -62,7 +64,7 @@ class MyHomePage extends StatefulWidget {
   _MyHomePageState createState() => _MyHomePageState();
 }
 
-// La clase State es responsable de dos cosas: mantener algunos datos que podamos 
+// La clase State es responsable de dos cosas: mantener algunos datos que puedes 
 // actualizar y construir la UI usando esa información.
 class _MyHomePageState extends State<MyHomePage> {
   // Si el recuadro verde debe ser visible o invisible
@@ -70,32 +72,31 @@ class _MyHomePageState extends State<MyHomePage> {
 
   @override
   Widget build(BuildContext context) {
-    // ¡El cuadro verde irá aquí con algunos otros widgets!
+    // El cuadro verde va aquí con algunos otros widgets.
   }
 }
 ```
 
 ## 3. Muestra un botón que alterne la visibilidad
 
-Ahora que tenemos algunos datos para determinar si nuestro recuadro verde debe ser visible o invisible 
-necesitaremos una forma de actualizar esos datos. En nuestro caso, si el cuadro está visible, queremos 
-ocultarlo. Si la caja está oculta, ¡queremos mostrarla!  
+Ahora que tienes algunos datos para determinar si el recuadro verde debe ser visible o invisible 
+necesitas una forma de actualizar esos datos. En este caso, si el cuadro está visible, queremos 
+ocultarlo. Si la caja está oculta, querrás mostrarla.  
 
-Para lograrlo, mostraremos un botón. Cuando un usuario pulsa el botón, alternamos el booleano de 
-verdadero a falso, o de falso a verdadero. Necesitamos hacer este cambio usando 
-[`setState`](https://docs.flutter.io/flutter/widgets/State/setState.html),
-que es un método de la clase `State`. Esto le permitirá a Flutter saber que necesita 
-reconstruir el Widget.
+Para lograrlo, mostrarás un botón. Cuando un usuario pulsa el botón, alternas el booleano de 
+verdadero a falso, o de falso a verdadero. Necesitas hacer este cambio usando 
+[`setState`][],
+que es un método de la clase `State`. Esto le permite a Flutter saber que necesita reconstruir el Widget.
 
 Nota: Para obtener más información sobre cómo trabajar con las entradas del usuario, por favor consulta la sección 
-[Manejando Gestos](/cookbook#manejando-gestos) del Cookbook.
+[Manejando Gestos](/docs/cookbook#gestures) del Cookbook.
 
 <!-- skip -->
 ```dart
 FloatingActionButton(
   onPressed: () {
-    // ¡Asegúrate de llamar a setState! Esto le dirá a Flutter que reconstruya el
-    // UI con nuestros cambios!
+    // Asegúrate de llamar a setState Esto le dice a Flutter que reconstruya el
+    // UI con los cambios!
     setState(() {
       _visible = !_visible;
     });
@@ -107,15 +108,14 @@ FloatingActionButton(
 
 ## 4. Al cuadro, aplícale el Fade in and out
 
-Tenemos un recuadro verde en la pantalla. Tenemos un botón para alternar la visibilidad a verdadero o 
-falso. Entonces, ¿cómo aplicamos el fade in and out al cuadro? 
-Con un Widget 
-[`AnimatedOpacity`](https://docs.flutter.io/flutter/widgets/AnimatedOpacity-class.html)!
+Tienes un recuadro verde en la pantalla. Tienes un botón para alternar la visibilidad a verdadero o 
+falso. Entonces, ¿cómo aplicas el fade in and out al cuadro? 
+Con un Widget [`AnimatedOpacity`][].
 
 El Widget `AnimatedOpacity` requiere tres argumentos:
 
   * `opacity`: Un valor de 0.0 (invisible) a 1.0 (completamente visible).
-  * `duration`: Cuánto tiempo debe durar la animación para completar
+  * `duration`: Cuánto tiempo debe durar la animación para completar.
   * `child`: El widget para animar. En nuestro caso, el cuadro verde.
 
 <!-- skip -->
@@ -153,7 +153,7 @@ class MyApp extends StatelessWidget {
 }
 
 // El trabajo de StatefulWidget es tomar algunos datos y crear una clase State.
-// En este caso, nuestro Widget toma un título y crea un _MyHomePageState.
+// En este caso, el Widget toma un título y crea un _MyHomePageState.
 class MyHomePage extends StatefulWidget {
   final String title;
 
@@ -163,7 +163,7 @@ class MyHomePage extends StatefulWidget {
   _MyHomePageState createState() => _MyHomePageState();
 }
 
-// La clase State es responsable de dos cosas: mantener algunos datos que podamos
+// La clase State es responsable de dos cosas: mantener algunos datos que puedas
 // actualizar y construir la UI usando esa información.
 class _MyHomePageState extends State<MyHomePage> {
   // Si el recuadro verde debe ser visible o invisible
@@ -191,8 +191,8 @@ class _MyHomePageState extends State<MyHomePage> {
       ),
       floatingActionButton: FloatingActionButton(
         onPressed: () {
-          // Asegúrate de llamar a setState! Esto le dirá a Flutter que reconstruya el
-          // UI con nuestros cambios!
+          // Asegúrate de llamar a setState. Esto le dice a Flutter que reconstruya el
+          // UI con los cambios!
           setState(() {
             _visible = !_visible;
           });
@@ -206,3 +206,7 @@ class _MyHomePageState extends State<MyHomePage> {
 ```
 
 ![Fade In and Out Demo](/images/cookbook/fade-in-out.gif){:.site-mobile-screenshot}
+
+[`AnimatedOpacity`]: {{site.api}}/flutter/widgets/AnimatedOpacity-class.html
+[`StatefulWidget`]: {{site.api}}/flutter/widgets/StatefulWidget-class.html
+[`setState`]: {{site.api}}/flutter/widgets/State/setState.html

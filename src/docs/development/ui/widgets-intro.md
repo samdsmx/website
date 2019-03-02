@@ -8,7 +8,7 @@ at the end of the page to avoid repeating links. {% endcomment -%}
 {% assign api = site.api | append: '/flutter' -%}
 
 Flutter widgets are built using a modern react-style framework, which takes
-inspiration from [React](http://facebook.github.io/react). The central idea is
+inspiration from [React](https://reactjs.org). The central idea is
 that you build your UI out of widgets. Widgets describe what their view
 should look like given their current configuration and state. When a widget's
 state changes, the widget rebuilds its description, which the framework diffs
@@ -87,7 +87,7 @@ very commonly used:
    absolute positioning layout model.
 
  * [Container]({{api}}/widgets/Container-class.html): The
-   [Container]({{api}}/widgets/Container-class.html) widget lets you create
+   [Container]({{api}}/widgets/Container-class.html) widget lets you create a
    rectangular visual element. A container can be decorated with a
    [BoxDecoration]({{api}}/painting/BoxDecoration-class.html), such as a
    background, a border, or a shadow. A
@@ -172,7 +172,7 @@ void main() {
 ```
 
 Be sure to have a `uses-material-design: true` entry in the `flutter`
-section of your `pubspec.yaml` file. It allows to use the predefined
+section of your `pubspec.yaml` file. It allows you to use the predefined
 set of [Material icons](https://design.google.com/icons/).
 
 ```yaml
@@ -205,10 +205,10 @@ of the column it places an instance of `MyAppBar`, passing the app bar a
 [Text]({{api}}/widgets/Text-class.html) widget to use as its title. Passing
 widgets as arguments to other widgets is a powerful technique that lets you
 create generic widgets that can be reused in a wide variety of ways. Finally,
-`MyScaffold` uses a [Expanded]({{api}}/widgets/Expanded-class.html) to fill
-the remaining space with its body, which consists a centered message.
+`MyScaffold` uses an [Expanded]({{api}}/widgets/Expanded-class.html) to fill
+the remaining space with its body, which consists of a centered message.
 
-More information: [Layouts](/docs/reference/widgets/layout)
+More information: [Layouts](/docs/development/ui/widgets/layout)
 
 ## Using Material Components
 
@@ -285,7 +285,7 @@ for the [leading]({{api}}/material/AppBar-class.html#leading) and the
 throughout the framework and is something you might consider when designing your
 own widgets.
 
-More information: [Material components](/docs/reference/widgets/material)
+More information: [Material components](/docs/development/ui/widgets/material)
 
 ## Handling gestures
 
@@ -343,7 +343,7 @@ More information: [Gestures in Flutter](/docs/development/ui/advanced/gestures)
 
 Thus far, we've used only stateless widgets. Stateless widgets receive arguments
 from their parent widget, which they store in
-[final](https://www.dartlang.org/guides/language/language-tour#final-and-const)
+[final]({{site.dart-site}}/guides/language/language-tour#final-and-const)
 member variables. When a widget is asked to
 [build]({{api}}/widgets/StatelessWidget/build.html), it uses these stored
 values to derive new arguments for the widgets it creates.
@@ -358,7 +358,7 @@ state. Consider this basic example, using the
 ```dart
 class Counter extends StatefulWidget {
   // This class is the configuration for the state. It holds the
-  // values (in this nothing) provided by the parent and used by the build
+  // values (in this case nothing) provided by the parent and used by the build
   // method of the State. Fields in a Widget subclass are always marked "final".
 
   @override
@@ -543,7 +543,7 @@ class ShoppingListItem extends StatelessWidget {
 
 The `ShoppingListItem` widget follows a common pattern for stateless widgets. It
 stores the values it receives in its constructor in
-[final](https://www.dartlang.org/guides/language/language-tour#final-and-const)
+[final]({{site.dart-site}}/guides/language/language-tour#final-and-const)
 member variables, which it then uses during its
 [build]({{api}}/widgets/StatelessWidget/build.html) function. For example, the
 `inCart` boolean toggles between two visual appearances: one that uses the
@@ -671,7 +671,7 @@ which is passed `oldWidget` to let you compare the old widget with the current
 
 When handling the `onCartChanged` callback, the `_ShoppingListState` mutates its
 internal state by either adding or removing a product from `_shoppingCart`. To
-signal to the framework that it changes its internal state, it wraps those calls
+signal to the framework that it changed its internal state, it wraps those calls
 in a [setState]({{api}}/widgets/State-class.html#setState) call. Calling
 [setState]({{api}}/widgets/State-class.html#setState) marks this widget as
 dirty and schedules it to be rebuilt the next time your app needs to update the

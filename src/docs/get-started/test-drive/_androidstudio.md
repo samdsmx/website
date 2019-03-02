@@ -13,12 +13,12 @@
 The above commands create a Flutter project directory called `myapp` that
 contains a simple demo app that uses [Material Components][].
 
-In the project directory, the code for your app is in `lib/main.dart`.
+{% include_relative _main-code-note.md  %}
 
 ## Run the app
 
  1. Locate the main Android Studio toolbar:<br>
-    ![Main IntelliJ toolbar][]
+    ![Main IntelliJ toolbar][]{:.mw-100}
  1. In the **target selector**, select an Android device for running the app.
     If none are listed as available, select **Tools> Android > AVD Manager** and
     create one there. For details, see [Managing AVDs][].
@@ -35,6 +35,6 @@ In the project directory, the code for your app is in `lib/main.dart`.
 {% include_relative _try-hot-reload.md save_changes=save_changes %}
 
 [Main IntelliJ toolbar]: {% asset tools/android-studio/main-toolbar.png @path %}
-[Managing AVDs]: https://developer.android.com/studio/run/managing-avds
-[Material Components]: https://material.io/guidelines
+[Managing AVDs]: {{site.android-dev}}/studio/run/managing-avds
+[Material Components]: {{site.material}}/guidelines
 </div>

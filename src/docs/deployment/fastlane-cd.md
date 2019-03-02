@@ -49,7 +49,8 @@ delivery from a local machine.
     deployment key once in the Play Store.
         * It's highly recommended to use the automatic cloud managed signing for
         the deployment key. For more information, see the [official Play Store documentation](https://support.google.com/googleplay/android-developer/answer/7384423?hl=en).
-        * Follow the [key generation steps](https://developer.android.com/studio/publish/app-signing#sign-apk)
+        * Follow the [key generation
+          steps]({{site.android-dev}}/studio/publish/app-signing#sign-apk)
         to create your upload key.
         * Configure gradle to use your upload key when building your app in
         release mode by editing `android.buildTypes.release` in
@@ -144,8 +145,7 @@ repository root.
     * Shard your script to run on both Linux and macOS platforms.
     * Remember to specify a dependency on Xcode for macOS (for example
     `osx_image: xcode9.2`).
-    * See [fastlane CI documentation](/docs/deployment/fastlane-cd)
-    for CI specific setup.
+    * See [fastlane CI documentation][] for CI specific setup.
     * During the setup phase, depending on the platform, make sure that:
          * Bundler is available using `gem install bundler`.
          * For Android, make sure the Android SDK is available and the `ANDROID_HOME`
@@ -159,6 +159,10 @@ repository root.
 
 ## Reference
 
-The [Flutter Gallery in the Flutter repo](https://github.com/flutter/flutter/tree/master/examples/flutter_gallery)
-uses fastlane for continuous deployment. See the source for a working example of
-fastlane in action. The Flutter framework repository's Cirrus script is [here](https://github.com/flutter/flutter/blob/master/.cirrus.yml).
+The [Flutter Gallery in the Flutter
+repo]({{site.github}}/flutter/flutter/tree/master/examples/flutter_gallery)
+uses fastlane for continuous deployment. See the source for a working example
+of fastlane in action. Also see the Flutter framework repository's
+[Cirrus script]({{site.github}}/flutter/flutter/blob/master/.cirrus.yml).
+
+[fastlane CI documentation]: https://docs.fastlane.tools/best-practices/continuous-integration

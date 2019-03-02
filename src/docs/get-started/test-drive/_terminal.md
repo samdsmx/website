@@ -11,9 +11,9 @@ $ cd myapp
 
 The command creates a Flutter project directory called `myapp` that
 contains a simple demo app that uses
-[Material Components](https://material.io/guidelines/).
+[Material Components]({{site.material}}/guidelines/).
 
-In the project directory, the code for your app is in `lib/main.dart`.
+{% include_relative _main-code-note.md  %}
 
 ## Run the app
 
@@ -30,7 +30,12 @@ In the project directory, the code for your app is in `lib/main.dart`.
     $ flutter run
     ```
 
-{% include_relative _try-hot-reload.md %}
+{% capture save_changes -%}
+.
+1. Type <kbd>r</kbd> in the terminal window.
+{% endcapture %}
 
-[Install]: /get-started/install
+{% include_relative _try-hot-reload.md save_changes=save_changes %}
+
+[Install]: /docs/get-started/install
 </div>

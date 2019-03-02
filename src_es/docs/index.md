@@ -17,37 +17,45 @@ description: La landing page para la documentación de Flutter.
 
 ## Que hay de nuevo en este sitio
 
-**5 de Noviembre de 2018**
+**26 de Febrero, 2019 **
 
-¡Bienvenido al sitio web renovado de Flutter!
+Flutter released [version
+1.2](https://developers.googleblog.com/2019/02/launching-flutter-12-at-mobile-world.html)
+today at Mobile World Congress (MWC) in Barcelona!
 
-Hemos pasado los últimos meses rediseñando el sitio web y como está
-organizada la información. Esperamos que puedas encontrar más facilmente
-los documentos. Algunos de los cambios del sitio web incluyen:
+In addition, here are some new docs we've released:
 
-* [Página principal](/) revisada
-* [Página portfolio](/showcase) revisada
-* [Página de la comunidad](/community) revisada
-* Navegación revisada en el panel lateral izquierdo
-* Tabla de contenidos en el lado derecho de la mayoría de las páginas
+* We've updated our [state management
+  advice](/docs/development/data-and-backend/state-mgmt/intro).
+  New pages include an
+  [introduction](/docs/development/data-and-backend/state-mgmt/intro),
+  [thinking declaratively](/docs/development/data-and-backend/state-mgmt/declarative), 
+  [ephemeral vs app state](/docs/development/data-and-backend/state-mgmt/ephemeral-vs-app),
+  [simple app state management](/docs/development/data-and-backend/state-mgmt/simple),
+  and [different state management
+  options](/docs/development/data-and-backend/state-mgmt/options).
+  Documenting state management is a tricky thing, as there is no one-size-fits-all
+  approach. We'd love your feedback on these new docs!
+* A new page on [Performance best practices](/docs/testing/best-practices).
+* Also at MWC, we announced a preview version of the new Dart DevTools
+  for profiling and debugging Dart and Flutter apps. You can find the docs on the
+  [DevTools wiki](https://flutter.github.io/devtools/).
+  In particular, check out the DevTool's [Flutter widget
+  inspector](https://flutter.github.io/devtools/inspector) for debugging
+  your UI, or the [timeline
+  view](https://flutter.github.io/devtools/timeline) for profiling your Flutter
+  application. Try them out and let us know what you think!
+* An update to the [Performance profiling](/docs/testing/ui-performance)
+  page that incorporates the new Dart DevTools UI.
+* Updates to the [Android
+  Studio/IntelliJ](/docs/development/tools/android-studio)
+  and [VS Code](/docs/development/tools/vs-code) pages incorporating info from
+  the new Dart DevTools UI.
 
-Algunos de los nuevos contenidos incluyen:
-
-* Inmersión profunda en las interoridades de Flutter,
-  [Dentro de Flutter](/docs/resources/inside-flutter)
-* [Videos técnicos](/docs/resources/videos)
-* [Administrar el State](/docs/development/data-and-backend/state-mgmt)
-* [Procesos Dart en Segundo 
-plano](/docs/development/packages-and-plugins/background-processes)
-* [Modos de compilación en Flutter](/docs/testing/build-modes)
-{% comment %}
-* How to connect [a native debugger _and_
-  a Dart debugger to your app](/docs/testing/oem-debuggers)
-  (not yet complete)
-{% endcomment %}
-
-Si tienes alguna cuestión sobre el sitio rediseñado, [crea un 
+If you have questions or comments about any of these docs, [file an
 issue]({{site.repo.this}}/issues).
+
+[What's new archive](/docs/whats-new-archive)
 
 ## ¿Nuevo en Flutter?
 
