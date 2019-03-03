@@ -14,7 +14,7 @@ diff2html: true
 
 {% asset get-started/startup-namer-part-1 alt="La app que construirás" class='site-image-right' %}
 
-%- comment %}
+{%- comment %}
   Code highlights in this page are green, to match diff additions.
 {% endcomment -%}
 <style>pre .highlight { background-color: #dfd; }</style>
