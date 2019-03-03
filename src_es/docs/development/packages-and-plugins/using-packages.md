@@ -9,25 +9,25 @@ rápidamente sin tener que desarrollar todo desde cero.
 
 Los paquetes existentes posibilitan muchos casos de uso, por ejemplo, crear peticiones de red 
 ([`http`](/docs/cookbook/networking/fetch-data/)), manejo personalizado de navegación/enrutado 
-([`fluro`](https://pub.dartlang.org/packages/fluro)), integración con APIs del dispositivo 
-(como [`url_launcher`](https://pub.dartlang.org/packages/url_launcher) &
-[`battery`](https://pub.dartlang.org/packages/battery)), y usar SDKs de plataforma de terceras
+([`fluro`]({{site.pub-pkg}}/fluro)), integración con APIs del dispositivo 
+(como [`url_launcher`]({{site.pub-pkg}}/url_launcher) &
+[`battery`]({{site.pub-pkg}}/battery)), y usar SDKs de plataforma de terceras
 partes (como 
-[Firebase](https://github.com/flutter/plugins/blob/master/FlutterFire.md)).
+[Firebase]({{site.github}}/flutter/plugins/blob/master/FlutterFire.md)).
 
 Si estás buscando desarrollar un nuevo paquete, por favor mira 
 [desarrollando paquetes](/docs/development/packages-and-plugins/developing-packages).
 
 Si estas buscando añadir assets, imágenes, o fuentes, ya sea almacenados en archivos o 
-paquetes, por favor mira [Assets & Imágenes](https://flutter.io/assets-and-images/).
+paquetes, por favor mira [Assets & Imágenes](/docs/development/ui/assets-and-images).
 
 ## Usando paquetes
 
 ### Buscando paquetes
 
-Los paquetes son publicados el repositorio de paquetes *[Pub](https://pub.dartlang.org)*.
+Los paquetes son publicados el repositorio de paquetes [*Pub*]({{site.pub}}).
 
-La [landing page de Flutter](https://pub.dartlang.org/flutter/) en el repositorio de 
+La [landing page de Flutter]({{site.pub}}/flutter/) en el repositorio de 
 paquetes muestra los paquetes 'top' 
 que son compatibles con Flutter (ej., que declaran dependencias generales compatibles 
 con Flutter), y admite la búsqueda entre todos los paquetes publicados.
@@ -59,7 +59,7 @@ Para añadir un paquete 'css_colors' a una app:
    del tipo `MissingPluginException` cuando usa el paquete.
 
 La pestaña 
-['installing'](https://pub.dartlang.org/packages/css_colors#-installing-tab-)
+['installing']({{site.pub-pkg}}/css_colors#-installing-tab-)
 disponible en cada paqueteen Pub es una referencia útil 
 para estos pasos.
 
@@ -78,9 +78,9 @@ personalizado](https://flutter.io/developing-packages/).
 Todos los paquetes tienen un número de versión, especificado en su fichero `pubspec.yaml`. 
 La versión actual de un paquete se muestra a continuación de su nombre (por ejemplo, 
 mira el paquete 
-[url_launcher](https://pub.dartlang.org/packages/url_launcher)), así como una lista de todas las 
+[url_launcher]({{site.pub-pkg}}/url_launcher)), así como una lista de todas las 
 versiones anteriores ([url_launcher
-versions](https://pub.dartlang.org/packages/url_launcher#-versions-tab-)).
+versions]({{site.pub-pkg}}/url_launcher#-versions-tab-)).
 
 Cuando un paquete es añadido a `pubspec.yaml` usando la forma abreviada `plugin1:`
 esto es interpretado como `plugin1: any`, es decir cualquier versión del paquete  puede 
@@ -95,7 +95,7 @@ especificar un rango de versiones usando uno de los siguientes formatos:
   ```
 
 * Restricciones de rango con [*caret 
-syntax*](https://www.dartlang.org/tools/pub/dependencies#caret-syntax):
+syntax*]({{site.dart-site}}/tools/pub/dependencies#caret-syntax):
   es similar a una restricción de rango de expresión regular
 
   ```
@@ -104,14 +104,14 @@ syntax*](https://www.dartlang.org/tools/pub/dependencies#caret-syntax):
   ```
 
 Para detalles adicionales, mire la [Pub 
-versioning guide](https://www.dartlang.org/tools/pub/versioning).
+versioning guide]({{site.dart-site}}/tools/pub/versioning).
 
 ### Actualizando las dependencias de paquetes
 
 Cuando ejecutas `flutter packages get` ('Packages Get' en IntelliJ) 
 por primera vez después de añadir un paquete, Flutter guarda la 
 versión concreta encontrada en el 
-[lockfile](https://www.dartlang.org/tools/pub/glossary#lockfile) `pubspec.lock`. 
+[lockfile]({{site.dart-site}}/tools/pub/glossary#lockfile) `pubspec.lock`. 
 Esto asegura que se obtiene la misma versión de nuevo si tú, u otro desarrollador en
 tu equipo, ejecuta `flutter packages get`.
 
@@ -119,7 +119,7 @@ Si quieres actualizar a una nueva versión del paquete, por ejemplo para
 usar nuevas funcionalidades en este paquete, ejecuta 
 `flutter packages upgrade` ('Upgrade dependencies' en IntelliJ). Esto obtendrá 
 la versión más alta disponible del paquete, que sea permitida por las 
-[restricciones de versión](https://www.dartlang.org/tools/pub/versioning#version-constraints)
+[restricciones de versión]({{site.dart-site}}/tools/pub/versioning#version-constraints)
 que hayas especificado en `pubspec.yaml`.
 
 ### Dependencias de paquetes no publicados
@@ -162,13 +162,13 @@ están disponibles opciones adicionales de dependencias:
 
   Finalmente, puedes usar el argumento `ref` para fijar la dependencia un commit específico de git,
   rama, o etiqueta. Para más detalles, mira el 
-  [Pub Dependencies article](https://www.dartlang.org/tools/pub/dependencies).
+  [Pub Dependencies article]({{site.dart-site}}/tools/pub/dependencies).
 
 ## Ejemplos
 
 ### Ejemplo: Usando el paquete CSS Colors {#css-example}
 
-El paquete [`css_colors`](https://pub.dartlang.org/packages/css_colors) define 
+El paquete [`css_colors`]({{site.pub-pkg}}/css_colors) define 
 constantes para los colores CSS, permitiéndote usar esto en cualquier lugar que 
 el framework de Flutter espere un argumento de tipo `Color`.
 
@@ -227,7 +227,7 @@ Para usar este paquete:
 
 ### Ejemplo: Usando el paquete URL Launcher para lanzar el navegador {#url-example}
 
-El paquete del plugin [URL Launcher](https://pub.dartlang.org/packages/url_launcher) 
+El paquete del plugin [URL Launcher]({{site.pub-pkg}}/url_launcher) 
 te permite abrir el navegador por defecto en la plataforma móvil para mostrar una 
 URL dada. Esto demuestra como los paquetes pueden también contener código específico 
 de plataforma (nosotros llamamos a estos paquetes 'plugins'). Este es soportado tanto

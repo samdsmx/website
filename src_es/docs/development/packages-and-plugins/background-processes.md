@@ -1,5 +1,7 @@
 ---
-title: Background processes
+title: Procesado en segundo plano
+description: Donde encontrar más información sobre como implementar procesos en segundo plano en Flutter.
+
 ---
 
 ¿Alguna vez has querido ejecutar código Dart en segundo plano, incluso si tu app no es 
@@ -16,7 +18,7 @@ callback dispatcher.
 Para más información y un ejemplo de geofencing que usa ejecución en segundo plano 
 de código Dart, mira [Ejecutar Dart en Segundo Plano con
 Plugins Flutter y
-Geofencing](https://medium.com/flutter-io/executing-dart-in-the-background-with-flutter-plugins-and-geofencing-2b3e40a1a124),
+Geofencing]({site.flutter-medium}}/executing-dart-in-the-background-with-flutter-plugins-and-geofencing-2b3e40a1a124),
 un artículo en las Publicaciones de Flutter en Medium. Al final de este artículo,
 encontrarás enlaces al código de ejemplo, y documentación relevante para Dart, 
 iOS, y Android.

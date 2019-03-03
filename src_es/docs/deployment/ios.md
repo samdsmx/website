@@ -6,7 +6,7 @@ short-title: iOS
 Esta guía proporciona un recorrido paso a paso para lanzar una aplicación Flutter a la 
 [App Store][appstore] y a [TestFlight][testflight].
 
-Para obtener información sobre la ofuscación del código Dart, mira [Ofuscación del código de Dart](https://github.com/flutter/flutter/wiki/Obfuscating-Dart-Code).
+Para obtener información sobre la ofuscación del código Dart, mira [Ofuscación del código de Dart]({{site.github}}/flutter/flutter/wiki/Obfuscating-Dart-Code).
 
 
 ## Preliminares
@@ -19,16 +19,17 @@ Para publicar tu aplicación en la App Store, tendrás que inscribirte en el
 opciones de afiliación en la guía de Apple 
 [como elegir una membresía][devprogram_membership].
 
-## Registra tu aplicación en iTunes Connect
+## Registra tu aplicación en App Store Connect
 
-[iTunes Connect][itunesconnect] es donde podrás gestionar el ciclo de vida de tu aplicación.
+[App Store Connect][appstoreconnect] (formalmente iTunes Connect) es donde podrás gestionar el ciclo de vida de tu aplicación.
 Definirás el nombre y la descripción de tu aplicación, añadirás capturas de pantalla, establecerás el precio,
-y gestionaras las versiones en la App Store y TestFlight.
+y gestionaras las versiones en la App Store y 
+TestFlight.
 
 El registro de tu aplicación implica dos pasos: registrar un ID de paquete único, y
-crear un registro de aplicación en iTunes Connect.
+crear un registro de aplicación en App Store Connect.
 
-Para obtener una descripción detallada de iTunes Connect, consulta la guía de 
+Para obtener una descripción detallada de App Store Connect, consulta la guía de 
 [iTunes Connect][itunesconnect_guide].
 
 ### Registrar un ID de paquete
@@ -44,12 +45,12 @@ pasos:
 1. En la página siguiente, confirma los detalles y haz clic en **Register** para registrar 
 tu ID de paquete.
 
-### Crear un registro de aplicación en iTunes Connect
+### Crear un registro de aplicación en App Store Connect
 
 A continuación, registrarás tu aplicación en iTunes Connect:
 
-1. Abre [iTunes Connect][itunesconnect_login] en tu navegador.
-1. En la página de inicio de iTunes Connect, haz clic en **My Apps**. 
+1. Abre [App Store Connect][appstoreconnect_login] en tu navegador.
+1. En la página de inicio de App Store Connect, haz clic en **My Apps**. 
 1. Haz clic en + en la esquina superior izquierda de la página My Apps y a continuación selecciona 
 **New App**. 
 1. Rellena los datos de tu aplicación en el formulario que aparece. En la sección Plataformas,
@@ -60,7 +61,7 @@ en la barra lateral.
 1. En la sección Información general, selecciona el ID del paquete que registraste 
 en el paso anterior.
 
-Para obtener un resumen detallado, consulta [Añade una aplicación a tu cuenta][itunesconnect_guide_register].
+Para obtener un resumen detallado, consulta [Añade una aplicación a tu cuenta][appstoreconnect_guide_register].
 
 ## Revisar la configuración del proyecto Xcode
 
@@ -82,7 +83,7 @@ En la sección Identity:
 
   * `Display Name:` el nombre de la aplicación que se mostrará en la pantalla de inicio y 
   en otros lugares.
-  * `Bundle Identifier:` el ID de la aplicación que has registrado en iTunes Connect.
+  * `Bundle Identifier:` el ID de la aplicación que has registrado en App Store Connect.
 
 En la sección Signing:
 
@@ -119,7 +120,7 @@ Actualiza los iconos por defecto con tus propios iconos de aplicación.
 
 ## Crear un archivo de compilación
 
-En este paso, crearás un archivo de compilación y cargarás tu compilación en iTunes 
+En este paso, crearás un archivo de compilación y cargarás tu compilación en App Store
 Connect.
 
 Durante el desarrollo, has estado creando, depurando y probando con *debug* builds. 
@@ -143,10 +144,10 @@ En Xcode, configura la versión de la aplicación y compila:
 1. En la sección Identity, actualisa la **Versión** con el número de versión que verá 
 el usuario que desees publicar
 1. En la sección Identidad, actualiza el identificador **Build** a un número de 
-compilación único que se utiliza para rastrear esta compilación en iTunes Connect. 
+compilación único que se utiliza para rastrear esta compilación en App Store Connect. 
 Cada carga requiere un número de compilación único.
 
-Por último, crea un archivo compilado y súbelo a iTunes Connect:
+Por último, crea un archivo compilado y súbelo a App Store Connect:
 
 1. Selecciona **Product > Archive** para producir un archivo compilado.
 1. En la barra lateral de la ventana de Xcode Organizer, selecciona tu aplicación iOS, 
@@ -156,14 +157,14 @@ y produce otra build. Puedes reutilizar el mismo ID de compilación hasta que
 subas un archivo.
 1. Una vez que el archivo comprimido se haya validado correctamente, haz clic en 
 **Upload to App Store....**. Puedes seguir el estado de tu compilación en la pestaña Actividades 
-de la página de detalles de tu aplicación en [iTunes Connect][itunesconnect_login].
+de la página de detalles de tu aplicación en [App Store Connect][appstoreconnect_login].
 
 Recibirás un correo electrónico dentro de 30 minutos notificándote que tu compilación 
 ha sido validada y está disponible para ser liberada a los probadores en TestFlight. 
 En este punto puedes elegir si quieres publicar en TestFlight, o seguir adelante y publicar 
 tu aplicación en el App Store.
 
-Para obtener más información, consulta [Cargar una aplicación a iTunes Connect][distributionguide_upload].
+Para obtener más información, consulta [Cargar una aplicación a App Store Connect][distributionguide_upload].
 
 ## Lanza tu aplicación en TestFlight
 
@@ -172,11 +173,11 @@ probadores internos y externos. En este paso opcional, lanzarás tu
 build en TestFlight. 
 
 1. Navega a la pestaña TestFlight de la página de detalles de la aplicación de tu aplicación en 
-[iTunes Connect][itunesconnect_login].
+[App Store Connect][appstoreconnect_login].
 1. Selecciona **Internal Testing** en la barra lateral.
 1. Selecciona la compilación que deseas publicar a los probadores y a continuación da clic en **Save**.
 1. Añade las direcciones de correo electrónico de los probadores internos. 
-Puedes añadir usuarios internos adicionales en la página Usuarios y roles de iTunes Connect, 
+Puedes añadir usuarios internos adicionales en la página Usuarios y roles de App Store Connect, 
 disponible en el menú desplegable de la parte superior de la página.
 
 Para obtener más información, consulta 
@@ -188,7 +189,7 @@ Cuando estés listo para lanzar tu aplicación al mundo, sigue estos pasos para 
 App Store para su revisión y publicación:
 
 1. Selecciona **Pricing and Availability** en la barra lateral de la página de detalles de 
-la aplicación de tu aplicación en[iTunes Connect][itunesconnect_login] 
+la aplicación de tu aplicación en[App Store Connect][appstoreconnect_login] 
 y completa la información necesaria.
 1. Selecciona el estado en la barra lateral. Si esta es la primera versión 
 de esta aplicación, su estado será **1.0 Prepare for Submission**. 
@@ -220,8 +221,8 @@ de publicación de una aplicación en el App Store.
 [distributionguide_submit]: https://help.apple.com/xcode/mac/current/#/dev067853c94
 [distributionguide_testflight]: https://help.apple.com/xcode/mac/current/#/dev2539d985f
 [distributionguide_upload]: https://help.apple.com/xcode/mac/current/#/dev442d7f2ca
-[itunesconnect]: https://developer.apple.com/support/itunes-connect/
-[itunesconnect_guide]: https://developer.apple.com/support/itunes-connect/
-[itunesconnect_guide_register]: https://help.apple.com/itunes-connect/developer/#/dev2cd126805
-[itunesconnect_login]: https://itunesconnect.apple.com/
+[appstoreconnect]: https://developer.apple.com/support/app-store-connect/
+[appstoreconnect_guide]: https://developer.apple.com/support/app-store-connect/
+[appstoreconnect_guide_register]: https://help.apple.com/app-store-connect/#/dev2cd126805
+[appstoreconnect_login]: https://appstoreconnect.apple.com/
 [testflight]: https://developer.apple.com/testflight/

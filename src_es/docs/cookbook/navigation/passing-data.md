@@ -1,5 +1,11 @@
 ---
-title: "Enviar datos a una nueva pantalla"
+title: Enviar datos a una nueva pantalla
+prev:
+  title: Devolver datos desde una pantalla
+  path: /docs/cookbook/navigation/returning-data
+next:
+  title: Obtener datos desde internet
+  path: /docs/cookbook/networking/fetch-data
 ---
 
 A menudo, no solo queremos navegar a una nueva pantalla, sino también pasar algunos datos a la 
@@ -89,11 +95,11 @@ class DetailScreen extends StatelessWidget {
     // Usa el objeto Todo para crear nuestra UI
     return Scaffold(
       appBar: AppBar(
-        title: Text("${todo.title}"),
+        title: Text(todo.title),
       ),
       body: Padding(
         padding: EdgeInsets.all(16.0),
-        child: Text('${todo.description}'),
+        child: Text(todo.description),
       ),
     );
   }
@@ -106,10 +112,11 @@ Con nuestra `DetailScreen` en su lugar, ¡estamos listos para realizar la Naviga
 queremos navegar a `DetailScreen` cuando un usuario pulse en una tarea pendiente de nuestra lista. 
 Cuando lo hagamos, también queremos pasar la tarea pendiente a `DetailScreen`. 
 
-Para lograr esto, escribiremos un callback [`onTap`](https://docs.flutter.io/flutter/material/ListTile/onTap.html) 
+Para lograr esto, escribiremos un callback [`onTap`]({{site.api}}/flutter/material/ListTile/onTap.html) 
  para nuestro Widget `ListTile`. Dentro de nuestro callback `onTap`, una vez más 
- emplearemos el método 
- [`Navigator.push`](https://docs.flutter.io/flutter/widgets/Navigator/push.html).
+ emplearemos el 
+ método 
+ [`Navigator.push`]({{site.api}}/flutter/widgets/Navigator/push.html).
 
 <!-- skip -->
 ```dart
@@ -208,11 +215,11 @@ class DetailScreen extends StatelessWidget {
     // Usa el objeto Todo para crear nuestra UI
     return Scaffold(
       appBar: AppBar(
-        title: Text("${todo.title}"),
+        title: Text(todo.title),
       ),
       body: Padding(
         padding: EdgeInsets.all(16.0),
-        child: Text('${todo.description}'),
+        child: Text(todo.description),
       ),
     );
   }

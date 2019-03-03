@@ -15,7 +15,7 @@ tiempo puede ser mejor invertido en el funcionamiento del código en lugar de en
 
 ### Formateando código automáticamente en Android Studio e IntelliJ
 
-Instala el plugin `Dart` (consulta [Configuración del Editor](/get-started/editor/))
+Instala el plugin `Dart` (consulta [Configuración del Editor](/docs/get-started/editor/))
 para obtener un formateo automático del código en Android Studio e IntelliJ.
 
 Para formatear automáticamente el código en la ventana de código fuente actual, haz clic con el botón 
@@ -25,7 +25,7 @@ Preferencias de IntelliJ.
 
 ### Formateando código automáticamente en VS Code
 
-Instala la extensión `Flutter` (consulta [Configuración del Editor](/get-started/editor/))
+Instala la extensión `Flutter` (consulta [Configuración del Editor](/docs/get-started/editor/))
 para obtener el formateo automático del código en VS Code.
 
 Para formatear automáticamente el código en la ventana de código fuente actual, haz clic con el 

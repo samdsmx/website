@@ -16,7 +16,14 @@ Para instalar y ejecutar Flutter, el entorno de trabajo debe estos requisitos m√
 - **Sistema Operativo**: Linux (64-bit)
 - **Espacio en Disco**: 600 MB (no incluye espacio en disco para IDE/herramientas).
 - **Herramientas**: Flutter  depende de que estas herramientas est√©n disponibles en tu entorno.
-  - `bash`, `mkdir`, `rm`, `git`, `curl`, `unzip`, `which`
+  - `bash`
+  - `curl`
+  - `git` 2.x
+  - `mkdir`
+  - `rm`
+  - `unzip`
+  - `which`
+  - `xz-utils`
 - **Bibliotecas Compartidas**: El comando `test` en Flutter  depende de que estas bibliotecas est√©n disponibles en tu entorno.
   * `libGLU.so.1` -  suministrada por mesa packages ej. `libglu1-mesa` en Ubuntu/Debian
 
@@ -29,4 +36,4 @@ Para instalar y ejecutar Flutter, el entorno de trabajo debe estos requisitos m√
 
 ## Siguiente paso
 
-[Siguiente paso: Configura un editor](/get-started/editor)
+[Siguiente paso: Configura un editor](/docs/get-started/editor)

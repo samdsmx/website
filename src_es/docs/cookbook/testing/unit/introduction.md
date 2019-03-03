@@ -1,9 +1,16 @@
 ---
-title: "Introducción a la prueba unitaria"
+title: Introducción a las pruebas unitarias
+short-title: Introduction
+prev:
+  title: Scrolling
+  path: /docs/cookbook/testing/integration/scrolling
+next:
+  title: Simular dependencias usando Mockito
+  path: /docs/cookbook/testing/unit/mocking
 ---
 
-¿Cómo podemos asegurarnos de que nuestras aplicaciones sigan funcionando a medida que 
-agregamos más funciones o cambiamos la funcionalidad existente? ¡Escribiendo pruebas!
+¿Cómo puedes asegurarte de que tus aplicaciones sigan funcionando a medida que 
+agregas más funciones o cambias la funcionalidad existente? Escribiendo pruebas.
 
 Las pruebas unitarias son prácticas para verificar el comportamiento de una sola función, 
 método o clase. El paquete [`test`]({{site.pub-pkg}}/test) proporciona 
@@ -12,8 +19,9 @@ el marco principal para escribir pruebas unitarias, y el paquete
 proporciona utilidades adicionales para probar Widgets.
 
 Esta receta demuestra las características principales proporcionadas por el paquete `test`. 
-Para obtener más información sobre el paquete test, por favor consulta la 
-[documentación del paquete test](https://github.com/dart-lang/test/blob/master/README.md).
+Para obtener más información sobre el paquete test, consulta la 
+[documentación 
+del paquete test]({{site.github}}/dart-lang/test/blob/master/README.md).
 
 ## Instrucciones
 
@@ -26,7 +34,7 @@ Para obtener más información sobre el paquete test, por favor consulta la
 
 ## 1. Agrega la dependencia test
 
-Si estamos trabajando en un paquete Dart que no depende de Flutter, podemos importar el 
+Si estás trabajando en un paquete Dart que no depende de Flutter, puedes importar el 
 paquete `test` . El paquete test proporciona la funcionalidad principal para escribir pruebas en Dart. 
 Este es el mejor enfoque cuando se escriben paquetes que serán consumidos por la web, el 
 servidor y las aplicaciones de Flutter.
@@ -36,9 +44,9 @@ dev_dependencies:
   test: <latest_version>
 ```
 
-Si estamos trabajando en un paquete que solo se utilizará para las aplicaciones de Flutter, 
-o si necesitamos escribir Widget tests, podemos confiar en el paquete `flutter_test` . 
-También incluirá todo, desde el paquete `test` , asi como utilidades adicionales para 
+Si estas trabajando en un paquete que solo se utilizará para las aplicaciones de Flutter, 
+o si necesitas escribir Widget tests, puedes confiar en el paquete `flutter_test` . 
+Este incluye todo, desde el paquete `test` , asi como utilidades adicionales para 
 probar Widgets.
 
 ```yaml
@@ -50,16 +58,16 @@ dev_dependencies:
 
 ## 2. Crea un archivo de prueba
 
-En este ejemplo, crearemos dos archivos: `counter.dart` y `counter_test.dart`. 
+En este ejemplo, crea dos archivos: `counter.dart` y `counter_test.dart`. 
 
-El archivo `counter.dart` contendrá una clase que queremos probar y residirá en 
-la carpeta `lib`. El archivo `counter_test.dart` contendrá los tests en sí y 
-vivirá dentro de la carpeta de prueba!
+El archivo `counter.dart` contendrá una clase que quieres probar y reside en 
+la carpeta `lib`. El archivo `counter_test.dart` contiene los tests en sí y 
+vive dentro de la carpeta de prueba.
 
 En general, los archivos de prueba deben residir dentro de una carpeta `test` 
 ubicada en la raíz de tu aplicación o paquete de Flutter.
 
-Cuando hayamos terminado, nuestra estructura de carpetas debería verse así:
+Cuando hayas terminado, la estructura de carpetas debería verse así:
 
 ```
 counter_app/
@@ -71,8 +79,8 @@ counter_app/
 
 ## 3. Crea una clase para probarla
 
-Luego, necesitaremos una "unidad" para probar. Recuerde: "unidad" es un 
-nombre elegante para una función, método o clase. En este ejemplo, crearemos 
+Luego, necesitas una "unidad" para probar. Recuerda: "unidad" es un 
+nombre elegante para una función, método o clase. En este ejemplo, creamos 
 una clase `Counter` dentro del archivo 
 `lib/counter.dart`. Será responsable de incrementar y disminuir un `value` comenzando en `0`. 
 
@@ -87,14 +95,14 @@ class Counter {
 }
 ```
 
-**Nota:** Para simplificar, este tutorial no sigue el enfoque "Test Driven 
-Development". Si estás más cómodo con ese estilo de desarrollo, 
-¡siempre puedes seguir esa ruta!
+**Nota:** Para simplificar, este tutorial no sigue el enfoque "Desarrolo 
+Dirigigo por Test". Si estás más cómodo con ese estilo de desarrollo, 
+siempre puedes seguir esa ruta.
 
 ## 4. Escribe un `test` para nuestra clase
 
-Dentro del archivo `counter_test.dart` , podemos escribir nuestra primera !prueba de unidad! 
-Las pruebas se definen utilizando la función de alto nivel `test`, y podemos verificar 
+Dentro del archivo `counter_test.dart` , escribe la primera prueba unitaria. 
+Las pruebas se definen utilizando la función de alto nivel `test`, y puedes verificar 
 si los resultados son correctos utilizando la función de alto nivel `expect`. 
 Ambas funciones provienen del paquete `test` .
 
@@ -117,7 +125,7 @@ void main() {
 
 ## 5. Combina múltiples tests en un `group`
 
-Si tenemos varias pruebas que están relacionadas entre sí, puede ser útil combinarlas 
+Si tienes varias pruebas que están relacionadas entre sí, puede ser útil combinarlas 
 utilizando la función `group` proporcionada por el paquete `test` .
 
 <!-- skip -->
@@ -152,7 +160,7 @@ void main() {
 
 ### 6. Ejecuta las pruebas
 
-Ahora que tenemos una clase `Counter` con pruebas en sitio, ¡podemos ejecutarlas! 
+Ahora que tienes una clase `Counter` con pruebas en sitio, puedes ejcutar las prubebas. 
 
 #### Ejecuta las pruebas usando el IDE IntelliJ o VSCode 
 
@@ -164,16 +172,16 @@ más rápido y la capacidad de establecer breakpoints.
     1. Abre el archivo `counter_test.dart` 
     2. Selecciona el menú `Run` 
     3. Haz clic en la opción `Run 'tests en counter_test.dart'` 
-    4. *Alternativamente, utiliza el atajo de teclado apropiado para tu plataforma!*
+    4. *Alternativamente, utiliza el atajo de teclado apropiado para tu plataforma.*
   * **VSCode**
     1. Abre el archivo `counter_test.dart` 
     2. Selecciona el menú `Debug` 
     3. Haz clic en la opción `Start Debugging` 
-    4. *Alternativamente, utiliza el atajo de teclado apropiado para tu plataforma!*
+    4. *Alternativamente, utiliza el atajo de teclado apropiado para tu plataforma.*
 
 #### Ejecuta las pruebas en una terminal
 
-También podemos usar una terminal para ejecutar nuestras pruebas ejecutando el siguiente comando desde la raíz del proyecto:
+También puedes usar una terminal para ejecutar nuestras pruebas ejecutando el siguiente comando desde la raíz del proyecto:
 
 ```
 flutter test test/counter_test.dart

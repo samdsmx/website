@@ -1,5 +1,11 @@
 ---
 title: "Focus en un campo de texto"
+prev:
+  title: Crea y da estilo a un campo de texto
+  path: /docs/cookbook/forms/text-input
+next:
+  title: Manejar los cambios de un campo de texto
+  path: /docs/cookbook/forms/text-field-changes
 ---
 
 Cuando se selecciona un campo de texto y se acepta la entrada, se dice que tiene  "focus." 
@@ -45,7 +51,7 @@ posible que también se necesite hacer focus a un campo de texto específico en 
 
 ### 1. Crea un `FocusNode`
 
-Primero, necesitaremos crear un [`FocusNode`](https://docs.flutter.io/flutter/widgets/FocusNode-class.html).
+Primero, necesitaremos crear un [`FocusNode`]({{site.api}}/flutter/widgets/FocusNode-class.html).
 Utilizaremos el `FocusNode` para identificar un `TextField` específico en el "focus tree" de 
 Flutter. Esto nos permitirá hacer focus al `TextField` en los siguientes pasos.
 
@@ -113,7 +119,7 @@ class _MyCustomFormState extends State<MyCustomForm> {
 ### 3. Dale Focus al `TextField` cuando pulses un botón
 
 Finalmente, queremos hace focus al campo de texto cuando el usuario pulsa un botón de acción 
-flotante. Utilizaremos el método [`requestFocus`](https://docs.flutter.io/flutter/widgets/FocusScopeNode/requestFocus.html) 
+flotante. Utilizaremos el método [`requestFocus`]({{site.api}}/flutter/widgets/FocusScopeNode/requestFocus.html) 
 para lograr esta tarea.
 
 <!-- skip -->

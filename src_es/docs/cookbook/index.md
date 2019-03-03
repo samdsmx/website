@@ -2,8 +2,8 @@
 title: Cookbook
 ---
 
-This cookbook contains recipes that demonstrate how to solve common problems
-while writing Flutter apps. Each recipe is self-contained and can be used as a
-reference to help you build up an application.
+Este cookbook contiene recetas que muestran como resolver problemas comunes 
+cuando escribimos apps Flutter. Cara receta esta auto-contenida y puede ser usada como una 
+refrencia para ayudar a construir una aplicación.
 
-{% include_relative _group.md pages=site.pages path_base='/docs/cookbook/' heading_syntax='##' %}
+{% include cookbook_toc.md pages=site.pages heading_syntax='##' %}

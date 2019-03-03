@@ -1,5 +1,12 @@
 ---
-title: "Introducción a los test de integración"
+title: Introducción a los test de integración
+short-title: Introduction
+prev:
+  title: Almacenando datos clave-valor en disco
+  path: /docs/cookbook/persistence/key-value
+next:
+  title: Perfiles de rendimiento
+  path: /docs/cookbook/testing/integration/profiling
 ---
 
 Las pruebas unitarias y las pruebas de widgets son útiles para probar clases individuales, 
@@ -12,7 +19,7 @@ dispositivo o emulador real y luego "conducen" la aplicación desde una suite de
 para asegurarse de que todo esté correcto en el camino.
 
 Para crear este par de prueba, podemos usar el paquete 
-[flutter_driver](https://docs.flutter.io/flutter/flutter_driver/flutter_driver-library.html). 
+[flutter_driver]({{site.api}}/flutter/flutter_driver/flutter_driver-library.html). 
 Proporciona herramientas para crear aplicaciones instrumentadas e impulsar esas aplicaciones 
 desde una suite de tests.
 
@@ -36,7 +43,7 @@ a la app counter producida por el comando `flutter create`. Esta app permite a u
 sobre un botón para aumentar un contador.
 
 Además, también tendremos que proporcionar una
-[`ValueKey`](https://docs.flutter.io/flutter/foundation/ValueKey-class.html) a
+[`ValueKey`]({{site.api}}/flutter/foundation/ValueKey-class.html) a
 los widgets `Text` y `FloatingActionButton`. Esto nos permite identificar 
 e interactuar con estos Widgets específicos dentro de la suite de tests. 
 
@@ -116,10 +123,14 @@ A continuación, necesitaremos el paquete `flutter_driver` para escribir el test
 Podemos agregar la dependencia `flutter_driver` a la sección 
 `dev_dependencies` del archivo `pubspec.yaml` de nuestras apps. 
 
+También añadimremos la dependencia `test` para usar las funciones y 
+aserciones actuales.
+
 ```yaml
 dev_dependencies:
   flutter_driver:
     sdk: flutter
+  test: any
 ```
     
 ### 3. Crea los archivos de test
@@ -158,7 +169,7 @@ Ahora, podemos instrumentar la app. Esto implicará dos pasos:
   1. Habilitar las extensiones del driver de flutter
   2. Ejecutar la app
 
-Agregaremos este código dentro del archivo `flutter_driver/app.dart`.
+Agregaremos este código dentro del archivo `test_driver/app.dart`.
 
 <!-- skip -->
 ```dart
@@ -181,7 +192,7 @@ Ahora que tenemos una app instrumentada, ¡podemos escribir tests para ella!
 Esto implicará cuatro pasos:
 
   1. Crea
-  [`SeralizableFinders`](https://docs.flutter.io/flutter/flutter_driver/CommonFinders-class.html)
+  [`SeralizableFinders`]({{site.api}}/flutter/flutter_driver/CommonFinders-class.html)
   para localizar widgets específicos
   2. Conéctate a la app antes de que nuestros tests ejecuten la función `setUpAll`
   3. Realiza el test a los escenarios importantes 

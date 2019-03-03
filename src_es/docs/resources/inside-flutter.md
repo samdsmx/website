@@ -2,8 +2,6 @@
 title: Dentro de Flutter
 ---
 
-# Visión General
-
 Este documento describe el funcionamiento interno del kit de herramientas de que hacen
 la API de Flutter posible. Porque los widgets de Flutter están construidos usando una composición
 agresiva, las interfaces de usuario construidas con Flutter tienen un gran número de
@@ -14,7 +12,7 @@ Con algunos detalles adicionales, este diseño también hace fácil para los des
 crear listas de desplazamiento infinitas utilizando callbacks que construyen exactamente aquellos 
 widgets que son visibles para el usuario.
 
-# Composición agresiva
+## Composición agresiva
 
 Uno de los aspectos más distintivos de Flutter es su _composición 
 agresiva_. Los widgets se construyen componiendo otros widgets,
@@ -35,7 +33,7 @@ Flutter utiliza una serie de eficientes algoritmos y optimizaciones
 tanto en la capa del árbol de widget como la del de renderizado, que se describen en las
 siguientes subsecciones.
 
-## Layout sublime
+### Layout sublime
 
 Con un gran número de objetos de renderizado y de widgets, la clave para un buen
 rendimiento son los algoritmos eficientes. De suma importancia es el
@@ -112,7 +110,7 @@ Como resultado de estas optimizaciones, cuando el árbol de objetos de renderiza
 nodos dirty, solo estos nodos y una parte limitada del subárbol alrededor 
 son visitados durante el layout.
 
-## Construcción Sublinear de widgets
+### Construcción Sublinear de widgets
 
 Similar al algoritmo de layout, el algoritmo de creación de widgets de Flutter
 es sublinear. Una vez construidos, los widgets se mantienen en el _árbol de elementos _, 
@@ -151,7 +149,7 @@ una tabla hash de los `InheritedWidget` en cada elemento. Tipicamente, muchos
 elementos harán referencia a la misma tabla hash, que cambia solo en
 elementos que introducen un nuevo `InheritedWidget`.
 
-## Reconciliación  Linear
+### Reconciliación  Linear
 
 Contrariamente a la creencia popular, Flutter no emplea una algoritmo de comparación 
 de árbol. En cambio, el framework decide si reutilizar elementos 
@@ -176,7 +174,7 @@ lista hija y consulta la tabla hash por key para buscar coincidencias. Los hijos
 sin coincidencias se descartan y se reconstruyen desde cero mientras que los hijos 
 coincidentes se reconstruyen con sus nuevos widgets.
 
-## Cirugia de arbol
+### Cirugia de arbol
 
 La reutilización de elementos es importante para el rendimiento porque los elementos tienen
 dos piezas de datos críticas: el estado de los widgets stateful y los
@@ -207,7 +205,7 @@ la fase de layout, acortando el camino.
 Las claves globales y las mutaciones de árbol no locales se utilizan ampliamente por
 los esarrolladores para lograr efectos como transiciones hero y de navegación.
 
-## Optimizaciones constant-factor
+### Optimizaciones constant-factor
 
 Además de estas optimizaciones algorítmicas, consegir una composabilidad 
 ageresiva también se basa en varios optimizaciones de factor constante. 
@@ -257,7 +255,7 @@ mayoria de los algoritmos discutidos anteriormente.
 Tomadas juntos y sumados sobre los grandes árboles creados por la composición 
 agresiva, estas optimizaciones tienen un efecto sustancial en el rendimiento.
 
-# Scroll infinito
+## Scroll infinito
 
 Las listas de scroll infinito son notoriamente difícultosas para los kits de herramientas.
 Flutter soporta scroll infinito con un interfaz simple
@@ -266,7 +264,7 @@ para construir widgets bajo demandad a medida que se hacen visibles para el usua
 el scroll. Soportar esta característica requiere _viewport-aware layout_
 y _construir widgets bajo demanda_.
 
-## Viewport-aware layout
+### Viewport-aware layout
 
 Como la mayoría de las cosas en Flutter, los widgets con scroll se construyen utilizando
 composición. El exterior de un widget con scroll es un `Viewport`,
@@ -301,7 +299,7 @@ protocolo de layout de los slivers para producir solo aquellos hijos que son act
 visiblse a través del viewport, independientemente de si esos hijos pertenecen
 al encabezado, la lista, o la cuadrícula.
 
-## Construcción de widgets bajo demanda.
+### Construcción de widgets bajo demanda.
 
 Si Flutter tenía un estricto flujo de _build-layout-pintado_,
 lo anterior sería insuficiente para implementar una lista de scroll infinito 
@@ -331,7 +329,7 @@ para actualizar eficientemente los elementos durante el scroll y para modificar
 el árbol de renderizado cuando los elementos se desplazan hacia adentro y fuera de la vista en
 el borde del viewport.
 
-# Ergonomía de API
+## Ergonomía de API
 
 Ser rápido solo importa si el framework se puede utilizar efectivamente.
 Para guiar el diseño de la API de Flutter hacia una mayor facilidad de uso, Flutter ha sido
@@ -345,7 +343,7 @@ la necesidad específica de códigos de ejemplo y diagramas ilustrativos.
 Esta sección analiza algunas de las decisiones tomadas en el diseño de API de Flutter
 en beneficio de la usabilidad.
 
-## Especialización de las API para que coincida con la mentalidad del desarrollador
+### Especialización de las API para que coincida con la mentalidad del desarrollador
 
 La clase base para los nodos en los árboles de `Widget`,` Element` y `RenderObject` de Flutter 
 no definen un modelo hijo. Esto permite que cada nodo sea
@@ -404,7 +402,7 @@ subárbol en la fase de build. Sin embargo, los desarrolladores suelen esperar
 que haya un widget para hacer esto, y así existe el widget `Visibility` 
 para envolver este patrón en un widget trivial reutilizable.
 
-## Argumentos explícitos
+### Argumentos explícitos
 
 Los frameworks de IU tienden a tener muchas propiedades, por lo que un desarrollador es
 raramente capaz de recordar el significado semántico de cada argumento de los 
@@ -420,7 +418,7 @@ Además, para evitar confusiones comúnmente causadas por dobles negativos.
 en las APIs, los argumentos booleanos y las propiedades siempre se nombran en el
 forma positiva (por ejemplo, `enabled: true` en lugar de` disabled: false`).
 
-## Allanando el camino
+### Allanando el camino
 
 Una técnica utilizada en varios lugares en el framework Flutter es
 definir la API tal que no existan condiciones de error. Esto elimina
@@ -464,7 +462,7 @@ toma once argumentos, algunos con dominios de entrada bastante amplios, pero
 han sido cuidadosamente diseñados para ser en su mayoría ortogonales entre sí,
 de tal manera que hay muy pocas combinaciones inválidas.
 
-## Reportar casos de error agresivamente
+### Reportar casos de error agresivamente
 
 No todas las condiciones de error pueden ser diseñadas. Para los que se quedan,
 en las compilaciones de depuración, Flutter generalmente intenta detectar los errores muy
@@ -487,7 +485,7 @@ de los malos datos. Los errores más comunes incluyen instrucciones detalladas.
 incluyendo en algunos casos código de ejemplo para evitar el error, o enlaces 
 para más documentación.
 
-## Paradigma reactivo
+### Paradigma reactivo
 
 Las API mutables basadas en árboles sufren de un patrón de acceso dicotómico:
 La creación del estado original del árbol normalmente utiliza una muy diferente
@@ -506,7 +504,7 @@ de la interfaz de usuario es descrito por el desarrollador y el framework
 calcula la serie de mutaciones de árbol necesarias para reflejar esta nueva
 configuración.
 
-## Interpolación
+### Interpolación
 
 Dado que el framework de Flutter alienta a los desarrolladores a describir la interfaz
 coincidiedno con el estado actual de la aplicación, existe un mecanismo para 
@@ -583,7 +581,7 @@ haciendo que la animación necesite interpolar a un triángulo. Mientras que
 la clase triangular puede `lerpFrom` la clase intermedia redondeada cuadrada,
 La transición se puede realizar sin problemas.
 
-# Conclusión
+## Conclusión
 
 El eslogan de Flutter, "todo es un widget", gira en torno a la construcción
 interfaces de usuario mediante la composición de widgets que, a su vez, se componen de

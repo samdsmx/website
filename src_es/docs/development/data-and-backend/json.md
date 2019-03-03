@@ -10,7 +10,7 @@ consumir algún JSON, tarde o temprano.
 Esta guía va sobre las maneras de usar JSON con Flutter. Cubre que 
 solución JSON usar en diferentes escenarios, y porqué.
 
-<aside class="alert alert-info" markdown="1">
+{{site.alert.info}}
 **Terminología:** _Codificar_ y _serializar_ son la misma cosa&mdash;convertir 
 una estructura de datos en una cadena de texto. _Descodificar_ y _deserializar_ son el 
 proceso opuesto&mdash;convertir una cadena en una estructura de datos.
@@ -20,7 +20,7 @@ trasladar estructuras de datos hacia y desde un formato más fácil de leer.
 Para evitar confusiones, este documento usa "serialización" cuando se hace referencia al 
 proceso general, y "codificar" y "descodificar" cuando se hace referencia específicamente 
 a estos procesos.
-</aside>
+{{site.alert.end}}
 
 ## ¿Cual método de serialización JSON es el adecuado para mí?
 
@@ -38,7 +38,7 @@ pequeños errores.
 ### Usar serialización manual para pequeños proyectos
 
 La decodificación manual de JSON se refiere a usar el decodificador JSON incluido en 
-`dart:convert`. Esto implica pasar una cadena JSON en bruto a el método `json.decode()` 
+`dart:convert`. Esto implica pasar una cadena JSON en bruto a la función `json.decode()` 
 , y luego buscar los valores que necesita en el `Map<String, dynamic>` que devuelve el 
 método. Esto no tiene dependencias externas ni un proceso de configuración, 
 y esto es bueno para una prueba de concepto rápida.
@@ -59,8 +59,8 @@ La serialización JSON con auto-generación de código significa tener una bibli
 que genera el _boilerplate_ de codificación para tí. Después de alguna configuración inicial,
 ejecutas un _file watcher_ que genera el código para las clases de tu modelo.
 Por ejemplo,
-[json_serializable](https://pub.dartlang.org/packages/json_serializable) y
-[built_value](https://pub.dartlang.org/packages/built_value)
+[json_serializable]({{site.pub}}/packages/json_serializable) y
+[built_value]({{site.pub}}/packages/built_value)
 son de este tipo de bibliotecas.
 
 Esta aproximación escala mejor para un proyecto grande. Ningún _boilerplate_ 
@@ -78,8 +78,8 @@ de código basada en codificación de JSON, mira
 
 La respuesta simple es no.
 
-Estas librerías necesitarían usar reflexión en tiempo de ejecución, que está desactivada en 
-Flutter. La reflexión en tiempo de ejecución interfiere con _tree shaking_, que es soportado 
+Estas librerías necesitarían usar [reflexión][] en tiempo de ejecución, que está desactivada en 
+Flutter. La reflexión en tiempo de ejecución interfiere con [tree shaking][], que es soportado 
 por Dart desde hace bastante tiempo. Con _tree shaking_, puedes hacer “shake off” del 
 código no utilizado de tus release builds. Esto optimiza significativamente el tamaño de la app.
 
@@ -88,12 +88,12 @@ el tree shaking difícil. Las herramientas no pueden conocer que partes del cód
 en tiempo de ejecución, entonces es difícil eliminar el código redundante. El tamaño de la app 
 no puede ser fácilmente optimizado cuando se usa reflexión.
 
-<aside class="alert alert-info" markdown="1">
+{{site.alert.info}}
 **¿Qué hay acerca de dartson?**
 
-La biblioteca [dartson](https://pub.dartlang.org/packages/dartson) usa reflexión en tiempo 
+La biblioteca [dartson]({{site.pub}}/packages/dartson) usa [reflexión][] en tiempo 
 de ejecución, lo que la hace incompatible con Flutter.
-</aside>
+{{site.alert.end}}
 
 Aunque no puedes usar reflexión en tiempo de ejecución con Flutter, algunas bibliotecas 
 te dan APIs similares, fáciles de usar, pero están basadas en auto-generación de código 
@@ -121,19 +121,19 @@ Con `dart:convert`, puedes codificar este modelo JSON de dos maneras.
 ### Serializar un JSON en línea
 
 Mirando en [la documentación JSON de 
-dart:convert](https://api.dartlang.org/stable/dart-convert/JsonCodec-class.html), 
+dart:convert][dart:convert], 
 verás que puedes decodificar el JSON llamando al método `json.decode`,
 con la cadena JSON como argumento del método.
 
 <!-- skip -->
 ```dart
-Map<String, dynamic> user = json.decode(json);
+Map<String, dynamic> user = jsonDecode(jsonString);
 
 print('Howdy, ${user['name']}!');
 print('We sent the verification link to ${user['email']}.');
 ```
 
-Desafortunadamente, `json.decode()` simplemente devuelve un `Map<String, dynamic>`, significando 
+Desafortunadamente, `jsonDecode()` simplemente devuelve un `Map<String, dynamic>`, significando 
 que no conoces los tipos de valores hasta el tiempo de ejecución. Con esta aproximación, 
 pierdes la mayoría de las características del tipado estático del lenguaje: seguridad de tipos,
 autocompletado y mucho más importante, las excepciones en tiempo de compilación. Tu código 
@@ -148,9 +148,9 @@ desde que el JSON vive en una estructura de mapa.
 Combate los problemas mencionados previamente introduciendo una clase de modelo plana, 
 llamada `User` en este ejemplo. Dentro de la clase `User`, encontrarás:
 
-* Un constructor `User.fromJson`, para construir una nueva instancia de `User` desde una 
+* Un constructor `User.fromJson()`, para construir una nueva instancia de `User` desde una 
   estructura de mapa.
-* Un método `toJson`, que convierte una instancia `User` en un mapa.
+* Un método `toJson()`, que convierte una instancia `User` en un mapa.
 
 Con esta aproximación, el _calling code_, puede tener seguridad de tipos, 
 autocompletado para los campos `name` y `email`, y excepciones en tiempo de compilación.
@@ -184,26 +184,26 @@ Con esta aproximación, puedes decodificar un usuario fácilmente.
 
 <!-- skip -->
 ```dart
-Map userMap = json.decode(json);
+Map userMap = jsonDecode(jsonString);
 var user = new User.fromJson(userMap);
 
 print('Howdy, ${user.name}!');
 print('We sent the verification link to ${user.email}.');
 ```
 
-Para codificar un usuario, pasa el objeto `User` al método `json.encode`.
-No necesitas llamar al método `toJson`, porque `json.encode`
+Para codificar un usuario, pasa el objeto `User` al método `jsonEncode()`.
+No necesitas llamar al método `toJson()`, porque `jsonEncode()`
 ya hace esto por ti.
 
 <!-- skip -->
 ```dart
-String json = json.encode(user);
+String json = jsonEncode(user);
 ```
 
 Con esta aproximación, el código ejecutable no tiene que preocuparse acerca de la 
 serialización JSON para nada. Sin embargo, la clase modelo definitivamente debe hacerlo.
 En una app en producción, querrás asegurarte que la serialización trabaja correctamente. 
-En la práctica, los métodos `User.fromJson` y `User.toJson` 
+En la práctica, los métodos `User.fromJson()` y `User.toJson()` 
 necesitan ambos tener test unitarios para verificar un comportamiento correcto.
 
 Sin embargo, los escenarios del mundo real no son normalmente tan simples.
@@ -218,7 +218,7 @@ Afortunadamente, ¡lo hay!
 
 Aunque hay otras bibliotecas disponibles, esta guía usa el 
 [paquete 
-json_serializable](https://pub.dartlang.org/packages/json_serializable),
+json_serializable]({{site.pub}}/packages/json_serializable),
 un generador de código automatizado que genera el _boilerplate_ 
 del JSON serializado por ti.
 
@@ -262,7 +262,6 @@ previos.
 
 **user.dart**
 
-<!-- skip -->
 {% prettify dart %}
 import 'package:json_annotation/json_annotation.dart';
 
@@ -282,7 +281,7 @@ class User {
   String email;
 
   /// Un método constructor de tipo factory es necesario para crear una nueva instancia User
-  /// desde un mapa. Pasa el mapa al constructor auto-generado `_$UserFromJson`.
+  /// desde un mapa. Pasa el mapa al constructor auto-generado `_$UserFromJson()`.
   /// El constructor es nombrado después de la clase fuente, en este caso User.
   factory User.fromJson(Map<String, dynamic> json) => _$[[highlight]]User[[/highlight]]FromJson(json);
 
@@ -349,14 +348,14 @@ no tienes que hacer ningún cambio a tu código anterior.
 
 <!-- skip -->
 ```dart
-Map userMap = json.decode(json);
+Map userMap = jsonDecode(jsonString);
 var user = User.fromJson(userMap);
 ```
 Lo mismo ocurre para codificar. La API a llamar es la misma que antes.
 
 <!-- skip -->
 ```dart
-String json = json.encode(user);
+String json = jsonEncode(user);
 ```
 
 Con `json_serializable`, puedes olvidarte de cualquier serialización manual en la clase 
@@ -370,11 +369,16 @@ funciona apropiadamente.
 
 Para más información, mira los siguientes recursos:
 
-* [Documentación 
-JsonCodec](https://api.dartlang.org/stable/dart-convert/JsonCodec-class.html)
+* Documentación de [dart:convert][] y [JsonCodec][]
 * [El paquete 
-json_serializable en Pub](https://pub.dartlang.org/packages/json_serializable)
+json_serializable en Pub]({{site.pub}}/packages/json_serializable)
 * [Ejemplos 
-de json_serializable en GitHub](https://github.com/dart-lang/json_serializable/blob/master/example/lib/example.dart)
+de json_serializable en GitHub]({{site.github}}/dart-lang/json_serializable/blob/master/example/lib/example.dart)
 * [Discusion 
-sobre dart:mirrors en Flutter](https://github.com/flutter/flutter/issues/1150)
+sobre dart:mirrors en Flutter]({{site.github}}/flutter/flutter/issues/1150)
+
+[dart:convert]: {{site.dart.api}}/{{site.dart.sdk.channel}}/dart-convert
+[JsonCodec]: {{site.dart.api}}/{{site.dart.sdk.channel}}/dart-convert/JsonCodec-class.html
+[reflexión]: https://en.wikipedia.org/wiki/Reflection_(computer_programming)
+[tree shaking]: https://en.wikipedia.org/wiki/Tree_shaking
+

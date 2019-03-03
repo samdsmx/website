@@ -22,6 +22,13 @@ encontrar las preguntas que son más relevantes a tus necesidades.
 
 ## ¿Cuál es el equivalente a un `UIView` en Flutter?
 
+{{site.alert.secondary}}
+¿Como de diferente son el estilo reactivo, o declarativo, que 
+el estilo tradicional imperativo?
+Para una comparación, mira [Introducción a UI 
+declarativo](/docs/get-started/flutter-for/declarative).
+{{site.alert.end}}
+
 En iOS, la mayor parte de lo que se crea en la interfaz de usuario se hace utilizando objetos 
 de vista, que son de la clase  `UIView`. Estos pueden actuar como contenedores para otras `UIView`, 
 que forman tu layout.
@@ -42,15 +49,15 @@ a su inmutabilidad. Porque no son puntos de vista en sí mismos, y no están dib
 directamente, sino que son una descripción de la UI y su semántica que se "inflan" en objetos de 
 vistas reales.
 
-Flutter incluye la librería [Material Components](https://material.io/develop/flutter/). 
+Flutter incluye la librería [Material Components]({{site.material}}/develop/flutter/). 
 Estos son los widgets que implementan las 
-[Material Design guidelines](https://material.io/design/). El diseño de Material Design es un 
+[Material Design guidelines]({{site.material}}/design/). El diseño de Material Design es un 
 sistema de diseño flexible [optimizado para todas 
-las plataformas](https://material.io/design/platform-guidance/cross-platform-adaptation.html#cross-platform-guidelines),
+las plataformas]({{site.material}}/design/platform-guidance/cross-platform-adaptation.html#cross-platform-guidelines),
 incluyendo iOS.
 
 Pero Flutter es lo suficientemente flexible y expresivo como para implementar cualquier lenguaje de diseño.
-En iOS, puedes utilizar los [Cupertino widgets](/docs/reference/widgets/cupertino)
+En iOS, puedes utilizar los [Cupertino widgets](/docs/development/ui/widgets/cupertino)
 para producir una interfaz que se parezca al
 [Lenguaje de diseño iOS de Apple](https://developer.apple.com/design/resources/).
 
@@ -91,7 +98,6 @@ El siguiente ejemplo muestra cómo usar un `StatelessWidget`. Un
 `StatelessWidget` común es el widget `Text`. Si nos fijamos en la implementación de
 el widget `Text` encontrarás que es una subclase de `StatelessWidget`.
 
-<!-- skip -->
 {% prettify dart %}
 Text(
   'Me gusta Flutter!',
@@ -111,7 +117,6 @@ usuario haga clic en el botón.
 
 Por ejemplo:
 
-<!-- skip -->
 {% prettify dart %}
 class SampleApp extends StatelessWidget {
   // Este widget es la raíz de su aplicación.
@@ -169,7 +174,6 @@ un árbol de widgets.
 
 El siguiente ejemplo enseña como mostrar un widget simple con padding:
 
-<!-- skip -->
 {% prettify dart %}
 @override
 Widget build(BuildContext context) {
@@ -194,7 +198,7 @@ Puedes añadir padding a cualquier widget, lo que imita la restricciones
 en iOS.
 
 Puedes ver los layouts que Flutter te ofrece en la sección [catálogo de 
-widgets](/docs/reference/widgets/layout).
+widgets](/docs/development/ui/widgets/layout).
 
 ## ¿Cómo agrego o elimino un componente de mi layout?
 
@@ -207,7 +211,6 @@ controlar la creación de ese hijo con una etiqueta booleana.
 El siguiente ejemplo muestra cómo alternar entre dos widgets cuando el usuario hace clic en
 el `FloatingActionButton`:
 
-<!-- skip -->
 {% prettify dart %}
 class SampleApp extends StatelessWidget {
   // Este widget es la raíz de su aplicación.
@@ -294,7 +297,6 @@ dile al controlador que inicie la animación
 El siguiente ejemplo muestra cómo escribir un `FadeTransition` que desvanece el widget
 en un logotipo al pulsar el botón `FloatingActionButton`:
 
-<!-- skip -->
 {% prettify dart %}
 class SampleApp extends StatelessWidget {
   // Este widget es la raíz de tu aplicación.
@@ -364,7 +366,7 @@ class _MyFadeTest extends State<MyFadeTest> with TickerProviderStateMixin {
 {% endprettify %}
 
 Para más información, mira
-[Widgets de animación y movimiento](/docs/reference/widgets/animation),
+[Widgets de animación y movimiento](/docs/development/ui/widgets/animation),
 el [Tutorial de animaciones](/docs/development/ui/animations/tutorial),
 y el [Visión general](/docs/development/ui/animations).
 
@@ -376,10 +378,10 @@ otras clases que te ayudan a dibujar: `CustomPaint` y `CustomPainter`,
 el último de estos implementa su algoritmo para dibujar al canvas.
 
 Para aprender cómo implementar un pintor de firmas en Flutter, vea la respuesta de Collin 
-en 
-[StackOverflow](https://stackoverflow.com/questions/46241071/create-signature-area-for-mobile-app-in-dart-flutter).
+en [StackOverflow][].
 
-<!-- skip -->
+[StackOverflow]: {{site.so}}/questions/46241071/create-signature-area-for-mobile-app-in-dart-flutter
+
 {% prettify dart %}
 class SignaturePainter extends CustomPainter {
   SignaturePainter(this.points);
@@ -442,7 +444,6 @@ Por ejemplo, ¿cómo se construye un `CustomButton` que tome una etiqueta en
 el constructor? Cree un botón personalizado que componga un `RaisedButton` con una etiqueta,
 en lugar de extender `RaisedButton`:
 
-<!-- skip -->
 {% prettify dart %}
 class CustomButton extends StatelessWidget {
   final String label;
@@ -458,7 +459,6 @@ class CustomButton extends StatelessWidget {
 
 Entonces utiliza `CustomButton`, tal y como lo harías con cualquier otro widget de Flutter:
 
-<!-- skip -->
 {% prettify dart %}
 @override
 Widget build(BuildContext context) {
@@ -491,7 +491,6 @@ Para navegar entre páginas, tiene un par de opciones:
 
 El siguiente ejemplo construye un Map.
 
-<!-- skip -->
 {% prettify dart %}
 void main() {
   runApp(MaterialApp(
@@ -507,7 +506,6 @@ void main() {
 
 Navega hasta una route haciendo `push` por su nombre en el `Navigator`.
 
-<!-- skip -->
 {% prettify dart %}
 Navigator.of(context).pushNamed('/b');
 {% endprettify %}
@@ -519,7 +517,6 @@ vuelta desde una ruta que has añadido a la pila. Esto se hace usando
 Por ejemplo, para iniciar una ruta 'location' que permita al usuario seleccionar su
 localización, podrías hacer lo siguiente:
 
-<!-- skip -->
 {% prettify dart %}
 Map coordinates = await Navigator.of(context).pushNamed('/location');
 {% endprettify %}
@@ -527,7 +524,6 @@ Map coordinates = await Navigator.of(context).pushNamed('/location');
 Y luego, dentro de tu ruta de 'location', una vez que el usuario haya seleccionado su
 localización, haces `pop()` en pila con la respuesta:
 
-<!-- skip -->
 {% prettify dart %}
 Navigator.of(context).pop({"lat":43.821757,"long":-79.226392});
 {% endprettify %}
@@ -538,8 +534,8 @@ En iOS, para enviar al usuario a otra aplicación, utilizas un esquema de URL es
 Para las aplicaciones a nivel de sistema, el esquema
 depende de la aplicación. Para implementar esta funcionalidad en Flutter,
 crear una integración de plataforma nativa, o usa un
-[plugin existente](https://pub.dartlang.org/flutter/), como
-[`url_launcher`](https://pub.dartlang.org/packages/url_launcher).
+[plugin existente]({{site.pub}}/flutter/), como
+[`url_launcher`]({{site.pub}}/packages/url_launcher).
 
 ## ¿Cómo puedo volver al al viewcontroller nativo de iOS?
 
@@ -574,7 +570,6 @@ usa las facilidades asincrónicas que proporciona el lenguaje Dart, tales como
 Por ejemplo, puedes ejecutar código de red sin que la interfaz de usuario se bloquee utilizando
 `async`/`await` y dejar que Dart haga el trabajo pesado:
 
-<!-- skip -->
 {% prettify dart %}
 loadData() async {
   String dataURL = "https://jsonplaceholder.typicode.com/posts";
@@ -590,7 +585,6 @@ llamando a `setState()`, que desencadena un rebuild del widget y actualiza los d
 
 El siguiente ejemplo carga datos de forma asincrónica y los visualiza en un `ListView`:
 
-<!-- skip -->
 {% prettify dart %}
 import 'dart:convert';
 
@@ -676,7 +670,6 @@ quieres moverlo a un `Isolate` para evitar bloquear el event loop.
 Para el trabajo de E/S, declare la función como `async`,
 y usa `await` en tareas de larga duración dentro de la función:
 
-<!-- skip -->
 {% prettify dart %}
 loadData() async {
   String dataURL = "https://jsonplaceholder.typicode.com/posts";
@@ -702,7 +695,6 @@ su nombre y no pueden compartir memoria (en forma de campos estáticos, por ejem
 El siguiente ejemplo muestra, en un Isolate simple, cómo compartir datos de nuevo a
 el hilo principal para actualizar la interfaz de usuario.
 
-<!-- skip -->
 {% prettify dart %}
 loadData() async {
   ReceivePort receivePort = ReceivePort();
@@ -874,13 +866,12 @@ class _SampleAppPageState extends State<SampleAppPage> {
 ## Cómo puedo hacer peticiones de red?
 
 Realizar una petición de red en Flutter es fácil cuando se utiliza el popular
-[`paquete` http](https://pub.dartlang.org/packages/http). Este abstrae una gran parte del trabajo 
+[`paquete` http]({{site.pub}}/packages/http). Este abstrae una gran parte del trabajo 
 de red que normalmente podría implementar tu mismo,
 lo que simplifica la realización de peticiones de red.
 
 Para utilizar el paquete `http`, añádelo a tus depedendencias en `pubspec.yaml`:
 
-<!-- skip -->
 {% prettify yaml %}
 dependencies:
   ...
@@ -889,7 +880,6 @@ dependencies:
 
 Para realizar una llamada de red, llame `await` en la función `async`  `http.get()`:
 
-<!-- skip -->
 {% prettify dart %}
 import 'dart:convert';
 
@@ -921,7 +911,6 @@ diferentes. Si `showLoadingDialog()` es `true` (cuándo `widgets.length == 0`),
 entonces renderizamos el `ProgressIndicator`. De lo contrario, renderizar el
 `ListView` con los datos devueltos de una llamada de red.
 
-<!-- skip -->
 {% prettify dart %}
 import 'dart:convert';
 
@@ -1022,14 +1011,13 @@ my-assets/data.json
 
 Declare el asset en el archivo `pubspec.yaml`:
 
-<!-- skip -->
 {% prettify yaml %}
 assets:
  - my-assets/data.json
 {% endprettify %}
 
 Y luego acceder a él desde el código usando un
-[`AssetBundle`](https://docs.flutter.io/flutter/services/AssetBundle-class.html):
+[`AssetBundle`]({{site.api}}/flutter/services/AssetBundle-class.html):
 
 <!-- skip -->
 {% prettify dart %}
@@ -1043,7 +1031,7 @@ Future<String> loadAsset() async {
 
 Para las imágenes, Flutter sigue un formato simple basado en la densidad como iOS.  Assets de imagen 
 podrían ser `1.0x`, `2.0x`, `3.0x`, o cualquier otro multiplicador. El denominado
-[`devicePixelRatio`](https://docs.flutter.io/flutter/dart-ui/Window/devicePixelRatio.html)
+[`devicePixelRatio`]({{site.api}}/flutter/dart-ui/Window/devicePixelRatio.html)
 expresa la proporción de píxeles físicos en un solo píxel lógico.
 
 Los assets se encuentran en cualquier carpeta arbitraria; Flutter no tiene
@@ -1063,22 +1051,19 @@ images/3.0x/my_icon.png  // 3.0x image
 
 A continuación, declare estas imágenes en el archivo `pubspec.yaml` :
 
-<!-- skip -->
 {% prettify yaml %}
 assets:
- - images/my_icon.jpeg
+ - images/my_icon.png
 {% endprettify %}
 
 Ya puede acceder a tus imágenes usando `AssetImage`:
 
-<!-- skip -->
 {% prettify dart %}
 return AssetImage("images/a_dot_burr.jpeg");
 {% endprettify %}
 
 o directamente en un `Image` widget:
 
-<!-- skip -->
 {% prettify dart %}
 @override
 Widget build(BuildContext context) {
@@ -1096,7 +1081,6 @@ sistema dedicado para manejar cadenas. Por el momento, la mejor práctica es dec
 su texto en una clase como campos estáticos y 
 acceder a ellos desde allí. Por ejemplo:
 
-<!-- skip -->
 {% prettify dart %}
 class Strings {
   static String welcomeMessage = "Welcome To Flutter";
@@ -1105,17 +1089,15 @@ class Strings {
 
 Puedes acceder a tus cadenas como tal:
 
-<!-- skip -->
 {% prettify dart %}
 Text(Strings.welcomeMessage)
 {% endprettify %}
 
 Por defecto, Flutter sólo es compatible con el inglés de EE.UU. para sus cadenas. 
 Si necesita añadir soporte para otros idiomas, incluya el paquete `flutter_localizations`. 
-Puede que también necesites añadir el paquete Dart [`intl`](https://pub.dartlang.org/packages/intl)
+Puede que también necesites añadir el paquete Dart [`intl`]({{site.pub}}/packages/intl)
 para usar el mecanismo i10n, búsqueda como formateo de fecha y hora.
 
-<!-- skip -->
 {% prettify yaml %}
 dependencies:
   # ...
@@ -1127,7 +1109,6 @@ dependencies:
 Para usar el paquete `flutter_localizations` ,
 especifica `localizationsDelegates` y `supportedLocales` en el widget de la aplicación:
 
-<!-- skip -->
 {% prettify dart %}
 import 'package:flutter_localizations/flutter_localizations.dart';
 
@@ -1156,15 +1137,15 @@ copia localizable de su propia aplicación,
 si desea que también se localicen.
 
 Cuando se inicializa, el `WidgetsApp` (o `MaterialApp`) crea un widget
-[`Localizations`](https://docs.flutter.io/flutter/widgets/Localizations-class.html)
+[`Localizations`]({{site.api}}/flutter/widgets/Localizations-class.html)
 para ti, con los delegados que especifique.
 La localización actual del dispositivo es siempre accesible desde el widget `Localizations`
 del contexto actual (en forma de un objecto `Locale`), o utilizando el
-[`Window.locale`](https://docs.flutter.io/flutter/dart-ui/Window/locale.html).
+[`Window.locale`]({{site.api}}/flutter/dart-ui/Window/locale.html).
 
 Para acceder a recursos localizados, utiliza el método `Localizations.of()` para acceder 
 a una clase de localización específica proporcionada por un delegado determinado.
-Utiliza el paquete [`intl_translation`](https://pub.dartlang.org/packages/intl_translation)
+Utiliza el paquete [`intl_translation`]({{site.pub}}/packages/intl_translation)
 para
 extraer una copia traducible a archivos
 [arb](https://code.google.com/p/arb/wiki/ApplicationResourceBundleSpecification)
@@ -1190,7 +1171,7 @@ Si bien hay un Podfile en la carpeta iOS en su proyecto Flutter,
 para la integración por plataforma. En general, usa 
 `pubspec.yaml` para declarar dependencias externas en Flutter. Un buen lugar para encontrar 
 buenos paquetes para Flutter es
-[Pub](https://pub.dartlang.org/flutter/packages/).
+[Pub]({{site.pub}}/flutter/packages/).
 
 # ViewControllers
 
@@ -1225,7 +1206,7 @@ el usuario, no responde a las entradas del usuario, pero se ejecuta en segundo p
 tiene un evento equivalente.
 
 Para más detalles sobre el significado de estos estados, véase
-[`AppLifecycleStatus` documentación](https://docs.flutter.io/flutter/dart-ui
+[`AppLifecycleStatus` documentación]({{site.api}}/flutter/dart-ui
 /AppLifecycleState-class.html).
 
 # Layouts
@@ -1242,7 +1223,6 @@ Debido al patrón inmutable de widgets de Flutter, pasas una lista de widgets a 
 Flutter se encarga de asegurarse de que el desplazamiento sea 
 rápido y suave.
 
-<!-- skip -->
 {% prettify dart %}
 import 'package:flutter/material.dart';
 
@@ -1297,7 +1277,6 @@ class _SampleAppPageState extends State<SampleAppPage> {
 En iOS, se implementa el método de delegado, `tableView:didSelectRowAtIndexPath:`.
 En Flutter, utiliza el manejo táctil proporcionado por los widgets pasados.
 
-<!-- skip -->
 {% prettify dart %}
 import 'package:flutter/material.dart';
 
@@ -1372,7 +1351,6 @@ Para una forma sencilla de actualizar tu `ListView`, crea una nueva `List` dentr
 Aunque este enfoque es simple, no se recomienda para conjuntos de datos grandes, 
 como se muestra en el siguiente ejemplo.
 
-<!-- skip -->
 {% prettify dart %}
 import 'package:flutter/material.dart';
 
@@ -1444,7 +1422,6 @@ La manera recomendada, eficiente y efectiva de construir una lista es usando un
 `ListView.Builder`. Este método es excelente cuando se tiene una lista dinámica o 
 una lista con grandes cantidades de datos.
 
-<!-- skip -->
 {% prettify dart %}
 import 'package:flutter/material.dart';
 
@@ -1536,7 +1513,6 @@ En Flutter la forma más fácil de hacerlo es usando el widget `ListView`. Esto 
 `ScrollView` como un `TableView` de iOS, y puedes hacer un layout de widgets 
 en formato vertical.
 
-<!-- skip -->
 {% prettify dart %}
 @override
 Widget build(BuildContext context) {
@@ -1648,7 +1624,6 @@ Utilizando `GestureDetector` puedes escuchar una amplia gama de gestos como:
 El siguiente ejemplo muestra un `GestureDetector` que rota el logotipo de Flutter
 con un doble toque:
 
-<!-- skip -->
 {% prettify dart %}
 AnimationController controller;
 CurvedAnimation curve;
@@ -1699,7 +1674,7 @@ específica de Material.
 
 Pero Flutter es lo suficientemente flexible y expresivo como para implementar cualquier lenguaje de diseño.
 En iOS, puede utilizar la
-[biblioteca Cupertino](https://docs.flutter.io/flutter/cupertino/cupertino-library.html)
+[biblioteca Cupertino]({{site.api}}/flutter/cupertino/cupertino-library.html)
 para producir una interfaz que se adhiera a las [Human Interface
 Guidelines](https://developer.apple.com/ios/human-interface-guidelines/overview/themes/).
 Para ver el listado completo de estos widgets, consulte la sección
@@ -1712,7 +1687,6 @@ Para personalizar los colores y estilos de cualquier componente hijo, utilice
 `ThemeData` objeto del widget `MaterialApp`. Por ejemplo, en el código de abajo, 
 la muestra principal está configurada en azul y el color de la selección de texto es rojo.
 
-<!-- skip -->
 {% prettify dart %}
 class SampleApp extends StatelessWidget {
   @override
@@ -1736,7 +1710,6 @@ referencia en el archivo `info.plist`. En Flutter, coloca el archivo de fuente e
 una carpeta y has referencia a él en el archivo `pubspec.yaml`, de forma similar a 
 como se importan las imágenes.
 
-<!-- skip -->
 {% prettify yaml %}
 fonts:
    - family: MyCustomFont
@@ -1747,7 +1720,6 @@ fonts:
 
 A continuación, asigna la fuente a su widget `Text`:
 
-<!-- skip -->
 {% prettify dart %}
 @override
 Widget build(BuildContext context) {
@@ -1797,10 +1769,9 @@ sobre ella. ¿Cómo funciona eso en Flutter?
 
 En la práctica, los formularios son manejados, como todo en Flutter, por widgets especializados. 
 Si tu tiene un `TextField` o un `TextFormField`, puede asignar un
-[`TextEditingController`](https://docs.flutter.io/flutter/widgets/TextEditingController-class.html)
+[`TextEditingController`]({{site.api}}/flutter/widgets/TextEditingController-class.html)
 para recuperar las entradas del usuario:
 
-<!-- skip -->
 {% prettify dart %}
 class _MyFormState extends State<MyForm> {
   // Crea un controlador de texto y utilícelo para recuperar el valor actual.
@@ -1859,7 +1830,6 @@ En Flutter puede mostrar fácilmente un "hint" o un texto de referencia para su 
 añadiendo un objeto `InputDecoration` al parámetro decoration del constructor de 
 decoración para el widget `Text` :
 
-<!-- skip -->
 {% prettify dart %}
 body: Center(
   child: TextField(
@@ -1877,7 +1847,6 @@ Sin embargo, no desea comenzar mostrando un error.
 En su lugar, cuando el usuario haya introducido datos no válidos, actualice el estado 
 y pase un nuevo objeto `InputDecoration`.
 
-<!-- skip -->
 {% prettify dart %}
 class SampleApp extends StatelessWidget {
   // Este widget es la raíz de su aplicación.
@@ -1966,7 +1935,7 @@ prefabricaddos [plugins](/docs/development/packages-and-plugins/using-packages) 
 objetivo específico. Por ejemplo, puede utilizar un plugin para acceder al carrete de cámara y a la 
 cámara del dispositivo directamente desde Flutter, sin tener que escribir su propia integración. Los 
 plugins se encuentran en el reposiorio de paquetes de código abierto de Dart y Flutter, [Pub]
-(https://pub.dartlang.org/).
+({{site.pub}}/).
 Algunos paquetes pueden soportar integraciones nativas en iOS, 
 Android o ambos.
 
@@ -1976,32 +1945,32 @@ y [publicarlo en Pub](/docs/development/packages-and-plugins/developing-packages
 
 ## ¿Cómo accedo al sensor GPS?
 
-Utilice el plugin [`geolocator`](https://pub.dartlang.org/packages/geolocator) de la comunidad.
+Utilice el plugin [`geolocator`]({{site.pub}}/packages/geolocator) de la comunidad.
 
 ## ¿Cómo accedo a la cámara?
 
-El plugin [`image_picker`](https://pub.dartlang.org/packages/image_picker) es popular 
+El plugin [`image_picker`]({{site.pub}}/packages/image_picker) es popular 
 para acceder a la cámara.
 
 ## ¿Cómo me conecto con Facebook?
 
 Para iniciar sesión con Facebook, utilice el plugin 
-[`flutter_facebook_login`](https://pub.dartlang.org/packages/flutter_facebook_login) de la comunidad.
+[`flutter_facebook_login`]({{site.pub}}/packages/flutter_facebook_login) de la comunidad.
 
 ## ¿Cómo uso las funciones de Firebase?
 
 La mayoría de las funciones de Firebase están cubiertas por
-[first party plugins](https://pub.dartlang.org/flutter/packages?q=firebase).
+[first party plugins]({{site.pub}}/flutter/packages?q=firebase).
 Estos plugins son integraciones de primera mano, mantenidas por el equipo de Flutter:
 
- * [`firebase_admob`](https://pub.dartlang.org/packages/firebase_admob) para Firebase AdMob
- * [`firebase_analytics`](https://pub.dartlang.org/packages/firebase_analytics) para la analítica de Firebase
- * [`firebase_auth`](https://pub.dartlang.org/packages/firebase_auth) para Firebase autenticación
- * [`firebase_core`](https://pub.dartlang.org/packages/firebase_core) para el package principal de Firebase
- * [`firebase_database`](https://pub.dartlang.org/packages/firebase_database) para RTDB Firebase
- * [`firebase_storage`](https://pub.dartlang.org/packages/firebase_storage) para Firebase Cloud Storage
- * [`firebase_messaging`](https://pub.dartlang.org/packages/firebase_messaging) para Mensajería Firebase (FCM)
- * [`cloud_firestore`](https://pub.dartlang.org/packages/cloud_firestore) para Firebase Cloud Firestore
+ * [`firebase_admob`]({{site.pub}}/packages/firebase_admob) para Firebase AdMob
+ * [`firebase_analytics`]({{site.pub}}/packages/firebase_analytics) para la analítica de Firebase
+ * [`firebase_auth`]({{site.pub}}/packages/firebase_auth) para Firebase autenticación
+ * [`firebase_core`]({{site.pub}}/packages/firebase_core) para el package principal de Firebase
+ * [`firebase_database`]({{site.pub}}/packages/firebase_database) para RTDB Firebase
+ * [`firebase_storage`]({{site.pub}}/packages/firebase_storage) para Firebase Cloud Storage
+ * [`firebase_messaging`]({{site.pub}}/packages/firebase_messaging) para Mensajería Firebase (FCM)
+ * [`cloud_firestore`]({{site.pub}}/packages/cloud_firestore) para Firebase Cloud Firestore
 
 También puedes encontrar algunos plugins Firebase de terceros en Pub que cubren áreas que 
 no están directamente cubiertas por los plugins de primer nivel.
@@ -2025,7 +1994,7 @@ En iOS, puede almacenar una colección de pares clave/valor utilizando una lista
 conocido como `UserDefaults`.
 
 En Flutter, accede a la funcionalidad equivalente mediante
-[Shared Preferences plugin](https://pub.dartlang.org/packages/shared_preferences).
+[Shared Preferences plugin]({{site.pub}}/packages/shared_preferences).
 Este plugin envuelve la funcionalidad de ambos `UserDefaults` y el 
 equivalente en Android, `SharedPreferences`.
 
@@ -2036,7 +2005,7 @@ encima de una base de datos SQL, lo que facilita la realización de consultas re
 modelos.
 
 En Flutter, acceda a esta funcionalidad utilizando el plugin
-[SQFlite](https://pub.dartlang.org/packages/sqflite).
+[SQFlite]({{site.pub}}/packages/sqflite).
 
 # Notificaciones
 
@@ -2050,4 +2019,4 @@ En Flutter, acceda a esta funcionalidad utilizando el plugin
 
 Para obtener más información sobre el uso de la API de mensajería en nube de Firebase, 
 consulte la documentación del plugin 
-[`firebase_messaging`](https://pub.dartlang.org/packages/firebase_messaging).
+[`firebase_messaging`]({{site.pub}}/packages/firebase_messaging).

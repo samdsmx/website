@@ -12,7 +12,7 @@ WBMP).
 ## Especificando recursos
 
 Flutter usa el archivo 
-[`pubspec.yaml`](https://www.dartlang.org/tools/pub/pubspec), 
+[`pubspec.yaml`]({{site.dart-site}}/tools/pub/pubspec), 
 ubicado en la raíz de su proyecto, para identificar los recursos requeridos 
 por una aplicación.
 
@@ -100,7 +100,7 @@ leer instrucciones, etc.
 ## Cargando recursos
 
 Tu aplicación puede acceder a sus recursos a través de un objeto
-[`AssetBundle`](https://docs.flutter.io/flutter/services/AssetBundle-class.html) 
+[`AssetBundle`]({{site.api}}/flutter/services/AssetBundle-class.html) 
 (paquete de recursos).
 
 Los dos métodos principales en un paquete de recursos te permiten cargar un 
@@ -111,7 +111,7 @@ ruta al recurso especificado en el archivo `pubspec.yaml` durante el tiempo de c
 ### Cargando elementos de texto
 
 Cada aplicación Flutter tiene un 
-[`rootBundle`](https://docs.flutter.io/flutter/services/rootBundle.html) 
+[`rootBundle`]({{site.api}}/flutter/services/rootBundle.html) 
 (paquete raiz) para acceder fácilmente al paquete de recursos 
 principal. Es posible cargar recursos directamente utilizando la 
 `rootBundle` estática global de `package:flutter/services.dart`.
@@ -152,7 +152,7 @@ píxeles del dispositivo actual.
 
 #### Declaración de assets de imagen según la resolución {#resolution-aware}
 
-[`AssetImage`](https://docs.flutter.io/flutter/painting/AssetImage-class.html) 
+[`AssetImage`]({{site.api}}/flutter/painting/AssetImage-class.html) 
 entiende cómo asignar un recurso solicitado lógico a uno que se aproxime 
 más a la proporción actual de píxeles del dispositivo. Para que esta 
 asignación funcione, los activos se deben organizar de acuerdo con una 
@@ -199,7 +199,7 @@ por debajo de esa resolución. Sin embargo, la entrada debe incluirse en el mani
 #### Cargando imagenes
 
 Para cargar una imagen, usa la clase 
-[`AssetImage`](https://docs.flutter.io/flutter/painting/AssetImage-class.html) en el 
+[`AssetImage`]({{site.api}}/flutter/painting/AssetImage-class.html) en el 
 método `build` de un Widget.
 
 Por ejemplo, tu aplicación puede cargar la imagen de fondo de las declaraciones de 
@@ -224,15 +224,15 @@ Widget build(BuildContext context) {
 Cualquier cosa que use el paquete de assets predeterminado heredará el conocimiento de 
 la resolución al cargar imágenes. (Si trabaja con algunas de las clases de 
 nivel inferior, como 
-[`ImageStream`](https://docs.flutter.io/flutter/painting/ImageStream-class.html) 
+[`ImageStream`]({{site.api}}/flutter/painting/ImageStream-class.html) 
 o 
-[`ImageCache`](https://docs.flutter.io/flutter/painting/ImageCache-class.html), 
+[`ImageCache`]({{site.api}}/flutter/painting/ImageCache-class.html), 
 también notarás los parámetros relacionados con la escala).
 
 ### Recursos de imágenes en paquetes {#from-packages}
 
 Para cargar una imagen desde un 
-[paquete](/docs/development/packages-and-plugins/using-packages), el argumento `package` se debe proporcionar a [`AssetImage`](https://docs.flutter.io/flutter/painting/AssetImage-class.html).
+[paquete](/docs/development/packages-and-plugins/using-packages), el argumento `package` se debe proporcionar a [`AssetImage`]({{site.api}}/flutter/painting/AssetImage-class.html).
 
 Por ejemplo, supongamos que su aplicación depende de un paquete llamado `my_icons`, que tiene la siguiente estructura de directorio:
 
@@ -284,8 +284,8 @@ Los recursos de Flutter están disponibles para el código de la plataforma a tr
 En Android, los recursos están disponibles a través de la 
 [API de AssetManager](https://developer.android.com/reference/android/content/res/AssetManager). 
 La clave de búsqueda utilizada, por ejemplo [openFd](https://developer.android.com/reference/android/content/res/AssetManager#openFd(java.lang.String)) se obtiene a partir de `lookupKeyForAsset` 
-en [PluginRegistry.Registrar](https://docs.flutter.io/javadoc/io/flutter/plugin/common/PluginRegistry.Registrar.html) o `getLookupKeyForAsset` en 
-[FlutterView](https://docs.flutter.io/javadoc/io/flutter/view/FlutterView.html). `PluginRegistry.Registrar` está disponible cuando se desarrolla 
+en [PluginRegistry.Registrar]({{site.api}}/javadoc/io/flutter/plugin/common/PluginRegistry.Registrar.html) o `getLookupKeyForAsset` en 
+[FlutterView]({{site.api}}/javadoc/io/flutter/view/FlutterView.html). `PluginRegistry.Registrar` está disponible cuando se desarrolla 
 un complemento, mientras que `FlutterView` sería la opción al desarrollar una aplicación que incluye una vista de plataforma.
 
 Como ejemplo, suponga que ha especificado esto en su pubspec.yaml
@@ -316,8 +316,8 @@ AssetFileDescriptor fd = assetManager.openFd(key);
 
 En iOS, los recursos están disponibles a través de 
 [mainBundle](https://developer.apple.com/documentation/foundation/nsbundle/1410786-mainbundle). La clave de búsqueda utilizada, por ejemplo [pathForResource:ofType:](https://developer.apple.com/documentation/foundation/nsbundle/1410989-pathforresource) 
-se obtiene de `lookupKeyForAsset` o `lookupKeyForAsset:fromPackage:` en [FlutterPluginRegistrar](https://docs.flutter.io/objcdoc/Protocols/FlutterPluginRegistrar.html) o 
-`lookupKeyForAsset:` o `lookupKeyForAsset:fromPackage:` en [FlutterViewController](https://docs.flutter.io/objcdoc/Classes/FlutterViewController.html). 
+se obtiene de `lookupKeyForAsset` o `lookupKeyForAsset:fromPackage:` en [FlutterPluginRegistrar]({{site.api}}/objcdoc/Protocols/FlutterPluginRegistrar.html) o 
+`lookupKeyForAsset:` o `lookupKeyForAsset:fromPackage:` en [FlutterViewController]({{site.api}}/objcdoc/Classes/FlutterViewController.html). 
 `FlutterPluginRegistrar` está disponible cuando se desarrolla un complemento, 
 mientras que `FlutterViewController` sería la opción al desarrollar una aplicación que incluye una vista de plataforma.
 
@@ -351,7 +351,7 @@ En el directorio raíz de tu proyecto Flutter, ve a `.../android/app/src/main/re
 carpetas de recursos de mapa de bits como `mipmap-hdpi` ya contienen imágenes placeholder nombradas 
 `ic_launcher.png`. Simplemente reemplázalos con tus recursos deseados respetando el tamaño de icono 
 recomendado por densidad de pantalla según lo indicado por la 
-[Guía del desarrollador de Android](https://developer.android.com/guide/practices/ui_guidelines/icon_design_launcher.html#size).
+[Guía del desarrollador de Android]({{site.android-dev}}/guide/practices/ui_guidelines/icon_design_launcher.html#size).
 
 ![Android icon location](/images/assets-and-images/android-icon-path.png)
 
@@ -376,17 +376,17 @@ Flutter también usa mecanismos de plataformas nativas para dibujar pantallas de
 
 {{site.alert.note}}
   Esto implica que si no llamas a 
-  [runApp](https://docs.flutter.io/flutter/widgets/runApp.html) en 
+  [runApp]({{site.api}}/flutter/widgets/runApp.html) en 
   la función `void main()` de tu aplicación (o más específicamente, si no llamas a 
-  [`window.render`](https://docs.flutter.io/flutter/dart-ui/Window/render.html) 
+  [`window.render`]({{site.api}}/flutter/dart-ui/Window/render.html) 
   en respuesta a
-  [`window.onDrawFrame`](https://docs.flutter.io/flutter/dart-ui/Window/onDrawFrame.html)), 
+  [`window.onDrawFrame`]({{site.api}}/flutter/dart-ui/Window/onDrawFrame.html)), 
   la pantalla de bienvenida se mantendrá para siempre.
 {{site.alert.end}}
 
 #### Android
 
-Para agregar una "pantalla de bienvenida" a tu aplicación Flutter, ve a `.../android/app/src/main`. En `res/drawable/launch_background.xml`, puedes usar esta [layer list drawable](https://developer.android.com/guide/topics/resources/drawable-resource#LayerList) XML para personalizar el aspecto de su pantalla de bienvenida. La plantilla existente proporciona un ejemplo para agregar una imagen a la mitad de una pantalla blanca en el código comentado. Puedes descomentarlo o usar otros objetos [drawables](https://developer.android.com/guide/topics/resources/drawable-resource) para lograr el efecto deseado.
+Para agregar una "pantalla de bienvenida" a tu aplicación Flutter, ve a `.../android/app/src/main`. En `res/drawable/launch_background.xml`, puedes usar esta [layer list drawable](https://developer.android.com/guide/topics/resources/drawable-resource#LayerList) XML para personalizar el aspecto de su pantalla de bienvenida. La plantilla existente proporciona un ejemplo para agregar una imagen a la mitad de una pantalla blanca en el código comentado. Puedes descomentarlo o usar otros objetos [drawables]({{site.android-dev}}/guide/topics/resources/drawable-resource) para lograr el efecto deseado.
 
 #### iOS
 

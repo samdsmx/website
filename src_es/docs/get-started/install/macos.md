@@ -39,4 +39,4 @@ su primera app en Flutter.
 
 ## Siguiente paso
 
-[Siguiente paso: Configura un editor](/get-started/editor)
+[Siguiente paso: Configura un editor](/docs/get-started/editor)

@@ -1,11 +1,18 @@
 ---
 title: "Trabajando con listas grandes"
+prev:
+  title: Crear listas con diferentes tipos de items
+  path: /docs/cookbook/lists/mixed-list
+next:
+  title: Reportar errores a un servicio
+  path: /docs/cookbook/maintenance/error-reporting
 ---
 
-El constructor estándar [`ListView`](https://docs.flutter.io/flutter/widgets/ListView-class.html) 
-funciona bien para listas pequeñas. Para trabajar con listas que contienen una gran cantidad de 
+El constructor estándar [`ListView`]({{site.api}}/flutter/widgets/ListView-class.html) 
+funciona bien para listas pequeñas. Para trabajar con listas 
+que contienen una gran cantidad de 
 elementos, es mejor usar el constructor 
-[`ListView.builder`](https://docs.flutter.io/flutter/widgets/ListView/ListView.builder.html) .
+[`ListView.builder`]({{site.api}}/flutter/widgets/ListView/ListView.builder.html) .
 
 Mientras que el constructor predeterminado `ListView` requiere que creemos todos los 
 elementos a la vez, el constructor `ListView.builder` creará los elementos a medida 
@@ -19,7 +26,7 @@ La mayoría de las veces, estos datos provendrán de internet o de una base de d
 
 Para este ejemplo, generaremos una lista de 10000 Strings usando el 
 constructor 
-[`List.generate`](https://docs.flutter.io/flutter/dart-core/List/List.generate.html) .
+[`List.generate`]({{site.api}}/flutter/dart-core/List/List.generate.html) .
 
 <!-- skip -->
 ```dart

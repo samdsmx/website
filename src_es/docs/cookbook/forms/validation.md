@@ -1,5 +1,11 @@
 ---
 title: "Construyendo un formulario con validaciones"
+prev:
+  title: Trabjando con Tabs
+  path: /docs/cookbook/design/tabs
+next:
+  title: Crear y dar estilo a un campo de texto
+  path: /docs/cookbook/forms/text-input
 ---
 
 Las aplicaciones a menudo requieren que los usuarios ingresen información en un campo de texto. Por 
@@ -23,12 +29,12 @@ campo de texto.
 
 ## 1. Crea una `Form` con un `GlobalKey`
 
-Primero, necesitaremos un [`Form`](https://docs.flutter.io/flutter/widgets/Form-class.html) para 
+Primero, necesitaremos un [`Form`]({{site.api}}/flutter/widgets/Form-class.html) para 
 trabajar. El Widget `Form`  actúa como un contenedor para agrupar y validar múltiples campos de 
 formulario.
 
 Cuando creamos el formulario, también debemos proporcionar una 
-[`GlobalKey`](https://docs.flutter.io/flutter/widgets/GlobalKey-class.html). 
+[`GlobalKey`]({{site.api}}/flutter/widgets/GlobalKey-class.html). 
 Esto identificará de manera única el `Form` con el que estamos trabajando y nos permitirá validar el formulario en un paso posterior. 
 
 <!-- skip -->
@@ -65,7 +71,7 @@ class MyCustomFormState extends State<MyCustomForm> {
 
 Tenemos nuestro `Form` en su lugar, pero no hemos proporcionado una forma para que nuestros 
 usuarios ingresen texto. Este es el trabajo de un 
-[`TextFormField`](https://docs.flutter.io/flutter/material/TextFormField-class.html).
+[`TextFormField`]({{site.api}}/flutter/material/TextFormField-class.html).
 El Widget `TextFormField`  nos da una entrada de texto de material design y sabe cómo 
 mostrar los errores de validación cuando se producen.
 
@@ -121,7 +127,7 @@ RaisedButton(
 
 Para validar el formulario, necesitaremos usar el `_formKey` creado en el paso 1. Podemos usar el 
 método `_formKey.currentState` para acceder a 
-[`FormState`](https://docs.flutter.io/flutter/widgets/FormState-class.html),
+[`FormState`]({{site.api}}/flutter/widgets/FormState-class.html),
 que Flutter crea automáticamente cuando creamos un `Form`. 
 
 La clase `FormState` contiene el método `validate`. Cuando se llama al método `validate`, 

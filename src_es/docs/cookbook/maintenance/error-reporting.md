@@ -1,23 +1,29 @@
 ---
 title: "Reportar errores a un servicio"
+prev:
+  title: Trabajando con listas grandes
+  path: /docs/cookbook/lists/long-lists
+next:
+  title: Animando un Widget entre pantallas
+  path: /docs/cookbook/navigation/hero-animations
 ---
 
-Aunque siempre hacemos todo lo posible para crear aplicaciones que estén libres de bugs, 
+Aunque siempre tratamos de crear aplicaciones que estén libres de bugs, 
 seguramente aparecerán de vez en cuando. Dado que las aplicaciones con bugs conducen a usuarios y 
 clientes insatisfechos, es importante entender con qué frecuencia nuestros usuarios experimentan 
 bugs y dónde ocurren. De esta manera, podemos priorizar los bugs con el mayor impacto y 
 trabajar para corregirlos.
 
-¿Cómo podemos determinar con qué frecuencia nuestros usuarios experimentan bugs? Cada vez que 
-ocurre un error, podemos crear un informe que contenga el error que ocurrió y el stacktrace asociado. 
-A continuación, podemos enviar el informe a un servicio de seguimiento de errores, 
+¿Cómo puedes determinar con qué frecuencia tus usuarios experimentan bugs? Cada vez que 
+ocurre un error, puedes crear un informe que contenga el error que ocurrió y el stacktrace asociado. 
+A continuación, puedes enviar el informe a un servicio de seguimiento de errores, 
 como Sentry, Fabric, o Rollbar. 
 
 El servicio de seguimiento de errores agregará todos las caídas que experimentan nuestros usuarios y 
 las agrupará para nosotros. Esto nos permite saber con qué frecuencia nuestra aplicación falla y 
 dónde se encuentran los problemas de nuestros usuarios. 
 
-En esta receta, veremos cómo informar errores al servicio de informes de fallas 
+En esta receta, verás cómo informar errores al servicio de informes de fallas 
 [Sentry](https://sentry.io/welcome/).
 
 ## Instrucciones
@@ -31,10 +37,10 @@ En esta receta, veremos cómo informar errores al servicio de informes de fallas
 
 ## 1. Obtén un DSN de Sentry
 
-Antes de poder informar los errores a Sentry, necesitaremos un "DSN" para identificar de 
-manera única nuestra aplicación con el servicio Sentry.io.
+Antes de poder informar los errores a Sentry, necesitas un "DSN" para identificar de 
+manera única tu aplicación con el servicio Sentry.io.
 
-Para obtener un DSN, por favor: 
+Para obtener un DSN, usa los siguientes pasos: 
 
   1. [Crea una cuenta con Sentry](https://sentry.io/signup/)
   2. Inicia sesión en la cuenta
@@ -43,9 +49,9 @@ Para obtener un DSN, por favor:
 
 ## 2. Importa el paquete Sentry
 
-A continuación, necesitaremos importar el paquete 
-[`sentry`](https://pub.dartlang.org/packages/sentry) en nuestra app. El paquete 
-sentry nos facilitará el envío de informes al servicio de seguimiento de errores 
+Importar el paquete 
+[`sentry`](https://pub.dartlang.org/packages/sentry) 
+facilita el envío de informes al servicio de seguimiento de errores 
 de Sentry.
 
 ```yaml
@@ -55,7 +61,7 @@ dependencies:
 
 ## 3. Crea un `SentryClient`
 
-Ahora podemos crear un `SentryClient`. Usaremos `SentryClient` para enviar informes 
+Crea un `SentryClient`. Usarás `SentryClient` para enviar informes 
 de errores al servicio sentry!
 
 <!-- skip -->
@@ -65,31 +71,31 @@ final SentryClient _sentry = SentryClient(dsn: "App DSN goes Here");
 
 ## 4. Crea una función para informar errores
 
-¡Con Sentry listo, podemos comenzar a reportar errores! Como no queremos informar errores 
-a Sentry durante el desarrollo, primero crearemos una función que nos permita saber 
-si estamos en modo debug o producción.
+¡Con Sentry listo, puedes comenzar a reportar errores! Como no querrás informar errores 
+a Sentry durante el desarrollo, primero crearrás una función que nos permita saber 
+si estas en modo debug o producción.
 
 <!-- skip -->
 ```dart
 bool get isInDebugMode {
-  // Supongamos que estamos en modo de producción
+  // Supongamos que estas en modo de producción
   bool inDebugMode = false;
   
-  // Las expresiones assert solo se evalúan durante el desarrollo. Ellas son ignoradas
-  // en producción. Por lo tanto, este código solo convertirá `inDebugMode` a true
-  // en nuestros entornos de desarollo!
+  // Las expresiones assert solo se evalúan durante el desarrollo. 
+  // Son ignoradas en producción. Por lo tanto, este código solo asignará true a `inDebugMode` 
+  // en nuestros entorno de desarollo.
   assert(inDebugMode = true);
   
   return inDebugMode;
 }
 ```   
 
-A continuación, podemos usar esta función en combinación con `SentryClient` 
-para informar errores cuando nuestra app están en modo de producción.
+A continuación, poduedes usar esta función en combinación con `SentryClient` 
+para informar errores cuando la app está en modo de producción.
 
 <!-- skip -->
 ```dart
-Future<Null> _reportError(dynamic error, dynamic stackTrace) async {
+Future<void> _reportError(dynamic error, dynamic stackTrace) async {
   // Imprime la excepción a la consola
   print('Caught error: $error');
   if (isInDebugMode) {
@@ -108,24 +114,25 @@ Future<Null> _reportError(dynamic error, dynamic stackTrace) async {
 
 ## 5. Captura e informa errores Dart
 
-Ahora que tenemos una función para informar errores según el entorno, ¡necesitamos una 
-forma de capturar los errores de Dart para poder informarlos! 
+Ahora que tienes una función para informar errores según el entorno, necesitaa una 
+forma de capturar los errores de Dart para poder informarlos. 
 
-Para esta tarea, ejecutaremos nuestra aplicación dentro de una 
-[`Zone`](https://docs.flutter.io/flutter/dart-async/Zone-class.html) personalizada. Las Zonas 
-establecen un contexto de ejecución para nuestro código. Esto proporciona una forma onveniente 
-de capturar todos los errores que ocurren dentro de ese contexto al proporcionar un `onError`.
+Para esta tarea, ejecuta tu aplicación dentro de una 
+[`Zone`]({{site.api}}/flutter/dart-async/Zone-class.html) personalizada. Las Zonas 
+establecen un contexto de ejecución para el código. Esto proporciona una forma conveniente 
+de capturar todos los errores que ocurren dentro de ese contexto al proporcionar un 
+función `onError`.
 
-En este caso, ejecutaremos nuestra app en una nueva `Zone` y capturaremos todos los errores al 
+En este caso, ejecutarás la app en una nueva `Zone` y capturaremos todos los errores al 
 proporcionar un callback `onError` .
 
 <!-- skip -->
 ```dart
-runZoned<Future<Null>>(() async {
+runZoned<Future<voird>>(() async {
   runApp(CrashyApp());
 }, onError: (error, stackTrace) {
-  // Siempre que ocurra un error, llama a la función `_reportError`. Esto enviará
-  // errors Dart a nuestra consola de desarrollo o Sentry dependiendo del entorno.
+  // Siempre que ocurra un error, llama a la función `_reportError`. Esto envia
+  // errors Dart a la consola de desarrollo o Sentry dependiendo del entorno.
   _reportError(error, stackTrace);
 });
 ```
@@ -133,11 +140,11 @@ runZoned<Future<Null>>(() async {
 ## 6. Captura e informa errores Flutter
 
 Además de los errores de Dart, Flutter puede arrojar errores adicionales, como las excepciones de 
-plataforma que se producen al llamar al código nativo. ¡Debemos asegurarnos de capturar e informar 
-también este tipo de errores!
+plataforma que se producen al llamar al código nativo. Debes asegurarte de capturar e informar 
+también este tipo de errores.
 
 Para capturar errores de Flutter, podemos sobrescribir la propiedad 
-[`FlutterError.onError`](https://docs.flutter.io/flutter/foundation/FlutterError/onError.html). 
+[`FlutterError.onError`]({{site.api}}/flutter/foundation/FlutterError/onError.html). 
 En este caso, si estamos en modo de depuración, usaremos una función de Flutter para darle formato 
 al error apropiadamente. Si estamos en modo de producción, enviaremos el error a nuestro 
 callback `onError`  definido  en el paso anterior.  
@@ -147,10 +154,10 @@ callback `onError`  definido  en el paso anterior.
 // Esto captura los errores informados por el framework Flutter.
 FlutterError.onError = (FlutterErrorDetails details) {
   if (isInDebugMode) {
-    // En modo de desarrollo, simplemente imprima en la consola..
+    // En modo de desarrollo, simplemente imprime en la consola..
     FlutterError.dumpErrorToConsole(details);
   } else {
-    // En modo de producción, informe a la zona de aplicación para informar a
+    // En modo de producción, informa a la zona de aplicación para informar a
     // Sentry.
     Zone.current.handleUncaughtError(details.exception, details.stack);
   }
@@ -160,4 +167,4 @@ FlutterError.onError = (FlutterErrorDetails details) {
 ## Ejemplo completo
 
 Para ver un ejemplo de trabajo, por favor mira la aplicación de ejemplo 
-[Crashy](https://github.com/flutter/crashy) . 
+[Crashy]({{site.github}}/flutter/crashy) . 

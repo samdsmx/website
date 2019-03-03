@@ -1,44 +1,61 @@
 ---
-title: "Navegar a una nueva pantalla y volver"
+title: Navegar a una nueva pantalla y volver
+description: Como navegar entre rutas
+prev:
+  title: Animar un Widget entre pantallas
+  path: /docs/cookbook/navigation/hero-animations
+next:
+  title: Navegar a rutas con nombre
+  path: /docs/cookbook/navigation/named-routes
 ---
 
 La mayoría de las aplicaciones contienen varias pantallas para mostrar diferentes tipos de 
-información. Por ejemplo, podríamos tener una pantalla que muestre productos. Nuestros usuarios 
-podrían entonces pulsar un producto para obtener más información sobre él en una nueva pantalla.
+información. Por ejemplo, una app puede tener una pantalla que muestre productos. Los usuarios 
+pueden entonces pulsar un producto para obtener más información sobre él en una nueva pantalla.
 
-En términos de Android, nuestras pantallas serían nuevas actividades. En términos de iOS, 
-nuevos ViewControllers. ¡En Flutter, las pantallas son solo Widgets!
+{{site.alert.info}}
+  **Terminología**: En Flutter, _pantallas_ y _paginas_ se llaman _rutas_.
+  El resto de este documento usa el término rutas.
+{{site.alert.end}}
 
-Entonces, ¿cómo navegamos a nuevas pantallas? ¡Usando el [`Navigator`](https://docs.flutter.io/flutter/widgets/Navigator-class.html)!
+En Android, una ruta es equivalente a un Activity. 
+En iOS, una ruta es equivalente a un ViewController.
+En Flutter, una ruta es solo un widget.
+
+¿Cómo navegamos a una nueva ruta? Usando 
+[`Navigator`]({{site.api}}/flutter/widgets/Navigator-class.html)!
 
 ## Instrucciones
 
-  1. Crea dos pantallas
-  2. Navega a la segunda pantalla usando `Navigator.push`
-  3. Regresa a la primer pantalla usando `Navigator.pop`
+Las siguientes secciones muestran como navigar entre dos rutas,
+usando estos pasos:
 
-## 1.  Crea dos pantallas
+  1. Crea dos rutas
+  2. Navega a la segunda ruta usando `Navigator.push`
+  3. Regresa a la primera ruta usando `Navigator.pop`
 
-Primero, necesitaremos dos pantallas con las que trabajar. Como este es un ejemplo básico, 
-crearemos dos pantallas, cada una conteniendo un solo botón. Pulsando sobre el botón de la 
-primera pantalla se navegará a la segunda. Pulsando sobre el botón de la segunda pantalla, 
-nuestro usuario volverá a la primera!
+## 1.  Crea dos rutas
 
-Primero, configuraremos la estructura visual.
+Primero, crea dos rutas para trabajar con ellas. Como este es un ejemplo básico,
+cada ruta contiene solo un simple bóton. Pulsando el botón en la 
+primera ruta navegas a la segunda ruta. Pulsando el botón en la 
+segunda ruta vuelves a la primera ruta.
+
+Primero, configura la estructura visual.
 
 ```dart
-class FirstScreen extends StatelessWidget {
+class FirstRoute extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('First Screen'),
+        title: Text('First Route'),
       ),
       body: Center(
         child: RaisedButton(
-          child: Text('Launch screen'),
+          child: Text('Open route'),
           onPressed: () {
-            // Navega a la segunda pantalla cuando se pulsa!
+            // Navega a la segunda ruta cuando se pulsa.
           },
         ),
       ),
@@ -46,17 +63,17 @@ class FirstScreen extends StatelessWidget {
   }
 }
 
-class SecondScreen extends StatelessWidget {
+class SecondRoute extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text("Second Screen"),
+        title: Text("Second Route"),
       ),
       body: Center(
         child: RaisedButton(
           onPressed: () {
-            // ¡Regresa a la primera pantalla cuando se pulsa!
+            // Regresa a la primera ruta cuando se pulsa.
           },
           child: Text('Go back!'),
         ),
@@ -68,43 +85,42 @@ class SecondScreen extends StatelessWidget {
 
 ## 2. Navega a la segunda pantalla usando `Navigator.push`
 
-Para navegar a una nueva pantalla, necesitaremos usar el método 
-[`Navigator.push`](https://docs.flutter.io/flutter/widgets/Navigator/push.html) 
-. El método `push` agregará una `Route` a la pila de rutas administradas 
-por el Navigator!
+Para navegar a una nueva ruta, usa el método 
+[`Navigator.push`]({{site.api}}/flutter/widgets/Navigator/push.html). 
+El método `push` agregará una `Route` a la pila de rutas administradas por 
+el Navigator. Pero ¿de dónde viene la `Route`? 
+Puedes crear la tuya, o usar un 
+[`MaterialPageRoute`]({{site.api}}/flutter/material/MaterialPageRoute-class.html). 
+`MaterialPageRoute` es muy práctico, ya que la transición a la 
+nueva ruta usa una animación específica de la plataforma. 
 
-El método `push` requiere una `Route`, pero ¿de dónde viene la `Route`? 
-Podemos crear la nuestra, o usar el [`MaterialPageRoute`](https://docs.flutter.io/flutter/material/MaterialPageRoute-class.html). 
-El `MaterialPageRoute` es muy práctico, ya que pasa a la nueva pantalla mediante 
-una animación específica de la plataforma. 
-
-En el método `build` de nuestro Widget `FirstScreen`, actualizaremos el 
+En el método `build()` del widget `FirstRoute`, actualiza el 
 callback `onPressed`:
 
 <!-- skip -->
 ```dart
-// Within the `FirstScreen` Widget
+// Dentro del widget `FirstRoute`
 onPressed: () {
   Navigator.push(
     context,
-    MaterialPageRoute(builder: (context) => SecondScreen()),
+    MaterialPageRoute(builder: (context) => SecondRoute()),
   );
 }
 ``` 
 
 ## 3. Regresa a la primer pantalla usando `Navigator.pop`
 
-Ahora que estamos en nuestra segunda pantalla, ¿cómo la cerramos y volvemos a la primera? 
-¡Usando el método [`Navigator.pop`](https://docs.flutter.io/flutter/widgets/Navigator/pop.html)! 
-El método `pop` eliminará la `Route` actual desde la pila de rutas administradas por 
-el navegador.
+¿Cómo cerramos la segunda ruta y volvemos a la primera? Usando el método 
+[`Navigator.pop`]({{site.api}}/flutter/widgets/Navigator/pop.html)! 
+El método `pop` elimina la `Route` actual de 
+la pila de rutas administradas por Navigator.
 
-Para esta parte, necesitaremos actualizar el callback `onPressed` que se encuentra en 
-nuestro widget `SecondScreen` 
+Para implementar un regreso al la ruta original, actualiza el callback 
+`onPressed` en el widget `SecondRoute` 
 
 <!-- skip -->
 ```dart
-// Dentro del widget SecondScreen
+// Dentro del widget SecondRoute
 onPressed: () {
   Navigator.pop(context);
 }
@@ -118,24 +134,24 @@ import 'package:flutter/material.dart';
 void main() {
   runApp(MaterialApp(
     title: 'Navigation Basics',
-    home: FirstScreen(),
+    home: FirstRoute(),
   ));
 }
 
-class FirstScreen extends StatelessWidget {
+class FirstRoute extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('First Screen'),
+        title: Text('First Route'),
       ),
       body: Center(
         child: RaisedButton(
-          child: Text('Launch screen'),
+          child: Text('Open route'),
           onPressed: () {
             Navigator.push(
               context,
-              MaterialPageRoute(builder: (context) => SecondScreen()),
+              MaterialPageRoute(builder: (context) => SecondRoute()),
             );
           },
         ),
@@ -144,12 +160,12 @@ class FirstScreen extends StatelessWidget {
   }
 }
 
-class SecondScreen extends StatelessWidget {
+class SecondRoute extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text("Second Screen"),
+        title: Text("Second Route"),
       ),
       body: Center(
         child: RaisedButton(
@@ -163,5 +179,9 @@ class SecondScreen extends StatelessWidget {
   }
 }
 ```
+
+{% comment %}
+We need a new GIF that shows "Route" instead of "Screen".
+{% endcomment %}
 
 ![Navigation Basics Demo](/images/cookbook/navigation-basics.gif){:.site-mobile-screenshot}

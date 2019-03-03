@@ -1,5 +1,11 @@
 ---
 title: "Crear una lista básica"
+prev:
+  title: Trabajando con imágenes en cache
+  path: /docs/cookbook/images/cached-images
+next:
+  title: Crear una lista horizontal
+  path: /docs/cookbook/lists/horizontal-list
 ---
 
 Mostrar listas de datos es un patrón fundamental para las aplicaciones móviles. 
@@ -9,7 +15,7 @@ para que trabajar con listas sea muy fácil!
 ## Crea un ListView 
 
 El uso del constructor estándar `ListView` es perfecto para listas que contienen solo algunos 
-elementos. También emplearemos el Widget incorporado [`ListTile`](https://docs.flutter.io/flutter/material/ListTile-class.html) 
+elementos. También emplearemos el Widget incorporado [`ListTile`]({{site.api}}/flutter/material/ListTile-class.html) 
 para darle a nuestros elementos una estructura visual.
 
 <!-- skip -->

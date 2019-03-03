@@ -13,12 +13,12 @@
 Los comandos de arriba crean un directorio para el proyecto llamado `myapp`
 el cual contiene una app demo sencilla que utiliza [Material Components][].
 
-Dentro del directorio del proyecto, el código de tu app, esta en `lib/main.dart`.
+{% include_relative _main-code-note.md  %}
 
 ## Ejecutar app
 
  1. Localiza la barra de herramientas principal de Android Studio:<br>
-    ![Main IntelliJ toolbar][]
+    ![Main IntelliJ toolbar][]{:.mw-100}
  1. En el **target selector**, selecciona un dispositivo android para ejecutar la app.
     Si ninguno esta en la lista como disponible, selecciona **Tools> Android > AVD Manager** y
     crea uno ahí mismo. Para más detalle, vea [Administrando AVDs][].
@@ -35,6 +35,6 @@ Dentro del directorio del proyecto, el código de tu app, esta en `lib/main.dart
 {% include_relative _try-hot-reload.md save_changes=save_changes %}
 
 [Main IntelliJ toolbar]: {% asset tools/android-studio/main-toolbar.png @path %}
-[Managing AVDs]: https://developer.android.com/studio/run/managing-avds
-[Material Components]: https://material.io/guidelines
+[Managing AVDs]: {{site.android-dev}}/studio/run/managing-avds
+[Material Components]: {{site.material}}/guidelines
 </div>

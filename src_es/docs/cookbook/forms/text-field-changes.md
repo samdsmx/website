@@ -1,5 +1,11 @@
 ---
 title: "Manejando cambios en un campo de texto"
+prev:
+  title: Centra el foco en un Text Field
+  path: /docs/cookbook/forms/focus
+next:
+  title: Obtener el valor de un campo de texto
+  path: /docs/cookbook/forms/retrieve-input
 ---
 
 En algunos casos, puede ser útil ejecutar una función callback cada vez que cambia el texto 
@@ -16,9 +22,9 @@ tenemos dos opciones:
 ## 1. Proporciona un callback `onChanged` a un `TextField`
 
 El enfoque más simple es proporcionar un 
-[`onChanged`](https://docs.flutter.io/flutter/material/TextField/onChanged.html) 
+[`onChanged`]({{site.api}}/flutter/material/TextField/onChanged.html) 
 callback a un 
-[`TextField`](https://docs.flutter.io/flutter/material/TextField-class.html). 
+[`TextField`]({{site.api}}/flutter/material/TextField-class.html). 
 Siempre que el texto cambie, se invocará el callback. Una desventaja de este 
 enfoque es que no funciona con Widgets `TextFormField` .
 
@@ -37,14 +43,14 @@ TextField(
 ## 2. Usa un `TextEditingController`
 
 Un enfoque más poderoso, pero más elaborado, es suministrar un
-[`TextEditingController`](https://docs.flutter.io/flutter/widgets/TextEditingController-class.html)
+[`TextEditingController`]({{site.api}}/flutter/widgets/TextEditingController-class.html)
 como propiedad del 
-[`controller`](https://docs.flutter.io/flutter/material/TextField/controller.html)
+[`controller`]({{site.api}}/flutter/material/TextField/controller.html)
 de `TextField` o de un `TextFormField`.
 
 Para recibir una notificación cuando el texto cambie, podemos escuchar al controlador usando 
 su método 
-[`addListener`](https://docs.flutter.io/flutter/foundation/ChangeNotifier/addListener.html).
+[`addListener`]({{site.api}}/flutter/foundation/ChangeNotifier/addListener.html).
 
 ### Instrucciones
 
@@ -123,7 +129,7 @@ _printLatestValue() {
 
 Finalmente, tenemos que escuchar el `TextEditingController` y ejecutar el método 
 `_printLatestValue`  cada vez que el texto cambie. Utilizaremos el método 
-[`addListener`](https://docs.flutter.io/flutter/foundation/ChangeNotifier/addListener.html)  para lograr esta tarea.
+[`addListener`]({{site.api}}/flutter/foundation/ChangeNotifier/addListener.html)  para lograr esta tarea.
 
 En este ejemplo, comenzaremos a escuchar los cambios cuando se inicializa la clase 
 `_MyCustomFormState` , y dejaremos de escuchar cuando se elimine 

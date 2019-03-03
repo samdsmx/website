@@ -1,18 +1,25 @@
 ---
-title: "Analizando un JSON en segundo plano"
+title: Analizando un JSON en segundo plano
+prev:
+  title: Obtener datos desde internet
+  path: /docs/cookbook/networking/authenticated-requests
+next:
+  title: Trabajando con WebSockets
+  path: /docs/cookbook/networking/web-sockets
 ---
 
 Por defecto, las aplicaciones Dart hacen todo su trabajo en un solo hilo. En la mayoría de los casos, 
 este modelo simplifica la programación y es lo suficientemente rápido para no resultar en 
 un mal rendimiento de la app o en animaciones a saltos, a menudo llamadas "jank".
 
-Sin embargo, es posible que tengamos que realizar un cálculo costoso, como analizar un 
+Sin embargo, es posible que tengas que realizar un cálculo costoso, como analizar un 
 documento JSON muy largo. Si este trabajo toma más de 16 milisegundos, nuestros 
 usuarios experimentarán "jank".
 
-Para evitar el "jank", necesitamos realizar operaciones costosas computacionalmente como esta en 
+Para evitar el "jank", necesitas realizar operaciones costosas computacionalmente como esta en 
 segundo plano. En Android, esto significaría programar el trabajo en un hilo diferente. 
-En Flutter, podemos usar una clase [Isolate](https://docs.flutter.io/flutter/dart-isolate/Isolate-class.html) separada.
+En Flutter, podemos usar una clase 
+[Isolate]({{site.api}}/flutter/dart-isolate/Isolate-class.html) separada.
 
 ## Instrucciones
 
@@ -24,7 +31,7 @@ En Flutter, podemos usar una clase [Isolate](https://docs.flutter.io/flutter/dar
 ## 1. Añade el paquete `http`
 
 Primero, agregaremos el paquete [`http`](https://pub.dartlang.org/packages/http) 
-a nuestro proyecto. El paquete `http` hace más fácil realizar peticiones de 
+a tu proyecto. El paquete `http` hace más fácil realizar peticiones de 
 red, como obtener datos desde un "JSON endpoint".
 
 ```yaml
@@ -34,10 +41,10 @@ dependencies:
   
 ## 2. Make a network request
 
-En este ejemplo, obtendremos un documento JSON grande que contiene una lista de 5000 
-objetos fotográficos desde la [JSONPlaceholder REST API](https://jsonplaceholder.typicode.com/) 
+En este ejemplo, obtendrás un documento JSON grande que contiene una lista de 5000 
+objetos fotográficos desde la [API JSONPlaceholder](https://jsonplaceholder.typicode.com/) 
 usando el método 
-[`http.get`](https://docs.flutter.io/flutter/package-http_http/package-http_http-library.html). 
+[`http.get`]({{site.api}}/flutter/package-http_http/package-http_http-library.html). 
 
 <!-- skip -->
 ```dart
@@ -46,19 +53,20 @@ Future<http.Response> fetchPhotos(http.Client client) async {
 }
 ```
 
-Nota: Estamos proporcionando un `http.Client` a la función en este ejemplo. Esto hará
-que la función sea mas fácil de probar y usar en diferentes entornos!
+Nota: Estas proporcionando un `http.Client` a la función en este ejemplo. Esto hace
+que la función sea mas fácil de probar y usar en diferentes entornos.
 
 ## 3. Analiza y convierte la respuesta en una lista de fotos
 
-A continuación, siguiendo la guía de la receta [Obtener datos desde internet](/docs/cookbook/networking/fetch-data/), 
-queremos convertir nuestra `http.Response` en una lista de objetos Dart.
+A continuación, siguiendo la guía de la receta [Obtener 
+datos desde internet](/docs/cookbook/networking/fetch-data/), 
+convertira la `http.Response` en una lista de objetos Dart.
 Esto facilitará trabajar con tales objetos en el futuro.
 
 ### Crea una clase `Photo`
 
-Primero, necesitaremos crear una clase `Photo` que contenga datos acerca de una foto. 
-También incluiremos un método `fromJson` del tipo factory para facilitar la creación de un objeto `Photo` 
+Primero, necesitarás crear una clase `Photo` que contenga datos acerca de una foto. 
+También incluirás un método `fromJson` del tipo factory para facilitar la creación de un objeto `Photo` 
 comenzando con un objeto json.
 
 <!-- skip -->
@@ -82,15 +90,15 @@ class Photo {
 
 ### Convierte la respuesta en un List de Photos
 
-Ahora, actualizaremos la función `fetchPhotos` para que pueda devolver un 
-`Future<List<Photo>>`. Para hacer esto, necesitaremos:
+Ahora, actualiza la función `fetchPhotos` para que pueda devolver un 
+`Future<List<Photo>>`. Para hacer esto, necesitas:
 
   1. Crea un método `parsePhotos` que convierta el body de la respuesta en un `List<Photo>`
   2. Usa la función `parsePhotos` en la función `fetchPhotos`
 
 <!-- skip -->
 ```dart
-// Una función que convertirá el body de la respuesta en un List<Photo>
+// Una función que convierte el body de la respuesta en un List<Photo>
 List<Photo> parsePhotos(String responseBody) {
   final parsed = json.decode(responseBody).cast<Map<String, dynamic>>();
 
@@ -109,10 +117,10 @@ Future<List<Photo>> fetchPhotos(http.Client client) async {
 
 Si ejecutas la función `fetchPhotos` en un teléfono lento, puedes notar que la app 
 se congela por un breve momento cuando esta analizando y convirtiendo el json. Esto es un jank, 
-y queremos deshacernos de esto!
+y queremos deshacernos de esto.
 
 Entonces ¿Cómo podemos hacer esto? Moviendo el análisis y conversión a un segundo plano aislado 
-usando la función [`compute`](https://docs.flutter.io/flutter/foundation/compute.html) 
+usando la función [`compute`]({{site.api}}/flutter/foundation/compute.html) 
 proporcionada por Flutter. La función `compute` puede ejecutar costosas funciones en un 
 segundo plano aislado y devolver el resultado. En este caso, queremos ejecutar 
 la función `parsePhotos` en segundo plano!
@@ -155,7 +163,7 @@ Future<List<Photo>> fetchPhotos(http.Client client) async {
   return compute(parsePhotos, response.body);
 }
 
-// Una función que convertirá el body de la respuesta en un List<Photo>
+// Una función que convierte el body de la respuesta en un List<Photo>
 List<Photo> parsePhotos(String responseBody) {
   final parsed = json.decode(responseBody).cast<Map<String, dynamic>>();
 

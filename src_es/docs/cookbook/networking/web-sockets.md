@@ -1,13 +1,20 @@
 ---
-title: "Trabajando con WebSockets"
+title: Trabajando con WebSockets
+prev:
+  title: Analizando un JSON en segundo plano
+  path: /docs/cookbook/networking/background-parsing
+next:
+  title: Persistir datos con SQLite
+  path: /docs/cookbook/persistence/sqlite
 ---
 
-Además de las peticiones normales HTTP, podemos conectarnos a servidores usando WebSockets. 
-WebSockets permite una comuncación de dos vias con el servidor sin ["polling"](https://es.wikipedia.org/wiki/Polling).
+Además de las peticiones normales HTTP, puedes conectar a servidores usando 
+WebSockets. WebSockets permite una comunicación de dos vías con el servidor sin 
+["polling"](https://es.wikipedia.org/wiki/Polling).
 
-En este ejemplo, conectaremos a un [servidor de pruebas proporcionado por 
-websocket.org](http://www.websocket.org/echo.html). Este servidor simplemente nos devolverá 
-el mismo mensaje que le enviemos!
+En este ejemplo, conectarás a un [servidor de pruebas proporcionado por 
+websocket.org](http://www.websocket.org/echo.html). Este servidor simplemente nos devuelve 
+el mismo mensaje que le envies.
 
 ## Instrucciones
 
@@ -18,13 +25,13 @@ el mismo mensaje que le enviemos!
   
 ## 1. Conecta a un servidor de WebSocket 
 
-El paquete [web_socket_channel](https://pub.dartlang.org/packages/web_socket_channel) 
-proporciona las herramientas que necesitaremos para conectarnos al servidor WebSocket.
+El paquete [web_socket_channel]({{site.pub-pkg}}/web_socket_channel) 
+proporciona las herramientas que necesitarás para conectarnos al servidor WebSocket.
 
-El paquete proporciona un `WebSocketChannel` que nos permite tanto escuchar mensajes 
+El paquete proporciona un `WebSocketChannel` que te permite tanto escuchar mensajes 
 desde el servidor como enviar mensajes al servidor. 
 
-En Flutter, podemos crear un `WebSocketChannel` que se conecta al servidor en una 
+En Flutter, crea un `WebSocketChannel` que se conecta al servidor en una 
 línea:
 
 <!-- skip -->
@@ -34,14 +41,15 @@ final channel = IOWebSocketChannel.connect('ws://echo.websocket.org');
 
 ## 2. Escucha mensajes desde el servidor
 
-Ahora que hemos establecido una conexión, podemos escuchar mensajes desde nuestro 
+Ahora que has establecido una conexión, puedes escuchar mensajes desde el 
 servidor.
 
-Después mandamos un mensaje al servidor de pruebas, este enviará el mensaje de vuelta. 
+Después que mandes un mensaje al servidor de pruebas, este envia el mensaje de vuelta. 
 
-¿Cómo vamos a escuchar por mensajes y mostrarlos? En este ejemplo, usaremos 
-un widget [`StreamBuilder`](https://docs.flutter.io/flutter/widgets/StreamBuilder-class.html) 
-para escuchar nuevos mensajes y un widget [`Text`](https://docs.flutter.io/flutter/widgets/Text-class.html) 
+¿Cómo escuchar por mensajes y mostrarlos? En este ejemplo, usaremos 
+un widget [`StreamBuilder`]({{site.api}}/flutter/widgets/StreamBuilder-class.html) 
+para escuchar nuevos mensajes y un widget 
+[`Text`]({{site.api}}/flutter/widgets/Text-class.html) 
 para mostrarlo.
 
 <!-- skip -->
@@ -56,21 +64,22 @@ StreamBuilder(
 
 ### ¿Cómo funciona esto?
 
-El `WebSocketChannel` proporciona un [`Stream`](https://docs.flutter.io/flutter/dart-async/Stream-class.html) 
+El `WebSocketChannel` proporciona un [`Stream`]({{site.api}}/flutter/dart-async/Stream-class.html) 
 de mensajes desde el servidor.
 
 La clase `Stream` es una parte fundamental del paquete `dart:async`. Este 
 proporciona una manera de escuchar eventos asíncronos desde 
 una fuente de datos. Al contrario que `Future`, el cual devuelve una única respuesta 
-asíncrona, la clase `Stream` puede entregar muchos eventos a lo largo del tiempo. 
+asíncrona, la clase `Stream` puede entregar muchos eventos a 
+lo largo del tiempo. 
 
-El widget [`StreamBuilder`](https://docs.flutter.io/flutter/widgets/StreamBuilder-class.html) 
-conectará a un `Stream` y pide a Flutter hacer rebuild cada vez que 
-recibe un evento usando la función `builder` proporcionada! 
+El widget [`StreamBuilder`]({{site.api}}/flutter/widgets/StreamBuilder-class.html) 
+conecta a un `Stream` y pide a Flutter hacer rebuild cada vez que 
+recibe un evento usando la función `builder` proporcionada. 
 
 ## 3. Envía datos al servidor
 
-Para enviar datos al servidor, agregaremos mensajes con el método `add` al receptor `sink` proporcionada 
+Para enviar datos al servidor, agrega mensajes con el método `add` al receptor `sink` proporcionada 
 por el `WebSocketChannel`.
 
 <!-- skip -->
@@ -80,7 +89,8 @@ channel.sink.add('Hello!');
 
 ### ¿Cómo funciona esto?
 
-El `WebSocketChannel` proporciona una clase [`StreamSink`](https://docs.flutter.io/flutter/dart-async/StreamSink-class.html)
+El `WebSocketChannel` proporciona una clase 
+[`StreamSink`]({{site.api}}/flutter/dart-async/StreamSink-class.html) 
 para enviar (_push_) mensajes al servidor. 
 
 La clase `StreamSink` proporciona una manera general para añadir eventos síncronos o asíncronos a una
@@ -88,8 +98,8 @@ fuente de datos.
 
 ## 4. Cierra la conexión al WebSocket
 
-Después de que hayamos usado el WebSocket, queremos cerrar la conexión! Para hacerlo, 
-podemos cerrar el `sink`.
+Después de que hayas usado el WebSocket, cierra la conexión. 
+Para hacerlo, cierra el `sink`.
 
 <!-- skip -->
 ```dart

@@ -41,18 +41,18 @@ un código 'boilerplate' verdaderamente pequeño.
 
 *Nota*: Si se desea, las llamadas a métodos pueden también ser enviadas en la 
 dirección inversa, con la plataforma actuando como cliente de métodos implementados 
-en Dart. Un ejemplo concreto de esto es el plugin [`quick_actions`](https://pub.dartlang.org/packages/quick_actions).
+en Dart. Un ejemplo concreto de esto es el plugin [`quick_actions`]({{site.pub}}/packages/quick_actions).
 
-[MethodChannel]: https://docs.flutter.io/flutter/services/MethodChannel-class.html
-[MethodChannelAndroid]: https://docs.flutter.io/javadoc/io/flutter/plugin/common/MethodChannel.html
-[MethodChanneliOS]: https://docs.flutter.io/objcdoc/Classes/FlutterMethodChannel.html
+[MethodChannel]: {{site.api}}/flutter/services/MethodChannel-class.html
+[MethodChannelAndroid]: {{site.api}}/javadoc/io/flutter/plugin/common/MethodChannel.html
+[MethodChanneliOS]: {{site.api}}/objcdoc/Classes/FlutterMethodChannel.html
 
 ### Tipos de datos y codecs soportados por Platform channel {#codec}
 
 La _standard platform channels_ usa un codec de mensaje standard que soporta 
 serialización binaria eficiente de valores similares a JSON simples, como booleans,
 numbers, Strings, byte buffers, y List y Maps de estos (mira
-[`StandardMessageCodec`](https://docs.flutter.io/flutter/services/StandardMessageCodec-class.html))
+[`StandardMessageCodec`]({{site.api}}/flutter/services/StandardMessageCodec-class.html))
 para detalles. La serialización y deserialización de estos valores hacia y desde los 
 mensajes ocurre automáticamente cuando envías y recibes valores.
 
@@ -88,9 +88,9 @@ paquetes](/docs/development/packages-and-plugins/developing-packages#plugin)), p
 la misma manera.
 
 *Nota*: El código fuente ejecutable completo para este ejemplo, está disponible en 
-[`/examples/platform_channel/`](https://github.com/flutter/flutter/tree/master/examples/platform_channel)
+[`/examples/platform_channel/`]({{site.github}}/flutter/flutter/tree/master/examples/platform_channel)
 para Android con Java y iOS con Objective-C. Para iOS con Swift, mira
-[`/examples/platform_channel_swift/`](https://github.com/flutter/flutter/tree/master/examples/platform_channel_swift).
+[`/examples/platform_channel_swift/`]({{site.github}}/flutter/flutter/tree/master/examples/platform_channel_swift).
 
 ### Step 1: Crea un nuevo proyecto de app {#example-project}
 
@@ -143,7 +143,7 @@ Usamos el resultado devuelto para actualizar el estado de el interfaz de usuario
   // Get battery level.
   String _batteryLevel = 'Unknown battery level.';
 
-  Future<Null> _getBatteryLevel() async {
+  Future<void> _getBatteryLevel() async {
     String batteryLevel;
     try {
       final int result = await platform.invokeMethod('getBatteryLevel');
@@ -340,6 +340,7 @@ class MainActivity() : FlutterActivity() {
   override fun onCreate(savedInstanceState: Bundle?) {
     super.onCreate(savedInstanceState)
 
+    GeneratedPluginRegistrant.registerWith(this)
     MethodChannel(flutterView, CHANNEL).setMethodCallHandler { call, result ->
       // TODO
     }
@@ -441,6 +442,7 @@ que fue usado en la parte del cliente en Flutter.
 
 ```objectivec
 #import <Flutter/Flutter.h>
+#import "GeneratedPluginRegistrant.h"
 
 @implementation AppDelegate
 - (BOOL)application:(UIApplication*)application didFinishLaunchingWithOptions:(NSDictionary*)launchOptions {
@@ -454,6 +456,7 @@ que fue usado en la parte del cliente en Flutter.
     // TODO
   }];
 
+  [GeneratedPluginRegistrant registerWithRegistry:self];
   return [super application:application didFinishLaunchingWithOptions:launchOptions];
 }
 ```
@@ -549,6 +552,7 @@ crea un `FlutterMethodChannel` atado al _channel name_ `samples.flutter.io/batte
       // Maneja mensajes sobre la batería.
     })
 
+    GeneratedPluginRegistrant.register(with: self)
     return super.application(application, didFinishLaunchingWithOptions: launchOptions)
   }
 }
@@ -616,7 +620,7 @@ básicos, usando un codec de mensajes personalizado. Además, puedes usar las cl
 especializadas [`BinaryCodec`][BinaryCodec], [`StringCodec`][StringCodec], y
 [`JSONMessageCodec`][JSONMessageCodec], o crear tu propio codec.
 
-[BasicMessageChannel]: https://docs.flutter.io/flutter/services/BasicMessageChannel-class.html
-[BinaryCodec]: https://docs.flutter.io/flutter/services/BinaryCodec-class.html
-[StringCodec]: https://docs.flutter.io/flutter/services/StringCodec-class.html
-[JSONMessageCodec]: https://docs.flutter.io/flutter/services/JSONMessageCodec-class.html
+[BasicMessageChannel]: {{site.api}}/flutter/services/BasicMessageChannel-class.html
+[BinaryCodec]: {{site.api}}/flutter/services/BinaryCodec-class.html
+[StringCodec]: {{site.api}}/flutter/services/StringCodec-class.html
+[JSONMessageCodec]: {{site.api}}/flutter/services/JSONMessageCodec-class.html

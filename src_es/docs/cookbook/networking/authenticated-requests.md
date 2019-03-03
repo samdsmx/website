@@ -1,14 +1,20 @@
 ---
-title: "Creando peticiones autentificadas"
+title: Creando peticiones autentificadas
+prev:
+  title: Obtener datos desde internet
+  path: /docs/cookbook/networking/fetch-data
+next:
+  title: Analizando un JSON en segundo plano
+  path: /docs/cookbook/networking/background-parsing
 ---
 
 Para obtener datos de muchos web services, necesitas proporcionar 
 autentificación. Hay muchas maneras para hacer esto, pero tal vez la más común 
-requiere el uso del encabezado HTTP `Authorization`.
+usa del encabezado HTTP `Authorization`.
 
 ## Añade el encabezado Authorization
 
-El paquete [`http`](https://pub.dartlang.org/packages/http) provée una manera 
+El paquete [`http`]({{site.pub-pkg}}/http) provée una manera 
 conveniente de agregar cabeceras a tus peticiones. También puedes aprovechar el 
 paquete `dart:io` para `HttpHeaders` comunes.
 
@@ -17,7 +23,7 @@ paquete `dart:io` para `HttpHeaders` comunes.
 Future<http.Response> fetchPost() {
   return http.get(
     'https://jsonplaceholder.typicode.com/posts/1',
-    // Envia headers de autentificación a tu backend
+    // Envia headers de autentificación al backend
     headers: {HttpHeaders.authorizationHeader: "Basic your_api_token_here"},
   );
 }

@@ -1,6 +1,8 @@
 Después de que el compilado de la app se complete, verás la app inicial en tu dispositivo.
 
-{% include app-figure.md img-class="site-mobile-screenshot border" image="starter-app.png" caption="Starter app" platform="iOS" %}
+{% include app-figure.md img-class="site-mobile-screenshot border"
+    path-prefix="get-started" platform="iOS" image="starter-app.png"
+    caption="Starter app" %}
 
 ## Probando el hot reload
 
@@ -11,16 +13,16 @@ quieres recargar, y ver los cambio en tu simulador, emulador, o dispositivo.
 
  1. Open `lib/main.dart`.
  1. Cambia el texto
-    <code class="text-nowrap">
-    'You have <del>pushed</del> the button this many times'
-    </code>
+     {% prettify dart %}
+      'You have [[strike]]pushed[[/strike]] the button this many times'
+    {% endprettify %}
     a
-    <code class="text-nowrap">
-      'You have <ins>clicked</ins> the button this many times'
-    </code>.
+     {% prettify dart %}
+      'You have [!clicked!] the button this many times'
+    {% endprettify %}
 
     {{site.alert.important}}
-      No presione el botón de 'Stop'; permita que su app continué ejecutándose.
+      Do _not_ stop your app. Let your app run.
     {{site.alert.end}}
 
   1. Guarda tus cambios{{include.save_changes}}

@@ -1,11 +1,18 @@
 ---
 title: "Manejando gestos Tap"
+rev:
+  title: Añadir el efecto ripple de Material Touch
+  path: /docs/cookbook/gestures/ripples
+next:
+  title: Implementar Swipe para Cancelar
+  path: /docs/cookbook/gestures/dismissible
+
 ---
 
 No solo queremos mostrar información a nuestros usuarios, queremos que nuestros usuarios 
 interactúen con nuestras aplicaciones. Entonces, ¿cómo respondemos a acciones fundamentales 
 como tapping y dragging? ¡Usaremos el widget 
-[`GestureDetector`](https://docs.flutter.io/flutter/widgets/GestureDetector-class.html)!
+[`GestureDetector`]({{site.api}}/flutter/widgets/GestureDetector-class.html)!
 
 Digamos que queremos hacer un botón personalizado que muestre un snackbar cuando hagamos tap. 
 ¿Cómo enfocaríamos esto?
@@ -42,9 +49,9 @@ GestureDetector(
   1. Si deseas agregar el efecto Material Ripple a tu botón, por favor consulta la receta
   "[Añadiendo efecto ripple de Material Touch](/docs/cookbook/gestures/ripples/)".
   2. Si bien hemos creado un botón personalizado para demostrar estos conceptos, Flutter 
-   incluye un puñado de botones: [RaisedButton](https://docs.flutter.io/flutter/material/RaisedButton-class.html), 
-  [FlatButton](https://docs.flutter.io/flutter/material/FlatButton-class.html), 
-  y [CupertinoButton](https://docs.flutter.io/flutter/cupertino/CupertinoButton-class.html)
+   incluye un puñado de botones: [RaisedButton]({{site.api}}/flutter/material/RaisedButton-class.html), 
+  [FlatButton]({{site.api}}/flutter/material/FlatButton-class.html), 
+  y [CupertinoButton]({{site.api}}/flutter/cupertino/CupertinoButton-class.html)
     
 
 ## Ejemplo completo

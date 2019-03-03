@@ -16,13 +16,13 @@ que describen acciones semánticas que consisten en uno o más movimientos de pu
 Los punteros representan datos en bruto de la interacción del usuario con la pantalla del dispositivo. 
 Existen cuatro tipos de eventos de punteros:
 
-- [`PointerDownEvent`](https://docs.flutter.io/flutter/gestures/PointerDownEvent-class.html)
+- [`PointerDownEvent`]({{site.api}}/flutter/gestures/PointerDownEvent-class.html)
   El puntero ha contactado con una ubicación determinada de la pantalla. 
-- [`PointerMoveEvent`](https://docs.flutter.io/flutter/gestures/PointerMoveEvent-class.html)
+- [`PointerMoveEvent`]({{site.api}}/flutter/gestures/PointerMoveEvent-class.html)
   El puntero se ha movido de una ubicación de la pantalla a otra.
-- [`PointerUpEvent`](https://docs.flutter.io/flutter/gestures/PointerUpEvent-class.html)
+- [`PointerUpEvent`]({{site.api}}/flutter/gestures/PointerUpEvent-class.html)
   El puntero ha dejado  de hacer contacto con la pantalla.
-- [`PointerCancelEvent`](https://docs.flutter.io/flutter/gestures/PointerCancelEvent-class.html)
+- [`PointerCancelEvent`]({{site.api}}/flutter/gestures/PointerCancelEvent-class.html)
   La acción de ese puntero ya no está dirigida hacia esta aplicación.
 
 En el evento pointer down, el framework hace un _hit test_ en tu app para determinar que 
@@ -34,7 +34,7 @@ No hay ningún mecanismo para cancelar o detener los eventos de punteros de
 ser enviados más allá.
 
 Para escuchar eventos de puntero directamente desde la capa de widgets, 
-use un widget [`Listener`](https://docs.flutter.io/flutter/widgets/Listener-class.html)
+use un widget [`Listener`]({{site.api}}/flutter/widgets/Listener-class.html)
 widget. Sin embargo, en general, considere usar gestos en su lugar 
 (como se discute a continuación).
 
@@ -88,26 +88,26 @@ ciclo de vida del gesto (por ejemplo, drag start, drag update, y drag end):
     Se establece `onHorizontalDragEnd` o `onVerticalDragEnd`.
 
 Para escuchar gestos desde la capa de widgets, use un
-[`GestureDetector`](https://docs.flutter.io/flutter/widgets/GestureDetector-class.html).
+[`GestureDetector`]({{site.api}}/flutter/widgets/GestureDetector-class.html).
 
 Si está utilizando Material Components, muchos de esos widgets ya responden
 A los taps o gestos.
 Por ejemplo,
-[IconButton](https://docs.flutter.io/flutter/material/IconButton-class.html) y
-[FlatButton](https://docs.flutter.io/flutter/material/FlatButton-class.html)
+[IconButton]({{site.api}}/flutter/material/IconButton-class.html) y
+[FlatButton]({{site.api}}/flutter/material/FlatButton-class.html)
 responde a (taps), y
-[`ListView`](https://docs.flutter.io/flutter/widgets/ListView-class.html)
+[`ListView`]({{site.api}}/flutter/widgets/ListView-class.html)
 responde a los swipes para activar el desplazamiento.
 Si no está utilizando esos widgets, pero desea que el efecto de "salpicadura de tinta" en un
 tap, puedes usar
-[`InkWell`](https://docs.flutter.io/flutter/material/InkWell-class.html).
+[`InkWell`]({{site.api}}/flutter/material/InkWell-class.html).
 
 ### Desambiguación de gestos
 
 En una ubicación determinada en la pantalla, puede haber varios detectores de gestos. Todos
 de estos detectores de gestos escuchan el flujo de eventos de puntero a medida que fluyen
 Pasado e intento de reconocer gestos específicos. los
-[`GestureDetector`](https://docs.flutter.io/flutter/widgets/GestureDetector-class.html)
+[`GestureDetector`]({{site.api}}/flutter/widgets/GestureDetector-class.html)
 widget decide qué gestos intentar reconocer en función de cuál de sus
 Las devoluciones de llamada no son nulas.
 

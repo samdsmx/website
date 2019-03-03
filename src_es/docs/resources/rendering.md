@@ -165,7 +165,7 @@ Si quieres definir un `RenderObject` que usa una nueva coordenada
 sistema, entonces usted debe heredar directamente de `RenderObject`. Ejemplos
 de hacer esto se puede encontrar en `RenderBox`, que se ocupa en
 rectángulos en el espacio cartesiano, y en el [ejemplo sector_layout.dart
-](https://github.com/flutter/flutter/blob/master/examples/layers/rendering/src/sector_layout.dart), cual
+]({{site.github}}/flutter/flutter/blob/master/examples/layers/rendering/src/sector_layout.dart), cual
 implementa un modelo de juguete basado en coordenadas polares. La clase `RenderView`,
 que se utiliza internamente para adaptarse desde el sistema host a este
 marco de representación, es otro ejemplo.

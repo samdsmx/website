@@ -1,5 +1,11 @@
 ---
 title: "Añadiendo efecto ripple de Material Touch"
+prev:
+  title: Obtener el valor de un campo de texto
+  path: /docs/cookbook/forms/retrieve-input
+next:
+  title: Manejando gestos Tap
+  path: /docs/cookbook/gestures/handling-taps
 ---
 
 Mientras  diseñamos una aplicación que debería seguir las directrices de Material Design, queremos 

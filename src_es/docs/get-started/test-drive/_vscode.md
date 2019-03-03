@@ -13,11 +13,11 @@ Los comando de arriba crean un directorio para el proyecto llamado `myapp`
 el cual contiene una app demo sencilla
 que utiliza [Material Components][].
 
-Dentro del directorio del proyecto, el código de tu app esta en `lib/main.dart`.
+{% include_relative _main-code-note.md  %}
 
 ## Ejecutar app
 
- 1. Localizar la barra de estado de VS Code(la barra azul en la parte de abajo de la ventana):<br> ![status bar][]{:width="450px"}
+ 1. Localizar la barra de estado de VS Code(la barra azul en la parte de abajo de la ventana):<br> ![status bar][]{:.mw-100}
  1. Seleccionar el dispositivo de el área de **Device Selector**.
     Para detalles, vea [Cambio rápido entre dispositivos de Flutter][].
     - Si no se encuentra ningún dispositivo disponible y prefieres usar un simulador,
@@ -35,8 +35,8 @@ Dentro del directorio del proyecto, el código de tu app esta en `lib/main.dart`
 
 {% include_relative _try-hot-reload.md save_changes=save_changes %}
 
-[instalar]: /get-started/install
-[Material Components]: https://material.io/guidelines
+[instalar]: /docs/get-started/install
+[Material Components]: {{site.material}}/guidelines
 [Quickly switching between Flutter devices]: https://dartcode.org/docs/quickly-switching-between-flutter-devices
 [Cambio rápido entre dispositivos de Flutter]: {% asset tools/vs-code/device_status_bar.png @path %}
 

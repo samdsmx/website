@@ -1,5 +1,11 @@
 ---
 title: "Creando listas con elementos de diferentes tipos"
+prev:
+  title: Crear una lista en un Grid
+  path: /docs/cookbook/lists/grid-lists
+next:
+  title: Trabajando con listas grandes
+  path: /docs/cookbook/lists/long-lists
 ---
 
 A menudo necesitamos crear listas que muestren diferentes tipos de contenido. Por ejemplo, podríamos 
@@ -67,7 +73,7 @@ final items = List<ListItem>.generate(
 
 Para poder convertir cada elemento en un Widget, emplearemos el 
 constructor 
-[`ListView.builder`](https://docs.flutter.io/flutter/widgets/ListView/ListView.builder.html).
+[`ListView.builder`]({{site.api}}/flutter/widgets/ListView/ListView.builder.html).
 
 En general, queremos proporcionar una función `builder` que verifique con qué tipo de 
 elemento estamos tratando, y devuelva el Widget apropiado para ese 

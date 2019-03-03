@@ -1,11 +1,11 @@
 ---
-title: "Empezar: Configurar Editor"
+title: Configurar un Editor
 prev:
   title: Instalar
-  path: /get-started/install
+  path: /docs/get-started/install
 next:
   title: Test drive
-  path: /get-started/test-drive
+  path: /docs/get-started/test-drive
 toc: false
 ---
 
@@ -16,7 +16,7 @@ sintaxis resaltada, asistencia al editar widgets, apoyo para ejecutar & depurar,
 
 Siga los siguientes pasos para agregar un complemento al editor para Androind Studio, IntelliJ 
 o VS Code. Si quiere utilizar un editor diferente, está bien, simplemente salte al 
-[siguiente paso: crear y ejecutar tu primer app](/get-started/test-drive/).
+[siguiente paso: crear y ejecutar tu primer app](/docs/get-started/test-drive).
 
 {% comment %} Nav tabs {% endcomment -%}
 <ul class="nav nav-tabs" id="editor-setup" role="tablist">
@@ -37,7 +37,7 @@ o VS Code. Si quiere utilizar un editor diferente, está bien, simplemente salte
 
 Android Studio ofrece una experiencia completa e integrada del IDE para Flutter. 
 
-   * [Android Studio](https://developer.android.com/studio/index.html), version 3.0 o superior.
+   * [Android Studio]({{site.android-dev}}/studio/index.html), version 3.0 o superior.
 
 Otra opción puede ser utilizar IntelliJ:
 
@@ -72,7 +72,6 @@ VS Code es un editor ligero con Flutter, asistencia al ejecutar y depurar.
   1. Teclee 'install', y seleccione la acción **'Extensions: Install Extension'**
   1. Introduzca `flutter` en el campo de busqueda, seleccione 'Flutter' en la lista, 
      y presione **Install**
-  1. Seleccione 'OK' para recargar VS Code
 
 ## Valida tu configuración con Flutter Doctor
 

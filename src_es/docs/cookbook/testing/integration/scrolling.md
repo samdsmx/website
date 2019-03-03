@@ -1,5 +1,11 @@
 ---
-title: "Haciendo scroll en test de integración"
+title: Scrolling
+prev:
+  title: Perfiles de rendimiento
+  path: /docs/cookbook/testing/integration/profiling
+next:
+  title: Introducción a los test unitarios
+  path: /docs/cookbook/testing/unit/introduction
 ---
 
 Muchas apps presentan listas de contenido, desde clientes de correo electrónico hasta apps de 

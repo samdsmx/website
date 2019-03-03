@@ -2,6 +2,12 @@
 title: "Usar Themes para compartir colores y estilos de fuente"
 short-title: Themes
 description: Como compartir colores y fuentes a lo largo de una app usando Themes.
+prev:
+  title: Actualizar el UI basado en la orientación
+  path: /docs/cookbook/design/orientation
+next:
+  title: Usar fuentes propias
+  path: /docs/cookbook/design/fonts
 ---
 
 Para compartir colores y estilos de fuente a través de nuestra aplicación, podemos 
@@ -18,7 +24,7 @@ colores de fondo y los estilos de fuente para AppBars, Buttons, Checkboxes, y m�
 
 Para compartir un Theme que contenga colores y estilos de fuente en toda nuestra 
 aplicación, podemos proporcionar 
-[`ThemeData`](https://docs.flutter.io/flutter/material/ThemeData-class.html)
+[`ThemeData`]({{site.api}}/flutter/material/ThemeData-class.html)
 al constructor de `MaterialApp`.
 
 Si no se proporciona ningún `theme` , Flutter crea un tema alternativo por nosotros.
@@ -28,14 +34,26 @@ Si no se proporciona ningún `theme` , Flutter crea un tema alternativo por noso
 MaterialApp(
   title: title,
   theme: ThemeData(
+    // Define el Brightness y Colores por defecto
     brightness: Brightness.dark,
     primaryColor: Colors.lightBlue[800],
     accentColor: Colors.cyan[600],
-  ),
+
+    // Define la Familia de fuente por defecto
+    fontFamily: 'Montserrat',
+    
+    // Define el TextTheme por defecto. Usa esto para espicificar el estilo de texto por defecto 
+    // para cabeceras, títulos, cuerpos de texto, y más.
+    textTheme: TextTheme(
+      headline: TextStyle(fontSize: 72.0, fontWeight: FontWeight.bold),
+      title: TextStyle(fontSize: 36.0, fontStyle: FontStyle.italic),
+      body1: TextStyle(fontSize: 14.0, fontFamily: 'Hind'),
+     ),
+  )
 );
 ```
 
-Por favor consulta la documentación de [ThemeData](https://docs.flutter.io/flutter/material/ThemeData-class.html)
+Por favor consulta la documentación de [ThemeData]({{site.api}}/flutter/material/ThemeData-class.html)
 para ver todos los colores y fuentes que puede definir.
 
 ## Temas para parte de una aplicación
@@ -70,7 +88,7 @@ Theme(
 En lugar de sobrescribir todo, a menudo tiene sentido extender el tema 
 padre. Podemos lograr esto utilizando el 
 método 
-[`copyWith`](https://docs.flutter.io/flutter/material/ThemeData/copyWith.html).
+[`copyWith`]({{site.api}}/flutter/material/ThemeData/copyWith.html).
 
 <!-- skip -->
 ```dart
@@ -124,15 +142,24 @@ class MyApp extends StatelessWidget {
     final appName = 'Custom Themes';
 
     return MaterialApp(
-      title: appName,
+      title: title,
       theme: ThemeData(
+        // Define el Brightness y Colores por defecto
         brightness: Brightness.dark,
         primaryColor: Colors.lightBlue[800],
         accentColor: Colors.cyan[600],
-      ),
-      home: MyHomePage(
-        title: appName,
-      ),
+
+        // Define la Familia de fuente por defecto
+        fontFamily: 'Montserrat',
+        
+        // Define el TextTheme por defecto. Usa esto para espicificar el estilo de texto por defecto 
+        // para cabeceras, títulos, cuerpos de texto, y más.
+        textTheme: TextTheme(
+          headline: TextStyle(fontSize: 72.0, fontWeight: FontWeight.bold),
+          title: TextStyle(fontSize: 36.0, fontStyle: FontStyle.italic),
+          body1: TextStyle(fontSize: 14.0, fontFamily: 'Hind'),
+        ),
+      )
     );
   }
 }

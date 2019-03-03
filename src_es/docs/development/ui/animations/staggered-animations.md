@@ -42,7 +42,7 @@ Esta guía muestra cómo construir una animación escalonada en Flutter.
   [staggered_pic_selection](https://github.com/flutter/website/tree/master/src/_includes/code/animation/staggered_pic_selection)
   : Muestra la eliminación de una imagen de una lista de imágenes mostradas en uno de tres tamaños.
     Este ejemplo utiliza dos [animation
-    controllers](https://docs.flutter.io/flutter/animation/AnimationController-class.html):
+    controllers]({{site.api}}/flutter/animation/AnimationController-class.html):
     uno para la selección/deselección de imágenes, y otro para la eliminación de imágenes.
     La animación de selección/deselección es escalonada. (Para ver este efecto,
     puede que necesites aumentar el valor de `timeDilation`.)
@@ -53,16 +53,15 @@ Esta guía muestra cómo construir una animación escalonada en Flutter.
     Este comportamiento escalonado es similar al que puedes ver en Google Photos.
 {{site.alert.end}}
 
-
-
 El siguiente video muestra la animación realizada por
 basic_staggered_animation:
 
-<!--
-  Use esto en lugar del código de inserción de YouTube predeterminado para que la incrustación
-  es responsive
--->
-<div class="embed-container"><iframe src="https://www.youtube.com/embed/0fFvnZemmh8?rel=0" frameborder="0" allowfullscreen></iframe></div>
+<div class="embedded-video-wrapper">
+  <iframe class="embedded-video-wrapper__frame"
+    src="https://www.youtube.com/embed/0fFvnZemmh8?rel=0"
+    frameborder="0" allowfullscreen>
+  </iframe>
+</div>
 
 En el video, ves la siguiente animación de un solo widget,
 que comienza como un cuadrado azul bordeado con esquinas ligeramente redondeadas.
@@ -85,24 +84,23 @@ Flutter](/docs/development/ui/layout).
 
 ## Estructura básica de una animación escalonada.
 
-<div class="whats-the-point" markdown="1">
-
-<b> <a id="whats-the-point" class="anchor" href="#whats-the-point" aria-hidden="true"><span class="octicon octicon-link"></span></a>¿Que aprenderás?</b>
+{{site.alert.secondary}}
+  <h4 class="no_toc">¿Que aprenderás?</h4>
 
 * Todas las animaciones son impulsadas por el mismo 
-  [AnimationController](https://docs.flutter.io/flutter/animation/AnimationController-class.html).
+  [AnimationController]({{site.api}}/flutter/animation/AnimationController-class.html).
 * Independientemente de cuanto dure la animación en tiempo real,
   Los valores del controlador deben estar entre 0.0 y 1.0, inclusive.
 * Cada animación tiene un
-  [Interval](https://docs.flutter.io/flutter/animation/Interval-class.html)
+  [Interval]({{site.api}}/flutter/animation/Interval-class.html)
   entre 0.0 y 1.0, inclusive.
 * Para cada propiedad que se anime en un interval, cree un
-  [Tween.](https://docs.flutter.io/flutter/animation/Tween-class.html)
+  [Tween.]({{site.api}}/flutter/animation/Tween-class.html)
   La interpolación especifica los valores de inicio y fin de esa propiedad.
 * La Tween produce un objeto 
-  [Animation](https://docs.flutter.io/flutter/animation/Animation-class.html) 
+  [Animation]({{site.api}}/flutter/animation/Animation-class.html) 
   que es gestionado por el controlador.
-</div>
+{{site.alert.end}}
 
 {% comment %}
 La aplicación es esencialmente animar un contenedor cuya decoración y tamaño son
@@ -124,7 +122,9 @@ Podrías notar las siguientes características:
 * Los cambios de padding y del radio del borde se producen durante el mismo intervalo exacto,
   pero no tienen porque hacerlo.
 
-<img src="/docs/development/ui/animations/staggered-animations/images/StaggeredAnimationIntervals.png" alt="Diagram showing the interval specified for each motion." />
+{% asset ui/animations/StaggeredAnimationIntervals.png
+    alt="Diagram showing the interval specified for each motion"
+    class="mw-100" %}
 
 Para configurar la animación:
 
@@ -140,9 +140,9 @@ en los valores del Animation, desencadenan la actualización del UI.
 
 El siguiente código crea tween para la propiedad `width`.
 Este construye un
-[CurvedAnimation](https://docs.flutter.io/flutter/animation/CurvedAnimation-class.html),
+[CurvedAnimation]({{site.api}}/flutter/animation/CurvedAnimation-class.html),
 especificando una "eased curve".
-Mira [Curves](https://docs.flutter.io/flutter/animation/Curves-class.html) 
+Mira [Curves]({{site.api}}/flutter/animation/Curves-class.html) 
 para otras curvas de animación predefinidas disponibles.
 
 <!-- skip -->
@@ -194,12 +194,12 @@ El widget stateful crea el controlador, reproduce la animación,
 y construye la parte no animada del árbol de widgets.
 La animación comienza cuando se detecta un toque en cualquier parte de la pantalla.
 
-[Código completo para el main.dart de basic_staggered_animation](https://raw.githubusercontent.com/flutter/website/master/src/_includes/code/animation/basic_staggered_animation/main.dart)
+[Código completo para el main.dart de basic_staggered_animation]({{site.repo.this}}/tree/{{site.branch}}/examples/_animation/basic_staggered_animation/main.dart)
 
 ### Stateless widget: StaggerAnimation
 
 En el widget stateless, StaggerAnimation, la función `build()` crea una instancia de
-[AnimatedBuilder](https://docs.flutter.io/flutter/widgets/AnimatedBuilder-class.html)&mdash;un
+[AnimatedBuilder]({{site.api}}/flutter/widgets/AnimatedBuilder-class.html)&mdash;un
 Widget de propósito general para la construcción de animaciones. El AnimatedBuilder
 crea un widget y lo configura usando los valores actuales del Tween.
 El ejemplo crea una función llamada `_buildAnimation ()` (que realiza
@@ -209,7 +209,6 @@ marcando el árbol de widgets como dirty a medida que cambian los valores.
 Para cada tick de la animación, los valores se actualizan,
 dando como resultado una llamada a `_buildAnimation ()`.
 
-<!-- skip -->
 {% prettify dart %}
 [[highlight]]clase StaggerAnimation extiende StatelessWidget[[/highlight]] {
   StaggerAnimation({ Key key, this.controller }) :
@@ -287,7 +286,6 @@ la animación, y construye la parte no animada del árbol de widgets.
 La animación comienza cuando se detecta un toque en la pantalla.
 La animación corre hacia adelante, luego hacia atrás.
 
-<!-- skip -->
 {% prettify dart %}
 [[highlight]]class StaggerDemo extends StatefulWidget[[/highlight]] {
   @override
@@ -309,7 +307,7 @@ class _StaggerDemoState extends State<StaggerDemo> with TickerProviderStateMixin
 
   // ...Boilerplate...
 
-  [[highlight]]Future<Null> _playAnimation() async[[/highlight]] {
+  [[highlight]]Future<void> _playAnimation() async[[/highlight]] {
     try {
       [[highlight]]await _controller.forward().orCancel;[[/highlight]]
       [[highlight]]await _controller.reverse().orCancel;[[/highlight]]
@@ -360,19 +358,19 @@ Los siguientes recursos pueden ayudar al escribir animaciones:
   Si los tweens son nuevos para ti, echa un vistazo a la
   [Tutorial de animaciones](/docs/development/ui/animations/tutorial).
 
-[Documentación de la API Flutter](https://docs.flutter.io/)
+[Documentación de la API Flutter]({{site.api}}/)
 : Documentación de referencia para todas las bibliotecas de Flutter.
   En particular, ver la documentación de la 
   [biblioteca
-  de animaciones](https://docs.flutter.io/flutter/animation/animation-library.html).
+  de animaciones]({{site.api}}/flutter/animation/animation-library.html).
 
-[Flutter Gallery](https://github.com/flutter/flutter/tree/master/examples/flutter_gallery)
+[Flutter Gallery]({{site.github}}/flutter/flutter/tree/master/examples/flutter_gallery)
 : Aplicación de demostración que muestra muchos Material Components y otras características 
   de Flutter. La [Shrine
-  manifestación](https://github.com/flutter/flutter/tree/master/examples/flutter_gallery/lib/demo/shrine)
+  manifestación]({{site.github}}/flutter/flutter/tree/master/examples/flutter_gallery/lib/demo/shrine)
   Implementa una animación hero.
 
-[Material motion spec](https://material.io/guidelines/motion/)
+[Material motion spec]({{site.material}}/guidelines/motion/)
 : Describe el movimiento para Material apps.
 
 {% comment %}
@@ -381,6 +379,6 @@ Paquete aún no examinado.
 ## Otros recursos
 
 * Para un enfoque alternativo a la secuencia de animación, vea el paquete
-[flutter_sequence_animation](https://pub.dartlang.org/packages/flutter_sequence_animation)
-en [pub.dartlang.org](https://pub.dartlang.org/packages).
+[flutter_sequence_animation]({{site.pub}}/packages/flutter_sequence_animation)
+en [pub.dartlang.org]({{site.pub}}/packages).
 {% endcomment %}

@@ -15,7 +15,7 @@ description: Como desarrollar apps Flutter en Visual Studio Code.
 
 ## Instalación y configuración
 
-Sigue las instrucciones de [Configura un editor](/get-started/editor?ide=vscode) 
+Sigue las instrucciones de [Configura un editor](/docs/get-started/editor?tab=vscode) 
 para instalar las extensiónes de Dart y Flutter (también llamados plugins).
 
 ### Actualizando la extensión
@@ -126,17 +126,20 @@ Durante una sesión de depuración, se agregan varios comandos de depuración ad
 * **Toggle Slow-Mode Banner**: Ocultar el banner de "slow mode" incluso cuando se ejecuta una 
   compilación de depuración.
 
-### Depurando con Observatory
+### Flutter inspector, performance profiling y Dart DevTools
 
-Observatory es una herramienta adicional de depuración y creación de perfiles presentada 
-con una interfaz de usuario basada en html. Para detalles ve la [página Observatory](https://dart-lang.github.io/observatory/).
+Dart DevTools son un conjunto de herramientas de depuración y creación de perfiles presentada 
+con una interfaz de usuario basada en html. DevTools reemplaza 
+la versión anterior de perfilado basada en navegador, 
+Observatory, e incluye funcionalidades previamente solo disponibles 
+para IntelliJ, como el Flutter Inspector.
 
-Para abrir Observatory:
-
- 1. Ejecuta tu aplicación en modo de depuración.
- 1. Ejecuta el comando **Open Observatory** desde la [Paleta de Comandos][].
+DevTools esta aún en desarrollo pero disponible para previsualización. Para instalación e instrucciones 
+sobre como empezar, mira [DevTools' docs][].
 
 ## Consejos de edición para el código Flutter
+
+Si tienes consejos adicionales que compartirnos, por favor ¡[háznoslos llegar][]!
 
 ### Asistencias y soluciones rápidas
 
@@ -214,7 +217,7 @@ tu sesión de depuración. Para realizar un hot restart, ejecute el comando
 ### Problemas conocidos y comentarios
 
 Todos los errores conocidos se siguen en el issue tracker: [Dart an Flutter extensions GitHub issue 
-tracker](https://github.com/Dart-Code/Dart-Code/issues).
+tracker][].
 
 Agradecemos sus comentarios, tanto sobre errores/problemas como sobre solicitudes de funcionalidades. 
 Antes de presentar nuevos problemas, por favor:
@@ -227,4 +230,9 @@ marcado.
 Al presentar nuevos issues, por favor incluye la salida de [flutter doctor][]
 
 [Paleta de Comandos]: https://code.visualstudio.com/docs/getstarted/userinterface#_command-palette
+[DevTools' docs]: https://flutter.github.io/devtools
 [flutter doctor]: {{site.url}}/bug-reports/#provide-some-flutter-diagnostics
+[háznoslos llegar]: {{site.github}}/flutter/website/issues/new
+[Dart an Flutter extensions GitHub issue 
+tracker]: {{site.github}}/Dart-Code/Dart-Code/issues
+

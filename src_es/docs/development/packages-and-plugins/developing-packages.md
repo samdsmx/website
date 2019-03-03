@@ -18,7 +18,7 @@ paquete mínimo consiste en:
 {{site.alert.note}}
   Para una lista de "que hacer" y "que no hacer" cuando escribimos un plugin óptimo,
   mira [Writing a good
-  plugin](https://medium.com/flutter-io/writing-a-good-flutter-plugin-1a561b986c9c)
+  plugin]({{site.flutter-medium}}/writing-a-good-flutter-plugin-1a561b986c9c)
   en Medium.
 {{site.alert.end}}
 
@@ -27,15 +27,15 @@ paquete mínimo consiste en:
 Los paquetes pueden contener varios tipos de contenido:
 
 * *Paquetes Dart*: Paquetes generales escritos en Dart, por ejemplo el 
-  paquete [`path`](https://pub.dartlang.org/packages/path). Algunos de estos 
+  paquete [`path`]({{site.pub}}/packages/path). Algunos de estos 
   pueden contener funcionalidades específicas de Flutter y así tener una
   dependencia del framework Flutter, restringiendo su uso solo a Flutter, 
-  por ejemplo el paquete [`fluro`](https://pub.dartlang.org/packages/fluro).
+  por ejemplo el paquete [`fluro`]({{site.pub}}/packages/fluro).
 
 * *Paquetes de Plugin*: Un paquete especializado de Dart que contiene una API 
   escrita en código Dart combinado con una implementación específica de plataforma 
   para Android (usando Java o Kotlin), y/o para iOS (usando ObjC o Swift). Un ejemplo 
-  concreto es el paquete de plugin [`battery`](https://pub.dartlang.org/packages/battery).
+  concreto es el paquete de plugin [`battery`]({{site.pub}}/packages/battery).
 
 ## Desarrollando paquetes Dart {#dart}
 
@@ -43,9 +43,9 @@ Los paquetes pueden contener varios tipos de contenido:
 
 Para crear un paquete Dart, usa la etiqueta `--template=package` con `flutter create`:
 
-{% commandline %}
-flutter create --template=package hello
-{% endcommandline %}
+```terminal
+$ flutter create --template=package hello
+```
 
 Esto crea un proyecto de paquete en la carpeta `hello/` con el siguiente
 contenido especializado:
@@ -53,20 +53,20 @@ contenido especializado:
 * `lib/hello.dart`:
    - El código Dart para el paquete.
 * `test/hello_test.dart`:
-   - Los [test unitarios](https://flutter.io/testing/#unit-testing) para el paquete.
+   - Los [test unitarios](/docs/testing#unit-testing) para el paquete.
 
 ### Paso 2: Implementa el paquete
 
 Para paquetes Dart puros, simplemente añade la funcionalidad dentro del fichero 
 main dentro de `lib/<package name>.dart`, o en múltiples ficheros en el directorio `lib`.
 
-Para probar el paquete, añade [test unitarios](https://flutter.io/testing/#unit-testing)
+Para probar el paquete, añade [test unitarios](/docs/testing#unit-testing)
 en el directorio `test`.
 
 Para detalles adicionales sobre como organizar 
 el contenido de un paquete, mira la documentación 
 en [Dart library
- package](https://www.dartlang.org/guides/libraries/create-library-packages).
+ package]({{site.dart-site}}/guides/libraries/create-library-packages).
 
 ## Desarrollar paquetes de plugin {#plugin}
 
@@ -86,9 +86,9 @@ Usa la opción `--org` para especificar tu organización, usando notación de no
 dominio inversa. Este valor es usado en varios paquetes y bundle identifiers en el código
 generado Android e iOS.
 
-{% commandline %}
-flutter create --org com.example --template=plugin hello
-{% endcommandline %}
+```terminal
+$ flutter create --org com.example --template=plugin hello
+```
 
 Esto crea un proyecto de plugin en la carpeta `hello/` con el siguiente contenido 
 especializado:
@@ -106,9 +106,9 @@ Por defecto, el proyecto de plugin usa código Objective-C para iOS y
 código Java para Android. Si prefieres Swift o Kotlin, puedes especificar el 
 lenguaje iOS usando `-i` y/o el lenguaje Android usando `-a`. Por ejemplo:
 
-{% commandline %}
-flutter create --template=plugin -i swift -a kotlin hello
-{% endcommandline %}
+```terminal
+$ flutter create --template=plugin -i swift -a kotlin hello
+```
 
 ### Paso 2: Implementa el paquete {#edit-plugin-package}
 
@@ -119,7 +119,7 @@ experiencia adecuada.
 #### Paso 2a: Define la API del paquete (.dart)
 
 La API del paquete de plugin es definida en código Dart. Abre la carpeta principal `hello/`
-en tu [editor Flutter] favorito(/get-started/editor/). Localiza el fichero 
+en tu [editor Flutter favorito](/docs/get-started/editor). Localiza el fichero 
 `lib/hello.dart`.
 
 #### Paso 2b: Añade el código de la plataforma Android (.java/.kt)
@@ -181,7 +181,7 @@ Es una práctica recomendada añadir la siguiente documentación a todos los paq
 ### Documentación de API
 
 Cuando publicas un paquete, la documentación de la API es generada y publicada automáticamente a 
-dartdocs.org, mira por ejemplo la [documentación de device_info](https://www.dartdocs.org/documentation/device_info/0.0.4/index.html).
+dartdocs.org, mira por ejemplo la [documentación de device_info]({site.pub-api}}/device_info/latest).
 
 Si quieres generar documentación de la API localmente en tu máquina de desarrollo 
 , usa los siguientes comandos:
@@ -203,12 +203,12 @@ Si quieres generar documentación de la API localmente en tu máquina de desarro
 
    `%FLUTTER_ROOT%\bin\cache\dart-sdk\bin\dartdoc` (en Windows)
 
-Para consejos sobre como escribir la documentación de la API, mira [Effective Dart: Documentation](https://www.dartlang.org/guides/language/effective-dart/documentation).
+Para consejos sobre como escribir la documentación de la API, mira [Effective Dart: Documentation]({{site.dart-site}}/guides/language/effective-dart/documentation).
 
 ## Publicando paquetes {#publish}
 
 Una vez que has implementado un paquete, puedes publicarlo en 
-[Pub](https://pub.dartlang.org/), para que otros desarrolladores 
+[Pub]({{site.pub}}), para que otros desarrolladores 
 puedan usarlo fácilmente.
 
 Antes de publicar, asegúrate de revisar el `pubspec.yaml`, `README.md`, y
@@ -216,14 +216,15 @@ Antes de publicar, asegúrate de revisar el `pubspec.yaml`, `README.md`, y
 
 A continuación, ejecuta el comando dry-run para ver si todos los análisis pasan correctamente:
 
-{% commandline %}
-flutter packages pub publish --dry-run
-{% endcommandline %}
+```terminal
+$ flutter packages pub publish --dry-run
+```
 
 Finalmente, ejecuta el comando actual para publicar:
-{% commandline %}
-flutter packages pub publish
-{% endcommandline %}
+
+```terminal
+$ flutter packages pub publish
+```
 
 Para detales sobre publicación, 
 mira [Pub publishing 
@@ -281,7 +282,7 @@ Supón que quieres usar `algun_paquete` y `otro_paquete` en tu paquete `hello`, 
 `url_launcher`, pero en diferentes versiones. Entonces tenemos un conflicto 
 en potencia. La mejor manera de evitar 
 esto para el autor del paquete es usar los [rangos de 
-versiones](https://www.dartlang.org/tools/pub/dependencies#version-constraints)
+versiones]({{site.dart-site}}/tools/pub/dependencies#version-constraints)
 antes que versiones especificas cuando especificamos las dependencias.
 
 ```yaml

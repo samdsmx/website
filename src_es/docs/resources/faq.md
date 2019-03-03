@@ -77,17 +77,9 @@ y la comunidad.
 
 ### ¿Quién usa Flutter?
 
-Google usa Flutter para crear aplicaciones críticas para el negocio para iOS y Android.
-Por ejemplo, la aplicación de herramientas de ventas móviles de Google está construida con Flutter, 
-junto con una aplicación Store Manager para Google Shopping Express. Otras aplicaciones están en 
-proceso, o "dentro del horno".
-
-Otros equipos fuera de Google también están utilizando Flutter.
-Por ejemplo, la aplicación oficial para el musical Hamilton
-([Android](https://play.google.com/store/apps/details?id=com.hamilton.app),
-[iOS](https://itunes.apple.com/us/app/hamilton-the-official-app/id1255231054?mt=8))
-está construido con Flutter.
-Puedes ver muchos más ejemplos en los [Casos de uso](/showcase) de Flutter.
+Desarrolladores dentro y fuera de Google usan Flutter para construir
+hermosas apps nativas para iOS y Android.
+Para aprender más sobre algunas de estas apps, visita los [casos de us](/showcase).
 
 ### ¿Qué hace que Flutter sea único?
 
@@ -107,22 +99,13 @@ significativamente la curva de aprendizaje y la accesibilidad para la mayoría d
 
 ### ¿Debo construir mi próxima aplicación de producción con Flutter?
 
-Flutter todavía se está desarrollando y aún no está en
-1.0. Pero Flutter se usa dentro de Google y las aplicaciones construidas
-con Flutter se implementan a los usuarios en producción.
-Algunas aplicaciones de ejemplo se muestran en [Portafolio](/showcase/).
+Flutter 1.0 fue lanzado el 4 de Diceiembre de 2018. Cientos de apps
+han sido lanzadas con Flutter a cientos de millones de dispositivos.
+Ve apps de ejemplo en los [casos de uso](/showcase).
 
-Algunas funciones clave aún no están completas, sin embargo, las características que se 
-completan generalmente son de alta calidad y están listas para usar.
-
-Nuestras API se están estabilizando y seguimos mejorando
-partes del sistema basadas en los comentarios de los usuarios.
-Envíanos un correo electrónico a [flutter-dev@googlegroups.com](mailto:flutter-dev@googlegroups.com)
-cuando hacemos un cambio que podría afectar a nuestros usuarios.
-
-Entonces realmente, depende de ti. Las funcionalidades que necesitas pueden estar disponibles hoy. 
-Por favor, haznos saber si lanzaste una aplicación construida con Flutter para los usuarios. 
-¡Nos encantaría escuchar lo que estás construyendo!
+Para más información del lanzamiento y sisguientes releases,
+mira [Flutter 1.0: Google's Portable UI
+Toolkit](https://developers.googleblog.com/2018/12/flutter-10-googles-portable-ui-toolkit.html).
 
 ## ¿Qué proporciona Flutter?
 
@@ -140,17 +123,17 @@ para texto
 ### ¿Flutter funciona con cualquier editor o IDE?
 
 Estamos construyendo plugins para [Android 
-Studio](https://developer.android.com/studio/),
+Studio]({{site.android-dev}}/studio/),
 [IntelliJ IDEA](https://www.jetbrains.com/idea/), 
 y [VS Code](https://code.visualstudio.com/).
 
-Ver [configuración del editor](/get-started/editor/) para detalles de configuración, y
-[Desarrollar aplicaciones de Flutter en un IDE](/docs/development/tools/ide) para obtener 
+Ver [configuración del editor](/docs/get-started/editor) para detalles de configuración, y
+[Desarrollar aplicaciones de Flutter en un IDE](//docs/development/tools/android-studio) para obtener 
 consejos sobre cómo usar los plugins.
 
 Alternativamente, puede usar una combinación del comando `flutter` en un terminal
 y uno de los muchos editores que soportan [edición 
-con Dart](https://www.dartlang.org/tools).
+con Dart]({{site.dart-site}}/tools).
 
 ### ¿Flutter viene con un framework?
 
@@ -172,8 +155,7 @@ crear tus propios widgets o personalizar los widgets existentes.
 ¡Sí! Los equipos Flutter y Material colaboran estrechamente
 y Material Theming es totalmente compatible. Numerosos ejemplos de esto
 se muestran en el laboratorio 
-[MDC-103 Flutter: 
-Material Theming](https://codelabs.developers.google.com/codelabs/mdc-103-flutter/).
+[MDC-103 Flutter: Material Theming]({{site.codelabs}}/codelabs/mdc-103-flutter/).
 
 ### ¿Flutter viene con un framework de pruebas?
 
@@ -202,8 +184,8 @@ para una mejor idea de los componentes principales.
 ### ¿Cómo ejecuta Flutter mi código en Android? {#run-android}
 
 Los códigos C y C++ del motor están compilados con el NDK de Android. El código Dart
-(tanto el del SDK como el tuyo) están ahead-of-time (AOT) compilados en una biblioteca ARM nativa. Esa 
-biblioteca está incluida en un proyecto de Android "runner", y el conjunto está integrado en un APK. 
+(tanto el del SDK como el tuyo) están ahead-of-time (AOT) compilados en una biblioteca ARM y x86 nativas. Estas 
+bibliotecas estan incluidas en un proyecto de Android "runner", y el conjunto está integrado en un APK. 
 Cuando se inicia, la aplicación carga la biblioteca Flutter.
 Cualquier representación, entrada o manejo de eventos, etc., son delegados en el código compilado de 
 Flutter y de la aplicación. Esto es similar a la forma en que funcionan muchos motores de juegos.
@@ -231,7 +213,7 @@ No. En cambio, Flutter proporciona un conjunto de widgets
 (incluidos los widgets de Material Design y Cupertino (estilo iOS))
 administrado y renderizado por el framework y el motor de Flutter.
 Puedes navegar por un 
-[catálogo de widgets de Flutter](/docs/development/ui/widgets/catalog).
+[catálogo de widgets de Flutter](//docs/development/ui/widgets).
 
 Esperamos que el resultado final sean aplicaciones de mayor calidad. Si reutilizamos
 los widgets OEM, la calidad y el rendimiento de las aplicaciones de Flutter estarían 
@@ -348,22 +330,39 @@ Flutter debería poder ejecutar la mayoría del código Dart que no se importa
 
 ### ¿Qué tan grande es el motor Flutter?
 
-En octubre de 2018, medimos el tamaño de una 
-[app Flutter mínima](https://github.com/flutter/flutter/tree/60d223c20c44424e3c8031d019270d22bab35df6/examples/hello_world), 
+En Dicembre de 2018, medimos el tamaño de descarga de una 
+[app Flutter mínima]({{site.github}}/flutter/flutter/tree/60d223c20c44424e3c8031d019270d22bab35df6/examples/hello_world), 
 (sin Material Components, solamente un único widget `Center`, 
 construido con `flutter build apk`), empaquetado y comprimido como una 
-release APK, tiene aproximadamente 4.28 MB.
+release APK, tiene aproximadamente 4.06&nbsp;MB.
 
 Para esta app simple, 
-el core engine tiene aproximadamente 2.86MB(comprimido), 
-el framework + el código de la app tiene aproximadamente 818 KB (comprimidos), 
-el archivo LICENSE tiene 54 KB (comprimido), 
-el código Java necesario (casses.dex) tienen 62 KB (comprimido), 
-y hay aproximadamente 449 KB (comprimidos) de ICU data.
+el core engine tiene aproximadamente 2.7&nbsp;MB (comprimido), 
+el framework + el código de la app tiene aproximadamente 820.6&nbsp;KB (comprimidos), 
+el archivo LICENSE tiene 53.5&nbsp;KB (comprimido), 
+el código Java necesario (casses.dex) tienen 61.8&nbsp;KB (comprimido), 
+y hay aproximadamente 450.4&nbsp;KB (comprimidos) de ICU data.
 
-Por supuesto, su experiencia puede ser diferente, 
-y le recomendamos que mida su propia aplicación,
-ejecutando `flutter build apk` y mirando `app/outputs/apk/app-release.apk`.
+Estos números han sido medidos usando 
+[apkanalyzer]({{site.android-dev}}/studio/command-line/apkanalyzer),
+que esta también contruido en [Android
+Studio]({{site.android-dev}}/studio/build/apk-analyzer).
+
+En iOS, un IPA de release de la misma app tiene un tamaño de descarga de 10.8&nbsp;MB en un
+iPhone X, como es reportado por Apple's App Store Connect. El IPA es mayor que el 
+APK principalmente porque Apple encripta binarios dentro del IPA,
+haciendo la compresión menos eficiente (mira la sección [iOS App Store Specific
+Considerations](https://developer.apple.com/library/archive/qa/qa1795/_index.html#//apple_ref/doc/uid/DTS40014195-CH1-APP_STORE_CONSIDERATIONS)
+del 
+[QA1795](https://developer.apple.com/library/archive/qa/qa1795/_index.html)) de Apple.
+
+Por suspuesto, todo es relativo, y nosotros recomendamos qu midas tu propia app. Para medir una 
+app Android, ejecuta `flutter build apk` y carga el APK
+(`build/app/outputs/apk/release/app-release.apk`) en Android Studio 
+([instrucciones]({{site.android-dev}}/studio/build/apk-analyzer)) para 
+un reporte detallado del tamaño. Para medir en una app iOS, sube un IPA de release a Apple
+App Store Connect ([instrucciones](/docs/deployment/ios)) y 
+obtiene el reporte de tamaño de allí.
 
 ## Capacidades
 
@@ -409,7 +408,7 @@ iOS 8 o más nuevo.
 Hardware móvil: dispositivos iOS (iPhone 4S o posterior) y dispositivos Android ARM.
 
 Nota: Flutter actualmente no es compatible con la construcción para x86 de Android
-(problema [#9253](https://github.com/flutter/flutter/issues/9253)) directamente, 
+(problema [#9253]({{site.github}}/flutter/flutter/issues/9253)) directamente, 
 sin embargo, las aplicaciones creadas para ARMv7 o ARM64 funcionan bien 
 (a través de la emulación ARM en muchos dispositivos Android x86.
 
@@ -419,13 +418,19 @@ y iOS, así como con los emuladores de Android y el simulador de iOS.
 Probamos en una variedad de teléfonos de gama baja a gama alta pero aún no 
 tenemos una garantía oficial de compatibilidad de dispositivos.
 
-No probamos en tabletas, por lo que puede haber problemas con algunos 
-widgets en tabletas. No hemos implementado adaptaciones específicas 
-en tabletas de nuestros widgets.
+Pensamos que Flutter funciona bien en tablets. No implementamos actualmente todas las adaptaciones específicas recomendadas por 
+Material Design pero estamos 
+planeando mejoras en este area.
 
 ### ¿Flutter se ejecuta en la web?
 
-No. No estamos trabajando para proporcionar una versión web de Flutter.
+Estamos trabajando en un proyecto experimental llamado  [Hummingbird][]. Esta es una 
+implementación basada en la web del runtime de Flutter que toma ventaja de las 
+capacidades de la plataforma Dart para compilar a JavaScript. Esto permite al código Flutter 
+ejecutarse en una web basada en estándares sin cambios.
+
+[Hummingbird]: {{site.flutter-medium}}/hummingbird-building-flutter-for-the-web-e687c2a023a8
+
 
 ### ¿Puedo usar Flutter para crear aplicaciones de escritorio?
 
@@ -436,14 +441,14 @@ código abierto y alentamos a la comunidad a utilizar Flutter de diversas manera
 
 Sí, puedes insertar una vista de Flutter en tu aplicación existente de Android o iOS, 
 sin embargo, nuestras herramientas no están actualmente optimizadas para este caso de uso (ver el
-[issue #14821](https://github.com/flutter/flutter/issues/14821) para detalles).
+[issue #14821]({{site.github}}/flutter/flutter/issues/14821) para detalles).
 
 Dos demostraciones actuales de esto son por ejemplo 
-[platform_view](https://github.com/flutter/flutter/tree/master/examples/platform_view)
-y [flutter_view](https://github.com/flutter/flutter/tree/master/examples/flutter_view). 
+[platform_view]({{site.github}}/flutter/flutter/tree/master/examples/platform_view)
+y [flutter_view]({{site.github}}/flutter/flutter/tree/master/examples/flutter_view). 
 Alguna documentación inicial está disponible en la página wiki
 [Add Flutter to existing 
-apps](https://github.com/flutter/flutter/wiki/Add-Flutter-to-existing-apps).
+apps]({{site.github}}/flutter/flutter/wiki/Add-Flutter-to-existing-apps).
 
 ### ¿Puedo acceder a servicios de plataforma y API como sensores y almacenamiento local?
 
@@ -519,7 +524,7 @@ y recibir mensajes a la plataforma móvil usando un
 Obtenga más información sobre cómo acceder a servicios de plataforma y de terceros en Flutter con 
 [canales de plataforma](/docs/development/platform-integration/platform-channels).
 
-Aquí hay un [proyecto de ejemplo](https://github.com/flutter/flutter/tree/master/examples/platform_channel) 
+Aquí hay un [proyecto de ejemplo]({{site.github}}/flutter/flutter/tree/master/examples/platform_channel) 
 que muestra como usar los canales de plataforma para acceder a la información de 
 estado de la batería en iOS y Android
 
@@ -546,7 +551,7 @@ actualmente una solución de paralelismo de memoria compartida, aunque estamos
 evaluando soluciones para esto.
 
 Echa un vistazo al [ejemplo de uso de isolates con 
-Flutter](https://github.com/flutter/flutter/blob/master/examples/layers/services/isolate.dart).
+Flutter]({{site.github}}/flutter/flutter/blob/master/examples/layers/services/isolate.dart).
 
 ### ¿Puedo ejecutar el código de Dart en segundo plano de una aplicación de Flutter?
 
@@ -590,7 +595,7 @@ y cómo crear una versión de [lanzamiento de versión de su aplicación iOS](/d
 
 Hemos visto ejecutar aplicaciones de Flutter en algunos Chromebooks.
 Estamos rastreando [problemas relacionados con la 
-ejecución de Flutter en Chromebooks](https://github.com/flutter/flutter/labels/platform-arc).
+ejecución de Flutter en Chromebooks]({{site.github}}/flutter/flutter/labels/platform-arc).
 
 ## Framework
 
@@ -784,7 +789,7 @@ puede crear el layout de una escena en una sola pasada.
 ### ¿Dónde puedo obtener soporte?
 
 Si crees que has encontrado un error, por favor archívalo en nuestro
-[issue tracker](https://github.com/flutter/flutter/issues). 
+[issue tracker]({{site.github}}/flutter/flutter/issues). 
 Nosotros te animamos a usar 
 [Stack Overflow](https://stackoverflow.com/tags/flutter) para preguntas tipo "HOWTO". 
 Para discusiones, por favor, 
@@ -795,7 +800,7 @@ Para discusiones, por favor,
 
 Flutter es de código abierto, y te animamos a contribuir. Puedes empezar simplemente 
 enviando issues para solicitudes de funcionalidades y bugs en nuestro 
-[issue tracker](https://github.com/flutter/flutter/issues).
+[issue tracker]({{site.github}}/flutter/flutter/issues).
 
 Le recomendamos que se una a nuestra lista de correo en 
 [{{site.email}}](mailto:{{site.email}})
@@ -804,14 +809,14 @@ y déjanos saber cómo estás usando Flutter y qué te gustaría hacer con él.
 Si estas interesado 
 en contribuir con el código, puede comenzar leyendo nuestra
 [Guía de 
-contribución](https://github.com/flutter/flutter/blob/master/CONTRIBUTING.md) 
+contribución]({{site.github}}/flutter/flutter/blob/master/CONTRIBUTING.md) 
 y mirar nuestra lista de 
-[easy starter issues](https://github.com/flutter/flutter/issues?q=is%3Aopen+is%3Aissue+label%3A%22easy+fix%22).
+[easy starter issues]({{site.github}}/flutter/flutter/issues?q=is%3Aopen+is%3Aissue+label%3A%22easy+fix%22).
 
 ### Flutter es de código abierto?
 
 Sí, Flutter es una tecnología de código abierto. Puedes encontrar el proyecto 
-en [GitHub](https://github.com/flutter/flutter).
+en [GitHub]({{site.github}}/flutter/flutter).
 
 ### ¿Qué licencia(s) de software se aplican a Flutter y sus dependencias?
 
@@ -822,7 +827,7 @@ lista completa en este [fichero de
 licencia](https://raw.githubusercontent.com/flutter/engine/master/sky/packages/sky_engine/LICENSE).
 
 El framework es completamente autónomo y requiere 
-[solo una licencia](https://github.com/flutter/flutter/blob/master/LICENSE).
+[solo una licencia]({{site.github}}/flutter/flutter/blob/master/LICENSE).
 
 Además, cualquier paquete Dart que uses puede tener sus propios requisitos de licencia.
 
@@ -849,7 +854,7 @@ Flutter es un proyecto de código abierto. Actualmente, la mayor parte del desar
 ingenieros en Google. ¡Si estás entusiasmado con Flutter, te animamos a que te unas la comunidad y 
 contribuir a Flutter!
 
-[widgets]: /docs/development/ui/widgets/catalog
+[widgets]: /docs/development/ui/widgets
 
 ### ¿Cuáles son los principios rectores de Flutter?
 
@@ -879,11 +884,13 @@ hermosas y deliciosas.
 ### ¿Apple rechazará mi aplicación Flutter?
 
 No podemos hablar por Apple, pero las políticas de Apple han cambiado en los últimos años, 
-y han permitido crear apps con sistemas como Flutter. Estamos al tanto de las 
-apps creadas con Flutter que han sido revisadas y lanzadas 
-a través de la App Store.
+y han permitido crear apps con sistemas como Unity y Flutter. Apple ha incuso destacado apps hechas con Flutter com [Hamilton.][Hamilton para iOS]
 
 Por supuesto, Apple está en última instancia a cargo de su ecosistema, 
 pero nuestro objetivo es seguir haciendo todo lo posible para 
 garantizar que las aplicaciones de Flutter 
 se puedan implementar en la App Store de Apple.
+
+[Hamilton for Android]: https://play.google.com/store/apps/details?id=com.hamilton.app
+[Hamilton for iOS]: https://itunes.apple.com/us/app/hamilton-the-official-app/id1255231054?mt=8
+

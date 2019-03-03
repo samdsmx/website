@@ -1,14 +1,20 @@
 ---
 title: "Creando una lista en un Grid"
+prev:
+  title: Crear una lista horizontal
+  path: /docs/cookbook/lists/horizontal-list
+next:
+  title: Crear listars con diferentes tipos de items
+  path: /docs/cookbook/lists/mixed-list
 ---
 
 En algunos casos, es posible que desee mostrar sus elementos como un Grid en lugar de una lista normal 
 de elementos que vienen uno tras otro. Para esta tarea, emplearemos el 
 widget 
-[`GridView`](https://docs.flutter.io/flutter/widgets/GridView-class.html) . 
+[`GridView`]({{site.api}}/flutter/widgets/GridView-class.html) . 
 
 La forma más sencilla de empezar a usar grids es usar el constructor 
-[`GridView.count`](https://docs.flutter.io/flutter/widgets/GridView/GridView.count.html)
+[`GridView.count`]({{site.api}}/flutter/widgets/GridView/GridView.count.html)
 porque nos permite especificar cuántas filas o columnas queremos.
 
 En este ejemplo, generaremos un List de 100 Widgets que mostrarán su índice en la lista. 

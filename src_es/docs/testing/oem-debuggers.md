@@ -1,5 +1,7 @@
 ---
 title: Usando un depurador OEM
+short-title: depuradores
+description: Como conectar un depurador OEM, como es Xcode, a tu app Flutter en ejecución.
 ---
 
 {{site.alert.tip}}
@@ -13,7 +15,7 @@ Solo la primera sección de esta guía, Depurando código Dart, es relevante par
 
 Si estas escribiendo un plugin especifico de plataforma o usando bibliotecas especificas 
 de plataforma escritas en Swift, ObjectiveC, Java, o Kotlin, puedes depurar 
-esta parte de tu código usando XCode (para iOS) o Android Gradle (para Android).
+esta parte de tu código usando Xcode (para iOS) o Android Gradle (para Android).
 Esta guia muestra como puedes conectar _dos_ depuradores a tu app Dart,
 uno para Dart, y one para el código OEM.
 
@@ -26,13 +28,13 @@ instalados y configurados.
 {{site.alert.tip}}
   Conecta a un dispositivo físico cuando depure, mejor que un emulador o 
   simulador, que no soportan modo profile. Para más información, mira
-  [modos de Flutter](https://github.com/flutter/flutter/wiki/Flutter's-modes).
+  [modos de Flutter]({{site.github}}/flutter/flutter/wiki/Flutter's-modes).
 {{site.alert.end}}
 
 ### Dart debugger
 
 * Abre tu proyecto en Android Studio. Si aún no tienes un proyecto,
-  crea uno usando las instrucciones en [Test drive](/get-started/test-drive).
+  crea uno usando las instrucciones en [Test drive](/docs/get-started/test-drive).
 
 * Simultáneamente abre el panel Debug y ehecyta la app en la vista Console
   pulsando en el icono bug 
@@ -155,7 +157,7 @@ Dart y, 2) el depurador Gradle de Android.
 
 * Reemplaza `lib/main.dart` con el siguiente código del 
 paquete
-[`url_launcher`](https://pub.dartlang.org/packages/url_launcher):
+[`url_launcher`]({{site.pub}}/packages/url_launcher):
 
 {% prettify dart %}
 // Copyright 2017 The Chromium Authors. All rights reserved.
@@ -193,9 +195,9 @@ class MyHomePage extends StatefulWidget {
 }
 
 class _MyHomePageState extends State<MyHomePage> {
-  Future<Null> _launched;
+  Future<void> _launched;
 
-  Future<Null> _launchInBrowser(String url) async {
+  Future<void> _launchInBrowser(String url) async {
     if (await canLaunch(url)) {
       await launch(url, forceSafariVC: false, forceWebView: false);
     } else {
@@ -203,7 +205,7 @@ class _MyHomePageState extends State<MyHomePage> {
     }
   }
 
-  Future<Null> _launchInWebViewOrVC(String url) async {
+  Future<void> _launchInWebViewOrVC(String url) async {
     if (await canLaunch(url)) {
       await launch(url, forceSafariVC: true, forceWebView: true);
     } else {
@@ -211,7 +213,7 @@ class _MyHomePageState extends State<MyHomePage> {
     }
   }
 
-  Widget _launchStatus(BuildContext context, AsyncSnapshot<Null> snapshot) {
+  Widget _launchStatus(BuildContext context, AsyncSnapshot<void> snapshot) {
     if (snapshot.hasError) {
       return Text('Error: ${snapshot.error}');
     } else {
@@ -248,7 +250,7 @@ class _MyHomePageState extends State<MyHomePage> {
               child: Text('Launch in app'),
             ),
             Padding(padding: EdgeInsets.all(16.0)),
-            FutureBuilder<Null>(future: _launched, builder: _launchStatus),
+            FutureBuilder<void>(future: _launched, builder: _launchStatus),
           ],
         ),
       ),
@@ -327,11 +329,11 @@ En otras palabras, DEPURAR!
   Alterna entre los depuradores pulsando el depurador apropiado en la banda del 
    panel Debug.
 
-## Depurar con XCode (iOS)
+## Depurar con Xcode (iOS)
 
 Para depurar código OEM en iOS, necesitas una app que contenga código OEM iOS.
 En esta sección, aprenderás como conectar dos depuradores a tu app: 1) el depurador
-de Dart y, 2) el depurador de XCode.
+de Dart y, 2) el depurador de Xcode.
 
 ## Recursos
 
@@ -341,18 +343,18 @@ iOS, y Android:
 ### Flutter
 
 * [Depurando Apps Flutter](/docs/testing/debugging)
-* [Depuración avanzada](/docs/development/tools/ide#advanced-debugging), a section in
-  [Desarrollar Apps Flutter en un IDE](/docs/development/tools/ide).
+* [Depuración avanzada](/docs/development/tools/android-studio#advanced-debugging), a section in
+  [Desarrollar Apps Flutter en un IDE](/docs/development/tools/android-studio).
 * [Perfiles de Rendimiento](/docs/testing/ui-performance)
 
 ### Android
 
 Puedes encontrar los siguientes recursos de depuración en 
-[developer.android.com](https://developer.android.com/).
+[developer.android.com]({{site.android-dev}}).
 
-* [Depura tu app](https://developer.android.com/studio/debug/)
+* [Depura tu app]({{site.android-dev}}/studio/debug)
 * [Android Debug
-  Bridge (adb)](https://developer.android.com/studio/command-line/adb)
+  Bridge (adb)]({{site.android-dev}}/studio/command-line/adb)
 
 ### iOS
 

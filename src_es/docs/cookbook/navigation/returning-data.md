@@ -1,5 +1,11 @@
 ---
-title: "Devolver datos desde una pantalla"
+title: Devolver datos desde una pantalla
+rev:
+  title: Navegar a rutas con nombre
+  path: /docs/cookbook/navigation/named-routes
+next:
+  title: Enviar datos a una nueva pantalla
+  path: /docs/cookbook/navigation/passing-data
 ---
 
 En algunos casos, es posible que queramos devolver datos desde una nueva pantalla. Por ejemplo, 
@@ -7,7 +13,8 @@ digamos que mostramos una nueva pantalla que presenta dos opciones para un usuar
 pulsa sobre una opción, queremos informar a nuestra primera pantalla de la selección del usuario para 
 que pueda actuar sobre esa información!
 
-¿Cómo podemos lograr esto? Usando [`Navigator.pop`](https://docs.flutter.io/flutter/widgets/Navigator/pop.html)!
+¿Cómo podemos lograr esto? Usando 
+[`Navigator.pop`]({{site.api}}/flutter/widgets/Navigator/pop.html)!
 
 ## Instrucciones
 
@@ -124,7 +131,7 @@ class SelectionScreen extends StatelessWidget {
 Ahora, queremos actualizar callback `onPressed` para nuestros dos botones! Para 
 devolver los datos a la primera pantalla, necesitaremos usar el 
 método 
-[`Navitator.pop`](https://docs.flutter.io/flutter/widgets/Navigator/pop.html).
+[`Navitator.pop`]({{site.api}}/flutter/widgets/Navigator/pop.html).
 
 `Navigator.pop` acepta un segundo argumento opcional llamado `result`. Si proporcionamos un 
 resultado, ¡será devuelto al `Future` en nuestro SelectionButton!
@@ -171,8 +178,11 @@ _navigateAndDisplaySelection(BuildContext context) async {
     MaterialPageRoute(builder: (context) => SelectionScreen()),
   );
 
-  // ¡Después de que la pantalla de selección devuelva un resultado, muéstralo en un Snackbar!
-  Scaffold.of(context).showSnackBar(SnackBar(content: Text("$result")));
+  // Después de que la pantalla de selección devuelva un resultado, 
+  // oculta cualquier snackbar previo y muestra el nuevo resultado.
+  Scaffold.of(context)
+  ..removeCurrentSnackBar()
+  ..showSnackBar(SnackBar(content: Text("$result")));
 }
 ```
 
@@ -221,8 +231,11 @@ class SelectionButton extends StatelessWidget {
       MaterialPageRoute(builder: (context) => SelectionScreen()),
     );
 
-    // ¡Después de que la pantalla de selección devuelva un resultado, muéstralo en un Snackbar!
-    Scaffold.of(context).showSnackBar(SnackBar(content: Text("$result")));
+     // Después de que la pantalla de selección devuelva un resultado,
+     // oculta cualquier snackbar previo y muestra el nuevo resultado.
+    Scaffold.of(context)
+    ..removeCurrentSnackBar()
+    ..showSnackBar(SnackBar(content: Text("$result")));
   }
 }
 

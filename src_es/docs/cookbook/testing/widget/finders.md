@@ -1,5 +1,11 @@
 ---
-title: "Descubriendo Widgets en un Widget Test"
+title: Encontrando widgets
+prev:
+  title: Introducción a las pruebas de Widgets
+  path: /docs/cookbook/testing/widget/introduction
+next:
+  title: Pulsando, arrastrando e ingresando texto
+  path: /docs/cookbook/testing/widget/tap-drag
 ---
 
 {% assign api = site.api | append: '/flutter' -%}

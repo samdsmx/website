@@ -4,7 +4,8 @@ características de uso y reportes básicos de errores. Estos datos son utilizad
 Analytics no envía cada ejecución o cualquier ejecución dentro del `flutter config`,
 por lo que puede optar por no participar en los análisis antes de enviar los datos. Para deshabilitar los reportes, 
 teclee `flutter config --no-analytics` y para mostrar la
-configuración actual, teclee `flutter config`. Vea la política de privacidad de Google: [www.google.com/intl/en/policies/privacy][].
+configuración actual, teclee `flutter config`. Vea la [Privacy Policy] de Google
 
-[www.google.com/intl/en/policies/privacy]: https://www.google.com/intl/en/policies/privacy/
+  [Privacy Policy]: https://policies.google.com/privacy
+
 </aside>

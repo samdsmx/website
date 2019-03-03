@@ -1,9 +1,15 @@
 ---
-title: "Trabajando con imágenes en caché"
+title: Trabajando con imágenes en caché
+prev:
+  title: Efecto 'Fade in' en imágenes con un placeholder
+  path: /docs/cookbook/images/fading-in-images
+next:
+  title: Listas básicas
+  path: /docs/cookbook/lists/basic-list
 ---
 
 En algunos casos, puede ser útil almacenar en caché las imágenes a medida que se descargan de la web para que puedan usarse sin conexión. Para este propósito, emplearemos el paquete  
-[`cached_network_image`](https://pub.dartlang.org/packages/cached_network_image)
+[`cached_network_image`]({{site.pub-pkg}}/cached_network_image)
 .
 
 Además del almacenamiento en caché, el paquete cached_image_network también admite  
@@ -12,20 +18,20 @@ placeholders e imágenes que se van desvaneciendo a medida que se cargan.
 <!-- skip -->
 ```dart
 CachedNetworkImage(
-  imageUrl: 'https://github.com/flutter/website/blob/master/_includes/code/layout/lakes/images/lake.jpg?raw=true',
+  imageUrl: 'https://picsum.photos/250?image=9',
 );
 ```
 
 ## Agrega un placeholder
 
-¡El paquete `cached_network_image` nos permite usar cualquier Widget como placeholder! 
-En este ejemplo, mostraremos un spinner mientras se carga la imagen.
+El paquete `cached_network_image` te permite usar cualquier Widget como placeholder.
+En este ejemplo, mostrarás un spinner mientras se carga la imagen.
 
 <!-- skip -->
 ```dart
 CachedNetworkImage(
   placeholder: CircularProgressIndicator(),
-  imageUrl: 'https://github.com/flutter/website/blob/master/src/_includes/code/layout/lakes/images/lake.jpg?raw=true',
+  imageUrl: 'https://picsum.photos/250?image=9',
 );
 ``` 
 
@@ -55,7 +61,7 @@ class MyApp extends StatelessWidget {
           child: CachedNetworkImage(
             placeholder: CircularProgressIndicator(),
             imageUrl:
-                'https://github.com/flutter/website/blob/master/src/_includes/code/layout/lakes/images/lake.jpg?raw=true',
+                'https://picsum.photos/250?image=9',
           ),
         ),
       ),

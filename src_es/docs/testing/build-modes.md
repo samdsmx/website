@@ -20,7 +20,7 @@ A continuación se describe cada modo y cuándo usarlo.
 En _modo depuración_, la aplicación está configurada para la depuración en el 
 Dispositivo físico, emulador, o simulador. El modo de depuración significa que:
 
-* [Afirmaciones](https://www.dartlang.org/guides/language/language-tour#assert)
+* [Afirmaciones]({{site.dart-site}}/guides/language/language-tour#assert)
    están activadas.
 * [Observatorio](https://dart-lang.github.io/observatory) está activado, 
 le permite utilizar el depurador de dardos.
@@ -75,5 +75,5 @@ Tu IDE también soporta estos modos. Android Studio, por ejemplo,
 provee una opción de menú **Run > Profile...**.∫
 
 Para más información sobre estos modos
-[Modos Flutter](https://github.com/flutter/flutter/wiki/Flutter%27s-modes)
-en la [wiki SDK Flutter](https://github.com/flutter/flutter/wiki).
+[Modos Flutter]({{site.github}}/flutter/flutter/wiki/Flutter%27s-modes)
+en la [wiki SDK Flutter]({{site.github}}/flutter/flutter/wiki).

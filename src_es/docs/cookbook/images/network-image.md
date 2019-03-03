@@ -1,18 +1,25 @@
 ---
 title: "Mostrar imágenes desde internet"
+prev:
+  title: Implementar Swipe para cancelar
+  path: /docs/cookbook/gestures/dismissible
+next:
+  title: Efecto 'Fade in' en imágenes con un placeholder
+  path: /docs/cookbook/images/fading-in-images
 ---
 
 Mostrar imágenes es fundamental para la mayoría de las aplicaciones móviles. Flutter proporciona el 
-widget de [`Image`](https://docs.flutter.io/flutter/widgets/Image-class.html) para mostrar 
+widget de [`Image`]({{site.api}}/flutter/widgets/Image-class.html) para mostrar 
 diferentes tipos de imágenes.
 
-Para trabajar con imágenes desde una URL, usa el constructor 
-[`Image.network`](https://docs.flutter.io/flutter/widgets/Image/Image.network.html).
+Para trabajar con imágenes desde una URL, 
+usa el constructor 
+[`Image.network`]({{site.api}}/flutter/widgets/Image/Image.network.html).
 
 <!-- skip -->
 ```dart
 Image.network(
-  'https://raw.githubusercontent.com/flutter/website/master/src/_includes/code/layout/lakes/images/lake.jpg',
+  'https://picsum.photos/250?image=9',
 )
 ```
 
@@ -57,7 +64,7 @@ class MyApp extends StatelessWidget {
           title: Text(title),
         ),
         body: Image.network(
-          'https://github.com/flutter/website/blob/master/src/_includes/code/layout/lakes/images/lake.jpg?raw=true',
+          'https://picsum.photos/250?image=9',
         ),
       ),
     );

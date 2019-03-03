@@ -4,7 +4,7 @@ short-title: Windows
 # js: [{defer: true, url: /assets/archive.js}]
 next:
   title: Configurar un editor
-  path: /get-started/editor
+  path: /docs/get-started/editor
 ---
 
 {% assign os = 'windows' -%}
@@ -17,7 +17,7 @@ Para instalar y ejecutar Flutter, el ambiente de trabajo debe de cumplir al meno
 - **Espacio en Disco**: 400 MB (no incluye espacio en disco para IDE/herramientas).
 - **Herramientas**: Flutter depende de que estas herramientas estén disponibles en tu entorno.
   - [Windows PowerShell 5.0][] o superior (este es pre-instalado con Windows 10)
-  - [Git para Windows][] con la opción **Use Git from the Windows Command Prompt**
+  - [Git para Windows][] 2.x, con la opción **Use Git from the Windows Command Prompt**
 
      Si Git para Windows está ya instalado, asegúrate de poder correr comandos con `git` desde el 
      Command Prompt o PowerShell.
@@ -28,7 +28,7 @@ Para instalar y ejecutar Flutter, el ambiente de trabajo debe de cumplir al meno
 
 ## Siguiente paso
 
-[Siguiente paso: Configura el editor](/get-started/editor)
+[Siguiente paso: Configura el editor](/docs/get-started/editor)
 
 [Git para Windows]: https://git-scm.com/download/win
 [Windows PowerShell 5.0]: https://docs.microsoft.com/en-us/powershell/scripting/setup/installing-windows-powershell

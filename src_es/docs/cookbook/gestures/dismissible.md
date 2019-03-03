@@ -1,5 +1,11 @@
 ---
 title: "Implementando Deslizar para Descartar"
+rev:
+  title: Manejando Gestos Tap
+  path: /docs/cookbook/gestures/handling-taps
+next:
+  title: Mostrar imágenes de internet
+  path: /docs/cookbook/images/network-image
 ---
 
 El patrón "Deslizar para descartar" es común en muchas aplicaciones móviles. Por ejemplo, 
@@ -8,7 +14,7 @@ permitir que nuestros usuarios eliminen los mensajes de correo electrónico de u
 al Trash.
 
 Flutter facilita esta tarea al proporcionar el 
-Widget [`Dismissible`](https://docs.flutter.io/flutter/widgets/Dismissible-class.html).
+Widget [`Dismissible`]({{site.api}}/flutter/widgets/Dismissible-class.html).
 
 ## Instrucciones
 
@@ -57,7 +63,7 @@ el elemento de la lista y mostrar un Snackbar. En una aplicación real, es posib
 realizar una lógica más compleja, como eliminar el elemento desde un web service o una 
 base de datos.
 
-¡Aquí es donde entra en juego el Widget [`Dismissible`](https://docs.flutter.io/flutter/widgets/Dismissible-class.html)!
+¡Aquí es donde entra en juego el Widget [`Dismissible`]({{site.api}}/flutter/widgets/Dismissible-class.html)!
 En nuestro ejemplo, actualizaremos nuestra función `itemBuilder` 
 para devolver un Widget `Dismissible` .
 

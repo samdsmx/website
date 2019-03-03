@@ -14,16 +14,16 @@ comportamientos de scrolling, tipografía, iconos, y más.
 <object type="image/svg+xml" data="/images/whatisflutter/hero-shrine.svg" style="width: 100%; height: 100%;"></object>
 
 Esta es una aplicación de demostración de la
-[Galería](https://github.com/flutter/flutter/tree/master/examples/flutter_gallery/lib/demo),
+[Galería]({{site.github}}/flutter/flutter/tree/master/examples/flutter_gallery/lib/demo),
 una colección de aplicaciones de ejemplo de Flutter que puedes ejecutar después de instalar 
 Flutter y de configurar tu entorno. Shrine tiene scrolling de imágenes de alta calidad, 
 cards interactivas, botones, listas desplegables, y una página de carrito de compras. 
 Para ver el código base único de este y otros ejemplos,
 [visita nuestro 
-repositorio en GitHub](https://github.com/flutter/flutter/tree/master/examples).
+repositorio en GitHub]({{site.github}}/flutter/flutter/tree/master/examples).
 
 No se requiere experiencia en desarrollo móvil para empezar. Las aplicaciones están escritas 
-en [Dart](https://www.dartlang.org), lo que resulta familiar si has utilizado un 
+en [Dart]({{site.dart-site}}), lo que resulta familiar si has utilizado un 
 lenguaje como Java o JavaScript. !La experiencia con lenguajes orientados a objetos 
 es definitivamente útil, pero, incluso los no programadores han desarrollado aplicaciones Flutter!
 
@@ -77,15 +77,15 @@ nuevos y antiguos y actualiza eficientemente la interfaz de usuario.
 #### Composición > herencia
 
 Los widgets se componen a menudo de muchos widgets pequeños y de un solo propósito, que se combinan 
-para producir efectos poderosos. Por ejemplo, [Container](https://github.com/flutter/flutter/blob/master/packages/flutter/lib/src/widgets/container.dart),
+para producir efectos poderosos. Por ejemplo, [Container]({{site.github}}/flutter/flutter/blob/master/packages/flutter/lib/src/widgets/container.dart),
 un widget de uso común está compuesto por varios widgets responsables del diseño,
 pintado, posicionamiento y dimensionado. Específicamente, Container está compuesto por widgets 
-[LimitedBox](https://docs.flutter.io/flutter/widgets/LimitedBox-class.html),
-[ConstrainedBox](https://docs.flutter.io/flutter/widgets/ConstrainedBox-class.html),
-[Align](https://docs.flutter.io/flutter/widgets/Align-class.html),
-[Padding](https://docs.flutter.io/flutter/widgets/Padding-class.html),
-[DecoratedBox](https://docs.flutter.io/flutter/widgets/DecoratedBox-class.html),
-y [Transform](https://docs.flutter.io/flutter/widgets/Transform-class.html)
+[LimitedBox]({{site.api}}/flutter/widgets/LimitedBox-class.html),
+[ConstrainedBox]({{site.api}}/flutter/widgets/ConstrainedBox-class.html),
+[Align]({{site.api}}/flutter/widgets/Align-class.html),
+[Padding]({{site.api}}/flutter/widgets/Padding-class.html),
+[DecoratedBox]({{site.api}}/flutter/widgets/DecoratedBox-class.html),
+y [Transform]({{site.api}}/flutter/widgets/Transform-class.html)
 widgets.  En lugar de subclasificar Contenedor para producir un efecto personalizado, 
 puedes componer estos y otros widgets sencillos de formas novedosas.
 
@@ -111,7 +111,7 @@ construyéndose sobre la capa anterior.
 El diagrama muestra las capas superiores de la estructura, que se utilizan más
 frecuentemente que las capas inferiores. Para el conjunto completo de librerías que componen
 la estructura de capas de Flutter, consulta nuestra
-[documentación de la API](https://docs.flutter.io).
+[documentación de la API]({{site.api}}).
 
 El objetivo de este diseño es ayudarte a hacer más con menos código.  Por ejemplo, la capa Material 
 se construye componiendo widgets básicos a partir de la capa de widgets, y la capa de widgets se 
@@ -131,17 +131,17 @@ en las capas inferiores.
 ### Construyendo widgetss
 
 Las características únicas de un widget se definen mediante la implementación de una función
-[build](https://docs.flutter.io/flutter/widgets/StatelessWidget/build.html)
+[build]({{site.api}}/flutter/widgets/StatelessWidget/build.html)
 que devuelve un árbol (o jerarquía) de widgets. Este árbol representa la parte del widget 
 de la interfaz de usuario en términos más concretos. 
 Por ejemplo, un widget de la barra de herramientas puede tener una función de compilación 
-que devuelva un [horizontal layout](https://docs.flutter.io/flutter/widgets/Row-class.html)
-de algún [text](https://docs.flutter.io/flutter/widgets/Text-class.html) y
-[diversos](https://docs.flutter.io/flutter/material/IconButton-class.html)
-[botones](https://docs.flutter.io/flutter/material/PopupMenuButton-class.html).
+que devuelva un [horizontal layout]({{site.api}}/flutter/widgets/Row-class.html)
+de algún [text]({{site.api}}/flutter/widgets/Text-class.html) y
+[diversos]({{site.api}}/flutter/material/IconButton-class.html)
+[botones]({{site.api}}/flutter/material/PopupMenuButton-class.html).
 El framework solicita entonces, recursivamente, a cada uno de estos widgets, 
 que ejecuten su método build hasta que el proceso llegue a su fin en un [widget completo 
-correcto](https://docs.flutter.io/flutter/widgets/RenderObjectWidget-class.html),
+correcto]({{site.api}}/flutter/widgets/RenderObjectWidget-class.html),
 que luego el framework une en un árbol.
 
 La función de construcción de un widget debería estar libre de efectos secundarios. 
@@ -164,19 +164,19 @@ del contador es el estado de ese widget. Cuando ese valor cambia, el widget nece
 ser reconstruido para actualizar la UI.
 
 Estos widgets heredan de
-[StatefulWidget](https://docs.flutter.io/flutter/widgets/StatefulWidget-class.html)
+[StatefulWidget]({{site.api}}/flutter/widgets/StatefulWidget-class.html)
 (en lugar de
-[StatelessWidget](https://docs.flutter.io/flutter/widgets/StatelessWidget-class.html))
+[StatelessWidget]({{site.api}}/flutter/widgets/StatelessWidget-class.html))
 y almacenan su estado mutable en una subclase de
-[State](https://docs.flutter.io/flutter/widgets/State-class.html).
+[State]({{site.api}}/flutter/widgets/State-class.html).
 
 <object type="image/svg+xml" data="/images/whatisflutter/diagram-state.svg" style="width: 85%; height: 85%"></object>
 
 Cada vez que se muta un objeto State (p.ej., incrementando el contador), debes llamar a
-[setState](https://docs.flutter.io/flutter/widgets/State/setState.html)() para indicar 
+[setState]({{site.api}}/flutter/widgets/State/setState.html)() para indicar 
 al framework que actualice la interfaz de usuario llamando al método build de State 
 de nuevo. Para ver un ejemplo de la gestión del estado, consulta el
-[template MyApp](https://github.com/flutter/flutter/blob/master/packages/flutter_tools/templates/app/lib/main.dart.tmpl)
+[template MyApp]({{site.github}}/flutter/flutter/blob/master/packages/flutter_tools/templates/app/lib/main.dart.tmpl)
 que es creado con cada nuevo proyecto de Flutter.
 
 El hecho de tener objetos state y widget separados permite que otros widgets traten de la 
@@ -194,8 +194,8 @@ para empezar a desarrollarlas e iterarlas.
 
 Próximos pasos:
 
-1.  [Sigue la Guía de Inicio de Flutter](/get-started).
-1.  Prueba con el [Tutorial - Construyendo layouts](/docs/development/ui/layout) y
+1.  [Sigue la Guía de Inicio de Flutter](/docs/get-started).
+1.  Prueba con el [Tutorial - Construyendo layouts](/docs/development/ui/layout/tutorial) y
     [Tutorial - Agregando interactividad](/docs/development/ui/interactive).
 1.  Sigue un ejemplo detallado en [Un Recorrido por el Framework de 
     Widgets Flutter](/docs/development/ui/widgets-intro).
@@ -212,8 +212,8 @@ Somos de código abierto y nos encantaría saber de ti.
 - [Síguenos en Twitter: @flutterio](https://twitter.com/flutterio/)
 
 
-[issues]: https://github.com/flutter/flutter/issues
-[apidocs]: https://docs.flutter.io
-[so]: https://stackoverflow.com/tags/flutter
-[mailinglist]: https://groups.google.com/d/forum/flutter-dev
+[issues]: {{site.github}}/flutter/flutter/issues
+[apidocs]: {{site.api}}
+[so]: {{site.so}}/tags/flutter
+[mailinglist]: {{site.groups}}/d/forum/flutter-dev
 [gitter]: https://gitter.im/flutter/flutter

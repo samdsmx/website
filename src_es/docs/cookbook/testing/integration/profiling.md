@@ -1,5 +1,11 @@
 ---
-title: "Perfiles de rendimiento en test de integración"
+title: Perfiles de rendimiento
+prev:
+  title: Introducción a los test de integración
+  path: /docs/cookbook/testing/integration/introduction
+next:
+  title: Scrolling
+  path: /docs/cookbook/testing/integration/scrolling
 ---
 
 Cuando se trata de aplicaciones móviles, el rendimiento es fundamental para la experiencia del usuario. Los usuarios 

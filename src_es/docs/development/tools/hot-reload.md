@@ -12,7 +12,7 @@ tus cambios.
 
 Para usar hot reload en una app Flutter:
 
-1.  Ejecuta la app desde un [editor Flutter](/get-started/editor/) soportado 
+1.  Ejecuta la app desde un [editor Flutter](/docs/get-started/editor/) soportado 
 o desde una ventana de terminal. El target puede ser tanto un dispositivo físico como uno virtual. Solo
 las apps en modo depuración pueden usar hot reload.
 1.  Modifica uno de los ficheros Dart en tu proyecto. La mayoría de los tipos de cambios en código pueden 
@@ -31,7 +31,7 @@ similar a:
 
 ```
 Performing hot reload...
-Reloaded 1 of 448 libraries in 2,777ms.
+Reloaded 1 of 448 libraries in 978ms.
 ```
 La app se actualiza para reflejar tus cambios, y el estado actual de la app
 — el valor de la variable counter en el ejemplo anterior — se conserva. Tu 
@@ -208,7 +208,7 @@ get bar => foo;
 ```
 
 Lee más sobre las [diferencias entre las palabras clave `const` y 
-`final`](https://news.dartlang.org/2012/06/const-static-final-oh-my.html) en Dart.
+`final`]({{site.news}}/2012/06/const-static-final-oh-my.html) en Dart.
 
 ## Cambio reciente de la UI es excluido
 
@@ -316,7 +316,7 @@ Cuando hot reload es invocado, la máquina host, mira en el código editado desd
  * Las bibliotecas de la biblioteca principal que conducen a las bibliotecas afectadas.
 
 En Dart 2, el código fuente de estas librerias de Dart, son convertidas en 
-[ficheros de kernel](https://github.com/dart-lang/sdk/tree/master/pkg/kernel) y 
+[ficheros de kernel]({{site.github}}/dart-lang/sdk/tree/master/pkg/kernel) y 
 enviadas a la VM Dart del dipositivo móvil.
 
 La VM Dart recarga todas las bibliotecas desde el nuevo fichero kernel. Hasta ahora no 
@@ -325,4 +325,4 @@ hay código re-ejecutado.
 El mecanismo hot reload entonces provoca que el framework Flutter lance 
 un "rebuild/re-layout/repaint" de todos los widgets y objetos renderizados existentes.
 
-[los campos estáticos son inicializados de forma perezosa]: https://news.dartlang.org/2012/02/static-variables-no-longer-have-to-be.html
+[los campos estáticos son inicializados de forma perezosa]: {{site.news}}/2012/02/static-variables-no-longer-have-to-be.html

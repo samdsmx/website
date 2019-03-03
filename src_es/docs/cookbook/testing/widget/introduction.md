@@ -1,10 +1,17 @@
 ---
-title: "Introducción a la prueba de Widget"
+title: Introducción a las pruebas de Widgets
+short-title: Introducción
+prev:
+  title: Simular dependencias usando Mockito
+  path: /docs/cookbook/testing/unit/mocking
+next:
+  title: Encontrando widgets
+  path: /docs/cookbook/testing/widget/finders
 ---
 
 {% assign api = site.api | append: '/flutter' -%}
 
-En el curso [introducción a las pruebas unitarias](/docs/cookbook/testing/unit), aprendimos 
+En lac [introducción a las pruebas unitarias](//docs/cookbook/testing/unit/introduction), aprendimos 
 como probar las clases Dart usando el paquete `test`. Con el fin de probar las clases 
 Widget, necesitaremos un poco de herramientas adicionales proporcionadas por el paquete 
 [`flutter_test`]({{api}}/flutter_test/flutter_test-library.html), el cual 

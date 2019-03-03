@@ -8,7 +8,7 @@ at the end of the page to avoid repeating links. {% endcomment -%}
 {% assign api = site.api | append: '/flutter' -%}
 
 Los widgets de Flutter son construidos usando un moderno framework de estilo-reactivo, el cual toma
-inspiración de [React](http://facebook.github.io/react/). La idea central es
+inspiración de [React](https://reactjs.org). La idea central es
 que construyas tu UI de widgets. Los Widgets describen cómo debería ser su vista,
 dada su configuración y estado actuales. Cuando el estado de un widget cambia,
 el widget reconstruye su descripción, que el framework difiere de la descripción
@@ -88,7 +88,7 @@ son de uso muy común:
 
  * [Container]({{api}}/widgets/Container-class.html): El widget 
    [Container]({{api}}/widgets/Container-class.html) te permite crear 
-   elementos visuales rectangulares. Un contenedor puede ser decorado con un
+   un elemento visuales rectangular. Un contenedor puede ser decorado con un
    [BoxDecoration]({{api}}/painting/BoxDecoration-class.html), como un fondo, 
    un borde o una sombra. Un
    [Container]({{api}}/widgets/Container-class.html) también puede tener márgenes, 
@@ -208,7 +208,7 @@ permite crear widgets genéricos que pueden ser reutilizados en una amplia varie
 de formas. Finalmente, `MyScaffold` utiliza un [Expanded]({{api}}/widgets/Expanded-class.html) 
 para rellenar el espacio restante con su cuerpo, que consiste en un mensaje centrado.
 
-Más información: [Layouts](/docs/reference/widgets/layout)
+Más información: [Layouts](/docs/development/ui/widgets/layout)
 
 ## Utilizando Material Components
 
@@ -285,7 +285,7 @@ para el [leading]({{api}}/material/AppBar-class.html#leading) y los
 lo largo de todo el framework y es algo que podría considerar al diseñar 
 sus propios widgets.
 
-Más información: [Componentes Material](/docs/reference/widgets/material)
+Más información: [Componentes Material](/docs/development/ui/widgets/material)
 
 ## Manejar gestos
 
@@ -343,7 +343,7 @@ Mas información: [Gestos en Flutter](/docs/development/ui/advanced/gestures)
 
 Hasta ahora, solo hemos usado widgets sin estado. Los widgets sin estado
 reciben argumentos de su widget padre, que son almacenados en propiedades
-[final](https://www.dartlang.org/docs/dart-up-and-running/ch02.html#final-and-const).
+[final]({{site.dart-site}}/guides/language/language-tour#final-and-const).
 Cuando en un widget es invocado el método
 [build]({{api}}/widgets/StatelessWidget/build.html), usa los valores almacenados 
 por aquél (el widget) para derivar nuevos argumentos para los widgets que crea.
@@ -358,7 +358,7 @@ para mantener el estado. Considera este ejemplo básico, usando el
 ```dart
 class Counter extends StatefulWidget {
   // Esta clase es la configuración para el estado. Guarda
-  // los valores (nada en este ejemplo) proporcionados por el padre y usados por el método
+  // los valores (en este caso nada) proporcionados por el padre y usados por el método
   // build del State. Los campos en una subclase Widget siempre se marcan como "final".
 
   @override
@@ -543,7 +543,7 @@ class ShoppingListItem extends StatelessWidget {
 
 El widget `ShoppingListItem` sigue un patrón común para los widgets stateless.
 Almacena los valores que recibe en su constructor en propiedades
-[final](https://www.dartlang.org/docs/dart-up-and-running/ch02.html#final-and-const),
+[final]({{site.dart-site}}/guides/language/language-tour#final-and-const),
 que luego utiliza durante la ejecución del método
 [build]({{api}}/widgets/StatelessWidget/build.html).
 Por ejemplo, el booleano `inCart` para alternar entre dos apariencias visuales:

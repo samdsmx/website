@@ -15,7 +15,7 @@ las aplicaciones en Flutter.
 Antes de ejecutar tus aplicaciones, prueba tu código con `flutter analyze`. Esta 
 herramienta (la cual es una envoltura de la herramienta `dartanalyzer`) analiza tu código 
 y te ayuda a encontrar posibles errores. Si estás usando un 
-[IDE/editor que soporte Flutter](/get-started/editor/),
+[IDE/editor que soporte Flutter](/docs/get-started/editor/),
 esto ya esta ocurriendo para tí.
 
 Dart analyzer hace un uso intenso de las anotaciones de tipos que pones 
@@ -30,7 +30,7 @@ Si inicias tu aplicación usando `flutter run`, entonces,
 mientras se está ejecutando, puedes abrir la página web en la URL de Observatory 
 impresa en la consola (ej., `Observatory listening on http://127.0.0.1:8100/`), para 
 conectar tu aplicación directamente con un depurador "statement-level single-stepping". 
-Si estas usando un [IDE/editor que soporte Flutter](/get-started/editor/),
+Si estas usando un [IDE/editor que soporte Flutter](/docs/get-started/editor/),
 puedes también depurar tu aplicación usando su depurador incorporado.
 
 Observatory tambien soporta creación de perfiles, examinar el heap, etc. Para mas 
@@ -69,7 +69,7 @@ puedes ver usando `flutter logs` (que es básicamente una envoltura sobre
 `adb logcat`).
 
 Si la salida es demasiada al mismo tiempo, entonces Android a veces descarta algunas lineas de 
-registro. Para evitar esto, puedes usar [`debugPrint()`](https://docs.flutter.io/flutter/foundation/debugPrint.html),
+registro. Para evitar esto, puedes usar [`debugPrint()`]({{site.api}}/flutter/foundation/debugPrint.html),
 de la biblioteca `foundation` de Flutter. Esto es una envoltura sobre `print` que acelera 
 la salida a un nivel que evita que sea descartada por el kernel de Android.
 
@@ -107,7 +107,7 @@ Observatory, conocido como "profile mode", está disponible también,
 usando `--profile` en lugar de `--release`.
 
 Para más información, mira
-[modos de Flutter](https://github.com/flutter/flutter/wiki/Flutter's-modes).
+[modos de Flutter](/docs/testing/build-modes).
 ## Capas de depuración de la aplicación
 
 Cada capa del framework Flutter proporciona una función para volcar 
@@ -116,7 +116,7 @@ su estado o eventos actuales a la consola (usando `debugPrint`).
 ### Capa de Widgets
 
 Para volcar el estado de la biblioteca de Widgets, llama a 
-[`debugDumpApp()`](https://docs.flutter.io/flutter/widgets/debugDumpApp.html).
+[`debugDumpApp()`]({{site.api}}/flutter/widgets/debugDumpApp.html).
 Puedes llamarlo más o menos en cualquier momento que la aplicación no 
 este en medio de la ejecución de la fase de construcción (en otras palabras, 
 en cualquier parte que no sea dentro de un método `build()`), siempre que la 
@@ -176,7 +176,7 @@ I/flutter ( 6559):              └Listener(listeners: down, up, cancel; behavio
 I/flutter ( 6559):               └AbsorbPointer(renderObject: RenderAbsorbPointer)
 I/flutter ( 6559):                └Focus([GlobalKey 489139594]; state: _FocusState(739584448))
 I/flutter ( 6559):                 └Semantics(container: true; renderObject: RenderSemanticsAnnotations)
-I/flutter ( 6559):                  └_FocusScope(this scope has focus; focused subscope: [GlobalObjectKey MaterialPageRoute<Null>(875520219)])
+I/flutter ( 6559):                  └_FocusScope(this scope has focus; focused subscope: [GlobalObjectKey MaterialPageRoute<void>(875520219)])
 I/flutter ( 6559):                   └Overlay([GlobalKey 199833992]; state: OverlayState(619367313; entries: [OverlayEntry@248818791(opaque: false; maintainState: false), OverlayEntry@837336156(opaque: false; maintainState: true)]))
 I/flutter ( 6559):                    └_Theatre(renderObject: _RenderTheatre)
 I/flutter ( 6559):                     └Stack(renderObject: RenderStack)
@@ -191,13 +191,13 @@ I/flutter ( 6559):                      │      └Listener(listeners: down; be
 I/flutter ( 6559):                      │       └ConstrainedBox(BoxConstraints(biggest); renderObject: RenderConstrainedBox)
 I/flutter ( 6559):                      └_OverlayEntry([GlobalKey 727622716]; state: _OverlayEntryState(279971240))
 I/flutter ( 6559):                       └_ModalScope([GlobalKey 816151164]; state: _ModalScopeState(875510645))
-I/flutter ( 6559):                        └Focus([GlobalObjectKey MaterialPageRoute<Null>(875520219)]; state: _FocusState(331487674))
+I/flutter ( 6559):                        └Focus([GlobalObjectKey MaterialPageRoute<void>(875520219)]; state: _FocusState(331487674))
 I/flutter ( 6559):                         └Semantics(container: true; renderObject: RenderSemanticsAnnotations)
 I/flutter ( 6559):                          └_FocusScope(this scope has focus)
 I/flutter ( 6559):                           └Offstage(offstage: false; renderObject: RenderOffstage)
 I/flutter ( 6559):                            └IgnorePointer(ignoring: false; renderObject: RenderIgnorePointer)
-I/flutter ( 6559):                             └_MountainViewPageTransition(animation: AnimationController(⏭ 1.000; paused; for MaterialPageRoute<Null>(/))➩ProxyAnimation➩Cubic(0.40, 0.00, 0.20, 1.00)➩Tween<Offset>(Offset(0.0, 1.0) → Offset(0.0, 0.0))➩Offset(0.0, 0.0); state: _AnimatedState(552160732))
-I/flutter ( 6559):                              └SlideTransition(animation: AnimationController(⏭ 1.000; paused; for MaterialPageRoute<Null>(/))➩ProxyAnimation➩Cubic(0.40, 0.00, 0.20, 1.00)➩Tween<Offset>(Offset(0.0, 1.0) → Offset(0.0, 0.0))➩Offset(0.0, 0.0); state: _AnimatedState(714726495))
+I/flutter ( 6559):                             └_MountainViewPageTransition(animation: AnimationController(⏭ 1.000; paused; for MaterialPageRoute<void>(/))➩ProxyAnimation➩Cubic(0.40, 0.00, 0.20, 1.00)➩Tween<Offset>(Offset(0.0, 1.0) → Offset(0.0, 0.0))➩Offset(0.0, 0.0); state: _AnimatedState(552160732))
+I/flutter ( 6559):                              └SlideTransition(animation: AnimationController(⏭ 1.000; paused; for MaterialPageRoute<void>(/))➩ProxyAnimation➩Cubic(0.40, 0.00, 0.20, 1.00)➩Tween<Offset>(Offset(0.0, 1.0) → Offset(0.0, 0.0))➩Offset(0.0, 0.0); state: _AnimatedState(714726495))
 I/flutter ( 6559):                               └FractionalTranslation(renderObject: RenderFractionalTranslation)
 I/flutter ( 6559):                                └RepaintBoundary(renderObject: RenderRepaintBoundary)
 I/flutter ( 6559):                                 └PageStorage([GlobalKey 619728754])
@@ -238,16 +238,16 @@ si llamas `toStringDeep` en la raíz del árbol de widgets.) Verás
 muchos widgets en este que no aparecen en el código de tu aplicación, 
 porque estos son insertados por las funciones build de los widgets del 
 framework. Por ejemplo,
-[`InkFeature`](https://docs.flutter.io/flutter/material/InkFeature-class.html)
+[`InkFeature`]({{site.api}}/flutter/material/InkFeature-class.html)
 es un detalle de implementación del widget 
-[`Material`](https://docs.flutter.io/flutter/material/Material-class.html).
+[`Material`]({{site.api}}/flutter/material/Material-class.html).
 
 Ya que la llamada a `debugDumpApp()` es invocada cuando el botón cambia 
 de _being pressed_ a _being released_, esto coincide con la llamada del 
 objeto 
-[`FlatButton`](https://docs.flutter.io/flutter/material/FlatButton-class.html)
+[`FlatButton`]({{site.api}}/flutter/material/FlatButton-class.html)
 a 
-[`setState()`](https://docs.flutter.io/flutter/widgets/State/setState.html)
+[`setState()`]({{site.api}}/flutter/widgets/State/setState.html)
 marcandose como "dirty". Es por esto que cuando miras el volcado 
 deberías ver este objeto especifico marcado como "dirty". También puedes ver 
 que _gesture listeners_ han sido registrados; en este caso, un único 
@@ -255,8 +255,8 @@ GestureDetector es listado, y este solo está escuchando por un gesto
 "tap" ("tap" es la salida de la función `toStringShort` de un `TapGestureDetector`).
 
 Si escribes tus propios widgets, puedes añadir información sobreescribiendo 
-[`debugFillProperties()`](https://docs.flutter.io/flutter/widgets/Widget/debugFillProperties.html).
-Añade objetos [DiagnosticsProperty](https://docs.flutter.io/flutter/foundation/DiagnosticsProperty-class.html)
+[`debugFillProperties()`]({{site.api}}/flutter/widgets/Widget/debugFillProperties.html).
+Añade objetos [DiagnosticsProperty]({{site.api}}/flutter/foundation/DiagnosticsProperty-class.html)
 a los argumentos del método, y llama al método de la superclase.
 Esta función es la que el método `toString` usa para rellenar en la 
 descripción del widget.
@@ -266,10 +266,10 @@ descripción del widget.
 Si estas tratando de depurar un problema de layout, entonces la capa 
 del árbol de Widgets puede tener insuficientes detalles. En este caso, 
 puedes volcar el árbol de renderizado llamando a 
-[`debugDumpRenderTree()`](https://docs.flutter.io/flutter/rendering/debugDumpRenderTree.html).
+[`debugDumpRenderTree()`]({{site.api}}/flutter/rendering/debugDumpRenderTree.html).
 Como con `debugDumpApp()`, puedes llamar esto mas o menos en cualquier momento 
 excepto durante la fase de pintado del layout. Como regla general, llamarlo desde 
-un [frame callback](https://docs.flutter.io/flutter/scheduler/SchedulerBinding/addPersistentFrameCallback.html) 
+un [frame callback]({{site.api}}/flutter/scheduler/SchedulerBinding/addPersistentFrameCallback.html) 
 o un manejador de eventos es la mejor solución.
 
 Para llamar a `debugDumpRenderTree()`, necesitas añadir `import
@@ -402,7 +402,7 @@ I/flutter ( 6559):            ╎ │           additionalConstraints: BoxConstr
 I/flutter ( 6559):            ╎ │
 I/flutter ( 6559):            ╎ └─child 2: RenderSemanticsAnnotations
 I/flutter ( 6559):            ╎   │ creator: Semantics ← Focus-[GlobalObjectKey
-I/flutter ( 6559):            ╎   │   MaterialPageRoute<Null>(875520219)] ← _ModalScope-[GlobalKey
+I/flutter ( 6559):            ╎   │   MaterialPageRoute<void>(875520219)] ← _ModalScope-[GlobalKey
 I/flutter ( 6559):            ╎   │   816151164] ← _OverlayEntry-[GlobalKey 727622716] ← Stack ←
 I/flutter ( 6559):            ╎   │   _Theatre ← Overlay-[GlobalKey 199833992] ← _FocusScope ←
 I/flutter ( 6559):            ╎   │   Semantics ← Focus-[GlobalKey 489139594] ← AbsorbPointer ←
@@ -413,7 +413,7 @@ I/flutter ( 6559):            ╎   │ size: Size(411.4, 683.4)
 I/flutter ( 6559):            ╎   │
 I/flutter ( 6559):            ╎   └─child: RenderOffstage
 I/flutter ( 6559):            ╎     │ creator: Offstage ← _FocusScope ← Semantics ←
-I/flutter ( 6559):            ╎     │   Focus-[GlobalObjectKey MaterialPageRoute<Null>(875520219)] ←
+I/flutter ( 6559):            ╎     │   Focus-[GlobalObjectKey MaterialPageRoute<void>(875520219)] ←
 I/flutter ( 6559):            ╎     │   _ModalScope-[GlobalKey 816151164] ← _OverlayEntry-[GlobalKey
 I/flutter ( 6559):            ╎     │   727622716] ← Stack ← _Theatre ← Overlay-[GlobalKey 199833992] ←
 I/flutter ( 6559):            ╎     │   _FocusScope ← Semantics ← Focus-[GlobalKey 489139594] ← ⋯
@@ -424,7 +424,7 @@ I/flutter ( 6559):            ╎     │ offstage: false
 I/flutter ( 6559):            ╎     │
 I/flutter ( 6559):            ╎     └─child: RenderIgnorePointer
 I/flutter ( 6559):            ╎       │ creator: IgnorePointer ← Offstage ← _FocusScope ← Semantics ←
-I/flutter ( 6559):            ╎       │   Focus-[GlobalObjectKey MaterialPageRoute<Null>(875520219)] ←
+I/flutter ( 6559):            ╎       │   Focus-[GlobalObjectKey MaterialPageRoute<void>(875520219)] ←
 I/flutter ( 6559):            ╎       │   _ModalScope-[GlobalKey 816151164] ← _OverlayEntry-[GlobalKey
 I/flutter ( 6559):            ╎       │   727622716] ← Stack ← _Theatre ← Overlay-[GlobalKey 199833992] ←
 I/flutter ( 6559):            ╎       │   _FocusScope ← Semantics ← ⋯
@@ -438,7 +438,7 @@ I/flutter ( 6559):            ╎       └─child: RenderFractionalTranslation
 I/flutter ( 6559):            ╎         │ creator: FractionalTranslation ← SlideTransition ←
 I/flutter ( 6559):            ╎         │   _MountainViewPageTransition ← IgnorePointer ← Offstage ←
 I/flutter ( 6559):            ╎         │   _FocusScope ← Semantics ← Focus-[GlobalObjectKey
-I/flutter ( 6559):            ╎         │   MaterialPageRoute<Null>(875520219)] ← _ModalScope-[GlobalKey
+I/flutter ( 6559):            ╎         │   MaterialPageRoute<void>(875520219)] ← _ModalScope-[GlobalKey
 I/flutter ( 6559):            ╎         │   816151164] ← _OverlayEntry-[GlobalKey 727622716] ← Stack ←
 I/flutter ( 6559):            ╎         │   _Theatre ← ⋯
 I/flutter ( 6559):            ╎         │ parentData: <none>
@@ -451,7 +451,7 @@ I/flutter ( 6559):            ╎         └─child: RenderRepaintBoundary
 I/flutter ( 6559):            ╎           │ creator: RepaintBoundary ← FractionalTranslation ←
 I/flutter ( 6559):            ╎           │   SlideTransition ← _MountainViewPageTransition ← IgnorePointer ←
 I/flutter ( 6559):            ╎           │   Offstage ← _FocusScope ← Semantics ← Focus-[GlobalObjectKey
-I/flutter ( 6559):            ╎           │   MaterialPageRoute<Null>(875520219)] ← _ModalScope-[GlobalKey
+I/flutter ( 6559):            ╎           │   MaterialPageRoute<void>(875520219)] ← _ModalScope-[GlobalKey
 I/flutter ( 6559):            ╎           │   816151164] ← _OverlayEntry-[GlobalKey 727622716] ← Stack ← ⋯
 I/flutter ( 6559):            ╎           │ parentData: <none>
 I/flutter ( 6559):            ╎           │ constraints: BoxConstraints(w=411.4, h=683.4)
@@ -594,26 +594,26 @@ y los tamaños (sizes) fluyen de vuelta hacia arriba.
 
 Por ejemplo, en el volcado anterior puedes ver que el tamaño de la ventana,
 `Size(411.4, 683.4)`, es usado para forzar todas las cajas por debajo de 
-[`RenderPositionedBox`](https://docs.flutter.io/flutter/rendering/RenderPositionedBox-class.html para tener el tamaño de la pantalla, con la restriccion de 
+[`RenderPositionedBox`]({{site.api}}/flutter/rendering/RenderPositionedBox-class.html para tener el tamaño de la pantalla, con la restriccion de 
 `BoxConstraints(w=411.4, h=683.4)`. El `RenderPositionedBox`, que este 
-volcado dice, fue creado por un widget [`Center`](https://docs.flutter.io/flutter/widgets/Center-class.html) 
+volcado dice, fue creado por un widget [`Center`]({{site.api}}/flutter/widgets/Center-class.html) 
 (como es descrito por el campo `creator`), configura las restricciones 
 de sus hijos a esto: `BoxConstraints(0.0<=w<=411.4,
 0.0<=h<=683.4)`. El hijo, un
-[`RenderPadding`](https://docs.flutter.io/flutter/rendering/RenderPadding-class.html),
+[`RenderPadding`]({{site.api}}/flutter/rendering/RenderPadding-class.html),
 inserta estas restricciones para asegurar que hay espacio para el padding, y así el 
-[`RenderConstrainedBox`](https://docs.flutter.io/flutter/rendering/RenderConstrainedBox-class.html) 
+[`RenderConstrainedBox`]({{site.api}}/flutter/rendering/RenderConstrainedBox-class.html) 
 tiene una restricción de `BoxConstraints(0.0<=w<=395.4,0.0<=h<=667.4)`. 
 Este objeto, de cuyo campo `creator` te hablamos es probablemente 
 parte de la definición de 
-[`FlatButton`](https://docs.flutter.io/flutter/material/FlatButton-class.html), 
+[`FlatButton`]({{site.api}}/flutter/material/FlatButton-class.html), 
 fija un ancho mínimo de 88 a su contenido y una altura especifica de 
 36.0. (Esta es la clase `FlatButton` implementando 
 las guias de Material Design respecto a las dimensiones de los botones.)
 
 El `RenderPositionedBox` más interno aplica las restricciones de nuevo, 
 esta vez para centrar el texto en el botón. El 
-[`RenderParagraph`](https://docs.flutter.io/flutter/rendering/RenderParagraph-class.html)
+[`RenderParagraph`]({{site.api}}/flutter/rendering/RenderParagraph-class.html)
 toma su tamaño basándose en su contenido. Si ahora sigues los tamaños hacia 
 arriba de la cadena, verás como el tamaño del texto es el que influencia el 
 ancho de todas las cajas que forman el botón, como todos ellos toman las dimensiones de 
@@ -629,14 +629,14 @@ nuevas dimensiones.
 
 Si escribes tu propio objecto de renderizado, puedes añadir información para 
 el volcado sobreescribiendo 
-[`debugFillProperties()`](https://docs.flutter.io/flutter/rendering/Layer/debugFillProperties.html).
-Añade objetos [DiagnosticsProperty](https://docs.flutter.io/flutter/foundation/DiagnosticsProperty-class.html)
+[`debugFillProperties()`]({{site.api}}/flutter/rendering/Layer/debugFillProperties.html).
+Añade objetos [DiagnosticsProperty]({{site.api}}/flutter/foundation/DiagnosticsProperty-class.html)
 a los argumentos del método, y llama al método de la supercalse.
 
 ### Capas
 
 Si estas tratando de depurar un problema de composición, puedes usar 
-[`debugDumpLayerTree()`](https://docs.flutter.io/flutter/rendering/debugDumpLayerTree.html).
+[`debugDumpLayerTree()`]({{site.api}}/flutter/rendering/debugDumpLayerTree.html).
 Para el ejemplo anterior, esta podría ser la salida:
 
 ```
@@ -672,7 +672,7 @@ usa para reducir cuanto necesita ser repintando.
 
 Puedes tambien obtener un volcado del árbol de Semántica (el árbol 
 presentado a las APIs de accesibilidad del sistema) usando
-[`debugDumpSemanticsTree()`](https://docs.flutter.io/flutter/rendering/debugDumpSemanticsTree.html).
+[`debugDumpSemanticsTree()`]({{site.api}}/flutter/rendering/debugDumpSemanticsTree.html).
 Para usar esto, primero debes habilitar la accesibilidad, por ejemplo habilitando 
 una herramienta de accesibilidad del sistema o el `SemanticsDebugger`
 (discutido más abajo).
@@ -687,13 +687,13 @@ I/flutter :  └SemanticsNode(3; Rect.fromLTRB(0.0, 0.0, 411.4, 683.4))
 I/flutter :    └SemanticsNode(4; Rect.fromLTRB(0.0, 0.0, 82.0, 36.0); canBeTapped; "Dump App")
 ```
 
-<!-- this tree is bad, see https://github.com/flutter/flutter/issues/2476 -->
+<!-- this tree is bad, see {{site.github}}/flutter/flutter/issues/2476 -->
 
 ### Scheduling
 
 Para encontrar donde ocurren sus eventos relativo al frame 
 de inicio/fin del mismo, puedes alternar entre los booleanos 
-[`debugPrintBeginFrameBanner`](https://docs.flutter.io/flutter/scheduler/debugPrintBeginFrameBanner.html) y   [`debugPrintEndFrameBanner`](https://docs.flutter.io/flutter/scheduler/debugPrintEndFrameBanner.html) 
+[`debugPrintBeginFrameBanner`]({{site.api}}/flutter/scheduler/debugPrintBeginFrameBanner.html) y   [`debugPrintEndFrameBanner`]({{site.api}}/flutter/scheduler/debugPrintEndFrameBanner.html) 
 para imprirmir el principio y el final de los frames a la consola.
 
 Por ejemplo:
@@ -705,14 +705,14 @@ I/flutter : Debug print: Am I performing this work more than once per frame?
 I/flutter : ▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀
 ```
 
-[`debugPrintScheduleFrameStacks`](https://docs.flutter.io/flutter/scheduler/debugPrintScheduleFrameStacks.html) puede 
+[`debugPrintScheduleFrameStacks`]({{site.api}}/flutter/scheduler/debugPrintScheduleFrameStacks.html) puede 
 también ser usado para imprimir la pila de llamadas que causan que el frame actual 
 haya sido programado.
 
 ## Depuración visual
 
 Puedes también depurar un problema de layout visualmente, configurando 
-[`debugPaintSizeEnabled`](https://docs.flutter.io/flutter/rendering/debugPaintSizeEnabled.html)
+[`debugPaintSizeEnabled`]({{site.api}}/flutter/rendering/debugPaintSizeEnabled.html)
 a `true`. Este es un booleano de la biblioteca `rendering`. Este puede ser 
 habilitado en cualquier momento y afectas todos los pintados mientras este 
 sea _true_. La manera más sencilla de fijar esto es al principio de tu punto 
@@ -737,13 +737,13 @@ se muestra con flechas amarillas, y espaciadores (de widgets como
 `Container` cuando este no tiene hijo) se muestran en gris.
 
 El 
-[`debugPaintBaselinesEnabled`](https://docs.flutter.io/flutter/rendering/debugPaintBaselinesEnabled.html)
+[`debugPaintBaselinesEnabled`]({{site.api}}/flutter/rendering/debugPaintBaselinesEnabled.html)
 hace algo parecido pero para objectos con lineas base. La linea base
 alfabética se muestra en verde brillante y la linea base ideografica 
 en naranja.
 
 La etiqueta 
-[`debugPaintPointersEnabled`](https://docs.flutter.io/flutter/rendering/debugPaintPointersEnabled.html) 
+[`debugPaintPointersEnabled`]({{site.api}}/flutter/rendering/debugPaintPointersEnabled.html) 
 cambia a un modo especial mediante el cual cualquier objeto 
 que sea pulsado es resaltado en color verde azulado. Esto puede ayudarte a 
 determinar cuando un objeto esta de alguna manera 
@@ -752,9 +752,9 @@ por ejemplo, este está actualmente fuera de los límites de su
 padre y así no es considerado para el _hit testing_ en primer lugar).
 
 Si estas tratando de depurar capas de composición, por ejemplo para determinar 
-cuando y donde añadir los widgets `RepaintBoundary`, puedes usar la etiqueta [`debugPaintLayerBordersEnabled`](https://docs.flutter.io/flutter/rendering/debugPaintLayerBordersEnabled.html)
+cuando y donde añadir los widgets `RepaintBoundary`, puedes usar la etiqueta [`debugPaintLayerBordersEnabled`]({{site.api}}/flutter/rendering/debugPaintLayerBordersEnabled.html)
 , que pinta los limites de cada capa en naranja, o la etiqueta 
-[`debugRepaintRainbowEnabled`](https://docs.flutter.io/flutter/rendering/debugRepaintRainbowEnabled.html)
+[`debugRepaintRainbowEnabled`]({{site.api}}/flutter/rendering/debugRepaintRainbowEnabled.html)
 , que provoca que se sobrepongan capas con un conjunto de colores rotativos 
 cuando son repintados.
 
@@ -766,7 +766,7 @@ depuración.
 
 La forma mas sencilla de depurar animaciones es disminuir su 
 velocidad. Para hacer esto, fija la variable 
-[`timeDilation`](https://docs.flutter.io/flutter/scheduler/timeDilation.html)
+[`timeDilation`]({{site.api}}/flutter/scheduler/timeDilation.html)
 (de la biblioteca `scheduler`) a un número mayor que 1.0,
 por ejemplo, 50.0. Esto es mejor hacerlo solo una vez en el inicio de la app. Si 
 cambias esto al vuelo, especialmente si lo reduces cuando las animaciones 
@@ -778,9 +778,9 @@ con tus esfuerzos.
 
 Para ver porque en tu aplicación se están provocando _relayout_ o _repaints_, puedes fijar 
 las etiquetas 
-[`debugPrintMarkNeedsLayoutStacks`](https://docs.flutter.io/flutter/rendering/debugPrintMarkNeedsLayoutStacks.html)
+[`debugPrintMarkNeedsLayoutStacks`]({{site.api}}/flutter/rendering/debugPrintMarkNeedsLayoutStacks.html)
 y
-[`debugPrintMarkNeedsPaintStacks`](https://docs.flutter.io/flutter/rendering/debugPrintMarkNeedsPaintStacks.html)
+[`debugPrintMarkNeedsPaintStacks`]({{site.api}}/flutter/rendering/debugPrintMarkNeedsPaintStacks.html)
 respectivamente. Esto registra un seguimiento de la pila en la consola 
 cada vez que una caja de renderizado es llamada a ejecutar un relayout 
 y un repaint. Puedes usar el método `debugPrintStack()` de la biblioteca 
@@ -820,8 +820,8 @@ Por ejemplo:
 
 Para realizar rastreos de rendimiento personalizados y medir tiempos reloj/CPU 
 de segmentos arbitrarios de código Dart de forma similar a como lo harías en 
-Android con [systrace](https://developer.android.com/studio/profile/systrace.html), usa 
-las utilidades [Timeline](https://api.dartlang.org/stable/dart-developer/Timeline-class.html) de 
+Android con [systrace]({{site.android-dev}}/studio/profile/systrace.html), usa 
+las utilidades [Timeline]({{site.dart.api}}/stable/dart-developer/Timeline-class.html) de 
 `dart:developer` para envolver el código que quieres medir como:
 
 <!-- import 'dart:developer'; -->
@@ -847,13 +847,13 @@ a tu producto final.
 
 Para obtener una representación gráfica del rendimiento de tu aplicación, fija 
 el argumento `showPerformanceOverlay` del constructor de 
-[`MaterialApp`](https://docs.flutter.io/flutter/material/MaterialApp/MaterialApp.html)
+[`MaterialApp`]({{site.api}}/flutter/material/MaterialApp/MaterialApp.html)
 a true. El constructor de 
-[`WidgetsApp`](https://docs.flutter.io/flutter/widgets/WidgetsApp-class.html)
+[`WidgetsApp`]({{site.api}}/flutter/widgets/WidgetsApp-class.html)
 tiene un argumento similar. (Si no usas `MaterialApp`
 o `WidgetsApp`, puedes obtener el mismo efecto envolviendo tu aplicación 
 en un stack y añadiendo un widget a tu stack que sea creado 
-llamando a [`PerformanceOverlay.allEnabled()`](https://docs.flutter.io/flutter/widgets/PerformanceOverlay/PerformanceOverlay.allEnabled.html).)
+llamando a [`PerformanceOverlay.allEnabled()`]({{site.api}}/flutter/widgets/PerformanceOverlay/PerformanceOverlay.allEnabled.html).)
 
 Esto muestra dos gráficas. La de arriba es el tiempo empleado 
 en el hilo de la GPU, la de abajo es el tiempo empleado en el hilo 
@@ -872,16 +872,16 @@ así los resultdos son engañosos.
 ## Material grid
 
 Cuando se desarrollan aplicaciones que implementan 
-[Material Design](https://www.google.com/design/spec/material-design/introduction.html),
+[Material Design]({{site.material}}/design/spec/material-design/introduction.html),
 puede ser de ayuda sobreponer una [Material Design baseline
-grid](https://www.google.com/design/spec/layout/metrics-keylines.html)
+grid]({{site.material}}/design/spec/layout/metrics-keylines.html)
 sobre la aplicación para ayudar a verificar alineaciones. Para este fin, el 
-constructor de [`MaterialApp`](https://docs.flutter.io/flutter/material/MaterialApp/MaterialApp.html) 
+constructor de [`MaterialApp`]({{site.api}}/flutter/material/MaterialApp/MaterialApp.html) 
 tiene un argumento `debugShowMaterialGrid` el cual, cuando se fija a `true` en modo 
 debug, se superpone un grid.
 
 También puedes sobreponer un grid en aplicaciones no basadas en Material usando 
-el widget [`GridPaper`](https://docs.flutter.io/flutter/widgets/GridPaper-class.html) 
+el widget [`GridPaper`]({{site.api}}/flutter/widgets/GridPaper-class.html) 
 directamente.
 
 ## Problemas comunes

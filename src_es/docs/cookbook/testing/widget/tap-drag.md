@@ -1,5 +1,8 @@
 ---
-title: "Pulsando, arrastrando e ingresando texto en los Widget Tests"
+title: Pulsando, arrastrando e ingresando texto
+prev:
+  title: Encontrando widgets
+  path: /docs/cookbook/testing/widget/finders
 ---
 
 {% assign api = site.api | append: '/flutter' -%}

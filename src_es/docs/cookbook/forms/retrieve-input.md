@@ -1,5 +1,11 @@
 ---
 title: "Obtener el valor de un campo de texto"
+prev:
+  title: Manejar los cambios en un campo de texto
+  path: /docs/cookbook/forms/text-field-changes
+next:
+  title: Añadir Material Touch Ripples
+  path: /docs/cookbook/gestures/ripples
 ---
 
 En esta receta, veremos cómo recuperar el texto que un usuario ha escrito en un 
@@ -14,7 +20,7 @@ campo de texto.
 ## 1. Crea un `TextEditingController`
 
 Para recuperar el texto que un usuario ha escrito en un campo de texto, necesitamos 
-crear un [`TextEditingController`](https://docs.flutter.io/flutter/widgets/TextEditingController-class.html).
+crear un [`TextEditingController`]({{site.api}}/flutter/widgets/TextEditingController-class.html).
 Luego proporcionaremos `TextEditingController` a un `TextField` en los siguientes 
 pasos.
 
@@ -70,7 +76,7 @@ TextField(
 ## 3. Muestra el valor actual del campo de texto
 
 Después de que hayamos proporcionado el `TextEditingController` a nuestro campo de texto, 
-¡podemos empezar a leer valores! Usaremos el método [`text`](https://docs.flutter.io/flutter/widgets/TextEditingController/text.html) 
+¡podemos empezar a leer valores! Usaremos el método [`text`]({{site.api}}/flutter/widgets/TextEditingController/text.html) 
 proporcionado por el `TextEditingController` para recuperar el String de texto 
 que el usuario haya digitado en el campo de texto.
 

@@ -11,12 +11,12 @@ configuración remota, y hospedaje para tus ficheros estáticos.
 Firebase soporta Flutter. Para más información, mira:
 
 * [Inicio con Fireabase y 
-   Flutter](https://firebase.google.com/docs/flutter/setup)
-   en la [documentación de Firebase](https://firebase.google.com/docs)
+   Flutter]({{site.firebase}}/docs/flutter/setup)
+   en la [documentación de Firebase]({{site.firebase}}/docs)
 * [Firebase for Flutter
    codelab](https://codelabs.developers.google.com/codelabs/flutter-firebase)
 * [FlutterFire
-  plugins](https://github.com/flutter/plugins/blob/master/FlutterFire.md)
+  plugins]({{site.github}}/flutter/plugins/blob/master/FlutterFire.md)
 * [Using Firestore as a backend to your Flutter
    app](https://youtu.be/DqJ_KjFzL9I) (video)
 
@@ -25,4 +25,4 @@ Además, la comunidad Flutter community ha creado documentos que puedes encontra
 * [Authenticating users with Firebase and
    Flutter](https://flutterdoc.com/mobileauthenticating-users-with-firebase-and-flutter-240c5557ac7f)
 * [Building chat app with Flutter and
-   Firebase](https://medium.com/flutter-community/building-a-chat-app-with-flutter-and-firebase-from-scratch-9eaa7f41782e)
+   Firebase]({{site.medium}}/flutter-community/building-a-chat-app-with-flutter-and-firebase-from-scratch-9eaa7f41782e)

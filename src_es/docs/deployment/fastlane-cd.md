@@ -49,7 +49,8 @@ una máquina local.
     una vez en la Play Store.
         * Se recomienda muy especialmente utilizar la autenticación automática administrada 
         en la nube para la clave de despliegue. Para obtener más información, consulta la [documentación oficial de Play Store](https://support.google.com/googleplay/android-developer/answer/7384423?hl=en).
-        * Sigue los pasos de [generación de claves](https://developer.android.com/studio/publish/app-signing#sign-apk)
+        * Sigue los pasos de [generación 
+        de claves]({{site.android-dev}}/studio/publish/app-signing#sign-apk)
         para crear tu clave de subida.
         * Configura gradle para usar tu clave de subida cuando compilas tu app en modo 
         release editando `android.buildTypes.release` en
@@ -144,8 +145,7 @@ de tu repositorio.
     * Fragmenta tu script para ejecutarse tanto en plataformas Linux como macOS.
     * Recuerda especificar una dependencia de Xcode para macOS (por ejemplo
     `osx_image: xcode9.2`).
-    * Mira la [documentación CI de fastlane](https://flutter.io/fastlane-cd/)
-    para configuraciones espécificas del CI.
+    * Mira la [documentación CI de fastlane][] para configuraciones espécificas del CI.
     * Durante la fase de configuración, dependiendo de la plataforma, asegúrate de que:
          * Está disponible Bundler usando `gem install bundler`.
          * Para Android, asegúrate que el Android SDK esta disponible y que `ANDROID_HOME` está 
@@ -159,6 +159,10 @@ de tu repositorio.
 
 ## Referencía
 
-La [Galería Flutter en el repositorio de Flutter](https://github.com/flutter/flutter/tree/master/examples/flutter_gallery)
-usa fastlane para despliegue continuo. Mira el código fuente para ver un ejemplo funcional de fastlane en acción. 
-El script Cirrus del repositorio de Flutter está [aquí](https://github.com/flutter/flutter/blob/master/.cirrus.yml).
+La app [Flutter Gallery en el repositorio de 
+Flutter]({{site.github}}/flutter/flutter/tree/master/examples/flutter_gallery)
+usa fastlane para despliegue continuo. Mira el código fuente 
+para ver un ejemplo funcional de fastlane en acción. También mira 
+el [script Cirrus]({{site.github}}/flutter/flutter/blob/master/.cirrus.yml).
+
+[documentación CI de fastlane]: https://docs.fastlane.tools/best-practices/continuous-integration

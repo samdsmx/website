@@ -16,8 +16,9 @@ una nueva ventana. Por ejemplo:
    la ruta donde has clonado el repositorio de Flutter:
 
    ```terminal
-    $ export PATH=$PATH:[PATH_TO_FLUTTER_GIT_DIRECTORY]/flutter/bin
+    $ export PATH="$PATH:[PATH_TO_FLUTTER_GIT_DIRECTORY]/flutter/bin"
     ```
+    
  4. Ejecuta `source $HOME/.bash_profile` para refrescar la ventana actual. 
  5. Verifica que el directorio de `flutter/bin` esta en tu PATH ejecutando el siguiente comando:
 

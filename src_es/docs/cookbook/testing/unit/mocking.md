@@ -1,5 +1,12 @@
 ---
-title: "Simular dependencias usando Mockito"
+title: Simular dependencias usando Mockito
+short-title: Mocking
+prev:
+  title: Introducción a las pruebas unitarias
+  path: /docs/cookbook/testing/unit/introduction
+next:
+  title: Introducción a las pruebas de Widgets
+  path: /docs/cookbook/testing/widget/introduction
 ---
 
 En ciertos casos, las pruebas unitarias pueden depender de las clases que obtienen datos 
@@ -11,12 +18,12 @@ de servicios web en vivo o bases de datos. Esto es inconveniente por algunas raz
   * Es difícil probar todos los posibles escenarios de éxito y falla utilizando un 
   servicio web en vivo o una base de datos.
   
-Por lo tanto, en lugar de confiar en un servicio web o base de datos en vivo, podemos 
+Por lo tanto, en lugar de confiar en un servicio web o base de datos en linea, puedes 
 "simular" esas dependencias. Los Mocks nos permiten emular un servicio web en vivo o 
 una base de datos y devolver resultados específicos según la situación.
 
-En términos generales, podemos simular dependencias creando una implementación 
-alternativa de una clase. Podemos escribir estas implementaciones alternativas a 
+En términos generales, puedes simular dependencias creando una implementación 
+alternativa de una clase. Puedes escribir estas implementaciones alternativas a 
 mano o hacer uso del paquete 
 [Mockito]({{site.pub-pkg}}/mockito) como atajo.
 
@@ -26,7 +33,7 @@ Para obtener más información, por favor consulta la documentación del paquete
 
 ## Instrucciones
 
-  1. Agrega la dependencia de `mockito` 
+  1. Agrega las dependencias `mockito` y `test` 
   2. Crea una función para probar 
   3. Crea un archivo de prueba con un `http.Client` simulado
   4. Escribe una prueba para cada condición
@@ -34,34 +41,34 @@ Para obtener más información, por favor consulta la documentación del paquete
 
 ## 1. Agrega la dependencia de `mockito` 
 
-Para utilizar el paquete `mockito` , primero debemos agregarlo a nuestro archivo  
+Para utilizar el paquete `mockito` , primero debes agregarlo al archivo  
 `pubspec.yaml` junto con la dependencia `flutter_test` en la sección 
 `dev_dependencies`.
 
-También usaremos el paquete `http` en este ejemplo y definiremos esa 
+También usarás el paquete `http` en este ejemplo y definiremos esa 
 dependencia en la sección `dependencies`.
 
 ```yaml
 dependencies:
   http: <newest_version>
 dev_dependencies:
-  flutter_test:
-    sdk: flutter
+  test: <newest_version>
   mockito: <newest_version>
 ```
 
 ## 2. Crea una función para probar
 
-En este ejemplo, queremos probar de forma unitaria la función `fetchPost` de la receta
+En este ejemplo, quieres probar de forma unitaria la función `fetchPost` de la receta
 [Obtener datos desde internet](/docs/cookbook/networking/fetch-data/). 
-Para probar esta función, necesitamos hacer dos cambios:
+Para probar esta función, necesitas hacer dos cambios:
 
-  1. Proporciona un `http.Client` a la función. Esto nos permitirá proporcionar el `http.Client` 
-  correcto según la situación. Para proyectos de Flutter y del lado del servidor, podemos 
-  proporcionar un `http.IOClient`. Para las aplicaciones del navegador, podemos proporcionar un 
-  `http.BrowserClient`. Para las pruebas, proporcionaremos un `http.Client` simulado.
+  1. Proporciona un `http.Client` a la función. Esto te permitirá proporcionar el `http.Client` 
+  correcto según la situación. Para proyectos de Flutter y del lado del servidor, puedes 
+  proporcionar un `http.IOClient`. Para las aplicaciones del navegador, puedes proporcionar un 
+  `http.BrowserClient`. 
+  Para las pruebas, proporciona un `http.Client` simulado.
   2. Utiliza el `client` proporcionado para buscar datos de Internet, en lugar del método
-  estático `http.get` , que es difícil de simular.
+  estático `http.get`, que es difícil de simular.
 
 La función debería tener el siguiente aspecto:
 
@@ -83,19 +90,19 @@ Future<Post> fetchPost(http.Client client) async {
 
 ## 3. Crea un archivo de prueba con un `http.Client` falso
 
-A continuación, necesitaremos crear nuestro archivo de prueba junto con una clase `MockClient` .
+A continuación, crea un archivo de prueba junto con una clase `MockClient` .
 Siguiendo los consejos de la receta 
 [Introducción a la prueba unitaria](/docs/cookbook/testing/unit/) ,
-crearemos un archivo denominado `fetch_post_test.dart` en la carpeta raíz `test` . 
+crea un archivo denominado `fetch_post_test.dart` en la carpeta raíz `test` . 
 
-La clase `MockClient` implementará la clase `http.Client` . Esto nos permitirá 
-pasar el `MockClient` a nuestra función `fetchPost` , y nos permitirá devolver 
+La clase `MockClient` implementa la clase `http.Client` . Esto nos permite 
+pasar el `MockClient` a la función `fetchPost` , y nos permite devolver 
 diferentes respuestas http en cada prueba.
 
 <!-- skip -->
 ```dart
 // Crea un MockClient usando la clase Mock proporcionada por el paquete Mockito
-// Crearemos nuevas instancias de esta clase en cada prueba. 
+// Crea nuevas instancias de esta clase en cada prueba. 
 class MockClient extends Mock implements http.Client {}
 
 main() {
@@ -105,21 +112,21 @@ main() {
 
 ## 4. Escribe una prueba para cada condición
 
-Si pensamos en nuestra función `fetchPost` hará una de estas dos cosas:
+Si piensas en la función `fetchPost` hará una de estas dos cosas:
 
   1. Devolver un `Post` si la llamada http tiene éxito
   2. Lanzar una `Exception` si falla la llamada http 
 
-Por lo tanto, queremos probar estas dos condiciones. Podemos usar la clase `MockClient`
+Por lo tanto, quieres probar estas dos condiciones. Podemos usar la clase `MockClient`
 para devolver una respuesta "Ok" para la prueba de éxito y una respuesta de 
 error para la prueba fallida. 
 
-Para lograr esto, usaremos la función `when` proporcionada por Mockito.
+Para lograr esto, usa la función `when` proporcionada por Mockito.
 
 <!-- skip -->
 ```dart
 // Crea un MockClient usando la clase Mock proporcionada por el paquete Mockito.
-// Crearemos nuevas instancias de esta clase en cada prueba.
+// Crea nuevas instancias de esta clase en cada prueba.
 class MockClient extends Mock implements http.Client {}
 
 main() {
@@ -128,7 +135,7 @@ main() {
       final client = MockClient();
 
       // Usa Mockito para devolver una respuesta exitosa cuando llama al 
-      // http.Client proporcionado
+      // http.Client proporcionado.
       when(client.get('https://jsonplaceholder.typicode.com/posts/1'))
           .thenAnswer((_) async => http.Response('{"title": "Test"}', 200));
 
@@ -139,7 +146,7 @@ main() {
       final client = MockClient();
 
       // Usa Mockito para devolver una respuesta fallida cuando llama al 
-      // http.Client proporcionado
+      // http.Client proporcionado.
       when(client.get('https://jsonplaceholder.typicode.com/posts/1'))
           .thenAnswer((_) async => http.Response('Not Found', 404));
 
@@ -151,22 +158,22 @@ main() {
 
 ### 5. Ejecuta las pruebas
 
-Ahora que tenemos una función `fetchPost` con pruebas en su lugar, 
-¡podemos ejecutar las pruebas! 
+Ahora que tienes una función `fetchPost` con pruebas en su lugar, 
+ejecuta las pruebas. 
 
 ```terminal
-$ flutter test test/counter_test.dart
+$ dart test/fetch_post_test.dart
 ```
 
-También puede ejecutar pruebas dentro de su editor favorito siguiendo 
+También puedes ejecutar pruebas dentro de tu editor favorito siguiendo 
 las instrucciones en 
 la receta 
 [Introducción a las pruebas unitarias](/docs/cookbook/testing/unit#run-tests-using-intellij-or-vscode). 
 
 ### Resumen
 
-En este ejemplo, hemos aprendido a usar Mockito para probar funciones o clases que 
+En este ejemplo, has aprendido a usar Mockito para probar funciones o clases que 
 dependen de servicios web o bases de datos. Esta es solo una breve introducción a 
 la biblioteca de Mockito y al concepto de simulación. Para obtener más información, 
 consulte la documentación provista por el 
-[paquete Mockito](https://pub.dartlang.org/packages/mockito).  
+[paquete Mockito]({{site.pub-pkg}}/mockito).  

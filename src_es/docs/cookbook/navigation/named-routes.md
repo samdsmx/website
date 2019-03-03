@@ -1,19 +1,25 @@
 ---
-title: "Navegar a rutas con nombre"
+title: Navegar a rutas con nombre
+rev:
+  title: Navegar a una nueva pantalla y volver
+  path: /docs/cookbook/navigation/navigation-basics
+next:
+  title: Devolver datos desde una pantalla
+  path: /docs/cookbook/navigation/returning-data
 ---
 
 En la receta 
 [Navegar a una nueva pantalla y volver](/cookbook/navigation/navigation-basics/)
 , aprendimos cómo Navegar a una nueva pantalla creando una nueva ruta 
 y publicándola en el 
-[`Navigator`](https://docs.flutter.io/flutter/widgets/Navigator-class.html). 
+[`Navigator`]({{site.api}}/flutter/widgets/Navigator-class.html). 
 
 Sin embargo, si tenemos que navegar a la misma pantalla en muchas partes de nuestras aplicaciones, 
 esto puede provocar la duplicación del código. En estos casos, puede ser útil definir una "ruta con 
 nombre" y usarla para la Navegación.
 
 Para trabajar con rutas con nombre, podemos usar la función 
-[`Navigator.pushNamed`](https://docs.flutter.io/flutter/widgets/Navigator/pushNamed.html) 
+[`Navigator.pushNamed`]({{site.api}}/flutter/widgets/Navigator/pushNamed.html) 
 . Este ejemplo replicará la funcionalidad de la receta original, demostrando cómo usar rutas 
 con nombre en su lugar.
 
@@ -73,7 +79,7 @@ class SecondScreen extends StatelessWidget {
 ## 2. Define las rutas
 
 A continuación, tendremos que definir nuestras rutas proporcionando propiedades adicionales al 
-constructor de [`MaterialApp`](https://docs.flutter.io/flutter/material/MaterialApp-class.html),
+constructor de [`MaterialApp`]({{site.api}}/flutter/material/MaterialApp-class.html),
 el `initialRoute` y las `routes` mismas.
 
 La propiedad `initialRoute` define con qué ruta debe comenzar nuestra aplicación. La propiedad 
@@ -101,7 +107,7 @@ Nota: Al usar `initialRoute`, asegúrate de no definir una propiedad `home` .
 
 Con nuestros Widgets y rutas en su lugar, ¡podemos comenzar a navegar! En este caso, 
 usaremos la función
-[`Navigator.pushNamed`](https://docs.flutter.io/flutter/widgets/Navigator/pushNamed.html)
+[`Navigator.pushNamed`]({{site.api}}/flutter/widgets/Navigator/pushNamed.html)
 . Esto le dice a Flutter que construya el Widget definido en nuestra tabla de rutas y 
 que abra la pantalla.
 
@@ -121,7 +127,7 @@ onPressed: () {
 
 Para volver a la primera página, podemos usar 
 la función 
-[`Navigator.pop`](https://docs.flutter.io/flutter/widgets/Navigator/pop.html).
+[`Navigator.pop`]({{site.api}}/flutter/widgets/Navigator/pop.html).
 
 <!-- skip -->
 ```dart

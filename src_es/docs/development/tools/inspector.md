@@ -6,6 +6,13 @@ description: Una breve reseña del inspector de widgets de Flutter.
 El Inspector de Widget de Flutter es una poderosa herramienta para visualizar y explorar 
 el árbol de widgets en Flutter.
 
+{{site.alert.note}}
+  Si bien aun puede acceder a Flutter inspector desde Android Studio, este
+  es ahora parte del nuevo [Dart DevTools](https://flutter.github.io/devtools).
+  Puedes encontrar documentación más actualizada en
+  [DevTools wiki](https://flutter.github.io/devtools/inspector)
+{{site.alert.end}}
+
 El framework Flutter usa widgets como el [elemento principal de 
 construcción](/docs/development/ui/widgets-intro) para todo, desde controles (text, buttons, 
 toggles, etc.) hasta layouts (centering, padding, rows, columns, etc.). 
@@ -16,6 +23,11 @@ los árboles de widgets. Puede ser útil para:
 * Diagnosticar problemas con layouts 
 
 ![IntelliJ Flutter inspector window]({% asset tools/android-studio/visual-debugging.png @path %})
+
+## Empezando con el inspector
+
+El inspector está actualmente disponible en [el plugin Flutter
+](/docs/get-started/editor) para Android Studio, o IntelliJ IDEA.
 
 Para iniciar haz clic en "Select widget" en la barra de herramientas del inspector de Flutter y después haz clic 
 sobre el dispositivo, para seleccionar un widget. El widget seleccionado se resaltará 
@@ -36,12 +48,7 @@ Las restricciones fluyen por el árbol hacia abajo y los tamaños fluyen hacia a
 Para una demostración más completa del Inspector, por favor vea el reciente 
 [DartConf talk](https://www.youtube.com/watch?v=JIcmJNT9DNI).
 
-## Comenzar con el Inspector
-
-El Inspector está disponible actualmente en el [plugin de 
-Flutter](/get-started/editor/) para Android Studio o IntelliJ IDEA.
-
 ## Feedback
 
 Si tienes sugerencias, o encuentras problemas, por favor 
-[reporta estos en nuestro issue tracker](https://github.com/flutter/flutter-intellij/issues/new?labels=inspector)!
+[reporta estos en nuestro issue tracker]({{site.github}}/flutter/flutter-intellij/issues/new?labels=inspector)!

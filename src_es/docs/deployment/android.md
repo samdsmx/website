@@ -48,7 +48,7 @@ especialmente:
 
 Cuando una nueva aplicación Flutter es creada, este tiene un Launcher Icon por defecto. Para 
 personalizar este icono debería 
-ver el paquete [Iconos de inicio de Flutter](https://pub.dartlang.org/packages/flutter_launcher_icons).
+ver el paquete [Iconos de inicio de Flutter]({{site.pub}}/packages/flutter_launcher_icons).
 
 Alternativamente, si deseas hacerlo manualmente, aquí está como:
 
@@ -67,6 +67,9 @@ Las carpetas predeterminadas `mipmap-` demuestran la convención de nomenclatura
 e inspecciona el icono de la app en el Launcher.
 
 ## Firmando la app
+
+Para publicar en Play store, necesitas proporcionar tu firma digital de aplicación. 
+Usa las siguientes instrucciones para firmar tu app.
 
 ### Creando un Keystore
 Si tienes una Keystore anterior, salta al siguiente paso. Si no, crea una ejecutando lo siguiente en
@@ -152,8 +155,8 @@ querrás reducir el tamaño del APK o proteger ese código
 de ingeniería inversa.
 
 Para información sobre ofuscación de código Dart, ver 
-[Obfuscating Dart Code](https://github.com/flutter/flutter/wiki/Obfuscating-Dart-Code)
-En la [wiki de Flutter](https://github.com/flutter/flutter/wiki/).
+[Obfuscating Dart Code]({{site.github}}/flutter/flutter/wiki/Obfuscating-Dart-Code)
+En la [wiki de Flutter]({{site.github}}/flutter/flutter/wiki/).
 
 ### Paso 1 - Configurar Proguard
 
@@ -188,7 +191,7 @@ android {
 
         release {
 
-            signingConfig signingConfigs.debug
+            signingConfig signingConfigs.release
 
             minifyEnabled true
             useProguard true
@@ -214,7 +217,7 @@ Usando la línea de comandos:
 1. Ejecuta `flutter build apk` (`flutter build` por defecto a `--release`).
 
 La release APK para su aplicación se creó en 
-`<app dir>/build/app/outputs/apk/app-release.apk`.
+`<app dir>/build/app/outputs/apk/release/app-release.apk`.
 
 ## Instalación de una release APK en un dispositivo
 
@@ -232,13 +235,13 @@ Usando la línea de comando:
 Para obtener instrucciones detalladas sobre la publicación de la versión release de una aplicación 
 en Google Play Store, consulta la [documentación de publicación de Google Play][play].
 
-[manifest]: http://developer.android.com/guide/topics/manifest/manifest-intro.html
-[manifesttag]: https://developer.android.com/guide/topics/manifest/manifest-element
-[appid]: https://developer.android.com/studio/build/application-id
-[permissiontag]: https://developer.android.com/guide/topics/manifest/uses-permission-element
-[applicationtag]: https://developer.android.com/guide/topics/manifest/application-element
-[gradlebuild]: https://developer.android.com/studio/build/#module-level
-[versions]: https://developer.android.com/studio/publish/versioning
-[launchericons]: https://developer.android.com/guide/practices/ui_guidelines/icon_design_launcher
-[calificadores de configuración]: https://developer.android.com/guide/topics/resources/providing-resources#AlternativeResources
-[play]: https://developer.android.com/distribute/googleplay/start
+[manifest]: {{site.android-dev}}/guide/topics/manifest/manifest-intro
+[manifesttag]: {{site.android-dev}}/guide/topics/manifest/manifest-element
+[appid]: {{site.android-dev}}/studio/build/application-id
+[permissiontag]: {{site.android-dev}}/guide/topics/manifest/uses-permission-element
+[applicationtag]: {{site.android-dev}}/guide/topics/manifest/application-element
+[gradlebuild]: {{site.android-dev}}/studio/build/#module-level
+[versions]: {{site.android-dev}}/studio/publish/versioning
+[launchericons]: {{site.android-dev}}/guide/practices/ui_guidelines/icon_design_launcher
+[configuration qualifiers]: {{site.android-dev}}/guide/topics/resources/providing-resources#AlternativeResources
+[play]: {{site.android-dev}}/distribute/googleplay/start

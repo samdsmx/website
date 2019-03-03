@@ -2,10 +2,10 @@
 title: Test inicial
 prev:
   title: Configura un editor
-  path: /get-started/editor
+  path: /docs/get-started/editor
 next:
   title: Escribe tu primera app Flutter
-  path: /get-started/codelab
+  path: /docs/get-started/codelab
 toc: false
 ---
 
