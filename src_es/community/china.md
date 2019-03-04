@@ -1,19 +1,19 @@
 ---
-title: Using Flutter in China
-description: Where to find a version of the Flutter site that is localized to Simplified Chinese.
+title: Usar Flutter en China
+description: Como encontrar una version del sitio de Flutter que este traducida a Chino Simplificado.
 toc: true
 ---
 
 {% assign path = 'flutter_infra/releases/stable/windows/flutter_windows_v1.0.0-stable.zip' -%}
 
-The Flutter community has made a Simplified Chinese version of the
-Flutter site website available at
+La comunidad Flutter ha confeccionado una version en Chino Simplificado del 
+sitio web de Flutter disponible en
 [https://flutter-io.cn](https://flutter-io.cn).
 
-If you’d like to install Flutter using an [installation
+Si prefieres instalar Flutter usando un [installation
 bundle](/docs/development/tools/sdk/archive),
-you can replace the domain of the original URL with a trusted mirror
-to speed it up. For example:
+puedes reemplazar la url del dominio original con un mirror verificado para 
+aceleralo. Por ejemplo:
 
 * Original URL:<br>
   [`https://storage.googleapis.com/{{path}}`](https://storage.googleapis.com/{{path}})
@@ -21,25 +21,25 @@ to speed it up. For example:
 * Mirrored URL:<br>
   [`https://storage.flutter-io.cn/{{path}}`](https://storage.flutter-io.cn/{{path}})
 
-You must also set two environment variables to upgrade Flutter and use the pub
-package repository in China. Instructions are below.
+Debes también configurar dos variables de entorno para actualizar Flutter y usar el repositorio de paquetes pub
+en China. Las instrucciones están abajo.
 
 {{site.alert.important}}
-  Use mirror sites only if you _trust_ the provider.
-  The Flutter team cannot verify their reliability or security.
+  Usa sitios mirror solo si has _verificado_ el proveedor.
+  El equipo de Flutter no puede verificar su fiabilidad o seguridad.
 {{site.alert.end}}
 
-## Configuring Flutter to use a mirror site
+## Configurar Flutter para usar un sitio mirror
 
-If you’re installing or using Flutter in China, it may be helpful to use
-a trustworthy local mirror site that hosts Flutter’s dependencies.
-To instruct the Flutter tool to use an alternate storage location,
-you need to set two environment variables, `PUB_HOSTED_URL` and
-`FLUTTER_STORAGE_BASE_URL`, before running the `flutter` command.
+Si estas instalando o usando Flutter en China, puede ser útil usar 
+un sitio mirror local digno de confianza que hospeda las dependencias de Flutter.
+Para instruir a la herramienta Flutter para usar una ubicación alternativa de 
+almacenamiento, necesitas configurar dos variables de entorno, `PUB_HOSTED_URL` y
+`FLUTTER_STORAGE_BASE_URL`, antes de ejecutar el comando `flutter`.
 
-Taking MacOS or Linux as an example, here are the first few steps in
-the setup process for using a mirror site. Run the following in a Bash
-shell from the directory where you wish to store your local Flutter clone:
+Tomando MacOS o Linux como un ejemplo, aquí están los primeros pasos en 
+el proceso de configuración para usar un sitio mirror. Ejecuta lo siguiente en una 
+terminal Bash desde el directorio en el que desees guardar tu copia local de Flutter:
 
 
 ```terminal
@@ -51,26 +51,26 @@ $ cd ./flutter
 $ flutter doctor
 ```
 
-After these steps, you should be able to continue
-[setting up Flutter](/docs/get-started/editor) normally.
-From here on, packages fetched by `flutter packages get` are
-downloaded from `flutter-io.cn` in any shell where `PUB_HOSTED_URL`
-and `FLUTTER_STORAGE_BASE_URL` are set.
+Después de estos pasos, deberías porder continuar
+[configurando Flutter](/docs/get-started/editor) normalmente.
+Desde aquí cuando, los paquetes sean obtenidos por `flutter packages get` serán 
+descargados desde `flutter-io.cn` en cualquier terminal en la que `PUB_HOSTED_URL`
+y `FLUTTER_STORAGE_BASE_URL` estén configurados.
 
-The `flutter-io.cn` server is a provisional mirror for Flutter
-dependencies and packages maintained by [GDG China]().
-The Flutter team cannot guarantee long-term availability of this service.
-You’re free to use other mirrors if they become available. If you’re
-interested in setting up your own mirror in China, contact
+El servidor `flutter-io.cn` es un mirror provisional para dependencias y paquetes 
+de Flutter mantenido por [GDG China]().
+El equipo de Flutter no garantiza la disponibilidad a largo plazo de este servicio.
+Eres libre de usar otros mirrors si estos están disponibles. Si estas interesado
+en configurar tu propio mirror en China, contacta
 [flutter-dev@googlegroups.com](mailto:flutter-dev@googlegroups.com)
-for assistance.
+para obtener asistencia.
 
 {{site.alert.secondary}}
-  **Known issue:** Running the Flutter Gallery app from source requires assets hosted on
-  a domain this workaround currently doesn't support. You can subscribe
-  to [Issue #13763]({{site.github}}/flutter/flutter/issues/13763)
-  to receive updates. In the meantime, you can check out Flutter Gallery
-  from Google Play or third-party app stores you trust.
+  **Error conocido:** Ejecutar la app Flutter Gallery desde la fuente requiere assets hospedados en
+  un dominio que esta solución actualmente no soporta. Puedes suscribirte 
+  al [Issue #13763]({{site.github}}/flutter/flutter/issues/13763)
+  para recibir actualizaciones. Mientras tanto, puedes obtener Flutter Gallery
+  desde Google Play o terceras app stores de tu confianza.
 {{site.alert.end}}
 
 ## Community-run mirror sites
