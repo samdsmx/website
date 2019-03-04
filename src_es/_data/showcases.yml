@@ -1,8 +1,8 @@
 - name: Alibaba
   featured: true
   description: >
-    Alibaba, the world's biggest online commerce company, used Flutter to create a beautiful app experience for iOS and
-    Android on their Xianyu app, which has 50M+ downloads.
+    Alibaba, la compañia de comercio online más grande del mundo, ha usado Flutter para crear una hermosa experiencia de app para iOS y
+    Android en su app Xianyu, que tiene 50M+ descargas.
   logo_src: showcase/logo-alibaba.png
   hero_src: showcase/hero-alibaba.jpg
   video_id: jtYk3gWRSw0
@@ -11,14 +11,14 @@
 
 - name: Google Ads
   description: >
-    The Google Ads app helps you keep your ad campaigns running smoothly — no matter where your business takes you.
+    La app de Google Ads te ayuda a mantener tus camapañas en funcionamiento — no importa a donde te lleve tu negocio.
   logo_src: showcase/logo-ads.svg
   app_store_link: https://itunes.apple.com/us/app/google-ads/id1037457231?mt=8
   play_store_link: https://play.google.com/store/apps/details?id=com.google.android.apps.adwords
 
 - name: AppTree
   description: >
-    AppTree provides an enterprise app platform for brands like McDonalds, Stanford, Wayfair & Fermilab
+    AppTree una plataforma de app para empresas para marcas como like McDonalds, Stanford, Wayfair & Fermilab
   logo_src: showcase/logo-app_tree.png
   learn_more_cta: Developer website
   learn_more_link: https://www.apptreerevolution.com/
@@ -26,7 +26,7 @@
 
 - name: Reflectly
   description: >
-    A beautiful journal and mindfulness app driven by artificial intelligence.
+    Un app hermoso de diario y mindfulness dirigida por inteligencia artificial.
   logo_src: showcase/logo-reflectly.png
   learn_more_cta: Learn more
   learn_more_link: https://medium.com/reflectly-engineering/reflectly-from-react-native-to-flutter-2e3dffced2ea
@@ -36,8 +36,8 @@
 - name: Hamilton Musical
   featured: true
   description: >
-    Official app of the hit Broadway musical, Hamilton. Includes daily lotteries, exclusive news and videos, a trivia
-    game, merchandise store, and more.
+    App oficial del exitoso musical de Broadway, Hamilton. Incluye lotería diaria, noticias exclusivas y videos, un juego 
+    tipo trivial, tienda de merchandising, y más.
   logo_src: showcase/logo-hamilton.png
   hero_src: showcase/hero-hamilton.jpg
   video_id: kfd-oLypqFI
@@ -48,15 +48,15 @@
 
 - name: Google Greentea
   description: >
-    An internal customer management app used widely by Google sales that provides rich visualizations for tracking sales
-    targets.
+    Una app interna de administración de clientes usada largamente por Google ventas que proporciona ricas visualizaciones para monitorizar objetivos 
+    de ventas.
   logo_src: showcase/logo-greentea.png
 
 - name: Abbey Road Studios
   featured: true
   description: >
-    Abbey Road’s Topline app helps artists record songs. You can share files, sing over imported tracks, add lyrics and
-    more.
+    La app Abbey Road’s Topline ayuda a los artistas a grabar canciones. Puedes compartir ficheros, cantar sobre las pistas importadas, y letras y 
+    más.
   logo_src: showcase/logo-abbey_road_studios.png
   hero_src: showcase/hero-abbey-road.jpg
   video_id: _ACWeGGBP4E
@@ -67,7 +67,7 @@
 
 - name: Tencent
   description: >
-    NOW Live is Tencent’s video streaming service with tens of millions of MAU.
+    NOW Live es un servicio de video en streaming de Tencent con decenas de millones de MAU.
   logo_src: showcase/logo-tencent.png
   learn_more_cta: Developer website
   learn_more_link: https://now.qq.com
@@ -75,7 +75,7 @@
 
 - name: JD Finance
   description: >
-    JD Finance is a leading digital technology company. The company covers fintech, digital enterprise services and urban computing.
+    JD Finance es una compañia lider de tecnología digital. La compañia cubre fintech, servicios digitales empresariales y computación urbana.
   logo_src: showcase/logo-jd.png
   learn_more_cta: Developer website
   learn_more_link: https://jr.jd.com/
