@@ -6,7 +6,7 @@ title: Navegación y enrutamiento
 TODO: una vez que la navegación de la página del Cookbook esté en su lugar, cambie lo siguiente para que sea una lista generada automáticamente.
 {% endcomment -%}
 
-El seguimiento [recetas de libros de cocina cubrir {{page.title | downcase }}][cookbook]:
+Las siguientes [recetas del cookbook cubren {{page.title | downcase }}][cookbook]:
 
 * [Navega a una nueva pantalla y vuelve.](/docs/cookbook/navigation/navigation-basics)
 * [Enviar datos a una nueva pantalla](/docs/cookbook/navigation/passing-data)
