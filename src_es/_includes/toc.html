@@ -2,7 +2,7 @@
   Include parameters:
 
   - class: CSS classes to add to toc element.
-  - header: header text, default 'Contents'
+  - header: header text, default 'Contenidos'
   - kind: should be one of 'inline' or 'side'; if present it is
     suffixed to the toc id, e.g. id="site-toc--side"
 
@@ -26,7 +26,7 @@
   {% if include.kind == 'side' %}data-fixed-column{% endif %}
 >
   <header class="site-toc__title">
-    {{include.header | default: 'Contents'}}
+    {{include.header | default: 'Contenidos'}}
     {% unless include.kind == 'inline' -%}
       <button type="button" class="btn site-toc--button__page-top" aria-label="Page top"></button>
     {% endunless -%}

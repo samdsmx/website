@@ -35,7 +35,7 @@ Para preparar la ejecución y probar tu app de Flutter en el simulador de iOS, s
  3. Dependiendo del tamaño de la pantalla de la máquina de desarrollo, se simulará la calidad en la pantalla de tu dispositivo iOS el cual 
  podría desbordar la pantalla, configura la escala del dispositivo en el menú **Window > Scale** en el simulador.
 
-### Create and run a simple Flutter app
+### Crea y ejecuta una app simple en Flutter
 
 Para crear tu primera app Flutter y probar tu configuración, sigue los siguientes pasos:
 

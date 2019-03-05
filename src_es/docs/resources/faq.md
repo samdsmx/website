@@ -632,7 +632,7 @@ Por defecto, el comando `flutter run` usa la configuración de compilación de d
 
 La configuración de depuración ejecuta su código Dart en una VM (máquina virtual) 
 habilitando un ciclo de desarrollo rápido con [hot reload](#hot-reload) 
-(los release builds son compilados usando los toolchains standard de [Android](#run-android) 
+(los release builds son compilados usando los toolchains estándar de [Android](#run-android) 
 e [iOS](#run-ios) toolchains).
 
 La configuración de depuración también verifica todas los asserts, lo que ayuda a detectar errores 

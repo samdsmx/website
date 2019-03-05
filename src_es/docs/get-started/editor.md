@@ -4,7 +4,7 @@ prev:
   title: Instalar
   path: /docs/get-started/install
 next:
-  title: Test drive
+  title: Test inicial
   path: /docs/get-started/test-drive
 toc: false
 ---

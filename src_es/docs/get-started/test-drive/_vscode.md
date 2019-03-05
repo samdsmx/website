@@ -2,7 +2,7 @@
 
 ## Crear la app
 
-  1. llamar **View > Command Palette**
+  1. Llama a **View > Command Palette**
   1. Teclea "flutter", y selecciona la acción **Flutter: New Project**
   1. Introducir el nombre del proyecto (como `myapp`), y presiona **Enter**
   1. Crear o seleccionar el directorio padre para el nuevo folder del proyecto

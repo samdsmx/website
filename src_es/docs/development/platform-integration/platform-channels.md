@@ -49,7 +49,7 @@ en Dart. Un ejemplo concreto de esto es el plugin [`quick_actions`]({{site.pub}}
 
 ### Tipos de datos y codecs soportados por Platform channel {#codec}
 
-La _standard platform channels_ usa un codec de mensaje standard que soporta 
+Eñ _platform channels estándar_ usa un codec de mensaje estándar que soporta 
 serialización binaria eficiente de valores similares a JSON simples, como booleans,
 numbers, Strings, byte buffers, y List y Maps de estos (mira
 [`StandardMessageCodec`]({{site.api}}/flutter/services/StandardMessageCodec-class.html))

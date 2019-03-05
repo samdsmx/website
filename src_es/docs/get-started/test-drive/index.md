@@ -34,6 +34,6 @@ apps Flutter.
   {% include_relative _terminal.md %}
 </div>
 
-## Next step
+## Siguiente paso
 
 A continuación, aprenderá algunos conceptos básicos de Flutter creando una pequeña aplicación.

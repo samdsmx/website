@@ -748,7 +748,7 @@ Flutter también proporciona un conjunto de widgets con estilo iOS llamados
 Cuando necesitas interactividad,
 lo más sencillo es usar uno de los widgets prefabricados. Aquí está una lista parcial:
 
-### Widgets standard:
+### Widgets estándar:
 
 * [Form](https://docs.flutter.io/flutter/widgets/Form-class.html)
 * [FormField](https://docs.flutter.io/flutter/widgets/FormField-class.html)

@@ -21,7 +21,7 @@ uno para Dart, y one para el código OEM.
 
 ## Depurando código Dart
 
-Usa tu IDE para depuración Dart standard. Estas instrucciones describen Android
+Usa tu IDE para depuración Dart estándar. Estas instrucciones describen Android
 Studio, pero puedes usar tu IDE preferido con los plugins para Flutter y Dart
 instalados y configurados.
 

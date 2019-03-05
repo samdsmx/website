@@ -2,7 +2,7 @@
 title: Escribe tu primera app en Flutter, parte 1
 short-title: Escribe tu primera app
 prev:
-  title: Test drive
+  title: Test inicial
   path: /docs/get-started/test-drive
 next:
   title: Aprende más
@@ -90,12 +90,12 @@ Nombre del proyecto **startup_namer** (en lugar de _myapp_).
 En este codelab, en su mayoría editarás **lib/main.dart**,
 donde se encuentra el código Dart.
 
-  1. Reemplaza el contenido de `lib/main.dart`.<br>
+ 1. Reemplaza el contenido de `lib/main.dart`.<br>
     Borra todo el código de **lib/main.dart**.
     Reemplaza con el siguiente código, el cual muestra "Hello World" en el centro
-    de la pantalla. 
+    de la pantalla.
 
-   <?code-excerpt "lib/main.dart" title?>
+    <?code-excerpt "lib/main.dart" title?>
     ```dart
     import 'package:flutter/material.dart';
 
@@ -128,13 +128,13 @@ donde se encuentra el código Dart.
       * VS Code: Clic derecho y elige **Format Document**.
       * Terminal: Ejecuta `flutter format <filename>`.
     {{site.alert.end}}
-    
-  2. [Ejecuta la app](/docs/get-started/test-drive#androidstudio) haciendo clic
+
+ 2. [Ejecuta la app](/docs/get-started/test-drive#androidstudio) haciendo clic
     en la flecha verde en el IDE.
-    Deberias ver la salida Android o iOS dependiendo de su dispositivo.
+    Deberías ver la salida Android o iOS, dependiendo de tu dispositivo.    
 
     {% indent %}
-            {% include android-ios-figure-pair.md image="hello-world.png" alt="Hello world app" %}
+      {% include android-ios-figure-pair.md image="hello-world.png" alt="Hello world app" %}
     {% endindent %}
 
     {{site.alert.tip}}
