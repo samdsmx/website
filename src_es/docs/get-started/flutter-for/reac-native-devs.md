@@ -722,7 +722,7 @@ de Flutter](/docs/resources/technical-overview).
 
 Para más información sobre los widgets principales del paquete Widgets, consulta
 [Widgets Básicos de Flutter](/docs/development/ui/widgets/basics), 
-el [Catálogo de Widgets de Flutter](/docs/development/ui/widgets/catalog), o 
+el [Catálogo de Widgets de Flutter](/docs/development/ui/widgets), o 
 el [Índice de Widgets de Flutter](/docs/reference/widgets).
 
 ## Vistas

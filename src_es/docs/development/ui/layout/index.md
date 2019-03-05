@@ -48,7 +48,7 @@ La segunda captura de pantalla muestra el layout visualmente, mostrando una fila
   [Depurar apps Flutter](/docs/testing/debugging).
 {{site.alert.end}}
 
-Aqui está un diagrama del árbol de widgets para este UI:
+Aquí está un diagrama del árbol de widgets para este UI:
 
 {% asset ui/layout/sample-flutter-layout.png class="mw-100" alt="Node tree" %}
 {:.text-center}
@@ -56,7 +56,7 @@ Aqui está un diagrama del árbol de widgets para este UI:
 La mayoría de esto podría verse como podría esperarse, pero puede que te estes preguntando 
 sobre los Container (mostrados en rosa). [Container][] es una clase widget que te permite
 personalizar su widget hijo. Usa un `Container` cuando quieras añadir
-padding, márgenes, bordes, o color de fondo, por nombrar alguna de sus 
+padding, márgenes, bordes, o color de fondo, por nombrar algunas de sus 
 capacidades.
 
 En este ejemplo, cada widget [Text][] se situa en un `Container` para añadir márgenes.
@@ -65,7 +65,7 @@ fila.
 
 El resto del UI en este ejemplo es controlado por propiedades.
 Fija un color para [Icon][] usando su propiedad `color`.
-Us la propiedad `Text.style` para fijar la fuente, su color, tamañao, y así sucesivamente.
+Us la propiedad `Text.style` para fijar la fuente, su color, tamaño, y así sucesivamente.
 Columns y rows tienen propiedades que te permiten especificar como se alinearán 
 sus hijos vertical u horizontalmente, y cuanto espacio deben ocupar 
 los hijos.
@@ -175,7 +175,7 @@ class MyApp extends StatelessWidget {
 {{site.alert.note}}
   La [biblioteca Material][] implementa widgets que siguen los principios 
   [Material Design][]. Cuando diseñas tu UI, puede usar exclusivamente 
-  widgets de la [biblioteca de widgets][] estandar, o puedes usar widgets de 
+  widgets de la [biblioteca de widgets][] estándar, o puedes usar widgets de 
   la biblioteca Material. Puedes mezclar widgets de ambas bibliotecas, puedes
   personalizar widgets existentes, o puedes construir tu propio conjunto de 
   widgets.
@@ -266,13 +266,13 @@ El árbol de widgets de la columna izquierda anida filas y columnas.
 {% asset ui/layout/pavlova-left-column-diagram.png class="mw-100"
     alt="Diagram showing a left column broken down to its sub-rows and sub-columns" %}
 
-Implementarás algo del layout del código de la app Pavlova en
+Implementarás algo del layout del código de Pavlova en
 [Anidando filas y columnas](#anidando-filas-y-columnas).
 
 {{site.alert.note}}
   Row y Column son widgets primitivos básicos para layout horizontales 
   y verticales&mdash;estos widgets de bajo nivel permiten una personalización 
-  máxima. Flutter también ofrece widgets especializaos de alto nivel 
+  máxima. Flutter también ofrece widgets especializados de alto nivel 
   que deben ser suficientes para tus necesidades. Por ejemplo, en lugar de un Row
   podrías preferir 
   [ListTile]({{api}}/material/ListTile-class.html),
@@ -372,15 +372,15 @@ igualitariamente entre, por encima, y por debajo de cada imagen.
 
 Cuando un layout es demasiado grande para ajustarse al dispositivo, una franja con un patrón 
 de rayas amarillas y negras
-aparece a lo largo del limite afectado. Here is an [example][sizing] of a row that is
-too wide:
+aparece a lo largo del limite afectado. Aquí hay un [ejemplo][sizing] de una fila que es 
+demasiado ancha:
 
 {% asset ui/layout/layout-too-large.png class="mw-100" alt="Overly-wide row" %}
 {:.text-center}
 
-Widgets can be sized to fit within a row or column by using the [Expanded][]
-widget. To fix the previous example where the row of images is too wide for its
-render box, wrap each image with an `Expanded` widget.
+Los widgtets pueden ser dimensionados para encajar dentro de una fila o columna usando el widget 
+[Expanded][]. Para solucionar el ejemplo anterior donde una fila de imágenes es demasiado ancha para su 
+caja de renderizado, envuelve cada imagen con un widget `Expanded`.
 
 <div class="row">
 <div class="col-lg-8">
@@ -410,10 +410,10 @@ render box, wrap each image with an `Expanded` widget.
 </div>
 </div>
 
-Perhaps you want a widget to occupy twice as much space as its siblings. For
-this, use the `Expanded` widget `flex` property, an integer that determines the
-flex factor for a widget. The default flex factor is 1. The following code sets
-the flex factor of the middle image to 2:
+Talvez quieras que un widget ocupe el doble de espacio que sus hermanos. Para 
+esto, usa la propiedad `flex` del widget `Expanded`, un entero que determina el 
+factor flex para un widget. El factor flex por defecto es 1. El siguiente código fija 
+el factor flex de la imagen de enmedio en 2:
 
 <div class="row">
 <div class="col-lg-8">
@@ -446,12 +446,12 @@ the flex factor of the middle image to 2:
 
 [sizing]: {{examples}}/layout/sizing
 
-### Packing widgets
+### Empaquetar widgets
 
-By default, a row or column occupies as much space along its main axis
-as possible, but if you want to pack the children closely together,
-set its `mainAxisSize` to `MainAxisSize.min`. The following example
-uses this property to pack the star icons together.
+Por defecto, una fila o columna ocupa tanto espacio como sea posible a lo largo de su eje 
+principal, pero si quieres empaquetar los hijos todos juntos,
+fija su `mainAxisSize` a `MainAxisSize.min`. El siguiente ejemplo 
+usa esta propiedad para empaquetar los iconos de estrella juntos.
 
 <div class="row">
 <div class="col-lg-8">
@@ -477,27 +477,27 @@ uses this property to pack the star icons together.
 </div>
 </div>
 
-### Nesting rows and columns
+### Anidar filas y columnas
 
-The layout framework allows you to nest rows and columns inside of rows
-and columns as deeply as you need. Let's look the code for the outlined section
-of the following layout:
+El layout de flutter te permte anidar filas y columnas dentro de filas y 
+columnas tan profundamente como necesites. Veamos el código para la sección bordeada 
+del siguiente layout:
 
 {% asset ui/layout/pavlova-large-annotated.png class="border mw-100"
     alt="Screenshot of the pavlova app, with the ratings and icon rows outlined in red" %}
 {:.text-center}
 
-The outlined section is implemented as two rows. The ratings row contains
-five stars and the number of reviews. The icons row contains three
-columns of icons and text.
+La sección bordeada esta implementada como dos filas. La fila de valoraciones contiene 
+cinco estrellas y el número de revisiones. La fila de iconos contiene tres columnas de 
+iconos y texto.
 
-The widget tree for the ratings row:
+El árbol de widget para la fila de valoraciones:
 
 {% asset ui/layout/widget-tree-pavlova-rating-row.png class="mw-100" alt="Ratings row widget tree" %}
 {:.text-center}
 
-The `ratings` variable creates a row containing a smaller row of 5 star icons,
-and text:
+La variable `ratings` crea una fila conteniendo una fila mas pequeña de 5 iconos estrella, 
+y texto:
 
 <?code-excerpt "layout/pavlova/lib/main.dart (ratings)" replace="/ratings/[!$&!]/g"?>
 ```dart
@@ -534,17 +534,17 @@ final [!ratings!] = Container(
 ```
 
 {{site.alert.tip}}
-  To minimize the visual confusion that can result from heavily nested layout
-  code, implement pieces of the UI in variables and functions.
+  Para minimizar la confusión visual que puede resultar de código de layout 
+  fuertemente anidado, implementa piezas de tu UI en variables y funciones.
 {{site.alert.end}}
 
-The icons row, below the ratings row, contains 3 columns; each column contains
-an icon and two lines of text, as you can see in its widget tree:
+La fila de iconos, bajo la fila de valoraciones, contiene 3 columnas; cada columna contiene 
+un icono y dos líneas de texto, como puedes ver en el árbolo de widgets:
 
 {% asset ui/layout/widget-tree-pavlova-icon-row.png class="mw-100" alt="Icon widget tree" %}
 {:.text-center}
 
-The `iconList` variable defines the icons row:
+La variable `iconList` define la fila de iconos:
 
 <?code-excerpt "layout/pavlova/lib/main.dart (iconList)" replace="/iconList/[!$&!]/g"?>
 ```dart
@@ -557,8 +557,8 @@ final descTextStyle = TextStyle(
   height: 2,
 );
 
-// DefaultTextStyle.merge() allows you to create a default text
-// style that is inherited by its child and all subsequent children.
+// DefaultTextStyle.merge() te permite crear un estilo de texto por defecto
+// que es heredado por sus hijos y todos los hijos subsecuentes.
 final [!iconList!] = DefaultTextStyle.merge(
   style: descTextStyle,
   child: Container(
@@ -593,8 +593,8 @@ final [!iconList!] = DefaultTextStyle.merge(
 );
 ```
 
-The `leftColumn` variable contains the ratings and icons rows, as well as the
-title and text that describes the Pavlova:
+La variable `leftColumn` contiene las filas de valoraciones y la de iconos, también tiene el 
+título y el texto que describe el Pavlova:
 
 <?code-excerpt "layout/pavlova/lib/main.dart (leftColumn)" replace="/leftColumn/[!$&!]/g"?>
 ```dart
@@ -611,16 +611,16 @@ final [!leftColumn!] = Container(
 );
 ```
 
-The left column is placed in a `Container` to constrain its width.
-Finally, the UI is constructed with the entire row (containing the
-left column and the image) inside a `Card`.
+La columna izquierda esta ubicada en un `Container` para resitringir su ancho.
+Finalmente, la UI es construida con la fila entera (conteniendo la columna 
+izquierda y la imagen) dentro de un `Card`.
 
-The [Pavlova image][] is from [Pixabay][].
-You can embed an image from the net using `Image.network()` but,
-for this example, the image is saved to an images directory in the project,
-added to the [pubspec file,]({{examples}}/layout/pavlova/pubspec.yaml)
-and accessed using `Images.asset()`. For more information, see
-[Adding assets and images](/docs/development/ui/assets-and-images).
+La [imagen del Pavlova][] es de [Pixabay][].
+Puedes incrustar una imagen desde la red usando `Image.network()` pero,
+para este ejemplo, la imagen esta guardada en un directorio 'images' en el proyecto, 
+añadido al [fichero pubspec,]({{examples}}/layout/pavlova/pubspec.yaml)
+y se accede usando `Images.asset()`. Para más información, mira 
+[Añadiendo assets e imágenes](/docs/development/ui/assets-and-images).
 
 <?code-excerpt "layout/pavlova/lib/main.dart (body)"?>
 ```dart
@@ -645,66 +645,66 @@ body: Center(
 ```
 
 {{site.alert.tip}}
-  The Pavlova example runs best horizontally on a wide device, such as a tablet.
-  If you are running this example in the iOS simulator, you can select a
-  different device using the **Hardware > Device** menu. For this example, we
-  recommend the iPad Pro. You can change its orientation to landscape mode using
-  **Hardware > Rotate**. You can also change the size of the simulator window
-  (without changing the number of logical pixels) using **Window > Scale**.
+  El ejemplo Pavlova corre mejor horizontalmente en un dispositivo ancho, como una tablet.
+  Si tu estas ejecutando este ejemplo en un simulador iOS, puedes seleccionar un 
+  dispositivo diferente usando el menú **Hardware > Device**. Para este ejemplo, 
+  recomendamos el iPad Pro. Puedes cambiar su orientación a modo landscape usando 
+  **Hardware > Rotate**. También puedes cambiar el tamaño de la ventan del simulador
+  (sin cambiar el número de píxeles lógicos) usando **Window > Scale**.
 {{site.alert.end}}
 
 **App source:** [pavlova]({{examples}}/layout/pavlova)
 
-[Pavlova image]: https://pixabay.com/en/photos/pavlova
+[imagen del Pavlova]: https://pixabay.com/en/photos/pavlova
 [Pixabay]: https://pixabay.com/en/photos/pavlova
 
 <hr>
 
 ## Widgets de layout comunes
 
-Flutter has a rich library of layout widgets. Here are a few of those most
-commonly used. The intent is to get you up and running as quickly as possible,
-rather than overwhelm you with a complete list.  For information on other
-available widgets, refer to the [Widget catalog][],
-or use the Search box in the [API reference docs]({{api}}).
-Also, the widget pages in the API docs often make suggestions
-about similar widgets that might better suit your needs.
+Flutter tiene una rica biblioteca de widgets de layout. Aquí hay algunos de los más 
+comúnmente usados. La intención es ponerte en funcionamiento lo más rápidamente posible,
+antes que abrumarte con una lista completa. Para información de otros 
+widgets disponibles, dirigete al [catálogo de Widgets][],
+o usa la búsqueda en la [documentación de referencia de la API]({{api}}).
+También, las páginas de widget en la documentación de la API a menudo ofrece sugerencias 
+sobre widgets similares que tal vez satisfagan mejor tus necesidades.
 
-The following widgets fall into two categories: standard widgets from the
-[biblioteca de widgets][], and specialized widgets from the [biblioteca Material][]. Any
-app can use the widgets library but only Material apps can use the Material
-Components library.
+Los siguientes widgets caen en dos categorías: widgets estándard de la 
+[biblioteca de widgets][], y widgets especializados de la [biblioteca Material][]. Cualquier 
+app puede usar la biblioteca de widgets pero solo las apps Material pueden usar la biblioteca 
+Material Components.
 
-### Standard widgets
+### Widgets estándar
 
-* [Container](#container): Adds padding, margins, borders, background color, or
-  other decorations to a widget.
-* [GridView](#gridview): Lays widgets out as a scrollable grid.
-* [ListView](#listview): Lays widgets out as a scrollable list.
-* [Stack](#stack): Overlaps a widget on top of another.
+* [Container](#container): Añade padding, márgenes, bordes, color de fondo, o
+  otras decoraciónes a un widget.
+* [GridView](#gridview): Organiza widgets en una cuadrícula con scroll.
+* [ListView](#listview): Organiza en una lista con scroll.
+* [Stack](#stack): Superpon un widget encima de otros.
 
-### Material widgets
+### Widgets Material
 
-* [Card](#card): Organizes related info into a box with rounded corners and a
-  drop shadow.
-* [ListTile](#listtile): Organizes up to 3 lines of text, and optional leading
-  and trailing icons, into a row.
+* [Card](#card): Organiza información relacionada en una caja con bordes redondeados y una 
+   sombra proyectada.
+* [ListTile](#listtile): Organiza hasta 3 lineas de texto, e iconos opcionales al principio o 
+   al final, en una fila.
 
 ### Container
 
-Many layouts make liberal use of [Container][]s to separate widgets using
-padding, or to add borders or margins. You can change the device's background
-by placing the entire layout into a `Container` and changing its background
-color or image.
+Muchos layouts hace un uso libre de [Container][]s para separar widgets usando 
+padding, o para añadir bordes o márgenes. Puedes cambiar el fondo del dispositivo 
+colocando el layout completo en un `Container` y cambiando su color o imagen 
+de fondo.
 
 <div class="row">
 <div class="col-lg-6" markdown="1">
-  <h4 class="no_toc">Summary (Container)</h4>
+  <h4 class="no_toc">Resumen (Container)</h4>
 
-  * Add padding, margins, borders
-  * Change background color or image
-  * Contains a single child widget, but that child can be a Row, Column,
-    or even the root of a widget tree
+  * Añade padding, márgenes, bordes
+  * Cambia color o imagen de fondo
+  * Contiene un único hijo, pero este hijo puede ser un Row, Column,
+    o incluso la raíz del árbol de widget
 </div>
 <div class="col-lg-6 text-center">
   {% asset ui/layout/margin-padding-border.png class="mb-4 mw-100"
@@ -713,12 +713,12 @@ color or image.
 </div>
 </div>
 
-#### Examples (Container)
+#### Ejemplos (Container)
 {:.no_toc}
 
-This layout consists of a column with two rows, each containing 2 images. A
-[Container][] is used to change the background color of the column to a lighter
-grey.
+Este layout consiste en una columna con dos filas, cada una conteniendo 2 imágenes. Un 
+[Container][] es usado para cambiar el color de fondo de la columna a un gris 
+claro.
 
 <div class="row">
 <div class="col-lg-7">
@@ -743,7 +743,7 @@ grey.
 </div>
 </div>
 
-A `Container` is also used to add a rounded border and margins to each image:
+Un `Container` tambien es usado para añadir brodes redondeados y márgenes a cada imagen:
 
 <?code-excerpt "layout/container/lib/main.dart (row)" replace="/\bContainer/[!$&!]/g;"?>
 ```dart
@@ -766,7 +766,7 @@ Widget _buildImageRow(int imageIndex) => Row(
     );
 ```
 
-You can find more `Container` examples in the [tutorial][] and the [Flutter
+Puedes encontrar más ejemplos con `Container` en el [tutorial][] y la [Flutter
 Gallery][].
 
 **App source:** [container]({{examples}}/layout/container)
@@ -775,34 +775,34 @@ Gallery][].
 
 ### GridView
 
-Use [GridView][] to lay widgets out as a two-dimensional list. `GridView`
-provides two pre-fabricated lists, or you can build your own custom grid. When a
-`GridView` detects that its contents are too long to fit the render box, it
-automatically scrolls.
+Usa [GridView][] para organizar widgets como una lista bi-dimensional. `GridView`
+proporciona dos listas pre-fabricadas, o puedes construir tu propia cuadrícula personalizada. Cuando un 
+`GridView` detecta que su contenido es muy grande para ajustarse a la caja de renderizado, este 
+automáticamante permite hacer scroll.
 
-#### Summary (GridView)
+#### Resumen (GridView)
 {:.no_toc}
 
-* Lays widgets out in a grid
-* Detects when the column content exceeds the render box and automatically
-  provides scrolling
-* Build your own custom grid, or use one of the provided grids:
-  * `GridView.count` allows you to specify the number of columns
-  * `GridView.extent` allows you to specify the maximum pixel width of a tile
+* Orgniza widgets en una cuadrícula
+* Detecta cuando el contenido de la columna excede la caja de renderizado y automáticamente 
+  proporciona scroll
+* Construye tu propia cuadrícula personalizada, o usa una de las proporcionadas:
+  * `GridView.count` te permite especificar el número de columnas
+  * `GridView.extent` te permite especificar el máximo número de píxeles de ancho de una celda
 {% comment %}
-* Use `MediaQuery.of(context).orientation` to create a grid that changes
-  its layout depending on whether the device is in landscape or portrait mode.
+* Usa `MediaQuery.of(context).orientation` para crear una cuadrícula que cambie su 
+  layout dependiendo de que el dispositivo esté en modo landscape o portrait.
 {% endcomment %}
 
 {{site.alert.note}}
-  When displaying a two-dimensional list where it's important which
-  row and column a cell occupies (for example,
-  it's the entry in the "calorie" column for the "avocado" row), use
-  [Table]({{api}}/widgets/Table-class.html) or
+  Cuando mostramos una lista bi-dimensional en la que es importante cual fila 
+  o columna ocupe una celda (por ejemplo,
+  es la entrada en la columna "calorias" para la fila "aguacate"), usa
+  [Table]({{api}}/widgets/Table-class.html) o
   [DataTable]({{api}}/material/DataTable-class.html).
 {{site.alert.end}}
 
-#### Examples (GridView)
+#### Ejemplos (GridView)
 {:.no_toc}
 
 <div class="row">
@@ -810,7 +810,7 @@ automatically scrolls.
   {% asset ui/layout/gridview-extent.png class="mw-100" alt="A 3-column grid of photos" %}
   {:.text-center}
 
-  Uses `GridView.extent` to create a grid with tiles a maximum 150 pixels wide.
+  Usa `GridView.extent` para crear una cuadrícula con celdas de un ancho máximo de 150 pixels.
 
   **App source:** [grid_and_list]({{examples}}/layout/grid_and_list)
 </div>
@@ -819,12 +819,12 @@ automatically scrolls.
       alt="A 2 column grid with footers" %}
   {:.text-center}
 
-  Uses `GridView.count` to create a grid that's 2 tiles wide in portrait mode,
-  and 3 tiles wide in landscape mode. The titles are created by setting the
-  `footer` property for each [GridTile][].
+  Usa `GridView.count` para crear una cuadrícula que tenga dos celdas de ancho en modo portrait,
+  y 3 celdas de ancho en modo landscape. Las celdas son creadas fijando la propiedad 
+  `footer` para cada [GridTile][].
 
   **Dart code:** [grid_list_demo.dart]({{demo}}/material/grid_list_demo.dart)
-  from the [Flutter Gallery][]
+  de la [Flutter Gallery][]
 </div>
 </div>
 
@@ -837,9 +837,9 @@ Widget _buildGrid() => [!GridView!].extent(
     crossAxisSpacing: 4,
     children: _buildGridTileList(30));
 
-// The images are saved with names pic0.jpg, pic1.jpg...pic29.jpg.
-// The List.generate() constructor allows an easy way to create
-// a list when objects have a predictable naming pattern.
+// Las imágenes estan guardadas con nombres pic0.jpg, pic1.jpg...pic29.jpg.
+// El constructor List.generate() permite una forma sencilla de crear
+// una lista cuando los objetos tienen un patrón de nombre predecible.
 List<Container> _buildGridTileList(int count) => List.generate(
     count, (i) => Container(child: Image.asset('images/pic$i.jpg')));
 ```
@@ -849,18 +849,18 @@ List<Container> _buildGridTileList(int count) => List.generate(
 ### ListView
 
 [ListView]({{api}}/widgets/ListView-class.html),
-a column-like widget, automatically provides scrolling when
-its content is too long for its render box.
+un widget similiar a una columna, automáticamente proporciona scroll cuando
+su contendido es demasiado grande para su caja de renderizado.
 
-#### Summary (ListView)
+#### Resumen (ListView)
 {:.no_toc}
 
-* A specialized [Column][] for organizing a list of boxes
-* Can be laid out horizontally or vertically
-* Detects when its content won't fit and provides scrolling
-* Less configurable than `Column`, but easier to use and supports scrolling
+* Un [Column][] especializado para organizar una lista de cajas
+* Puede ser organizado horizontal o verticalmente
+* Detecta cuando su contenido no puede ser ajustado y proporciona scroll
+* Menos configurable que `Column`, pero más fácil de usar y con soporte para scroll
 
-#### Examples (ListView)
+#### Ejemplos (ListView)
 {:.no_toc}
 
 <div class="row">
@@ -869,8 +869,8 @@ its content is too long for its render box.
       alt="ListView containing movie theaters and restaurants" %}
   {:.text-center}
 
-  Uses `ListView` to display a list of businesses using `ListTile`s. A `Divider`
-  separates the theaters from the restaurants.
+  Usa `ListView` para mostrar una lista de negocios usando `ListTile`s. Un `Divider`
+  separa los teatros de los restaurantes.
 
   **App source:** [grid_and_list]({{examples}}/layout/grid_and_list)
 </div>
@@ -879,11 +879,11 @@ its content is too long for its render box.
       alt="ListView containing shades of blue" %}
   {:.text-center}
 
-  Uses `ListView` to display the [Colors]({{api}}/material/Colors-class.html) from
-  the [Material Design palette]({{site.material}}/guidelines/style/color.html)
-  for a particular color family.
+  Usa `ListView` para mostrar los [Colors]({{api}}/material/Colors-class.html) de
+  la [paleta de Material Design]({{site.material}}/guidelines/style/color.html)
+  para una familia particular de color.
 
-  **Dart code:** [colors_demo.dart]({{demo}}/colors_demo.dart) from the
+  **Dart code:** [colors_demo.dart]({{demo}}/colors_demo.dart) de la 
   [Flutter Gallery][]
 </div>
 </div>
@@ -926,19 +926,19 @@ ListTile _tile(String title, String subtitle, IconData icon) => ListTile(
 
 ### Stack
 
-Use [Stack][] to arrange widgets on top of a base widget&mdash;often an image.
-The widgets can completely or partially overlap the base widget.
+Usa [Stack][] para organizar widgets encima de un widget base&mdash;a menudo una imagen.
+Los widgets pueden superponerse completa o parcialmente al widget base.
 
-#### Summary (Stack)
+#### Resumen (Stack)
 {:.no_toc}
 
-* Use for widgets that overlap another widget
-* The first widget in the list of children is the base widget;
-  subsequent children are overlaid on top of that base widget
-* A `Stack`'s content can't scroll
-* You can choose to clip children that exceed the render box
+* Usado por widgets que se superponen a otro widget
+* El primer widget en la lista de hijos es el widget base;
+  los hijos siguientes son superpuestos encima de este widget base
+* El contenido de un `Stack` no puede hacer scroll
+* Puedes elegir recortar los hijos que excedan la caja de renderizado
 
-#### Examples (Stack)
+#### Ejemplos (Stack)
 {:.no_toc}
 
 <div class="row">
@@ -946,10 +946,10 @@ The widgets can completely or partially overlap the base widget.
   {% asset ui/layout/stack.png class="mw-100" width="200px" alt="Circular avatar image with a label" %}
   {:.text-center}
 
-  Uses `Stack` to overlay a `Container` (that displays its `Text` on a translucent
-  black background) on top of a `CircleAvatar`.
-  The `Stack` offsets the text using the `alignment` property and
-  `Alignment`s.
+  Usa `Stack` para suporponer un `Container` (que muestra su `Text` en un fondo 
+  negro tráslucido) encima de un `CircleAvatar`.
+  El `Stack` ubica el texto usando la propiedad `alignment` y objetos 
+  `Alignment`.
 
   **App source:** [card_and_stack]({{examples}}/layout/card_and_stack)
 </div>
@@ -957,11 +957,11 @@ The widgets can completely or partially overlap the base widget.
   {% asset ui/layout/stack-flutter-gallery.png class="mw-100" alt="An image with a grey gradient across the top" %}
   {:.text-center}
 
-  Uses `Stack` to overlay a gradient to the top of the image. The gradient
-  ensures that the toolbar's icons are distinct against the image.
+  Usa `Stack` para superponer un gradiente encima de la imagen. El gradiente 
+  asegura que los iconos del toolbar son distintos de la imasgen.
 
   **Dart code:** [contacts_demo.dart]({{demo}}/contacts_demo.dart)
-  from the [Flutter Gallery][]
+  de la [Flutter Gallery][]
 </div>
 </div>
 
@@ -995,33 +995,34 @@ Widget _buildStack() => [!Stack!](
 
 ### Card
 
-A [Card][], from the [biblioteca Material][], contains related nuggets of
-information and can be composed from almost any widget, but is often used with
-[ListTile][]. `Card` has a single child, but its child can be a column, row,
-list, grid, or other widget that supports multiple children. By default, a
-`Card` shrinks its size to 0 by 0 pixels. You can use [SizedBox][] to constrain
-the size of a card.
+Un [Card][], de la [biblioteca Material][], contiene fragmentos relacionados de 
+información y puede ser compuesto por casi cualquier widget, pero es a menudo usado con 
+[ListTile][]. `Card` tiene un solo hijo, pero su hijo puede ser una columna, fila,
+lista, cuadrícula, o otro widget que soporte múltiples hijos. Por defecto, un
+`Card` encoje su tamaño a 0 por 0 píxeles. Puedes usar [SizedBox][] para restringir 
+el tamaño de un card.
 
-In Flutter, a `Card` features slightly rounded corners and a drop shadow, giving
-it a 3D effect. Changing a `Card`'s `elevation` property allows you to control
-the drop shadow effect. Setting the elevation to 24, for example, visually lifts
-the `Card` further from the surface and causes the shadow to become more
-dispersed. For a list of supported elevation values, see [Elevation][] in the
-[Material guidelines][Material Design]. Specifying an unsupported value disables
-the drop shadow entirely.
+En Flutter, un `Card` tiene como característica esquinas ligeramente redondeadas y una 
+sombra arrojada, dándole a este un efecto 3D. 
+Cambiar la propiedad `elevation` de un `Card` te permite contolar 
+el efecto de sombra arrojada. Configurando la elevación a 24, por ejemplo, visualmente eleva 
+el `Card` de la superficie y causa que la sombra se vuelva más 
+dispersa. Para una lista de valores permitidos de elevación, mira [Elevation][] en las 
+[Material guidelines][Material Design]. Especificar un valor no soportado desactiva 
+completamente la sombra arrojada.
 
-#### Summary (Card)
+#### Resumen (Card)
 {:.no_toc}
 
-* Implements a [Material card][]
-* Used for presenting related nuggets of information
-* Accepts a single child, but that child can be a `Row`, `Column`, or other
-  widget that holds a list of children
-* Displayed with rounded corners and a drop shadow
-* A `Card`'s content can't scroll
-* From the [biblioteca Material][]
+* Implementa un [Material card][]
+* Usado para repesentar fragementos relacionados de información
+* Acepta un úncio hijo, pero este hijo puede ser un `Row`, `Column`, o otro
+  widget que albergue una lista de hijos
+* Mostrado con escquinas redondeadas y arroja una sombra
+* El contenido de un `Card` no puede hacer scroll
+* De la [biblioteca Material][]
 
-#### Examples (Card)
+#### Ejemplos (Card)
 {:.no_toc}
 
 <div class="row">
@@ -1029,8 +1030,8 @@ the drop shadow entirely.
   {% asset ui/layout/card.png class="mw-100" alt="Card containing 3 ListTiles" %}
   {:.text-center}
 
-  A `Card` containing 3 ListTiles and sized by wrapping it with a `SizedBox`. A
-  `Divider` separates the first and second `ListTiles`.
+  Un `Card` conteniendo 3 ListTiles y dimensionado envolviéndolo con un `SizedBox`. Un
+  `Divider` separa el primer del segundo `ListTiles`.
 
   **App source:** [card_and_stack]({{examples}}/layout/card_and_stack)
 </div>
@@ -1039,10 +1040,10 @@ the drop shadow entirely.
       alt="Card containing an image, text and buttons" %}
   {:.text-center}
 
-  A `Card` containing an image and text.
+  Un `Card` conteniendo una imagen y un texto.
 
   **Dart code:** [cards_demo.dart]({{demo}}/material/cards_demo.dart)
-  from the [Flutter Gallery][]
+  de la [Flutter Gallery][]
 </div>
 </div>
 
@@ -1087,19 +1088,19 @@ Widget _buildCard() => SizedBox(
 
 ### ListTile
 
-Use [ListTile][], a specialized row widget from the [biblioteca Material][], for an
-easy way to create a row containing up to 3 lines of text and optional leading
-and trailing icons. `ListTile` is most commonly used in [Card][] or
-[ListView][], but can be used elsewhere.
+Usa [ListTile][], un widget de tipo fila especializado de la [biblioteca Material][], para una 
+forma sencilla de crear una fila conteniendo hasta 3 líneas de texto e iconos opcionales al inicio 
+o al final. `ListTile` es mayormente usado en un [Card][] o
+[ListView][], pero puede ser usado en cualquier parte.
 
-#### Summary (ListTile)
+#### Resumen (ListTile)
 {:.no_toc}
 
-* A specialized row that contains up to 3 lines of text and optional icons
-* Less configurable than `Row`, but easier to use
-* From the [biblioteca Material][]
+* Una fila especializada que contiene hasta 3 lineas de texto e iconos opcionales
+* Menos configurable que un `Row`, pero más fácil de usar
+* De la [biblioteca Material][]
 
-#### Examples (ListTile)
+#### Ejemplos (ListTile)
 {:.no_toc}
 
 <div class="row">
@@ -1107,7 +1108,7 @@ and trailing icons. `ListTile` is most commonly used in [Card][] or
   {% asset ui/layout/card.png class="mw-100" alt="Card containing 3 ListTiles" %}
   {:.text-center}
 
-  A `Card` containing 3 `ListTiles`.
+  Un `Card` conteniendo 3 `ListTiles`.
 
   **App source:** [card_and_stack]({{examples}}/layout/card_and_stack)
 </div>
@@ -1116,35 +1117,35 @@ and trailing icons. `ListTile` is most commonly used in [Card][] or
       alt="3 ListTiles, each containing a pull-down button" %}
   {:.text-center}
 
-  Uses `ListTile` to list 3 drop down button types.<br>
+  Usa `ListTile` para listar 3 tipos de drop down button.<br>
   **Dart code:** [buttons_demo.dart]({{demo}}/material/buttons_demo.dart)
-  from the [Flutter Gallery][]
+  de la [Flutter Gallery][]
 </div>
 </div>
 
 <hr>
 
-## Resources
+## Recursos
 
-The following resources may help when writing layout code.
+Los siguientes recursos pueden ayudar cuando escribas código de layout.
 
-* [Layout tutorial](/docs/development/ui/layout/tutorial)
-: Learn how to build a layout.
-* [Widget Overview](/docs/development/ui/widgets)
-: Describes many of the widgets available in Flutter.
-* [HTML/CSS Analogs in Flutter](/docs/get-started/flutter-for/web-devs)
-: For those familiar with web programming, this page maps HTML/CSS functionality
-  to Flutter features.
+* [Tutorial de Layout](/docs/development/ui/layout/tutorial)
+: Aprende como construir un layout.
+* [Visión general de los Widgets](/docs/development/ui/widgets)
+: Describe la mayoría de los widgets disponibles en Flutter.
+* [Análogia de HTML/CSS con Flutter](/docs/get-started/flutter-for/web-devs)
+: Para aquellos familiarizados con la programación web, esta página mapea las funcionalidades HTML/CSS 
+  con las características de Flutter.
 * [Flutter Gallery][]
-: Demo app showcasing many Material Design widgets and other Flutter features.
-* [Flutter API documentation]({{api}})
-: Reference documentation for all of the Flutter libraries.
-* [Dealing with Box Constraints in Flutter](/docs/development/ui/layout/box-constraints)
-: Discusses how widgets are constrained by their render boxes.
-* [Adding Assets and Images in Flutter](/docs/development/ui/assets-and-images)
-: Explains how to add images and other assets to your app's package.
+: App Demo mostrando muchos widgets Material Design y otras características de Flutter.
+* [Documentación de la API de Flutter]({{api}})
+: Documentación de referencia para todas las bibliotecas de Flutter.
+* [Tratar con restricciones de caja en Flutter](/docs/development/ui/layout/box-constraints)
+: Discute como los widgets son restringidos por sus cajas de renderizado.
+* [Añadir Assets e Imágenes en Flutter](/docs/development/ui/assets-and-images)
+: Explica como añadir imágenes y otros assets al paquete de tu app.
 * [Zero to One with Flutter]({{site.medium}}/@mravn/zero-to-one-with-flutter-43b13fd7b354)
-: One person's experience writing his first Flutter app.
+: Una experiencia personal escribiendo su primera app Fluter.
 
 [build()]: {{api}}/widgets/StatelessWidget/build.html
 [Card]: {{api}}/material/Card-class.html
@@ -1171,4 +1172,4 @@ The following resources may help when writing layout code.
 [Text]: {{api}}/widgets/Text-class.html
 [tutorial]: /docs/development/ui/layout/tutorial
 [biblioteca de widgets]: {{api}}/widgets/widgets-library.html
-[Widget catalog]: /docs/development/ui/widgets
+[catálogo de Widgets]: /docs/development/ui/widgets

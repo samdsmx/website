@@ -3,7 +3,7 @@
   url: /docs/get-started/install
 - name: Catálogo de Widgets
   description: Introdúcete en el rico conjunto de widgets disponibles en el SDK de Flutter.
-  url: /docs/development/ui/widgets/catalog
+  url: /docs/development/ui/widgets
 - name: API Docs
   description: Marca los docs de referencia de la API del framework de Flutter.
   url: https://docs.flutter.io
