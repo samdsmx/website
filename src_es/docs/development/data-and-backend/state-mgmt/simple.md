@@ -307,7 +307,7 @@ return HumongousWidget(
 
 A veces, no necesitas realmente los _datos_ en el modelo para cambiar la interfaz de usuario, pero aún así necesitas acceder a ella. Por ejemplo, un botón `ClearCart` quiere permitir al usuario eliminar todo del carrito. No necesitas mostrar el contenido del carrito, sólo necesita llamar al método `clear()`.
 
-Podríamos usar `ScopedModelDescendant<CartModel>` para esto, pero eso sería un desperdicio. Estaríamos pidiendo el marco para reconstruir un widget que no necesita ser reconstruido. 
+Podríamos usar `ScopedModelDescendant<CartModel>` para esto, pero eso sería un desperdicio. Estaríamos pidiendo al framework reconstruir un widget que no necesita ser reconstruido. 
 
 Para este caso de uso, podemos usar `ScopedModel.of`. 
 
