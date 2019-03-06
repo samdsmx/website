@@ -138,7 +138,7 @@ body_class: landing-page create
                 archivo ZIP, excluyendo las pruebas unitarias que no se ejecutan, no debe ser
                 superior a 5,120 bytes medido (como por ejemplo) con
                 <code>find . -name "*.dart" | xargs cat | wc -c</code> ejecutandolo desde terminal en la raíz de tu
-                proyecto</p>
+                proyecto.</p>
             <p>La aplicación puede usar paquetes Flutter que son a) publicados en
                 <a href="https://pub.dartlang.org">pub.dartlang.org</a>;
                 b) tienen una amplia aplicabilidad (por ejemplo, no está escrito únicamente con
@@ -151,9 +151,8 @@ body_class: landing-page create
     <div class="col-12 col-md-10 offset-md-1">
         <h4>Reglas del concurso:</h4>
         <div class="create__text-columns">
-            <p>Detalles completos y reglas en nuestras <a
-                    href="https://docs.google.com/document/d/12GT0_LT9Pet9eWTPYtziQjzKdc8mTfAL1zB-um2WoJQ/edit">Reglas
-                    Oficiales</a>.
+            <p>Detalles completos y reglas en nuestras 
+                    <a href="https://docs.google.com/document/d/12GT0_LT9Pet9eWTPYtziQjzKdc8mTfAL1zB-um2WoJQ/edit">Reglas oficiales</a>.
                 Pero aquí hay un breve resumen de algunos de los puntos clave:</p>
             <p>Todo el trabajo debe ser del concursante.</p>
             <p>Sólo una presentación por participante.</p>
@@ -192,8 +191,6 @@ body_class: landing-page create
                 o propiedad intelectual de un tercero.</p>
             <p>La presentación no es objeto de ningún litigio o reclamo real o pontecial.</p>
             <p>El participante no incluye ningún comentario despectivo relacionado con el Patrocinador o un tercero.</p>
-            <p>Por preguntas, consulte a
-                <a href="mailto:flutter-create@google.com">flutter-create@google.com</a>.</p>
         </div>
     </div>
 </section>
@@ -258,11 +255,70 @@ body_class: landing-page create
                 No debe ser menor de edad (según la ley local) para ser elegible para ganar.
             </p>
             <p>
+                <b>¿Puedo usar animaciones Flare? Si es asi, ¿cuentan estas para el tamaño en
+                    bytes?</b><br>
+            </p>
+            <p>
+                Imágenes, vídeos, fuentes, y otros tipos de assets binarios no están incluidos 
+                en el límite de 5KB de códido Dart. 
+            </p>
+            <p>
+                <b>¿Puedo almacenar datos en un fichero separado? Por ejemplo,
+                    para un catálogo de perros, ¿Puedo guardar los datos de los perros en un json?</b><br>
+            </p>
+            <p>
+                Los datos están bien. Sin embargo, estamos contando todo el código Dart en el límite de 5KB,
+                por tanto el JSON loader será incluido.
+            </p>
+            <p>
+                <b>¿Deben los envíos al concurso "Flutter Create" haber sido formatedos 
+                    con dartfmt?</b><br>
+            </p>
+            <p>
+                Podemos ejecutar dartfmt en nuestro lado. Creemos que la calidad del código está
+                primeramente dirigida por una buena estuctura, más que por la identación.
+                Pero por supuesto, si el código es impenetrable para los jueces incluso 
+                despues de ejecutar dartfmt, puede ser complicado para ellos puntuarlo 
+                como un código de calidad.
+            </p>
+            <p>
+                <b>¿Puede un equipo de personas enviar un proyecto único?</b><br>
+            </p>
+            <p>
+                Un equipo de personas pueden enviar un proyecto único, pero la persona 
+                que envia el proyecto a través de nuestro formulario de estar autorizada 
+                para enviar el proyecto en nombre de todo el equipo o entidad,
+                y un proyecto ganador de un equipo es solo elegible para un premio.
+            </p>
+            <p>
+                <b>¿Deberíamos enviar solo un archivo .dart o todos los archivos ya que el tamaño dado es de 5 kb 
+                    y todos los archivos estarían por encima de 5 kb?</b><br>
+            </p>
+            <p>
+                    Por favor, envíe lo que sea necesario para construir y ejecutar su aplicación 
+                    con `flutter run`.
+            </p>
+            <p>
+                <b>¿Debería el tamaño de la aplicación ser 5kb después de crear 
+                    un archivo zip o sin comprimir el archivo?</b><br>
+            </p>
+            <p>
+                    Estamos midiendo los archivos Dart, no los archivos ZIP, 
+                    por lo que los 5 KB se miden sin comprimir el archivo.
+            </p>
+            <p>
+                <b>¿Los activos (arte y audio) también tienen que ser creados 
+                    por los participantes?</b><br>
+            </p>
+            <p>
+                    Todos los activos deben cumplir con nuestras Reglas oficiales para los envíos, 
+                    y los participantes deben crear o tener permiso para usar y 
+                    enviar todas las partes de su envío.
+            </p>
+            <p>
                 <b>Si tengo más preguntas, ¿dónde debo ir?</b><br>
-                Echa un vistazo a través de nuestras <a
-                    href="https://docs.google.com/document/d/12GT0_LT9Pet9eWTPYtziQjzKdc8mTfAL1zB-um2WoJQ/edit">reglas
-                    oficiales</a>. Puedes escribir a <a
-                    href="mailto:flutter-create@google.com">flutter-create@google.com</a>.
+                Echa un vistazo a través de nuestras 
+                <a href="https://docs.google.com/document/d/12GT0_LT9Pet9eWTPYtziQjzKdc8mTfAL1zB-um2WoJQ/edit">reglas oficiales</a>.
             </p>
         </div>
     </div>

@@ -1,8 +1,8 @@
 ---
-title: "Trabajando con listas grandes"
+title: Trabajando con listas grandes
 prev:
-  title: Crear listas con diferentes tipos de items
-  path: /docs/cookbook/lists/mixed-list
+  title: Coloca un app bar flotante sobre una lista 
+  path: /docs/cookbook/lists/floating-app-bar
 next:
   title: Reportar errores a un servicio
   path: /docs/cookbook/maintenance/error-reporting

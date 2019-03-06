@@ -2,8 +2,8 @@
 title: Introducción a los test de integración
 short-title: Introduction
 prev:
-  title: Almacenando datos clave-valor en disco
-  path: /docs/cookbook/persistence/key-value
+  title: Toma una imagen usando la Camera
+  path: /docs/cookbook/plugins/picture-using-camera
 next:
   title: Perfiles de rendimiento
   path: /docs/cookbook/testing/integration/profiling

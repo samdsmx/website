@@ -1,5 +1,5 @@
 ---
-title: "Creando una lista en un Grid"
+title: Creando una lista en un Grid
 prev:
   title: Crear una lista horizontal
   path: /docs/cookbook/lists/horizontal-list

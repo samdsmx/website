@@ -1202,7 +1202,7 @@
   },
   {
     "name": "NestedScrollView",
-    "description": "",
+    "description": "Una vista con scroll dentro de la cual pueden haber otras vistas con scroll anidadas, con sus posiciones de scroll intrínsicamente enlazadas.",
     "categories": [
       "Scrolling"
     ],

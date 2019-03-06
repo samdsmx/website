@@ -1,5 +1,5 @@
 ---
-title: "Reportar errores a un servicio"
+title: Reportar errores a un servicio
 prev:
   title: Trabajando con listas grandes
   path: /docs/cookbook/lists/long-lists

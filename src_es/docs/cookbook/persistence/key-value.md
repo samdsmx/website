@@ -4,8 +4,8 @@ prev:
   title: Leyendo y Escribiendo Archivos
   path: /docs/cookbook/persistence/reading-writing-files
 next:
-  title: Introducción a los test de integración
-  path: /docs/cookbook/testing/integration/introduction
+  title: Reproducir y pausar un video
+  path: /docs/cookbook/plugins/play-video
 ---
 
 Si tienes una colección relativamente pequeña de pares clave-valor que te gustaría guardar,

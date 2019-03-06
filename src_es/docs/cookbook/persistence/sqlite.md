@@ -207,7 +207,9 @@ Future<void> updateDog(Dog dog) async {
     'dogs',
     dog.toMap(),
     // Aseguúrate de que solo actualizarás el Dog con el id coincidente
-    where: "id = ${dog.id}",
+     where: "id = ?",
+    // Pasa el id Dog a través de whereArg para prevenir SQL injection
+    whereArgs: [dog.id],
   );
 }
 
@@ -221,6 +223,13 @@ await updateDog(Dog(
 // Y puedes imprimir los resultados actualizados
 print(await dogs()); // Imprime a Fido con 42 años.
 ```
+{{site.alert.warning}}
+Usa siempre `whereArgs` para pasar argumentos a una sentencia `where`. Esto 
+ayuda a proteger contra ataques de SQL. 
+
+No uses interpolación de strings, como es `where: "id = ${dog.id}"`!
+{{site.alert.end}}
+
 
 ## 8. Eliminar un `Dog` de la base de datos
 
@@ -238,7 +247,9 @@ Future<void> deleteDog(int id) async {
   await db.delete(
     'dogs',
     // Utiliza la cláusula `where` para eliminar un dog específico
-    where: "id = $id",
+    where: "id = ?",
+    // Pasa el id Dog a través de whereArg para prevenir SQL injection
+    whereArgs: [id],
   );
 }
 ```
@@ -315,7 +326,9 @@ void main() async {
       'dogs',
       dog.toMap(),
       // Aseguúrate de que solo actualizarás el Dog con el id coincidente
-      where: "id = ${dog.id}",
+       where: "id = ?",
+      // Pasa el id Dog a través de whereArg para prevenir SQL injection
+      whereArgs: [dog.id],
     );
   }
 
@@ -327,7 +340,9 @@ void main() async {
     await db.delete(
       'dogs',
       // Utiliza la cláusula `where` para eliminar un dog específico
-      where: "id = $id",
+       where: "id = ?",
+      // Pasa el id Dog a través de whereArg para prevenir SQL injection
+      whereArgs: [dog.id],
     );
   }
 

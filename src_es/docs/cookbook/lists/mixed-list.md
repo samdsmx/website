@@ -1,11 +1,11 @@
 ---
-title: "Creando listas con elementos de diferentes tipos"
+title: Creando listas con elementos de diferentes tipos
 prev:
   title: Crear una lista en un Grid
   path: /docs/cookbook/lists/grid-lists
 next:
-  title: Trabajando con listas grandes
-  path: /docs/cookbook/lists/long-lists
+  title: Coloca un app bar flotante sobre una lista 
+  path: /docs/cookbook/lists/floating-app-bar
 ---
 
 A menudo necesitamos crear listas que muestren diferentes tipos de contenido. Por ejemplo, podríamos 
