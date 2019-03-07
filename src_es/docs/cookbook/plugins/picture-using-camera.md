@@ -59,7 +59,7 @@ final firstCamera = cameras.first;
 ## 3. Crear e inicializar el `CameraController`.
 
 Una vez que tengas una cámara para trabajar, deberás crear e inicializar un `CameraController`. Este 
-proceso establece una conexión con la cámara del dispositivo que le permite controlar la cámara 
+proceso establece una conexión con la cámara del dispositivo que te permite controlar la cámara 
 y mostrar una vista previa de la alimentación de la cámara.
 
 Para lograrlo, por favor:
@@ -68,7 +68,7 @@ Para lograrlo, por favor:
   2. Añade una variable a la clase `State` para almacenar el `CameraController`.
   3. Añade una variable a la clase `State` para almacenar el `Future` devuelto desde `CameraController.initialize`
   4. Crear e inicializar el controlador en el método `initState`
-  5. Elimine el controlador en el método `dispose`
+  5. Elimina el controlador en el método `dispose`
 
 <!-- skip -->
 ```dart
@@ -86,8 +86,8 @@ class TakePictureScreen extends StatefulWidget {
 }
 
 class TakePictureScreenState extends State<TakePictureScreen> {
-  // Añada dos variables a la clase de estado para almacenar el CameraController 
-  // y el futuro
+  // Añade dos variables a la clase de estado para almacenar el CameraController 
+  // y el Future
   CameraController _controller;
   Future<void> _initializeControllerFuture;
 
@@ -103,7 +103,7 @@ class TakePictureScreenState extends State<TakePictureScreen> {
       ResolutionPreset.medium,
     );
 
-    // A continuación, debes inicializar el controlador. Esto devolverá un Futuro
+    // A continuación, debes inicializar el controlador. Este devuelve un Future
     _initializeControllerFuture = _controller.initialize();
   }
 
@@ -116,14 +116,14 @@ class TakePictureScreenState extends State<TakePictureScreen> {
 
   @override
   Widget build(BuildContext context) {
-    // Llenaras esto en los siguientes pasos
+    // Llenarás esto en los siguientes pasos
   }
 }
 ```
 
 {{site.alert.warning}}
-Si no inicializas el `CameraController`, *no* podrás trabajar con
-la cámara.
+Si no inicializas el `CameraController`, *no* puedes usar la cámara 
+para mostrar una previsualización y tomar una captura.
 {{site.alert.end}}
 
 ## 4. Usa un `CameraPreview` para mostrar el feed de la cámara
@@ -148,7 +148,7 @@ FutureBuilder<void>(
   future: _initializeControllerFuture,
   builder: (context, snapshot) {
     if (snapshot.connectionState == ConnectionState.done) {
-      // Si el Futuro esta completo, mostrar vista previa
+      // Si el Future esta completo, mostrar vista previa
       return CameraPreview(_controller);
     } else {
       // De lo contrario, mostrar el indicador de cargando
@@ -162,7 +162,7 @@ FutureBuilder<void>(
 
 También puedes usar el `CameraController` para tomar fotos usando el método 
 [`takePicture`](https://pub.dartlang.org/documentation/camera/latest/camera/CameraController/takePicture.html). 
-En este ejemplo, crearas un `FloatingActionButton` que tome una foto usando 
+En este ejemplo, crearás un `FloatingActionButton` que tome una foto usando 
 el `CameraController` cuando un usuario toque el botón.
 
 Para guardar una imagen se necesitan 3 pasos:
@@ -207,7 +207,7 @@ FloatingActionButton(
 ## 6. Muestra la imagen con un widget `Imagen`
 
 Si tomas la foto con éxito, puedes mostrar la imagen guardada utilizando 
-un widget `Image`. En este caso, la imagen se almacenará como un archivo 
+un widget `Image`. En este caso, la imagen se almacena como un archivo 
 en el dispositivo.
 
 Por lo tanto, debes proporcionar un `Archivo` al constructor `Image.file`. Puedes 
@@ -277,7 +277,7 @@ class TakePictureScreenState extends State<TakePictureScreen> {
       ResolutionPreset.medium,
     );
 
-    // A continuación, debes inicializar el controlador. Esto devolverá un futuro!
+    // A continuación, debes inicializar el controlador. Esto devuelve un Future!
     _initializeControllerFuture = _controller.initialize();
   }
 
@@ -291,7 +291,7 @@ class TakePictureScreenState extends State<TakePictureScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: Text('Take a picture!')),
+      appBar: AppBar(title: Text('Take a picture')),
       // Debes esperar hasta que el controlador se inicialice antes de mostrar la vista previa 
       // de la cámara. Utiliza un FutureBuilder para mostrar un spinner de carga 
       // hasta que el controlador haya terminado de inicializar.
@@ -299,7 +299,7 @@ class TakePictureScreenState extends State<TakePictureScreen> {
         future: _initializeControllerFuture,
         builder: (context, snapshot) {
           if (snapshot.connectionState == ConnectionState.done) {
-            // Si el Futuro está completo, muestra la vista previa
+            // Si el Future está completo, muestra la vista previa
             return CameraPreview(_controller);
           } else {
             // De lo contrario, muestra un indicador de carga
