@@ -4,7 +4,7 @@ title: Flutter Brand Guidelines
 
 El nombre y logo "Flutter" son marcas propiedad de Google.
 Estas Brand Guidelines describen el uso apropiado de la marca Flutter
-por mienbros de la comunidad de desarrolladores que hayan obtenido 
+por miembros de la comunidad de desarrolladores que hayan obtenido 
 nuestro consentimiento de uso de la marca de conformidad con los [Términos de Servicio de Flutter](/tos).
 Estas guidelines asegurarán que la marca Flutter es usada en 
 manera que promocione la misión de Google de proporcionar un SDK libre y open source
@@ -20,16 +20,16 @@ assets](https://drive.google.com/corp/drive/folders/1KXNtO9My2AMpDOF9A9Y_4aj4_Bc
 
 ## Normas generales que gobiernan el uso de la marca Flutter
 
-Eres libre de usar la marca Flutter: (i) en conecxión con tu
+Eres libre de usar la marca Flutter: (i) en conexión con tu
 descarga y uso del SDK de Flutter para compilar y desarrollar  
-apps, (ii) en material formativo (ej., video tutoriales, publicaciones online,
+apps, (ii) en material formativo (ej., video-tutoriales, publicaciones online,
 etc.) que proporcione instrucciones o consejos en cuanto a como usar el SDK
 de Flutter para compilar y desarrollar apps, y (iii) para mostrar tu apoyo para 
 el uso del SDK de Flutter por miembros de la comunidad de desarrollo.  
 
 Estas guidelines no restringen tu derecho de usar el nombre "Flutter" en 
 conexión con descripciones del SDK de Flutter que puedan ser considerados 
-considered "uso justo."  Por ejemplo, puede usar el nombre "Flutter"
+"uso justo."  Por ejemplo, puede usar el nombre "Flutter"
 para hacer afirmaciones veraces (ej., "construido con el SKD de 
 Flutter") o para describir con precisión una característica del SDK de Flutter.  
 
@@ -46,7 +46,7 @@ fondo, en tu imagen de perfil o en tu nombre de usuario en la red social.
 
 ## Reglas específicas de uso apropiado de la marca Flutter
 
-Además de la regla general discutida arriba, a continuación hay relgas específicas
+Además de la regla general discutida arriba, a continuación hay reglas específicas
 que gobiernan el uso apropiado de la marca Flutter.  
 
 **Debes:**
@@ -56,7 +56,7 @@ que gobiernan el uso apropiado de la marca Flutter.
 * Usar un término genérico acompañando el nombre "Flutter", por ejemplo,
   "el SDK de Flutter" o "las herramientas de UI de Flutter UI."
 * Distingue el nombre "Flutter" del texto alrededor de alguna manera.
-  Usa mayusculas para la primera letra, usa mayusculas o cursiva para la marca entera,
+  Usa mayúsculas para la primera letra, usa mayúsculas o cursiva para la marca entera,
   coloca la marca entre comillas, usa un estilo o tipo de fuente diferente para la marca.
 * Usar el simbolo trademark <sup>TM</sup> para la primera o vez más prominente
   en que el nombre "Flutter" aparezca en el texto de tu sitio web o blog.
@@ -101,7 +101,7 @@ abajo hay excepciones específicas a las reglas descritas anteriormente:
    usuarios en que se base (ej., para un grupo de usuarios basados en Francia,
    los colores azul, blanco y rojo), dejando el logo de Flutter inalterado en 
    otros casos. Como cuenta en red social debe incluir una renuncia que 
-   carifique que esta no es una cuenta oficial de Google.
+   clarifique que esta no es una cuenta oficial de Google.
 
 2. Puedes usar la marca Flutter como parte del nombre de una lista de correo
    o comunidad de contenido relacionada (ej., cursos de entramiento de Flutter,
@@ -115,5 +115,5 @@ abajo hay excepciones específicas a las reglas descritas anteriormente:
    o afiliados por Google LLC."
    Cuando la marca Flutter se muestre en una cuenta de red social
    como parte del nombre del sitio, debe incluir una renuncia que 
-   carifique que esta no es una cuenta oficial de Google.
+   clarifique que esta no es una cuenta oficial de Google.
 
