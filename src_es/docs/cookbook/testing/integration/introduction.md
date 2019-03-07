@@ -2,7 +2,7 @@
 title: Introducción a los test de integración
 short-title: Introduction
 prev:
-  title: Toma una imagen usando la Camera
+  title: Toma una imagen usando la camára
   path: /docs/cookbook/plugins/picture-using-camera
 next:
   title: Perfiles de rendimiento

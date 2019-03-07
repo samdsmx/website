@@ -4,7 +4,7 @@ prev:
   title: Almacenando datos clave-valor en disco
   path: /docs/cookbook/persistence/key-value
 next:
-  title: Toma una imagen usando la Camera
+  title: Toma una imagen usando la cámara
   path: /docs/cookbook/plugins/picture-using-camera
 ---
 
@@ -22,7 +22,7 @@ Este cookbook muestra cómo usar el paquete `video_player` para transmitir un v�
   4. Mostrar el reproductor de vídeo
   5. Reproducir y pausar el vídeo
 
-## 1.Añadir la dependencia `video_player`
+## 1. Añadir la dependencia `video_player`
 
 Esta receta depende de un complemento: `video_player`. Primero, agrega esta dependencia a tu `pubspec.yaml`.
 

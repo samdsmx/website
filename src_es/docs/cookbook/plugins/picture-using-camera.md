@@ -1,5 +1,5 @@
 ---
-title: Toma una imagen usando la Camera
+title: Toma una imagen usando la cámara
 prev:
   title: Reproducir y pausar un video
   path: /docs/cookbook/plugins/play-video
