@@ -71,7 +71,7 @@ que gobiernan el uso apropiado de la marca Flutter.
 
 **No debes:**
 
-* No debes alterar, distorcionar, o modificar la marca Flutter de ninguna manera.
+* No debes alterar, distorsionar, o modificar la marca Flutter de ninguna manera.
   Esto incluye variar la ortografía del nombre "Flutter", o mostrar 
   el logo de Flutter con variaciones de color o elementos visuales no aprobados. 
 * No debes combinar el nombre Google con el nombre "Flutter" para formar una marca 
@@ -105,7 +105,7 @@ abajo hay excepciones específicas a las reglas descritas anteriormente:
 
 2. Puedes usar la marca Flutter como parte del nombre de una lista de correo
    o comunidad de contenido relacionada (ej., cursos de entrenamiento de Flutter,
-   foros comunitarios de Flutter) cuyo proposito sea el uso de promover el uso del 
+   foros comunitarios de Flutter) cuyo propósito sea el uso de promover el uso del 
    SDK de Flutter por miembros de la comunidad de desarrolladores.
    Cuando la marca Flutter se muestre en un sitio web como parte del nombre de 
    comunidad del sitio, debes usar el símbolo <sup>TM</sup>
