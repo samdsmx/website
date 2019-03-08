@@ -190,7 +190,7 @@
   children:
     - title: Recursos Dart
       permalink: /docs/resources/bootstrap-into-dart
-    - title: Dento de Flutter
+    - title: Dentro de Flutter
       permalink: /docs/resources/inside-flutter
     - title: Visión general técnica
       permalink: /docs/resources/technical-overview
