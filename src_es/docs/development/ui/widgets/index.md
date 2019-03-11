@@ -10,13 +10,13 @@ también puedes ver todos los widgets en el [índice de widgets](/docs/reference
 
 <div class="card-deck card-deck--responsive">
 {% for section in site.data.catalog.index %}
-    <div class="card">
+   <div class="card">
         <div class="card-body">
-            <a href="{{section.id}}"><header class="card-title">{{section.name}}</header></a>
+            <a href="{{page.url}}{{section.id}}"><header class="card-title">{{section.name}}</header></a>
             <p class="card-text">{{section.description}}</p>
         </div>
         <div class="card-footer card-footer--transparent">
-            <a href="{{section.id}}">Visitar</a>
+            <a href="{{page.url}}{{section.id}}">Visit</a>
         </div>
     </div>
 {% endfor %}

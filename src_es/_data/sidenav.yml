@@ -132,7 +132,7 @@
         - title: Procesos en segundo plano
           permalink: /docs/development/packages-and-plugins/background-processes
         - title: Repositorio de paquetes
-          permalink: http://pub.dartlang.org/flutter
+          permalink: https://pub.dartlang.org/flutter
     - title: Herramientas & técnicas
       permalink: /docs/development/tools
       children:
