@@ -44,18 +44,6 @@ dev_dependencies:
   test: <latest_version>
 ```
 
-Si estas trabajando en un paquete que solo se utilizará para las aplicaciones de Flutter, 
-o si necesitas escribir Widget tests, puedes confiar en el paquete `flutter_test` . 
-Este incluye todo, desde el paquete `test` , asi como utilidades adicionales para 
-probar Widgets.
-
-```yaml
-dev_dependencies:
-  flutter_test:
-    sdk: flutter
-```
-
-
 ## 2. Crea un archivo de prueba
 
 En este ejemplo, crea dos archivos: `counter.dart` y `counter_test.dart`. 
