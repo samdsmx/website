@@ -29,7 +29,8 @@ Obtén más información en los siguientes enlaces, muchos de los cuales han sid
   por Eric Windmill
 * [Podrías no necesitar Redux: La edición de Flutter](https://proandroiddev.com/you-might-not-need-redux-the-flutter-edition-9c11eba006d7), por Ryan Edge
 * [Gestión de estado con el patrón scoped model en el framework Flutter de Dart](https://www.youtube.com/watch?v=-MCeWP3rgI0), un video por Tensor Programming
-* [Flutter: Inherited Widget y Scoped Model Explicado, parte 1](https://www.youtube.com/watch?v=j-27MZwRbFw),un video por MTechViral
+* [Flutter: Inherited Widget y Scoped Model Explicado, parte 1](https://www.youtube.com/watch?v=j-27MZwRbFw), 
+un video por MTechViral
 * [Gestión de estado&mdash;scoped model en Flutter](https://www.youtube.com/watch?v=Oql5bU-Uvso)
 * [Scoped model package]({{site.pub-pkg}}/scoped_model)
 
@@ -38,14 +39,24 @@ Obtén más información en los siguientes enlaces, muchos de los cuales han sid
 * [Gestión de animaciones con Redux y Flutter](https://www.youtube.com/watch?v=9ZkLtr0Fbgk), un video del DartConf 2018 [Articulo en Medium]({{site.flutter-medium}}/animation-management-with-flutter-and-flux-redux-94729e6585fa)
 * [Flutter Redux package]({{site.pub-pkg}}/flutter_redux) on the [Pub site]({{site.pub}})
 * [Introdución a Redux en Flutter](https://blog.novoda.com/introduction-to-redux-in-flutter/), por Xavi Rigau
-* [Flutter + Redux&mdash;Como hacer una app con lista de compras](https://hackernoon.com/flutter-redux-how-to-make-shopping-list-app-1cd315e79b65), por Paulina Szklarska en Hackernoon
-* [Contruye una aplicacion TODO tipo (CRUD) en Flutter con Redux&mdash;Part 1](https://www.youtube.com/watch?v=Wj216eSBBWs), un video por Tensor Programming
-* [Flutter Redux Thunk, un ejemplo]({{site.medium}}/flutterpub/flutter-redux-thunk-27c2f2b80a3b),
+* [Flutter + Redux&mdash;Como hacer una app con lista de compras](https://hackernoon.com/flutter-redux-how-to-make-shopping-list-app-1cd315e79b65), 
+por Paulina Szklarska en Hackernoon
+* [Contruye una aplicacion TODO tipo (CRUD) en Flutter con Redux&mdash;Part 1](https://www.youtube.com/watch?v=Wj216eSBBWs), 
+un video por Tensor Programming
+* [Flutter Redux Thunk, un ejemplo]({{site.medium}}/flutterpub/flutter-redux-thunk-27c2f2b80a3b), 
   por Jack Wong
-* [Contruyendo una app (grande) en Flutter con Redux](https://hillelcoren.com/2018/06/01/building-a-large-flutter-app-with-redux/), por Hillel Coren
+* [Contruyendo una app (grande) en Flutter con Redux](https://hillelcoren.com/2018/06/01/building-a-large-flutter-app-with-redux/), 
+por Hillel Coren
 
 ## BLoC / Rx
 
-* [Gestion de estado usando el patron BLoC en Flutter](https://hk.saowen.com/a/fbb6e484de022173fe85248875286060ce40d069c97420bc0be49d838e19e372), por Saowen
+* [Gestion de estado usando el patron BLoC en Flutter](https://hk.saowen.com/a/fbb6e484de022173fe85248875286060ce40d069c97420bc0be49d838e19e372), 
+por Saowen
 * [Arquitectura para tu proyecto Flutter usando BLoC pattern]({{site.medium}}/flutterpub/architecting-your-flutter-project-bd04e144a8f1), por Sagar Suri
 * [Biblioteca Bloc](https://felangel.github.io/bloc), por Felix Angelov
+* [Programación Reactiva - Streams - BLoC - Casos Prácticos de Uso] (https://www.didierboelens.com/2018/12/reactive-programming---streams---bloc---practical-use-cases/), por Didier Boelens 
+
+## MobX
+
+* [MobX.dart, Manejo de estado para tus aplicaciones Dart y Flutter](https://github.com/mobxjs/mobx.dart)
+* [Como empezar con MobX.dart](https://mobx.pub/getting-started)
