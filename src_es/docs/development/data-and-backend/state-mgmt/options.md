@@ -33,7 +33,7 @@ Obtén más información en los siguientes enlaces, muchos de los cuales han sid
 un video por MTechViral
 * [Gestión de estado&mdash;scoped model en Flutter](https://www.youtube.com/watch?v=Oql5bU-Uvso)
 * [Scoped model package]({{site.pub-pkg}}/scoped_model)
-
+* [Widget - State - Context - InheritedWidget](https://www.didierboelens.com/2018/06/widget---state---context---inheritedwidget/), por Didier Bolelens
 ## Redux
 
 * [Gestión de animaciones con Redux y Flutter](https://www.youtube.com/watch?v=9ZkLtr0Fbgk), un video del DartConf 2018 [Articulo en Medium]({{site.flutter-medium}}/animation-management-with-flutter-and-flux-redux-94729e6585fa)
