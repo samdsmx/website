@@ -54,7 +54,7 @@ por Hillel Coren
 por Saowen
 * [Arquitectura para tu proyecto Flutter usando BLoC pattern]({{site.medium}}/flutterpub/architecting-your-flutter-project-bd04e144a8f1), por Sagar Suri
 * [Biblioteca Bloc](https://felangel.github.io/bloc), por Felix Angelov
-* [Programación Reactiva - Streams - BLoC - Casos Prácticos de Uso] (https://www.didierboelens.com/2018/12/reactive-programming---streams---bloc---practical-use-cases/), por Didier Boelens 
+* [Programación Reactiva - Streams - BLoC - Casos Prácticos de Uso](https://www.didierboelens.com/2018/12/reactive-programming---streams---bloc---practical-use-cases/), por Didier Boelens 
 
 ## MobX
 
