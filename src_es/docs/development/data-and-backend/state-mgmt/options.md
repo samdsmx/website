@@ -34,6 +34,7 @@ un video por MTechViral
 * [Gestión de estado&mdash;scoped model en Flutter](https://www.youtube.com/watch?v=Oql5bU-Uvso)
 * [Scoped model package]({{site.pub-pkg}}/scoped_model)
 * [Widget - State - Context - InheritedWidget](https://www.didierboelens.com/2018/06/widget---state---context---inheritedwidget/), por Didier Bolelens
+
 ## Redux
 
 * [Gestión de animaciones con Redux y Flutter](https://www.youtube.com/watch?v=9ZkLtr0Fbgk), un video del DartConf 2018 [Articulo en Medium]({{site.flutter-medium}}/animation-management-with-flutter-and-flux-redux-94729e6585fa)
@@ -47,11 +48,11 @@ un video por Tensor Programming
   por Jack Wong
 * [Contruyendo una app (grande) en Flutter con Redux](https://hillelcoren.com/2018/06/01/building-a-large-flutter-app-with-redux/), 
 por Hillel Coren
+* [Fish-Redux - Un framework ensamblado de aplicaciones flutter basado en Redux](https://github.com/alibaba/fish-redux/),
+  por Alibaba
 
 ## BLoC / Rx
 
-* [Gestion de estado usando el patron BLoC en Flutter](https://hk.saowen.com/a/fbb6e484de022173fe85248875286060ce40d069c97420bc0be49d838e19e372), 
-por Saowen
 * [Arquitectura para tu proyecto Flutter usando BLoC pattern]({{site.medium}}/flutterpub/architecting-your-flutter-project-bd04e144a8f1), por Sagar Suri
 * [Biblioteca Bloc](https://felangel.github.io/bloc), por Felix Angelov
 * [Programación Reactiva - Streams - BLoC - Casos Prácticos de Uso](https://www.didierboelens.com/2018/12/reactive-programming---streams---bloc---practical-use-cases/), por Didier Boelens 

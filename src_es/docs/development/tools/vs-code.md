@@ -124,7 +124,13 @@ Durante una sesión de depuración, se agregan varios comandos de depuración ad
 * **Toggle Repaint Rainbow**: Muestra colores rotativos en las capas cuando vuelva a pintar.
 * **Toggle Slow Animations**: Reduce la velocidad de las animaciones para permitir la inspección visual.
 * **Toggle Slow-Mode Banner**: Ocultar el banner de "slow mode" incluso cuando se ejecuta una 
-  compilación de depuración.
+compilación de depuración.
+
+### Depurar bibliotecas externas 
+
+Por defecto, depurar una biblioteca externa está desactivado en la extensión Flutter. Para habilitarlo:
+1. **Settings > Extensions > Dart Configuration **
+2. Marca la opción `Debug External Libraries`
 
 ### Flutter inspector, performance profiling y Dart DevTools
 

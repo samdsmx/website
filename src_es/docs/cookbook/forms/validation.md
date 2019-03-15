@@ -35,7 +35,8 @@ formulario.
 
 Cuando creamos el formulario, también debemos proporcionar una 
 [`GlobalKey`]({{site.api}}/flutter/widgets/GlobalKey-class.html). 
-Esto identificará de manera única el `Form` con el que estamos trabajando y nos permitirá validar el formulario en un paso posterior. 
+Esto identificará de manera única el `Form` con el que estamos trabajando y nos 
+permitirá validar el formulario en un paso posterior. 
 
 <!-- skip -->
 ```dart
@@ -66,6 +67,13 @@ class MyCustomFormState extends State<MyCustomForm> {
   }
 }
 ```
+
+{{site.alert.tip}}
+Usar una `GlobalKey` es la manera recomendada para acceder a un formulario. Sin embargo, si tienes 
+un árbol de widget más complejo, puedes usar el método 
+[`Form.of`](https://docs.flutter.io/flutter/widgets/Form/of.html) para 
+acceder al formulario entre a través anidados.
+{{site.alert.end}}
 
 ## 2. Agrega un `TextFormField` con lógica de validación
 

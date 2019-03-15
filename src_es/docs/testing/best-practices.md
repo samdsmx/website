@@ -1,15 +1,14 @@
 ---
-title: Mejores prácticas de desempeño
-short-title: Best practices
-description: Cómo asegurarse de que tu aplicación Flutter es eficaz.
+title: Mejores prácticas de rendimiento
+short-title: Mejores prácticas
+description: Cómo asegurarse de que tu aplicación Flutter tiene buen rendimiento.
 ---
 
 Generalmente, las aplicaciones Flutter son eficientes por defecto, por lo que 
 sólo necesita evitar los errores comunes para obtener un rendimiento excelente 
 en lugar de tener que microoptimizar con herramientas de perfilado complicadas. 
 Estas mejores recomendaciones te ayudarán a escribir la aplicación Flutter con 
-el mayor desempeño posible.
-
+el mayor rendimiento posible.
 
 ## Mejores prácticas
 
@@ -18,19 +17,29 @@ más eficiente? En particular, ¿cómo te aseguras de que el código de pintado
 generado por el framework es lo más eficiente posible? He aquí algunas cosas 
 a considerar al diseñar tu aplicación:
 
-### Llamar a setState cuidadosamente
+### Controla el coste del método build()
 
 * Evita el trabajo repetitivo y costoso en los métodos `build()` ya que `build()` 
-  puede ser invocado frecuentemente cuando los Widgets ancestrales se reconstruyen.
-* Localice la llamada `setState()` hacia la parte del subárbol cuya interfaz de 
-  usuario realmente necesita cambiar. Evite llamar a setState() en lo alto del árbol 
-  si el cambio está contenido en una pequeña parte del árbol.
-* Cuando un widget se reconstruye, pero la compilación impide que a un child se 
-  reconstruya, reutiliza el mismo widget child.
+  puede ser invocado frecuentemente cuando los Widgets ancestros se reconstruyen.
+* Evita los Widgets únicos con una función `build()` larga. 
+  Divídelos en diferentes Widgets basados en la encapsulación pero también en como 
+  cambian: 
+  * Cuando `setState()` es llamado en un State, todo los widgets descendientes se  
+    reconstruirán. Por lo tanto, coloca la llamada a `setState()` en la parte del  
+    subárbol cuya UI realmente necesita cambiar. Evita llamar 
+    setState() arriba en el árbol si el cambio está contenido en una parte pequeña  
+    del árbol.
+  * El recorrido para reconstruir todos los descendientes se detiene cuando se 
+    vuelve a encontrar la misma instancia del hijo que en el frame anterior. Esta 
+    técnica es muy utilizada en el framework para optimizar 
+    animaciones cuando la animación no afecta al subárbol de hijos. Mira
+    el patrón [TransitionBuilder](https://docs.flutter.io/flutter/widgets/TransitionBuilder.html)
+    y el [SlideTransition](https://github.com/xster/flutter/blob/9da3df5ba4e4cac46620e153bdf972ebde25bd58/packages/flutter/lib/src/widgets/transitions.dart#L229)
+    los cuales utilizan estos principios para evitar reconstruir sus descendientes cuando se anima.
 
 Ver también:
 
-* [Consideraciones de desempeño]({{site.api}}/flutter/widgets/StatefulWidget-class.html#performance-considerations),
+* [Consideraciones de rendimiento]({{site.api}}/flutter/widgets/StatefulWidget-class.html#performance-considerations),
   parte del documento de la API
   [StatefulWidget]({{site.api}}/flutter/widgets/StatefulWidget-class.html)  
 
@@ -127,7 +136,7 @@ Siempre que sea posible, el plugin proporciona un enlace a un consejo relevante.
 Los siguientes comportamientos podrían afectar negativamente el rendimiento de tu aplicación.
 
 * Evita usar el widget `Opacity`, y en particular evita utilizarlo en una animación. 
-  En su lugar, utiliza `AnimatedOpacity` o `FadeInImage`. Para obtener más información, consulta Consideraciones de desempeño para la animación de la opacidad.
+  En su lugar, utiliza `AnimatedOpacity` o `FadeInImage`. Para obtener más información, consulta Consideraciones de rendimiento para la animación de la opacidad.
 
 * Cuando utilices un AnimatedBuilder, evita poner un subárbol en la función builder 
   que construye widgets que no dependan de la animación. Este subárbol se reconstruye para cada tick de la animación. En su lugar, construye esa parte del subárbol una vez y pásala como un child al AnimatedBuilder. Para obtener más información, consulta [Performance
@@ -145,14 +154,14 @@ Los siguientes comportamientos podrían afectar negativamente el rendimiento de 
 Para obtener más información sobre el rendimiento, consulta los siguientes recursos:
 
 * [Optimizaciones de 
-  desempeño]({{site.api}}/flutter/widgets/AnimatedBuilder-class.html#performance-optimizations)
+  rendimiento]({{site.api}}/flutter/widgets/AnimatedBuilder-class.html#performance-optimizations)
   en la página de la API AnimatedBuilder
-* [Consideraciones de desempeño para la animación 
+* [Consideraciones de rendimiento para la animación 
   de opacidad]({{site.api}}/flutter/widgets/Opacity-class.html#performance-considerations-for-opacity-animation)
   en la pagina de la API Opacity 
 * [Ciclo de vida de los 
   elementos]({{site.api}}/flutter/widgets/ListView-class.html#child-elements-lifecycle)
   y cómo cargarlos eficientemente, en la página de la API ListView
 * [Consideraciones de 
-  desempeño]({{site.api}}/flutter/widgets/StatefulWidget-class.html#performance-considerations)
+  rendimiento]({{site.api}}/flutter/widgets/StatefulWidget-class.html#performance-considerations)
   de un StatefulWidget
