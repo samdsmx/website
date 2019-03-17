@@ -95,7 +95,7 @@ millones de descargas.
 Aprenda cómo crear aplicaciones Flutter de este curso gratuito de Udacity:
 
 * [Desarrolle Aplicaciones Nativas con Flutter](https://www.udacity.com/course/build-native-mobile-apps-with-flutter--ud905)
-
+* [Flutter Crash Course](https://fluttercrashcourse.com/), por Nick Manning
 
 [The Boring Flutter Show playlist]: https://www.youtube.com/playlist?list=PLjxrf2q8roU3ahJVrSgAnPjzkpGmL9Czl
 [Flutter Widget of the Week playlist]: https://www.youtube.com/playlist?list=PLjxrf2q8roU23XGwz3Km7sQZFTdB996iG

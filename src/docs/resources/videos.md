@@ -92,9 +92,11 @@ millions of downloads.
 
 ## Online course
 
-Learn how to build Flutter apps from this free Udacity course:
+Learn how to build Flutter apps with these free video courses:
 
 * [Build Native Mobile Apps with Flutter](https://www.udacity.com/course/build-native-mobile-apps-with-flutter--ud905)
+* [Flutter Crash Course](https://fluttercrashcourse.com/), by Nick Manning
+
 
 
 [The Boring Flutter Show playlist]: https://www.youtube.com/playlist?list=PLjxrf2q8roU3ahJVrSgAnPjzkpGmL9Czl
@@ -104,4 +106,3 @@ Learn how to build Flutter apps from this free Udacity course:
 [Flutter in Focus playlist]: https://www.youtube.com/playlist?list=PLjxrf2q8roU2HdJQDjJzOeO6J3FoFLWr2
 [Flutter Live '18 playlist]: https://www.youtube.com/playlist?list=PLjxrf2q8roU38by1vmaw_BHHsy7emEXl-
 [Flutter Developer Stories playlist]: https://www.youtube.com/playlist?list=PLjxrf2q8roU33POuWi4bK0zvDpAHK6759
-
