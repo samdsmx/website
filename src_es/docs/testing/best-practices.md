@@ -24,10 +24,10 @@ a considerar al diseñar tu aplicación:
 * Evita los Widgets únicos con una función `build()` larga. 
   Divídelos en diferentes Widgets basados en la encapsulación pero también en como 
   cambian: 
-  * Cuando `setState()` es llamado en un State, todo los widgets descendientes se  
-    reconstruirán. Por lo tanto, coloca la llamada a `setState()` en la parte del  
-    subárbol cuya UI realmente necesita cambiar. Evita llamar 
-    setState() arriba en el árbol si el cambio está contenido en una parte pequeña  
+  * Cuando `setState()` es llamado en un State, todo los widgets descendientes se 
+    reconstruirán. Por lo tanto, coloca la llamada a `setState()` en la parte del 
+    subárbol cuya UI realmente necesita cambiar. Evita llamar setState() arriba 
+    en el árbol si el cambio está contenido en una parte pequeña 
     del árbol.
   * El recorrido para reconstruir todos los descendientes se detiene cuando se 
     vuelve a encontrar la misma instancia del hijo que en el frame anterior. Esta 
