@@ -13,7 +13,7 @@ también fácil para ti aprender Dart.
 
 [Language tour](https://www.dartlang.org/guides/language/language-tour)
 : Tu mejor introducción al lenguaje Dart. Aprende sobre las características de Dart 
-tales como _optional types_, _clousures_, _libraries_, _lexical scoping_,
+tales como _strong types_, _clousures_, _libraries_, _lexical scoping_,
   _top-level functions_, _named parameters_, _async / await_ y mucho más.
 
 [Library tour](https://www.dartlang.org/guides/libraries/library-tour)

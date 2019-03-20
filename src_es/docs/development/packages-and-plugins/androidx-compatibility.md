@@ -4,42 +4,129 @@ description: Cómo solucionar las incompatibilidades de AndroidX que han sido de
 ---
 
 {{site.alert.note}}
-  Es posible que se te dirija a esta página si el framework detecta un problema en su aplicación Flutter que involucra incompatibilidades de AndroidX.
+  Es posible que se te dirija a esta página si el framework detecta 
+  un problema en su aplicación Flutter que involucra incompatibilidades de AndroidX.
 {{site.alert.end}}
 
-El código de Android a menudo utiliza las bibliotecas [`android.support`]({{site.android-dev}}/topic/libraries/support-library/) para garantizar la compatibilidad con versiones anteriores. Las bibliotecas `android.support` están obsoletas, y fueron reemplazadas con [AndroidX]({{site.android-dev}}/jetpack/androidx/). AndroidX tiene similitudes de funciones con las bibliotecas antiguas con algunas capacidades adicionales, pero, desafortunadamente, estos dos conjuntos de bibliotecas son incompatibles.
+El código de Android a menudo utiliza las bibliotecas 
+[`android.support`]({{site.android-dev}}/topic/libraries/support-library/) 
+para garantizar la compatibilidad con versiones anteriores. 
+Las bibliotecas `android.support` están obsoletas, y fueron 
+reemplazadas con [AndroidX]({{site.android-dev}}/jetpack/androidx/). 
+AndroidX tiene similitudes de funciones con las bibliotecas antiguas 
+con algunas capacidades adicionales, pero, desafortunadamente, estos 
+dos conjuntos de bibliotecas son incompatibles.
 
-_Gradle se bloquea al intentar crear un APK que se basa en ambos conjuntos de bibliotecas._ Esta página explica cómo podés solucionar este problema.
+_Gradle se bloquea al intentar crear un APK que se basa en ambos 
+conjuntos de bibliotecas._ Esta página explica cómo podés solucionar este problema.
 
 ## Arreglando fallas de AndroidX en una aplicación Flutter
 
 AndroidX puede romper una aplicación Flutter en tiempo de compilación de dos maneras:
 
-1. La aplicación utiliza un complemento de AndroidX y su archivo `build.gradle` principal tiene en `compileSdkVersion` una versión menor a 28.
+1. La aplicación utiliza un complemento de AndroidX y su archivo     `build.gradle` principal 
+   tiene en `compileSdkVersion` una versión menor a 28.
 2. La aplicación utiliza tanto el código AndroidX como el obsoleto al mismo tiempo.
 
-Los mensajes de error del Gradle varían. A veces, los mensajes mensionan "package androidx" o "package android.support" directamente. Sin embargo, a menudo los mensajes de error del Gradle no son obvios, y en cambio hablan de "AAPT", "AAPT2", o "parsing resources".
+Los mensajes de error del Gradle varían. A veces, los mensajes mencionan 
+"package androidx" o "package android.support" directamente. Sin embargo, a menudo los 
+mensajes de error del Gradle no son obvios, y en cambio 
+hablan de "AAPT", "AAPT2", o "parsing resources".
 
-Estos problemas deben solucionarse ya sea migrando manualmente el código a la misma biblioteca, o degradando las versiones de los complementos que aún utilizas las bibliotecas de soporte originales.
+Estos problemas deben solucionarse ya sea migrando manualmente el 
+código a la misma biblioteca, o degradando las versiones de los 
+complementos que aún utilizas las bibliotecas de soporte originales.
 
 ### Cómo migrar una aplicación Flutter a AndroidX
 
 {{site.alert.note}}
-  Es imposible migrar completamente tu aplicación a AndroidX si estás utilizando activamente algunos complementos que dependen de la antigua biblioteca de soporte. Si su aplicación depende de los complementos que utilizan los paquetes `android.support` anteriores, deberá [evitar el uso de AndroidX](#avoiding-androidx).
+  Es imposible migrar completamente tu aplicación a AndroidX si estás 
+  utilizando activamente algunos complementos que dependen de la 
+  antigua biblioteca de soporte. Si su aplicación depende de los 
+  complementos que utilizan los paquetes `android.support` anteriores, deberá [evitar el uso de AndroidX](#avoiding-androidx).
 {{site.alert.end}}
 
-Primero asegúrate de que `compileSdkVersion` sea al menos `28` en `app/build.gradle`. Esta propiedad controla la versión del SDK de Android que Gradle usa para construir tu APK. No afecta a la versión mínima de SDK con la que se puede ejecutar tu aplicación. Consulte la documentación del desarrollador de Android en [el archivo de compilación a nivel módulo]({{site.android-dev}}/studio/build/#module-level) para obtener más información.
+Primero asegúrate de que `compileSdkVersion` sea al menos `28` en 
+`app/build.gradle`. Esta propiedad controla la versión del SDK de 
+Android que Gradle usa para construir tu APK. No afecta a la versión 
+mínima de SDK con la que se puede ejecutar tu aplicación. Consulte la 
+documentación del desarrollador de Android en [el archivo de 
+compilación a nivel módulo]({{site.android-dev}}/studio/build/#module-level) 
+para obtener más información.
 
 #### Recomendado: usa Android Studio para migrar tu aplicación
 
-Esto requiere la última versión de Android Studio. Usa las siguientes instrucciones:
+Esto requiere la última versión de Android Studio. 
+Usa las siguientes instrucciones:
 
-1. Importa tu aplicación Flutter en Android Studio para que el IDE pueda analizar el código de Android siguiendo los pasos en [Edición del código de Android en Android Studio con soporte completo de IDE](/docs/development/tools/android-studio#android-ide).
-2. Sigue las instrucciones para [Mirgrar a AndroidX]({{site.android-dev}}/jetpack/androidx/migrate).
+1. Importa tu aplicación Flutter en Android Studio para que el IDE 
+   pueda analizar el código de Android siguiendo los pasos en 
+   [Edición del código de Android en Android Studio con soporte 
+   completo de IDE](/docs/development/tools/android-studio#android-ide).
+2. Sigue las instrucciones para [Mirgrar a 
+AndroidX]({{site.android-dev}}/jetpack/androidx/migrate). 
 
 #### No recomendado: migra manualmente tu aplicación
 
-Consulte [Migrando a AndroidX]({{site.android-dev}}/jetpack/androidx/migrate) para obtener instrucciones detalladas sobre cómo hacerlo.
+Consulta [Migrando a 
+AndroidX]({{site.android-dev}}/jetpack/androidx/migrate) para obtener 
+instrucciones detalladas sobre cómo hacerlo. A continuación se detallan algunos pasos que probablemente deberas seguir como parte de este proceso, que se enumeran aquí como referencia. Sin embargo, las cosas específicas que debes hacer dependerán de la configuración de tu compilación y podrían diferir de los cambios de ejemplo que se sugieren aquí.
+
+1. En `android/gradle/wrapper/gradle-wrapper.properties` cambia la línea que empieza con `distributionUrl` con esto:
+
+`distributionUrl=https\://services.gradle.org/distributions/gradle-4.10.2-all.zip`
+
+2. En `android/build.gradle`, reemplaza:
+
+```gradle
+dependencies {
+    classpath 'com.android.tools.build:gradle:3.2.1'
+}
+```
+
+por
+
+```gradle
+dependencies {
+    classpath 'com.android.tools.build:gradle:3.3.0'
+}
+```
+
+3. En `android/gradle.properties`, añade
+
+```
+android.enableJetifier=true
+android.useAndroidX=true
+```
+
+4. En `android/app/build.gradle`:
+
+Bajo `android {`, asegúrate que `compileSdkVersion` y `targetSdkVersion` son al menos 28.
+
+5. Reemplaza todas la bibliotecas obsoletas con las equivalentes 
+AndroidX. Por ejemplo, si estas usando los ficheros `.gradle` por defecto, haz los siguientes cambios:
+
+En `android/app/build.gradle`
+
+`testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"`
+
+por
+
+`testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"`
+
+Finalmente, en `dependencies {`, reemplaza
+
+```gradle
+androidTestImplementation 'com.android.support.test:runner:1.0.2'
+androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.2'
+```
+
+por
+
+```gradle
+androidTestImplementation 'androidx.test.runner:1.1.1'
+androidTestImplementation 'androidx.test.espresso:espresso-core:3.1.1'
+```
 
 ### Evitando AndroidX
 
