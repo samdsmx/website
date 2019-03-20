@@ -348,17 +348,31 @@ un hijo dentro del existentea stateless widget `MyApp`.
       }
     ```
 
- 4. Elímina el código de generación de palabras de `MyApp`:
+ 4. Elimina el código de generación de palabras de `MyApp` haciendo los cambios que se muestran en el siguiente diff:
 
-    <?code-excerpt "lib/main.dart (RandomWordsState)" title indent-by="2" replace="/(\n  )(.*)/$1[!$2!]/g"?>
-    ```dart
-      class RandomWordsState extends State<RandomWords> {
-        [!@override!]
-        [!Widget build(BuildContext context) {!]
-        [!  final wordPair = WordPair.random();!]
-        [!  return Text(wordPair.asPascalCase);!]
-        [!}!]
-      }
+     <?code-excerpt path-base="codelabs/startup_namer"?>
+    <?code-excerpt "{step2_use_package,step3_stateful_widget}/lib/main.dart" to="}"?>
+    ```diff
+    --- step2_use_package/lib/main.dart
+    +++ step3_stateful_widget/lib/main.dart
+    @@ -6,7 +6,6 @@
+     class MyApp extends StatelessWidget {
+       @override
+       Widget build(BuildContext context) {
+    -    final wordPair = WordPair.random();
+         return MaterialApp(
+           title: 'Welcome to Flutter',
+           home: Scaffold(
+    @@ -14,8 +13,8 @@
+               title: Text('Welcome to Flutter'),
+             ),
+             body: Center(
+    -          child: Text(wordPair.asPascalCase),
+    +          child: RandomWords(),
+             ),
+           ),
+         );
+       }
     ```
 
  5. Reinicia la app.
