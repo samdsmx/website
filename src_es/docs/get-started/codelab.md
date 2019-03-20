@@ -348,7 +348,7 @@ un hijo dentro del existentea stateless widget `MyApp`.
       }
     ```
 
- 4. Elmina el código de generación de palabras de `MyApp`:
+ 4. Elímina el código de generación de palabras de `MyApp`:
 
     <?code-excerpt "lib/main.dart (RandomWordsState)" title indent-by="2" replace="/(\n  )(.*)/$1[!$2!]/g"?>
     ```dart
