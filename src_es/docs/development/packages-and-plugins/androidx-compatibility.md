@@ -70,7 +70,7 @@ AndroidX]({{site.android-dev}}/jetpack/androidx/migrate).
 
 Consulta [Migrando a 
 AndroidX]({{site.android-dev}}/jetpack/androidx/migrate) para obtener 
-instrucciones detalladas sobre cómo hacerlo. A continuación se detallan algunos pasos que probablemente deberas seguir como parte de este proceso, que se enumeran aquí como referencia. Sin embargo, las cosas específicas que debes hacer dependerán de la configuración de tu compilación y podrían diferir de los cambios de ejemplo que se sugieren aquí.
+instrucciones detalladas sobre cómo hacerlo. A continuación se detallan algunos pasos que probablemente deberás seguir como parte de este proceso, que se enumeran aquí como referencia. Sin embargo, las cosas específicas que debes hacer dependerán de la configuración de tu compilación y podrían diferir de los cambios de ejemplo que se sugieren aquí.
 
 1. En `android/gradle/wrapper/gradle-wrapper.properties` cambia la línea que empieza con `distributionUrl` con esto:
 
