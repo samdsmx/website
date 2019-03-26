@@ -24,6 +24,9 @@ De una pantalla a otra se llama animación _hero_.
 en Flutter, aunque el mismo movimiento a veces se denomina
 una transición _del elemento compartido_.
 
+Quizás quieras ver este vídeo de un minuto introduciendo el widget Hero:
+<iframe width="560" height="315" src="https://www.youtube.com/embed/Be9UH1kXFDw?rel=0" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
 Esta guía muestra cómo construir estándar
 animaciones de hero, y animaciones de hero que transforman el
 Imagen desde una forma circular a una forma cuadrada durante el vuelo.

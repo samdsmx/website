@@ -41,6 +41,26 @@ aplicación)](https://codelabs.developers.google.com/codelabs/flutter#6)
 muestra cómo animar el nuevo mensaje&mdash;deslizándolo desde el área de entrada 
 hasta la lista de mensajes.
 
+También tenemos algunos vídeos que discuten aspectos de las animaciones en Flutter.
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/yI-8QHpGIP4?rel=0" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+AnimatedContainer
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/9hltevOHQBw?rel=0" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+Opacity, incluyendo el widget implícito AnimatedOpacity
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/pK738Pg9cxc?rel=0" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+FadeInImage
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/Be9UH1kXFDw?rel=0" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+Hero
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/9z_YNlRlWfA?rel=0" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+Transform
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/N-RiyZlv8v8?rel=0" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+AnimatedBuilder
+
 ## Tipos de animación
 
 Las animaciones se clasifican en dos categorías: basadas en física o en interpolación.
@@ -128,9 +148,10 @@ Las animaciones más pequeñas pueden ser secuenciales, o pueden sobreponerse pa
 
 * [Animación escalonada](/animations/staggered-animations/)
 
-<!-- Save so I can remember how to add it back later.
-<img src="/images/ic_new_releases_black_24px.svg" alt="this doc is new!"> NEW<br>
--->
+{% comment %}
+  Save so I can remember how to add it back later.
+  <img src="/images/ic_new_releases_black_24px.svg" alt="this doc is new!"> NEW<br>
+{% endcomment -%}
 
 ## Otros recursos
 
@@ -156,4 +177,3 @@ The animation API for the Flutter framework.
 
 Si hay documentación de animación específica que te gustaría ver, por favor 
 [crea un issue](https://github.com/flutter/flutter/issues).
-

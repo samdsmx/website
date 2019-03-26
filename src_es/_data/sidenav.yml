@@ -147,7 +147,7 @@
           children:
             - title: Actualizar
               permalink: /docs/development/tools/sdk/upgrading
-            - title: Archivo
+            - title: Releases
               permalink: /docs/development/tools/sdk/archive
         - title: Hot reload
           permalink: /docs/development/tools/hot-reload
@@ -205,7 +205,7 @@
 - title: Referencia
   expanded: true
   children:
-    - title: Indice de Widgets
+    - title: Índice de Widgets
       permalink: /docs/reference/widgets
     - title: Referencia de la API
       permalink: https://docs.flutter.io

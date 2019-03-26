@@ -8,6 +8,11 @@ para construir aplicaciones móviles con Flutter. Si entiendes los fundamentos d
 trabajo de iOS, entonces puedes usar este documento como una forma de empezar a aprender a 
 desarrollar con Flutter.
 
+Antes de introducirte en este documento, quizás quieras ver este vídeo de 15 minutos del 
+[canal de Youtube de Flutter](https://www.youtube.com/flutterdev) sobre 
+el paquete Cupertino.
+<iframe width="560" height="315" src="https://www.youtube.com/embed/3PdUaidHc-E?rel=0" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
 Tus conocimientos y habilidades sobre iOS son muy valiosos cuando construyes con
 Flutter, porque Flutter se apoya en el sistema operativo móvil para numerosas
 capacidades y configuraciones. Flutter es una nueva forma de crear interfaces de usuario 

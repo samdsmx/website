@@ -1,7 +1,7 @@
 ---
-title: Flutter SDK archive
-short-title: Archive
-description: Flutter SDK archive
+title: Flutter SDK releases
+short-title: Releases
+description: All current Flutter SDK releases, both stable and developer.
 toc: false
 ---
 
@@ -12,7 +12,8 @@ toc: false
 }
 </style>
 
-El canal {{site.sdk.channel | capitalize }} contiene la compilación más estable de Flutter. Mira [canales de Flutter][] para más detalles.
+The {{site.sdk.channel | capitalize }} channel contains the most stable Flutter builds. See [Flutter’s
+channels][] for details.
 
 {% comment %} Nav tabs {% endcomment -%}
 <ul class="nav nav-tabs" id="editor-setup" role="tablist">
@@ -34,19 +35,19 @@ El canal {{site.sdk.channel | capitalize }} contiene la compilación más establ
 {% include_relative _os.md os="Linux" %}
 </div>
 
-## Canal masterMaster channel
+## Master channel
 
-No hay disponibles bundles de instalación para master. Sin embargo, puedes obtener el SDK
-directamente desde el [repositorio de GitHub]({{site.repo.flutter}}) clonando el canal master,
-y entonces desencadenando la descarga de las dependencias del SDK:
+Installation bundles are not available for master. However, you can get the SDK
+directly from [GitHub repo]({{site.repo.flutter}}) by cloning the master channel,
+and then triggering a download of the SDK dependencies:
 
 ```terminal
 $ git clone -b master https://github.com/flutter/flutter.git
 $ ./flutter/bin/flutter --version
 ```
 
-Para detalles adicionales sobre como los bundles de instalación estan estructurados, mira
-[bundles de Instalación][].
+For additional details on how our installation bundles are structured, see
+[Installation bundles][].
 
-[canales de Flutter]: {{site.repo.flutter}}/wiki/Flutter-build-release-channels
-[bundles de Instalación]: {{site.repo.flutter}}/wiki/Flutter-Installation-Bundles
+[Flutter’s channels]: {{site.repo.flutter}}/wiki/Flutter-build-release-channels
+[Installation bundles]: {{site.repo.flutter}}/wiki/Flutter-Installation-Bundles

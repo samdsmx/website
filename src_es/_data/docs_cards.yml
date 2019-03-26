@@ -6,4 +6,13 @@
   url: /docs/development/ui/widgets
 - name: API Docs
   description: Marca los docs de referencia de la API del framework de Flutter.
-  url: https://docs.flutter.io
+  url: https://api.flutter.dev/
+- name: Cookbook
+  description: Navega por el cookbook, muchas recetas sencillas para Flutter.
+  url: /docs/cookbook
+- name: Ejemplos
+  description: Revisa los ejemplos de Flutter.
+  url: https://github.com/flutter/samples/blob/master/INDEX.md
+- name: Vídeos
+  description: Ve muchos vídeos en el canal de Youtube de Flutter.
+  url: https://www.youtube.com/flutterdev

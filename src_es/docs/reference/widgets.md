@@ -1,5 +1,5 @@
 ---
-title: Flutter widget index
+title: Índice de widgets
 short-title: Widgets
 show_breadcrumbs: false
 ---
@@ -8,6 +8,14 @@ show_breadcrumbs: false
 
 Este es un listado alfabético de casi todos los widgets que vienen con 
 Flutter. También puedes [navegar por los widgets por categoría][catalog].
+
+Quizás también quieras revisar nuestra serie de vídeos Widget of the Week 
+en el [canal de Youtube de Flutter]({{site.social.youtube}}). Cada corto episodio 
+trata de un widget de Flutter diferente. Para ver más series de videos, mira 
+nuestra página de [videos](/docs/resources/videos).
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/b_sQ9bMltGU" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+[Widget of the Week playlist](https://www.youtube.com/playlist?list=PLjxrf2q8roU23XGwz3Km7sQZFTdB996iG)
 
 <div class="card-deck card-deck--responsive">
 {% for comp in sorted %}
