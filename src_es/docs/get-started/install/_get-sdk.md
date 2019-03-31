@@ -41,6 +41,19 @@
     Para agregar Flutter permanentemente a tu path, mira [Actualiza  
     el path](#actualiza-tu-path).
 
+1. Opcionalmente, pre-descarga binarios de desarrollo:
+
+    La herramienta `flutter` descarga binarios de desarrollo específicos de plataforma según 
+    los necesita. Para escenarios en los que pre-descargar estos artefactos es preferible 
+    (ej., entornos de compilación herméticos, disponibilidad de red intermitente), los binarios iOS
+    y Android pueden ser descargados por anticipado ejecutando:
+
+    ```
+    $ flutter precache
+    ```
+
+    Para opciones adicionales de descarga, mira `flutter help precache`.
+
 ¡Ahora estas preparado para ejecutar comandos de Flutter!
 
 {{site.alert.note}}
