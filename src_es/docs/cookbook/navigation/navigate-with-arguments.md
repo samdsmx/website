@@ -8,7 +8,7 @@ next:
   path: /docs/cookbook/navigation/returning-data
 ---
  
-El objeto [`Navigator`](https://docs.flutter.io/flutter/widgets/Navigator-class.html)
+El objeto [`Navigator`]({{site.api}}/flutter/widgets/Navigator-class.html)
 proporciona la habilidad de navegar a una ruta con nombre desde cualquier parte de la app usando 
 un identificador común. En algunos casos, quizás necesites pasar argumentos a una 
 ruta con nombre. Por ejemplo, es posible que desees navegar a la ruta `/user` y 
@@ -16,16 +16,16 @@ pasar información sobre el usuario a esta ruta.
 
 En Flutter, puedes completar esta tarea proporcionando un parámetro adicional `arguments` a
 el método 
-[`Navigator.pushNamed`](https://docs.flutter.io/flutter/widgets/Navigator/pushNamed.html). 
+[`Navigator.pushNamed`]({{site.api}}/flutter/widgets/Navigator/pushNamed.html). 
 Puedes extraer los argumentos usando el método 
-[`ModalRoute.of`](https://docs.flutter.io/flutter/widgets/ModalRoute/of.html)
+[`ModalRoute.of`]({{site.api}}/flutter/widgets/ModalRoute/of.html)
 o dentro de una función 
-[`onGenerateRoute`](https://docs.flutter.io/flutter/widgets/WidgetsApp/onGenerateRoute.html)
+[`onGenerateRoute`]({{site.api}}/flutter/widgets/WidgetsApp/onGenerateRoute.html)
 proporcionada al 
 constructor de  
-[`MaterialApp`](https://docs.flutter.io/flutter/material/MaterialApp-class.html)
+[`MaterialApp`]({{site.api}}/flutter/material/MaterialApp-class.html)
 o de 
-[`CupertinoApp`](https://docs.flutter.io/flutter/cupertino/CupertinoApp-class.html).
+[`CupertinoApp`]({{site.api}}/flutter/cupertino/CupertinoApp-class.html).
 
 Esta receta demuestra como pasar argumentos a una ruta con nombre y leer los 
 argumentos usando `ModelRoute.of` y `onGenerateRoute`.
@@ -60,7 +60,7 @@ class ScreenArguments {
 
 A continuación, crea un widget que extrae y muestra `title` y `message` desde 
 el objeto `ScreenArguments`. Para acceder al objeto `ScreenArguments`, usa el método 
-[`ModalRoute.of`](https://docs.flutter.io/flutter/widgets/ModalRoute/of.html). 
+[`ModalRoute.of`]({{site.api}}/flutter/widgets/ModalRoute/of.html). 
 Este método devuelve la ruta actual con los argumentos.
 
 <!-- skip -->
@@ -106,7 +106,7 @@ MaterialApp(
 
 Finalmente, navega hasta `ExtractArgumentsScreen` cuando el usuario pulsa un botón 
 usando 
-[`Navigator.pushNamed`](https://docs.flutter.io/flutter/widgets/Navigator/pushNamed.html).
+[`Navigator.pushNamed`]({{site.api}}/flutter/widgets/Navigator/pushNamed.html).
 Proporciona los argumentos a la ruta a través de la propiedad `arguments`. 
 `ExtractArgumentsScreen` extrae `title` y `message` de estos 
 argumentos.
@@ -136,7 +136,7 @@ RaisedButton(
 
 En lugar de extraer los argumentos directamente dentro del widget, puedes tambén 
 extraer los argumentos dentro de la función 
-[`onGenerateRoute`](https://docs.flutter.io/flutter/widgets/WidgetsApp/onGenerateRoute.html)
+[`onGenerateRoute`]({{site.api}}/flutter/widgets/WidgetsApp/onGenerateRoute.html)
 y pasar estos al widget.
 
 La función `onGenerateRoute` crea la ruta correcta basándose en la propiedad `RouteSettings` 

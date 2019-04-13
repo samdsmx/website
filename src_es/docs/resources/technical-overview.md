@@ -209,7 +209,7 @@ Somos de código abierto y nos encantaría saber de ti.
 - [Chat en vivo con ingenieros y usuarios de Flutter][gitter]
 - [Discusión sobre Flutter, mejores prácticas, diseño de aplicaciones y más en nuestra lista de correo][mailinglist]
 - [Notificar fallos, solicitar funcionalidades y documentos][issues]
-- [Síguenos en Twitter: @flutterio](https://twitter.com/flutterio/)
+- [Síguenos en Twitter: @flutterdev](https://twitter.com/flutterio/)
 
 
 [issues]: {{site.github}}/flutter/flutter/issues

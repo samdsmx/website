@@ -65,14 +65,6 @@ en configurar tu propio mirror en China, contacta
 [flutter-dev@googlegroups.com](mailto:flutter-dev@googlegroups.com)
 para obtener asistencia.
 
-{{site.alert.secondary}}
-  **Error conocido:** Ejecutar la app Flutter Gallery desde la fuente requiere assets hospedados en
-  un dominio que esta solución actualmente no soporta. Puedes suscribirte 
-  al [Issue #13763]({{site.github}}/flutter/flutter/issues/13763)
-  para recibir actualizaciones. Mientras tanto, puedes obtener Flutter Gallery
-  desde Google Play o terceras app stores de tu confianza.
-{{site.alert.end}}
-
 ## Community-run mirror sites
 
 * Shanghai Jiaotong University Linux User Group

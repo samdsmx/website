@@ -8,7 +8,7 @@ next:
   path: /docs/cookbook/plugins/picture-using-camera
 ---
 
-Reproducir videos es una tarea común en el desarrollo de aplicaciones, y las aplicaciones de Flutter no son la excepción. Para reproducir videos, el equipo de Flutter proporciona el complemento [`video_player`](https://pub.dartlang.org/packages/video_player). Puedes usar el complemento `video_player` tanto para reproducir videos almacenados en el sistema de archivos, como un asset, o desde internet.
+Reproducir videos es una tarea común en el desarrollo de aplicaciones, y las aplicaciones de Flutter no son la excepción. Para reproducir videos, el equipo de Flutter proporciona el complemento [`video_player`]({{site.pub-pkg}}/video_player). Puedes usar el complemento `video_player` tanto para reproducir videos almacenados en el sistema de archivos, como un asset, o desde internet.
 
 En iOS, el complemento `video_player` hace uso de [`AVPlayer`](https://developer.apple.com/documentation/avfoundation/avplayer) para manejar la reproducción. En Android, utiliza [`ExoPlayer`](https://google.github.io/ExoPlayer/).
 
@@ -128,7 +128,7 @@ class _VideoPlayerScreenState extends State<VideoPlayerScreen> {
 
 ## 4. Mostrar el reproductor de vídeo
 
-Ahora es el momento de mostrar el vídeo. El complemento `video_player` proporciona el Widget [`VideoPlayer`](https://pub.dartlang.org/documentation/video_player/latest/video_player/VideoPlayer-class.html) para mostrar el vídeo inicializado por el `VideoPlayerController`. Por defecto, el Widget `VideoPlayer` ocupa tanto espacio como sea posible. Esto a menudo no es ideal para videos porque están diseñados para mostrarse en una resolución de aspecto específica, como 16x9 o 4x3.
+Ahora es el momento de mostrar el vídeo. El complemento `video_player` proporciona el Widget [`VideoPlayer`]({{site.pub-api}}/video_player/latest/video_player/VideoPlayer-class.html) para mostrar el vídeo inicializado por el `VideoPlayerController`. Por defecto, el Widget `VideoPlayer` ocupa tanto espacio como sea posible. Esto a menudo no es ideal para videos porque están diseñados para mostrarse en una resolución de aspecto específica, como 16x9 o 4x3.
 
 Por lo tanto, puedes envolver el Widget `VideoPlayer` en un Widget [`AspectRatio`](https://docs.flutter.io/flutter/widgets/AspectRatio-class.html) para asegurarte de que el vídeo tenga las proporciones correctas.
 
@@ -160,7 +160,7 @@ FutureBuilder(
 
 ## 5. Reproducir y pausar el vídeo
 
-Por defecto, el vídeo inicia en estado de pausa. Para iniciar la reproducción, llama al método [`play`](https://pub.dartlang.org/documentation/video_player/latest/video_player/VideoPlayerController/play.html) proporcionado por `VideoPlayerController`. para pausar la reproducción, llama al método [`pause`](https://pub.dartlang.org/documentation/video_player/latest/video_player/VideoPlayerController/pause.html).
+Por defecto, el vídeo inicia en estado de pausa. Para iniciar la reproducción, llama al método [`play`]({{site.pub-api}}/video_player/latest/video_player/VideoPlayerController/play.html) proporcionado por `VideoPlayerController`. para pausar la reproducción, llama al método [`pause`]({{site.pub-api}}/video_player/latest/video_player/VideoPlayerController/pause.html).
 
 Para este ejemplo, agrega un `FloatingActionButton` a su aplicación que muestre un icono de reproducción o pausa según la situación. Cuando el usuario toque el botón, reproduzca el vídeo si está actualmente pausado, o pause el vídeo si está reproduciendo.
 

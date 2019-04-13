@@ -235,6 +235,52 @@ Usando la línea de comando:
 Para obtener instrucciones detalladas sobre la publicación de la versión release de una aplicación 
 en Google Play Store, consulta la [documentación de publicación de Google Play][play].
 
+## Compilar un release app bundle
+
+Esta sección describe como compilar un release app bundle. Si completas 
+los pasos para firmar en la sección previa, el release bundle será firmado.
+
+Desde la linea de comando:
+
+1. Introduce `cd <app dir>`. (Remplaza `<app, dir>` con el directorio de tu apliación.)
+1. Ejecuta `flutter build appbundle`. (Ejecutando `flutter build` por defecto para un release build.)
+1. Para generar una variante diferente de bundle, puedes introducir
+   <nobr>`flutter build appbundle --release --target-platform=android-arm`.</nobr>
+   Esto genera un bundle para android-arm.
+
+El release bundle para tu app se crea en
+`<app dir>/build/app/outputs/bundle/release/app.aab`.
+
+{{site.alert.note}}
+  A partir de escribir esto, el comando app bundle solo genera libs compatibles con 
+  **armeabi-v7a**. Sigue [Issue 18494]() para más información.
+{{site.alert.end}} 
+
+## Probar un app Bundle
+
+Un app bundle puede ser probado de múltiples maneras. Esta sección describe un par de 
+maneras con las que probar un app bundle.
+
+### Offline usando la herramienta bundle
+
+1. Si no lo has hecho ya, descarga `bundletool` desde el 
+[repositorio de GitHub](https://github.com/google/bundletool).
+1. [Genera un conjunto de 
+APKs](https://developer.android.com/studio/command-line/bundletool#generate_apks)
+de tu app bundle.
+1. [Despliega las 
+APKs](https://developer.android.com/studio/command-line/bundletool#deploy_with_bundletool)
+a dispositivos conectados.
+
+### Online usando Google Play
+
+1. Sube tu bundle a Google Play para probarlo. Puedes usar el internal
+test track, o el canal alpha o beta para probar el bundle antes de lanzarlo 
+a producción.
+2. Sigue [estos pasos para subir tu 
+bundle](https://developer.android.com/studio/publish/upload-bundle)
+a la Play Store.
+
 [manifest]: {{site.android-dev}}/guide/topics/manifest/manifest-intro
 [manifesttag]: {{site.android-dev}}/guide/topics/manifest/manifest-element
 [appid]: {{site.android-dev}}/studio/build/application-id

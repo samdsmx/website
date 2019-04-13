@@ -71,7 +71,7 @@ class MyCustomFormState extends State<MyCustomForm> {
 {{site.alert.tip}}
 Usar una `GlobalKey` es la manera recomendada para acceder a un formulario. Sin embargo, si tienes 
 un árbol de widget más complejo, puedes usar el método 
-[`Form.of`](https://docs.flutter.io/flutter/widgets/Form/of.html) para 
+[`Form.of`]({{site.api}}/flutter/widgets/Form/of.html) para 
 acceder al formulario entre a través anidados.
 {{site.alert.end}}
 

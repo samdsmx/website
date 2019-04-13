@@ -5,7 +5,7 @@ next:
   path: /docs/cookbook/animation/opacity-animation
 ---
 
-La clase [`Container`](https://docs.flutter.io/flutter/widgets/Container-class.html) 
+La clase [`Container`]({{site.api}}/flutter/widgets/Container-class.html) 
 proporciona una manera conveniente de crer un widget con propiedades específicas: 
 ancho, alto, color de fondo, padding, bordes, y más.
 
@@ -13,7 +13,7 @@ Las animaciones simples a menudo implican cambiar estas propiedades a lo largo d
 Por ejemplo, es posible que desees animar el color de fondo de gris a verde para indicar que el usuario ha seleccionado un elemento.
 
 Para animar estas propiedades, Flutter proporciona el widget 
-[`AnimatedContainer`](https://docs.flutter.io/flutter/widgets/AnimatedContainer-class.html). 
+[`AnimatedContainer`]({{site.api}}/flutter/widgets/AnimatedContainer-class.html). 
 Al igual que el widget `Container`,` AnimatedContainer` te permite definir 
 el ancho, la altura, los colores de fondo y más. Sin embargo, cuando el 
 `AnimatedContainer` se reconstruye con nuevas propiedades, automáticamente 
@@ -33,8 +33,8 @@ el color de fondo y el radio del borde cuando el usuario toca un botón.
 ## 1. Crear un widget StatefulWidget con propiedades por defecto
 
 Para empezar, crea unas clases 
-[`StatefulWidget`](https://docs.flutter.io/flutter/widgets/StatefulWidget-class.html) y 
-[`State`](https://docs.flutter.io/flutter/widgets/State-class.html).
+[`StatefulWidget`]({{site.api}}/flutter/widgets/StatefulWidget-class.html) y 
+[`State`]({{site.api}}/flutter/widgets/State-class.html).
 Usa la clase State personalizada para definir las propiedades que necesitas cambiar a 
 lo largo del tiempo. En este ejemplo, esto incluye el ancho, alto, color, y radio del 
 borde. Además, también puedes definir el valor por defecto de cada propiedad.
@@ -92,7 +92,7 @@ AnimatedContainer(
 
 Finalmente, inicia la animación reconstruyendo el `AnimatedContainer` con 
 nuevas propiedades. ¿Cómo desencadenar una reconstrucción? Cuando se trata de `StatefulWidgets`, 
-[`setState`] (https://docs.flutter.io/flutter/widgets/State/setState.html) 
+[`setState`] ({{site.api}}/flutter/widgets/State/setState.html) 
 es la solución.
 
 Para este ejemplo, agrega un botón a la aplicación. Cuando el usuario toca el botón, actualiza 

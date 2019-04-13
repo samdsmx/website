@@ -10,7 +10,7 @@ next:
 
 Si escribes una aplicación que necesita persistir y consultar grandes cantidades de datos en el dispositivo local, considera usar una base de datos en lugar de un archivo local o un almacén de clave-valor. En general, las bases de datos proporcionan inserciones, actualizaciones y consultas más rápidas en comparación con otras soluciones de persistencia local.
 
-Las aplicaciones de Flutter pueden hacer uso de las bases de datos SQLite a través del complemento [`sqflite`](https://pub.dartlang.org/packages/sqflite) disponible en el pub. ¡Esta receta muestra los conceptos básicos de uso de `sqflite` para insertar, leer, actualizar y eliminar datos sobre varios Dogs(perros)!
+Las aplicaciones de Flutter pueden hacer uso de las bases de datos SQLite a través del complemento [`sqflite`]({{site.pub-pkg}}/sqflite) disponible en el pub. ¡Esta receta muestra los conceptos básicos de uso de `sqflite` para insertar, leer, actualizar y eliminar datos sobre varios Dogs(perros)!
 
 Si eres nuevo en SQLite y en las sentencias de SQL, revisa el [sitio SQLite Tutorial](http://www.sqlitetutorial.net/) para aprender lo básico antes de completar este cookbok.
 
@@ -108,7 +108,7 @@ Ahora que tienes una base de datos con una tabla adecuada para almacenar informa
 Primero, inserta un `Dog` en la tabla `dogs`. Esto implica dos pasos:
 
   1. Convertir la clase `Dog` en un `Map`
-  2. Usar el método [`insert`](https://pub.dartlang.org/documentation/sqflite/latest/sqlite_api/DatabaseExecutor/insert.html) para almacenar el `Map` en la tabla `dogs`
+  2. Usar el método [`insert`]({{site.pub-api}}/sqflite/latest/sqlite_api/DatabaseExecutor/insert.html) para almacenar el `Map` en la tabla `dogs`
 
 <!-- skip -->
 ```dart
@@ -189,7 +189,7 @@ print(await dogs()); // Imprime una lista que contiene a Fido
 
 ## 7. Actualizar un `Dog` en la base de datos
 
-Después de haber insertado alguna información en la base de datos, es posible que desees actualizar esa información más adelante. Para ello, utiliza el método [`update`](https://pub.dartlang.org/documentation/sqflite/latest/sqlite_api/DatabaseExecutor/update.html) del complemento `sqflite`.
+Después de haber insertado alguna información en la base de datos, es posible que desees actualizar esa información más adelante. Para ello, utiliza el método [`update`]({{site.pub-api}}/sqflite/latest/sqlite_api/DatabaseExecutor/update.html) del complemento `sqflite`.
 
 Esto implica dos pasos:
 
@@ -233,7 +233,7 @@ No uses interpolación de strings, como es `where: "id = ${dog.id}"`!
 
 ## 8. Eliminar un `Dog` de la base de datos
 
-Además de insertar y actualizar información sobre perros, también puedes eliminar perros de la base de datos. Para borrar datos, usa el método [`delete`](https://pub.dartlang.org/documentation/sqflite/latest/sqlite_api/DatabaseExecutor/delete.html) del complemento `sqflite`. 
+Además de insertar y actualizar información sobre perros, también puedes eliminar perros de la base de datos. Para borrar datos, usa el método [`delete`]({{site.pub-api}}/sqflite/latest/sqlite_api/DatabaseExecutor/delete.html) del complemento `sqflite`. 
 
 En esta parte, crea una función que tome una identificación y elimina el perro con un id coincidente de la base de datos. Para hacer que esto funcione, debes proporcionar una cláusula `where` para limitar los registros que se eliminen.
 

@@ -10,7 +10,7 @@ esfuerzo en enviarnos tantos comentarios como sea posible.
 ## Crear un problema en Github
 
 * Se puede crear un nuevo problema de Github en
- [https://github.com/flutter/flutter/issues/new](https://github.com/flutter/flutter/issues/new)
+ [{{site.github}}/flutter/flutter/issues/new](https://github.com/flutter/flutter/issues/choose)
 
 ## Proporcionar algunos diagnósticos Flutter
 

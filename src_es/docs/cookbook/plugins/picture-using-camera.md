@@ -9,7 +9,7 @@ next:
 ---
 
 Muchas aplicaciones requieren trabajar con las cámaras del dispositivo para tomar fotos y videos.
-Flutter proporciona el plugin [`camera`](https://pub.dartlang.org/packages/camera)
+Flutter proporciona el plugin [`camera`]({{site.pub-pkg}}/camera)
 para este propósito. El plugin `camera` proporciona herramientas para obtener una lista de las
 cámaras disponibles, mostrar una vista previa que viene de una cámara específica, y tomar
 fotos o videos.
@@ -30,9 +30,9 @@ tomar una foto y mostrarla.
 
 Para completar esta receta, necesitas añadir tres dependencias a tu aplicación:
 
-  - [`camera`](https://pub.dartlang.org/packages/camera) - Proporciona herramientas para trabajar con las cámaras del dispositivo
-  - [`path_provider`](https://pub.dartlang.org/packages/path_provider) - Encuentra las rutas correctas para almacenar imágenes
-  - [`path`](https://pub.dartlang.org/packages/path) - Crea rutas que funcionan en cualquier plataforma
+  - [`camera`]({{site.pub-pkg}}/camera) - Proporciona herramientas para trabajar con las cámaras del dispositivo
+  - [`path_provider`]({{site.pub-pkg}}/path_provider) - Encuentra las rutas correctas para almacenar imágenes
+  - [`path`]({{site.pub-pkg}}/path) - Crea rutas que funcionan en cualquier plataforma
 
 ```yaml
 dependencies:
@@ -136,7 +136,7 @@ antes de trabajar con la cámara. Por lo tanto, debes esperar a que
 el `_initializeControllerFuture` creado en el paso anterior se complete 
 antes de mostrar una `CameraPreview`.
 
-Puede utilizar un [`FutureBuilder`](https://docs.flutter.io/flutter/widgets/FutureBuilder-class.html) 
+Puede utilizar un [`FutureBuilder`]({{site.api}}/flutter/widgets/FutureBuilder-class.html) 
 exactamente para este propósito.
 
 <!-- skip -->
@@ -161,7 +161,7 @@ FutureBuilder<void>(
 ## 5. Tomar una foto con el `CameraController`.
 
 También puedes usar el `CameraController` para tomar fotos usando el método 
-[`takePicture`](https://pub.dartlang.org/documentation/camera/latest/camera/CameraController/takePicture.html). 
+[`takePicture`]({{site.pub-api}}/camera/latest/camera/CameraController/takePicture.html). 
 En este ejemplo, crearás un `FloatingActionButton` que tome una foto usando 
 el `CameraController` cuando un usuario toque el botón.
 

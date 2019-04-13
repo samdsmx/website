@@ -577,8 +577,8 @@ Información clave:
   Incluso para imágenes con transparencia.
 
 * La clase de fotos no incluye al hero en su árbol de widgets.
-  Para que la animación funcione, el hero.
-  envuelve el widget de RadialExpansion, que envuelve al hero.
+  Para que la animación funcione, el hero
+  envuelve el widget RadialExpansion.
 
 ### Clase RadialExpansion
 

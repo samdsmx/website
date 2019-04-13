@@ -8,14 +8,14 @@ next:
   path: /docs/cookbook/lists/long-lists
 ---
 
-Para facilitar a los usuarios la visualización de una lista de elementos, es posible que desees ocultar el app bar a medida que el usuario se desplaza por la lista. Esto es especialmente cierto si tu aplicación muestra un app bar "alto" que ocupa mucho espacio vertical.
+Para facilitar a los usuarios la visualización de una lista de elementos, es posible que desees ocultar el app bar a medida que el usuario se desplaza por la lista. Esto es esspecialmente cierto si tu aplicación muestra un app bar "alto" que ocupa mucho espacio vertical.
 
 Tradicionalmente, creas el app bar proporcionando la propiedad `appBar` al 
 Widget `Scaffold`. Esto crea el app bar fijo que siempre permanece por encima 
 del `body` del `Scaffold`.
 
 Mover el app bar desde un Widget `Scaffold` a un
-[`CustomScrollView`](https://docs.flutter.io/flutter/widgets/CustomScrollView-class.html)
+[`CustomScrollView`]({{site.api}}/flutter/widgets/CustomScrollView-class.html)
 te permite crear el app bar que se desplaza fuera de la pantalla a medida que te desplazas a través de una lista de elementos contenidos dentro 
 del `CustomScrollView`.
 
@@ -54,9 +54,9 @@ Scaffold(
 ### 2. Usa `SliverAppBar` para agregar el app bar flotante
 
 A continuación, agrega el app bar al
-[`CustomScrollView`](https://docs.flutter.io/flutter/widgets/CustomScrollView-class.html).
+[`CustomScrollView`]({{site.api}}/flutter/widgets/CustomScrollView-class.html).
 Flutter proporciona el Widget
-[`SliverAppBar`](https://docs.flutter.io/flutter/material/SliverAppBar-class.html)
+[`SliverAppBar`]({{site.api}}/flutter/material/SliverAppBar-class.html)
 de manera novedosa. Al igual que el widget `AppBar` normal, puedes usar la
 `SliverAppBar` para mostrar un título, pestañas, imágenes y más.
 
@@ -88,7 +88,7 @@ CustomScrollView(
 
 {{site.alert.tip}}
 Juega con las [diversas propiedades que puedes pasar al Widget `SliverAppBar`
-](https://docs.flutter.io/flutter/material/SliverAppBar/SliverAppBar.html)
+]({{site.api}}/flutter/material/SliverAppBar/SliverAppBar.html)
 y usa hot reload para ver los resultados. Por ejemplo, puedes usar un 
 Widget `Image` para la propiedad `flexibleSpace` y crear una imagen de fondo 
 que se reduce en tamaño a medida que se desplaza fuera de la pantalla.
@@ -99,17 +99,17 @@ que se reduce en tamaño a medida que se desplaza fuera de la pantalla.
 
 Ahora que tienes el app bar en su lugar, agrega una lista de elementos al 
 `CustomScrollView`. Tienes dos opciones: una
-[`SliverList`](https://docs.flutter.io/flutter/widgets/SliverList-class.html) o
-una [`SliverGrid`](https://docs.flutter.io/flutter/widgets/SliverGrid-class.html).
+[`SliverList`]({{site.api}}/flutter/widgets/SliverList-class.html) o
+una [`SliverGrid`]({{site.api}}/flutter/widgets/SliverGrid-class.html).
 Si necesitas mostrar una lista de elementos uno tras otro, utiliza el 
 Widget `SliverList`. Si necesitas mostrar una lista de cuadrículas, usa el 
 Widget `SliverGrid`.
 
 Los widgets `SliverList` y `SliverGrid` toman un parámetro requerido: un
-[`SliverChildDelegate`](https://docs.flutter.io/flutter/widgets/SliverChildDelegate-class.html).
+[`SliverChildDelegate`]({{site.api}}/flutter/widgets/SliverChildDelegate-class.html).
 Si bien esto suena elegante, el delegado se utiliza simplemente para 
 proporcionar una lista de Widgets a `SliverList` o `SliverGrid`. Por ejemplo, el
-[`SliverChildBuilderDelegate`](https://docs.flutter.io/flutter/widgets/SliverChildBuilderDelegate-class.html)
+[`SliverChildBuilderDelegate`]({{site.api}}/flutter/widgets/SliverChildBuilderDelegate-class.html)
 te permite crear una lista de elementos que se construyen perezosamente a medida que te desplazas, igual que el widget `ListView.builder`.
 
 <!-- skip -->

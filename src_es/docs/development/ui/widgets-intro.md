@@ -7,7 +7,7 @@ at the end of the page to avoid repeating links. {% endcomment -%}
 
 {% assign api = site.api | append: '/flutter' -%}
 
-Los widgets de Flutter son construidos usando un moderno framework de estilo-reactivo, el cual toma
+Los widgets de Flutter son construidos usando un moderno framework que toma
 inspiración de [React](https://reactjs.org). La idea central es
 que construyas tu UI de widgets. Los Widgets describen cómo debería ser su vista,
 dada su configuración y estado actuales. Cuando el estado de un widget cambia,

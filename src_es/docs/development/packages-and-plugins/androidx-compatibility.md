@@ -74,7 +74,9 @@ instrucciones detalladas sobre cómo hacerlo. A continuación se detallan alguno
 
 1. En `android/gradle/wrapper/gradle-wrapper.properties` cambia la línea que empieza con `distributionUrl` con esto:
 
-`distributionUrl=https\://services.gradle.org/distributions/gradle-4.10.2-all.zip`
+   ```
+   distributionUrl=https\://services.gradle.org/distributions/gradle-4.10.2-all.zip
+   ```
 
 2. En `android/build.gradle`, reemplaza:
 
@@ -104,15 +106,19 @@ android.useAndroidX=true
 Bajo `android {`, asegúrate que `compileSdkVersion` y `targetSdkVersion` son al menos 28.
 
 5. Reemplaza todas la bibliotecas obsoletas con las equivalentes 
-AndroidX. Por ejemplo, si estas usando los ficheros `.gradle` por defecto, haz los siguientes cambios:
+   AndroidX. Por ejemplo, si estas usando los ficheros `.gradle` por defecto, haz los siguientes cambios:
 
-En `android/app/build.gradle`
+   En `android/app/build.gradle`
 
-`testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"`
+   ```gradle
+   testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+   ```
 
-por
+   por
 
-`testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"`
+   ```gradle
+   testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+   ```
 
 Finalmente, en `dependencies {`, reemplaza
 

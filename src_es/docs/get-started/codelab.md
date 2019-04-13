@@ -129,8 +129,7 @@ donde se encuentra el código Dart.
       * Terminal: Ejecuta `flutter format <filename>`.
     {{site.alert.end}}
 
- 2. [Ejecuta la app](/docs/get-started/test-drive#androidstudio) haciendo clic
-    en la flecha verde en el IDE.
+ 2. Ejecuta la app [de la forma que describe tu IDE](/docs/get-started/test-drive).
     Deberías ver la salida Android o iOS, dependiendo de tu dispositivo.    
 
     {% indent %}
@@ -256,8 +255,7 @@ open source, en [pub.dartlang.org]({{site.pub}}/flutter/).
       "UpperCamelCase".
     {{site.alert.end}}
 
- 5. Si la app esta ejecutándose, utiliza el botón de hot reload
-    (<img src="images/hot-reload-button.png" alt="lightning bolt icon">)
+ 5. Si la app esta ejecutándose, haz [hot reload](/docs/get-started/test-drive)
     para actualizar la app. Cada vez que se presione hot reload
     o se guarde el proyecto, deberá verse una palabra diferente,
     elegida aleatoriamente, en la app.
@@ -439,8 +437,8 @@ retrasada, a petición.
     un factory builder y un función callback especificada como función anónima,
     dos parámetros se pasan a la función&mdash;el `BuildContext`, 
     y un fila de iteración , `i`. El iterador empieza desde 0 e incrementa
-    cada vez que la función es llamada, un vez cada que un juego de palabras es llamado.
-    Este modelo permite que la lista sugerida crezca infinítamente mientras el hace scroll.
+    cada vez que la función es llamada. Este incrementa dos veces por cada pareja de palabras sugeridas: 
+    una para el ListTile, y una para el Divider. Este modelo permie a la lista de sugerencias crecer infinitamente cuando el usuario hace scroll.
 
  2. Añade una función `_buildSuggestions()`, mostrada 
     abajo, a la clase `RandomWordsState` (borra los comentarios, si lo prefieres).

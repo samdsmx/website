@@ -33,7 +33,7 @@ a considerar al diseñar tu aplicación:
     vuelve a encontrar la misma instancia del hijo que en el frame anterior. Esta 
     técnica es muy utilizada en el framework para optimizar 
     animaciones cuando la animación no afecta al subárbol de hijos. Mira
-    el patrón [TransitionBuilder](https://docs.flutter.io/flutter/widgets/TransitionBuilder.html)
+    el patrón [TransitionBuilder]({{site.api}}/flutter/widgets/TransitionBuilder.html)
     y el [SlideTransition](https://github.com/xster/flutter/blob/9da3df5ba4e4cac46620e153bdf972ebde25bd58/packages/flutter/lib/src/widgets/transitions.dart#L229)
     los cuales utilizan estos principios para evitar reconstruir sus descendientes cuando se anima.
 
