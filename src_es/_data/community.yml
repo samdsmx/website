@@ -1,85 +1,29 @@
-- name: Github
-  featured: true
-  title: Dinos que quieres ver
+- name: "FlutterES Facebook"
   description: >
-    Una manera sencilla de enviar feedback es marcar como "me gusta" issues importantes para ti en GitHub
-  logo_src: community/logo-github.png
-  screen_src: community/screen-github.png
-  screen_class: border-top border-light p-3 shadow
-  learn_more_cta: See the issue tracker
-  learn_more_link: https://github.com/flutter/flutter/issues
+    Unete a la mayor comunidad de desarrolladores de Flutter de habla hispana.
+  logo_src: community/logo-facebook.png
+  learn_more_link: https://m.facebook.com/groups/flutter.dart.spanish/
 
-- name: Meetup
-  featured: true
-  title: Queda con otros usuarios de Flutter en tu area
+- name: "FlutterES Telegram"
   description: >
-    Aprende de otros desarrolladores y mira lo que la comunidad esta desarrollando con Flutter uniendote a los eventos de la comunidad alrededor del mundo
-  logo_src: community/logo-meetup.svg
-  screen_src: community/screen-meetup.png
-  learn_more_cta: Find an event near you
-  learn_more_link: https://www.meetup.com/find/?allMeetups=false&keywords=flutter&radius=Infinity&userFreeform=Santa+Clara%2C+CA&mcId=z95054&mcName=Santa+Clara%2C+CA&sort=recommended&eventFilter=mysugg
+    Unete al chat más activo, donde resolver rapidamente tus dudas sobre Flutter.
+  logo_src: community/logo-telegram.png
+  learn_more_link: https://t.me/flutter_dart_spanish
 
-- name: Stack Overflow
+- name: "@ESFlutter"
   description: >
-    Responde preguntas y soluciona problemas de tu app a través de la más fuerte comunidad de foro de mensajes.
-  logo_src: community/logo-stack-overflow.png
-  learn_more_link: https://stackoverflow.com/tags/flutter
-
-- name: Gitter
-  description: >
-    Unete a la conversación y mantente conectado con desarrolladores alrededor del globo que estan construyendo apps con Flutter.
-  logo_src: community/logo-gitter.svg
-  learn_more_link: https://gitter.im/flutter/flutter
-
-- name: Google Groups
-  description: >
-    Responde preguntas y soluciona problemas de tu app con el soporte de la comunidad 
-    Google. O apúntate para anuncios de Flutter.
-  logo_src: community/logo-google.png
-  learn_more_link:
-    - name: flutter-announce
-      url: https://groups.google.com/forum/#!forum/flutter-announce
-    - name: flutter-dev
-      url: https://groups.google.com/forum/#!forum/flutter-dev
-
-- name: "@flutter.io"
-  description: >
-    Sigue al equipo de Flutter en tiempo real con información sobre nuevas características, eventos, y más.
+    Sigue a la comunidad FlutterES en tiempo real con información sobre nuevas características, eventos, y más.
   logo_src: community/logo-twitter.png
-  learn_more_link: https://twitter.com/flutterio
+  learn_more_link: https://twitter.com/EsFlutter
 
 - name: Medium
   description: >
-    Obtén las ultimas noticias y Get the latest news y artículos de un diverso grupo de usuarios que usan Flutter.
+    Obtén las ultimas noticias y artículos en español sobre Flutter.
   logo_src: community/logo-medium.png
-  learn_more_link: https://medium.com/flutter-io
+  learn_more_link: https://medium.com/comunidad-flutter
 
-- name: Flutter Community Slack
+- name: FlutterES Comunidad Slack
   description: >
     Conecta y trabaja tus problemas con un grupo de personas experimentadas en Flutter.
   logo_src: community/logo-slack.png
-  learn_more_link: https://fluttercommunity.dev/joinslack
-
-- name: Flutter YouTube
-  description: >
-    Mira estos videos para aprender de Google y desarrolladores con Flutter.
-  logo_src: community/logo-youtube.png
-  learn_more_link: https://www.youtube.com/playlist?list=PLOU2XLYxmsIJ7dsVN4iRuA7BT8XHzGtCr
-
-- name: r/FlutterDev
-  description: >
-    Unéte a la gran comunidad en Reddit con discusiones sobre cada aspecto de Flutter.
-  logo_src: community/logo-reddit.png
-  learn_more_link: https://www.reddit.com/r/FlutterDev/
-
-- name: Discord
-  description: >
-    Habla con otros desarrolladores sobre cualquier tema relacionado con Flutter, y comparte recursos útiles.
-  logo_src: community/logo-discord.png
-  learn_more_link: https://discord.gg/N7Yshp4
-
-- name: UX Research
-  description: >
-    Apúntate para participar en el UX research plan y estar al corriente de la progresión de Flutter.
-  logo_src: community/logo-google-forms.png
-  learn_more_link: https://docs.google.com/forms/d/e/1FAIpQLSe0i4De809KXVCdljGKrjMj3lxhuzbuFKCtY5PEQPCYtGxFMg/viewform
+  learn_more_link: https://bit.ly/FlutterDevsEnEspanol

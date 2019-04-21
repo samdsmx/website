@@ -1,0 +1,59 @@
+---
+title: Articulos
+layout: landing
+body_class: landing-page community
+---
+
+<section class="my-4 row text-center">
+    <div class="col-12">
+        <h1>Articulos sobre Flutter en Español</h1>
+    </div>
+</section>
+
+<section class="landing-page__case-studies text-center">
+         <div class="row">   
+        {% for case in site.data.articulos -%}
+            
+            {% assign learnMoreCta = case.learn_more_cta | default: 'Ver más' -%}
+                <div class="col-12 col-md-4">
+           
+                    <div class="card">
+                        
+                        <div class="card-body p-4">
+                            <h3>{{ case.name }}</h3>
+                            <p>{{ case.description }}</p>
+                        </div>
+                        <div class="card-footer card-footer--transparent card-footer--links">
+                            {% if case.learn_more_link[0] -%}
+                                <span class="dropdown">
+                                    <a href="#" class="dropdown-toggle" id="dropdownMenuButton{{ forloop.index }}" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                        {{ learnMoreCta }}
+                                    </a>
+                                    <div class="dropdown-menu" aria-labelledby="dropdownMenuButton{{ forloop.index }}">
+                                        {% for learnMoreCase in case.learn_more_link -%}
+                                            <a class="dropdown-item" href="{{learnMoreCase.url}}" target="_blank" rel="noopener">{{learnMoreCase.name}}</a>
+                                        {% endfor -%}
+                                    </div>
+                                </span>
+                            {% elsif case.learn_more_link -%}
+                                <a href="{{ case.learn_more_link }}">{{ learnMoreCta }}</a>
+                            {% endif -%}
+                            {% if case.play_store_link or case.app_store_link -%}
+                                <span class="dropdown">
+                                    <a href="#" class="dropdown-toggle" id="dropdownMenuButton{{ forloop.index }}" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                        Download
+                                    </a>
+                                    <div class="dropdown-menu" aria-labelledby="dropdownMenuButton{{ forloop.index }}">
+                                        {% if case.play_store_link %}<a class="dropdown-item" href="{{ case.play_store_link }}" target="_blank" rel="noopener">Android</a>{% endif -%}
+                                        {% if case.app_store_link %}<a class="dropdown-item" href="{{ case.app_store_link }}" target="_blank" rel="noopener">iOS</a>{% endif -%}
+                                    </div>
+                                </span>
+                            {% endif -%}
+                        </div>
+                    </div>
+                
+                </div>
+        {% endfor -%}
+    </div>
+    
+</section>

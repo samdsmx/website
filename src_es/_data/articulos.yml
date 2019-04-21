@@ -1,0 +1,329 @@
+- name: "Usando Pencil para hacer los MockUps de tus Apps."
+  description: >
+    19 Abril 2019 por Rurick M. Poisot
+  logo_src: 
+  learn_more_link: https://medium.com/comunidad-flutter/usando-pencil-para-hacer-los-mockups-de-tus-apps-b0b7172480e0
+
+- name: "Flutter Hot Reload no re-ejecuta el código."
+  description: >
+    19 Abril 2019 por Cesar Vega
+  logo_src: 
+  learn_more_link: https://medium.com/comunidad-flutter/flutter-hot-reload-no-re-ejecuta-el-código-4a507d6b9279
+
+- name: "Descifrando Coding Interview en Flutter: Diseñando el Call Center."
+  description: >
+    13 Abril 2019 por Cesar Vega
+  logo_src: 
+  learn_more_link: https://medium.com/comunidad-flutter/descifrando-coding-interview-en-flutter-diseñando-el-call-center-a3fb6b79b6ab
+
+- name: "Usando Streams en Flutter."
+  description: >
+    12 Abril 2019 por Cesar Vega
+  logo_src: 
+  learn_more_link: https://medium.com/comunidad-flutter/usando-streams-en-flutter-28c9357772a9
+
+- name: "Código efectivo en tu aplicación Flutter desde el principio."
+  description: >
+    11 Abril 2019 por Carlos Millan
+  logo_src: 
+  learn_more_link: https://medium.com/comunidad-flutter/código-efectivo-en-tu-aplicación-flutter-desde-el-principio-b88715e90019
+
+- name: "Acciones y/o Transiciones Después de un StreamBuilder."
+  description: >
+    3 Abril 2019 por Eduardo Graciano
+  logo_src: 
+  learn_more_link: https://medium.com/comunidad-flutter/realizar-acciones-o-transiciones-después-de-un-streambuilder-e9d2c549461a
+
+- name: "Llaves! ¿Para que son buenas?"
+  description: >
+    30 Marzo 2019 por Eduardo Graciano
+  logo_src: 
+  learn_more_link: https://medium.com/comunidad-flutter/llaves-para-que-son-buenas-aec7b539ee2a
+
+- name: "No todas las animaciones son complejas."
+  description: >
+    28 Marzo 2019 por Argel Bejarano
+  logo_src: 
+  learn_more_link: https://medium.com/comunidad-flutter/no-todas-las-animaciones-son-complejas-c1c0faadedd5
+
+- name: "Anunciando — Dash."
+  description: >
+    26 Marzo 2019 por Cesar Vega
+  logo_src: 
+  learn_more_link: https://medium.com/comunidad-flutter/anunciando-dash-3c8b68bc5b03
+
+- name: "Implementa Arquitectura a tu proyecto Flutter usando el patrón BLOC (Parte 2)"
+  description: >
+    24 Marzo 2019 por Cesar Vega
+  logo_src: 
+  learn_more_link: https://medium.com/comunidad-flutter/implementa-arquitectura-a-tu-proyecto-flutter-usando-el-patrón-bloc-parte-2-91a8956980b4
+
+- name: "Implementa Arquitectura a tu proyecto Flutter usando el patrón BLOC"
+  description: >
+    24 Marzo 2019 por Cesar Vega
+  logo_src: 
+  learn_more_link: https://medium.com/comunidad-flutter/implementa-arquitectura-a-tu-proyecto-flutter-usando-el-patrón-bloc-2cb031722166
+
+- name: "Flutter Deep Dive, Parte 4: “RenderFlex children have non-zero flex…”"
+  description: >
+    22 Marzo 2019 por Argel Bejarano
+  logo_src: 
+  learn_more_link: https://medium.com/comunidad-flutter/flutter-deep-dive-parte-4-renderflex-children-have-non-zero-flex-9d9f9133f476
+
+- name: "Flutter Deep Dive, Parte 3: “RenderFlex children have non-zero flex…”"
+  description: >
+    22 Marzo 2019 por Argel Bejarano
+  logo_src: 
+  learn_more_link: https://medium.com/comunidad-flutter/flutter-deep-dive-parte-3-renderflex-children-have-non-zero-flex-885c825902d
+
+- name: "Flutter Deep Dive, Parte 2: “RenderFlex children have non-zero flex…”"
+  description: >
+    22 Marzo 2019 por Argel Bejarano
+  logo_src: 
+  learn_more_link: https://medium.com/comunidad-flutter/flutter-deep-dive-parte-2-renderflex-children-have-non-zero-flex-5d889d14cc9d
+
+- name: "Comunicación entre Widgets"
+  description: >
+    21 Marzo 2019 por Diego Velazquez
+  logo_src: 
+  learn_more_link: https://medium.com/comunidad-flutter/comunicación-entre-widgets-5f61b6c2e56c
+
+- name: "Haciendo de Dart un mejor lenguaje para UI"
+  description: >
+    20 Marzo 2019 por Cesar Vega
+  logo_src: 
+  learn_more_link: https://medium.com/comunidad-flutter/haciendo-de-dart-un-mejor-lenguaje-para-ui-5f67065f4003
+
+- name: "Cero a Uno con Flutter"
+  description: >
+    20 Marzo 2019 por Eduardo Graciano
+  logo_src: 
+  learn_more_link: https://medium.com/comunidad-flutter/cero-a-uno-con-flutter-76ca09d4a30
+
+- name: "Lo revolucionario de Flutter"
+  description: >
+    18 Marzo 2019 por Cesar Vega
+  logo_src: 
+  learn_more_link: https://medium.com/comunidad-flutter/lo-revolucionario-de-flutter-425d4e43de8d
+
+- name: "Programación reactiva"
+  description: >
+    12 Marzo 2019 por Cesar Vega
+  logo_src: 
+  learn_more_link: https://medium.com/comunidad-flutter/programación-reactiva-815b826c527a
+
+- name: "Cómo solucionar la incompatibilidad de AndroidX en Flutter"
+  description: >
+    8 Marzo 2019 por Carlos Millan
+  logo_src: 
+  learn_more_link: https://medium.com/comunidad-flutter/cómo-solucionar-la-incompatibilidad-de-androidx-en-flutter-8bce978748b9
+
+- name: "Formas sencillas de pasar y compartir datos con widgets / pages"
+  description: >
+    6 Marzo 2019 por Carlos Millan
+  logo_src: 
+  learn_more_link: https://medium.com/comunidad-flutter/formas-sencillas-de-pasar-y-compartir-datos-con-widgets-pages-3489d2fab49f
+
+- name: "Flutter: Cómo informar errores."
+  description: >
+    5 Marzo 2019 por Eduardo Graciano
+  logo_src: 
+  learn_more_link: https://medium.com/comunidad-flutter/flutter-cómo-informar-errores-5c98078c2586
+
+- name: "¿Por qué Flutter usa Dart?"
+  description: >
+    5 Marzo 2019 por Cesar Vega
+  logo_src: 
+  learn_more_link: https://medium.com/comunidad-flutter/por-qué-flutter-usa-dart-8e7703650def
+
+- name: "S.O.L.I.D Los primeros 5 principios del diseño orientado a objetos con Dart."
+  description: >
+    1 Marzo 2019 por Cesar Vega
+  logo_src: 
+  learn_more_link: https://medium.com/comunidad-flutter/s-o-l-i-d-los-primeros-5-principios-del-diseño-orientado-a-objetos-con-dart-49f7e4e86d1a
+
+- name: "Empezando con Testmagic."
+  description: >
+    28 Febrero 2019 por Argel Bejarano
+  logo_src: 
+  learn_more_link: https://medium.com/comunidad-flutter/empezando-con-testmagic-5295af8853b4
+
+- name: "Lanzamiento de Flutter 1.2 en el Mobile World Congress."
+  description: >
+    27 Febrero 2019 por Carlos Millan
+  logo_src: 
+  learn_more_link: https://medium.com/comunidad-flutter/lanzamiento-de-flutter-1-2-en-el-mobile-world-congress-f257ed6b5887
+
+- name: "Comprendiendo el manejo de estado y por que nunca lo harás…"
+  description: >
+    26 Febrero 2019 por Argel Bejarano
+  logo_src: 
+  learn_more_link: https://medium.com/comunidad-flutter/comprendiendo-el-manejo-de-estado-y-por-que-nunca-lo-harás-abe0d0bd77bc
+
+- name: "Flutter: Push, Pop, Push."
+  description: >
+    26 Febrero 2019 por Eduardo Graciano
+  logo_src: 
+  learn_more_link: https://medium.com/comunidad-flutter/flutter-push-pop-push-f76795b8bc07
+
+- name: "Flutter Vision — Flutter + Firebase ML Vision + Firebase Cloud Firestore."
+  description: >
+    25 Febrero 2019 por Cesar Vega
+  logo_src: 
+  learn_more_link: https://medium.com/comunidad-flutter/flutter-vision-flutter-firebase-ml-vision-firebase-cloud-firestore-cdeed1409af3
+
+- name: "Introducción a Dart VM."
+  description: >
+    22 Febrero 2019 por Cesar Vega
+  logo_src: 
+  learn_more_link: https://medium.com/comunidad-flutter/introducción-a-dart-vm-889aedcd9c00
+
+- name: "Diseño avanzado en Flutter — Flow."
+  description: >
+    21 Febrero 2019 por Carlos Millan
+  logo_src: 
+  learn_more_link: https://medium.com/comunidad-flutter/diseño-avanzado-en-flutter-flow-c0cec5927a6e
+
+- name: "Asegurando Aplicaciones Flutter."
+  description: >
+    19 Febrero 2019 por Cesar Vega
+  logo_src: 
+  learn_more_link: https://medium.com/comunidad-flutter/asegurando-aplicaciones-flutter-4ea1661171a6
+
+- name: "Flutter: No temas al Garbage Collector."
+  description: >
+    18 Febrero 2019 por Cesar Vega
+  logo_src: 
+  learn_more_link: https://medium.com/comunidad-flutter/flutter-no-temas-al-garbage-collector-dfd46f7eb903
+
+- name: "Flutter +MLKit = ❤."
+  description: >
+    11 Febrero 2019 por Cesar Vega
+  logo_src: 
+  learn_more_link: https://medium.com/comunidad-flutter/flutter-mlkit-7c16f559eac8
+
+- name: "Flutter — Atajos del IDE para Desarrollo Rápido."
+  description: >
+    5 Febrero 2019 por Carlos Millan
+  logo_src: 
+  learn_more_link: https://medium.com/comunidad-flutter/flutter-atajos-del-ide-para-desarrollo-rápido-20f0ea1d7ce4
+
+- name: "Flutter app architecture 101: Vanilla, Scoped Model, BLoC."
+  description: >
+    4 Febrero 2019 por Eduardo Graciano
+  logo_src: 
+  learn_more_link: https://medium.com/comunidad-flutter/flutter-app-architecture-101-vanilla-scoped-model-bloc-5a488f880d9f
+
+- name: "Protocol buffers."
+  description: >
+    3 Febrero 2019 por Cesar Vega
+  logo_src: 
+  learn_more_link: https://medium.com/comunidad-flutter/protocol-buffers-50918e988890
+
+- name: "Poniendo los métodos build a dieta: trucos y consejos para un código de UI mas limpio en Flutter."
+  description: >
+    2 Febrero 2019 por Rurick M. Poisot
+  logo_src: 
+  learn_more_link: https://medium.com/comunidad-flutter/poniendo-los-métodos-build-a-dieta-trucos-y-consejos-para-un-código-de-ui-mas-limpio-en-flutter-cbc1a158723f
+
+- name: "El poder de los WebViews en Flutter."
+  description: >
+    1 Febrero 2019 por Argel Bejarano
+  logo_src: 
+  learn_more_link: https://medium.com/comunidad-flutter/el-poder-de-los-webviews-en-flutter-950bbb56db08
+
+- name: "Serie Flutter Animated: Opacidad Animada."
+  description: >
+    31 Enero 2019 por Carlos Millan
+  logo_src: 
+  learn_more_link: https://medium.com/comunidad-flutter/serie-flutter-animated-opacidad-animada-3f496af48eb4
+
+- name: "Container en Flutter: No es el <div> de Papá…"
+  description: >
+    31 Enero 2019 por Argel Bejarano
+  logo_src: 
+  learn_more_link: https://medium.com/comunidad-flutter/container-en-flutter-no-es-el-div-de-papá-ae61de156644
+
+- name: "Serie Flutter Animated: Containers Animados."
+  description: >
+    29 Enero 2019 por Carlos Millan
+  logo_src: 
+  learn_more_link: https://medium.com/comunidad-flutter/serie-flutter-animated-containers-animados-7b9d22a42310
+
+- name: "Flutter Widgets 08 | Scaffold."
+  description: >
+    25 Enero 2019 por Eduardo Graciano
+  logo_src: 
+  learn_more_link: https://medium.com/comunidad-flutter/flutter-widgets-08-scaffold-5455cd1714b5
+
+- name: "Modos de ejecución de código en Flutter."
+  description: >
+    24 Enero 2019 por Cesar Vega
+  logo_src: 
+  learn_more_link: https://medium.com/comunidad-flutter/modos-de-ejecución-de-código-en-flutter-f7941030e3a1
+
+- name: "Shared Preferences: ¿Cómo guardar la configuración de la aplicación Flutter y las preferencias del usuario para su posterior reutilización?"
+  description: >
+    21 Enero 2019 por Carlos Millan
+  logo_src: 
+  learn_more_link: https://medium.com/comunidad-flutter/shared-preferences-cómo-guardar-la-configuración-de-la-aplicación-flutter-y-las-preferencias-del-8bbd30cd7dbc
+
+- name: "Como ver los bordes de diseño en Flutter."
+  description: >
+    19 Enero 2019 por Rurick M. Poisot
+  logo_src: 
+  learn_more_link: https://medium.com/comunidad-flutter/como-ver-los-bordes-de-diseño-en-flutter-f06b0b0ec768
+
+- name: "Fundamentos de Streams en Dart."
+  description: >
+    10 Enero 2019 por Argel Bejarano
+  logo_src: 
+  learn_more_link: https://medium.com/comunidad-flutter/fundamentos-de-streams-en-dart-3a4030636516
+
+- name: "Trabajando con Layouts en Flutter."
+  description: >
+    1 Enero 2019 por Argel Bejarano
+  logo_src: 
+  learn_more_link: https://medium.com/comunidad-flutter/trabajando-con-layouts-en-flutter-30a78e2a3496
+
+- name: "Google Maps en Flutter."
+  description: >
+    12 Diciembre 2018 por Argel Bejarano
+  logo_src: 
+  learn_more_link: https://medium.com/comunidad-flutter/google-maps-en-flutter-22b481372f7a
+
+- name: "Utilizando Flare con Flutter."
+  description: >
+    11 Diciembre 2018 por Argel Bejarano
+  logo_src: 
+  learn_more_link: https://medium.com/comunidad-flutter/utilizando-flare-con-flutter-57b53c5ee72d
+
+- name: "Login Básico Flutter."
+  description: >
+    7 Noviembre 2018 por Argel Bejarano
+  logo_src: 
+  learn_more_link: https://medium.com/comunidad-flutter/login-básico-flutter-e0a479c38036
+
+- name: "Widgets Básicos en Flutter."
+  description: >
+    3 Noviembre 2018 por Argel Bejarano
+  logo_src: 
+  learn_more_link: https://medium.com/comunidad-flutter/widgets-básicos-en-flutter-b6821ac8d2a0
+
+- name: "Clase Scaffold en Flutter."
+  description: >
+    26 Octubre 2018 por Argel Bejarano
+  logo_src: 
+  learn_more_link: https://medium.com/comunidad-flutter/clase-scaffold-en-flutter-28b2789eae10
+
+- name: "Slivers al Descubierto."
+  description: >
+    22 Octubre 2018 por Argel Bejarano
+  logo_src: 
+  learn_more_link: https://medium.com/comunidad-flutter/slivers-desenmascarado-a44781aa7597
+
+- name: "Trabajando con API en Flutter."
+  description: >
+    20 Octubre 2018 por Argel Bejarano
+  logo_src: 
+  learn_more_link: https://medium.com/comunidad-flutter/trabajando-con-api-en-flutter-2e49b78b6b98

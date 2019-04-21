@@ -6,10 +6,10 @@ body_class: landing-page community
 
 <section class="community__intro row text-center">
     <div class="col-12">
-        <h1>Bienvenido a la comunidad Flutter</h1>
+        <h1>Bienvenido a la comunidad de habla hispana FlutterES</h1>
         <p class="community__intro__description">
-            ¡Somos de código abierto y nos encantaría saber de ti! A continuación encontrarás
-            formas de involucrarte en la comunidad Flutter así como enlaces a 
+            A continuación encontrarás formas de involucrarte en la 
+            comunidad FlutterES así como enlaces a 
             recursos que puede ayudar a responder tus dudas.
             Si estas en China, lee
             <a href="/community/china">Usas Flutter en China</a>.
@@ -19,7 +19,7 @@ body_class: landing-page community
 
 {% comment %}
     Servicios destacados
-{% endcomment -%}
+
 {% for case in site.data.community -%}
 {% if case.featured -%}
     <section class="card">
@@ -48,6 +48,7 @@ body_class: landing-page community
     </section>
 {% endif -%}
 {% endfor -%}
+{% endcomment -%}
 
 {% comment %}
     Otros servicios
@@ -60,7 +61,7 @@ body_class: landing-page community
                 <h2>Unete a la conversación</h2>
                 <p>
                     Obten respuestas a tus preguntas y mantente actualizado con todo lo nuevo y excitante que ocurre en la 
-                    comunidad Flutter revisando los siguientes enlaces
+                    comunidad FlutterES revisando los siguientes enlaces
                 </p>
             </div>
         </div>
@@ -69,7 +70,7 @@ body_class: landing-page community
             {% if case.featured -%}
                 {% continue -%}
             {% endif -%}
-            {% assign learnMoreCta = case.learn_more_cta | default: 'Learn more' -%}
+            {% assign learnMoreCta = case.learn_more_cta | default: 'Ver más' -%}
 
             {% capture loopCount %}{% increment communityCounter %}{% endcapture -%}
             {% capture modulo3 %}{{ loopCount | modulo:3 }}{% endcapture -%}
