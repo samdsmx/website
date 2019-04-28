@@ -141,7 +141,7 @@ En Xcode, configura la versión de la aplicación y compila:
 1. Selecciona **Product > Destination > Generic iOS Device**.
 1. Selecciona **Runner** en el navegador de proyectos Xcode a continuación selecciona el target **Runner**
    en la barra lateral de la vista de configuración.
-1. En la sección Identity, actualisa la **Versión** con el número de versión que verá 
+1. En la sección Identity, actualiza la **Versión** con el número de versión que verá 
 el usuario que desees publicar
 1. En la sección Identidad, actualiza el identificador **Build** a un número de 
 compilación único que se utiliza para rastrear esta compilación en App Store Connect. 
