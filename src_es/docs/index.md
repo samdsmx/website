@@ -23,15 +23,16 @@ description: La landing page para la documentación de Flutter.
 
 ## Que hay de nuevo en este sitio
 
-**26 de Febrero, 2019 **
+**7 de Mayo, 2019 Google I/O **
 
-Flutter released [version
-1.2](https://developers.googleblog.com/2019/02/launching-flutter-12-at-mobile-world.html)
-en Mobile World Congress (MWC) en Barcelona. Para más información, mira las 
-[release notes](https://github.com/flutter/flutter/wiki/Release-Notes---Flutter-1.2.1)
+[Flutter 1.5](https://developers.googleblog.com/2019/05/Flutter-io19.html) ha sido lanzado!
+
+Para más información de las actualizaciones, mira las [release
+notes](https://github.com/flutter/flutter/wiki/Release-Notes-Flutter-1.5.4)
 o [descarga el release](/docs/development/tools/sdk/archive).
 
-Para una lista de nuevos documentos, mira [que hay de nuevo](/docs/whats-new-archive).
+
+[Archivo de noticias](/docs/whats-new-archive).
 
 ## ¿Nuevo en Flutter?
 

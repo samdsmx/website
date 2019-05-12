@@ -17,7 +17,7 @@ trabajar para corregirlos.
 ¿Cómo puedes determinar con qué frecuencia tus usuarios experimentan bugs? Cada vez que 
 ocurre un error, puedes crear un informe que contenga el error que ocurrió y el stacktrace asociado. 
 A continuación, puedes enviar el informe a un servicio de seguimiento de errores, 
-como Sentry, Fabric, o Rollbar. 
+como Sentry, Fabric, o [Rollbar](https://rollbar.com/). 
 
 El servicio de seguimiento de errores agregará todos las caídas que experimentan nuestros usuarios y 
 las agrupará para nosotros. Esto nos permite saber con qué frecuencia nuestra aplicación falla y 

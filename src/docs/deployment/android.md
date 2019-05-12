@@ -253,7 +253,7 @@ The release bundle for your app is created at
 
 {{site.alert.note}}
   As of this writing, the app bundle command only generates **armeabi-v7a**
-  compatible libs. Follow [Issue 18494]() for more information.
+  compatible libs. Follow [Issue 18494][Issue 18494] for more information.
 {{site.alert.end}} 
 
 ## Testing an app Bundle
@@ -263,7 +263,7 @@ ways in which to test an app bundle.
 
 ### Offline using the bundle tool
 
-1. If you have done done so already, download `bundletool` from the
+1. If you have done so already, download `bundletool` from the
 [GitHub repository](https://github.com/google/bundletool).
 1. [Generate a set of
 APKs](https://developer.android.com/studio/command-line/bundletool#generate_apks)

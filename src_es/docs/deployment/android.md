@@ -253,7 +253,7 @@ El release bundle para tu app se crea en
 
 {{site.alert.note}}
   A partir de escribir esto, el comando app bundle solo genera libs compatibles con 
-  **armeabi-v7a**. Sigue [Issue 18494]() para más información.
+  **armeabi-v7a**. Sigue [Issue 18494][Issue 18494] para más información.
 {{site.alert.end}} 
 
 ## Probar un app Bundle

@@ -24,7 +24,7 @@ buscadores disponibles, por favor consulta la documentación de
 [`CommonFinders`]({{api}}/flutter_driver/CommonFinders-class.html).
 
 Si no estás familiarizado con Widget testing y el rol de las clases `Finder`, por favor revisa 
-la receta [Introducción al Widget testing](/docs/cookbook/testing/integration). 
+la receta [Introducción al widget testing](/docs/cookbook/testing/integration). 
 
 ### Instrucciones
 

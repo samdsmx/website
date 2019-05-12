@@ -78,7 +78,8 @@ El GIF animado muestra como trabaja la app al completar la parte 1.
 <?code-excerpt path-base="codelabs/startup_namer/step1_base"?>
 
 Crear un app sencilla desde una plantilla de Flutter, utilizando las instrucciones en
-[Iniciando con tu primer app de Flutter.](/docs/get-started/test-drive#create-app)
+[Iniciando con tu primer app de 
+Flutter.](/docs/get-started/test-drive#create-app)
 Nombre del proyecto **startup_namer** (en lugar de _myapp_).
 
 {{site.alert.tip}}

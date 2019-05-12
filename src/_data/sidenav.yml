@@ -24,6 +24,8 @@
           permalink: /docs/get-started/flutter-for/web-devs
         - title: Flutter for Xamarin.Forms devs
           permalink: /docs/get-started/flutter-for/xamarin-forms-devs
+        - title: Introduction to declarative UI
+          permalink: /docs/get-started/flutter-for/declarative
     - title: "Dart language overview"
       permalink: https://www.dartlang.org/guides/language
 
@@ -132,7 +134,7 @@
         - title: Background processes
           permalink: /docs/development/packages-and-plugins/background-processes
         - title: Package site
-          permalink: https://pub.dartlang.org/flutter
+          permalink: https://pub.dev/flutter
     - title: Tools & techniques
       permalink: /docs/development/tools
       children:
@@ -192,6 +194,8 @@
       permalink: /docs/resources/bootstrap-into-dart
     - title: Inside Flutter
       permalink: /docs/resources/inside-flutter
+    - title: Platform adaptations
+      permalink: /docs/resources/platform-adaptations
     - title: Technical overview
       permalink: /docs/resources/technical-overview
     # - title: Flutter best practices # TODO
@@ -210,4 +214,4 @@
     - title: API reference
       permalink: https://docs.flutter.io
     - title: Package site
-      permalink: https://pub.dartlang.org/flutter
+      permalink: https://pub.dev/flutter

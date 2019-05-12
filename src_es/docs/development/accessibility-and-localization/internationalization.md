@@ -46,7 +46,7 @@ paquete `intl`]({{site.github}}/flutter/website/tree/master/src/_includes/code/i
 Por defecto Flutter, solo proporciona localizaciones para US English. Para añadir 
 soporte para otros idiomas, una aplicación debe especificar propiedades
 adicionales de MaterialApp, e incluir un paquete separado llamado `flutter_localizations`. 
-A Mayo de 2018, este paquete soporta 24 
+A Abril de 2019, este paquete soporta alrededor de 52 
 idiomas.
 
 Para usar flutter_localizations, añade el paquete como dependencia a tu fichero 
@@ -73,8 +73,9 @@ MaterialApp(
    GlobalWidgetsLocalizations.delegate,
  ],
  supportedLocales: [
-    const Locale('en', 'US'), // Inglés
-    const Locale('es', 'ES'), // Español
+    const Locale('en'), // Inglés
+    const Locale('es'), // Español
+    const Locale('zh'), // Chino
     // ... otras regiones que la app soporte
   ],
   // ...
@@ -185,9 +186,13 @@ del mismo tipo base sea especificado en el parámetro `localizationsDelegates`
 de la app.
 
 El paquete flutter_localizations incluye implementaciones multi-idioma 
-de los interfaces de localizacion llamadas GlobalMaterialLocalizations
-y GlobalWidgetsLocalizations. Las apps internacionales deben especificar 
-localization delegates para estas clases como se describe en
+de los interfaces de localizacion llamadas 
+[GlobalMaterialLocalizations]({{site.api}}/flutter/flutter_localizations/GlobalMaterialLocalizations-class.html)
+y 
+[GlobalWidgetsLocalizations]({{site.api}}/flutter/flutter_localizations/GlobalWidgetsLocalizations-class.html). 
+Las apps internacionales deben especificar 
+localization delegates para 
+estas clases como se describe en
 [configura una app internacionalizada.](#setting-up)
 
 {% prettify dart %}
@@ -200,8 +205,9 @@ MaterialApp(
    GlobalWidgetsLocalizations.delegate,
  ],
  supportedLocales: [
-    const Locale('en', 'US'), // English
-    const Locale('es', 'es_ES'), // Español
+    const Locale('en'), // English
+    const Locale('es'), // Español
+    const Locale('zh'), // Chino
     // ... otras regiones que la app soporte
   ],
   // ...
@@ -213,7 +219,7 @@ de las clases correspondientes. Por ejemplo,
 `GlobalMaterialLocalizations.delegate` es un LocalizationsDelegate
 que produce una instancia de GlobalMaterialLocalizations.
 
-A mayo de 2018, las clases global localization soportan [alrededor de 24
+A abril de 2019, las clases global localization soportan [alrededor de 52
 idiomas.]({{site.github}}/flutter/flutter/tree/master/packages/flutter_localizations/lib/src/l10n)
 
 <a name="defining-class"></a>
@@ -375,6 +381,95 @@ class DemoLocalizationsDelegate extends LocalizationsDelegate<DemoLocalizations>
   @override
   bool shouldReload(DemoLocalizationsDelegate old) => false;
 }
+{% endprettify %}
+
+<a name="adding-language"></a>
+## Añadir soporte para un nuevo idioma
+
+Una app que necesite soporte para un idioma que no este incluido en 
+[GlobalMaterialLocalizations]({{site.api}}/flutter/flutter_localizations/GlobalMaterialLocalizations-class.html)
+tiene un poco de trabajo extra que hacer: se debe proporcionar alrededor de 70 traducciones 
+ ("localizaciones") para palabras o frases.
+
+Como ejemplo, vamos a mostrar como añadir soporte para el idioma 
+Bielorruso.
+
+Una nueva subclase de GlobalMaterialLocalizations subclass define las 
+localizaciones que dependen de la biblioteca Material.
+Una nueva subclase de LocalizationsDelegate, que sirve como 
+una factoría para la subclase de GlobalMaterialLocalizations, 
+debe también definirse.
+
+Aqui está [el código fuente para un ejemplo completo](
+{{site.github}}/flutter/website/tree/master/examples/internationalization/add_language/lib/main.dart), 
+menos las traducciones bielorrusas reales, de una app que incluye soporte para un 
+nuevo idioma.
+
+La subclase específica de GlobalMaterialLocalizations se llama
+`BeMaterialLocalizations`, y la subclase de LocalizationsDelegate es
+`_BeMaterialLocalizationsDelegate`. El valor de 
+`BeMaterialLocalizations.delegate` es una instancia del delegado, y 
+esto es todo lo que se necesita para una app que use esta localización.
+
+La clase delegado incluye localizaciones de formatos básicos de fechas y 
+números. Todas las otras localizaciones son definidas por getters que devuelven un 
+String en BeMaterialLocalizations, como estos:
+
+{% prettify dart %}
+@override
+String get backButtonTooltip => r'Back';
+
+@override
+String get cancelButtonLabel => r'CANCEL';
+
+@override
+String get closeButtonLabel => r'CLOSE';
+
+// etc..
+{% endprettify %}
+
+Estas son las traducciones en inglés. Para completar la tarea necesitas 
+cambiarlos para que cada getter devuelva el string apropiado 
+en Bielorruso.
+
+Los getters devuelven "raw" Dart strings que tienen como prefijo una r, como
+`r'About $applicationName'`, porque algunas veces los strings contienen 
+variables con un prefijo `$`. Las variables son expandidas por los métodos 
+parametrizados de localización: 
+{% prettify dart %}
+@override
+String get aboutListTileTitleRaw => r'About $applicationName';
+
+@override
+String aboutListTileTitle(String applicationName) {
+  final String text = aboutListTileTitleRaw;
+  return text.replaceFirst(r'$applicationName', applicationName);
+}
+{% endprettify %}
+
+Para más información sobre los strings localizados, mira el  
+[flutter_localizations README](
+{{site.github}}/flutter/flutter/blob/master/packages/flutter_localizations/lib/src/l10n/README.md).
+
+Una vez hayas implementado tus subclases de idioma específicas de 
+GlobalMaterialLocalizations y LocalizationsDelegate, solo 
+necesitas añadir el idioma y la instancia delegada a tu app. 
+Aqui esta el código que configura el idioma de la app 
+a Bielorruso y añade la instancia del delegado BeMaterialLocalizations 
+a la lista de localizationsDelegates de la app:
+
+{% prettify dart %}
+MaterialApp(
+  localizationsDelegates: [
+    GlobalWidgetsLocalizations.delegate,
+    GlobalMaterialLocalizations.delegate,
+    BeMaterialLocalizations.delegate,
+  ],
+  supportedLocales: [
+    const Locale('be', 'BY')
+  ],
+  home: ...
+)
 {% endprettify %}
 
 <a name="dart-tools"></a>

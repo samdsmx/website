@@ -175,7 +175,7 @@ Es una práctica recomendada añadir la siguiente documentación a todos los paq
 
 1. Un fichero `README.md` que hace de introducción al paquete
 1. Un fichero `CHANGELOG.md` que documenta los cambios en cada versión
-1. Un fichero `LICENSE` conteniendo los términos bajo los que el paquete es licensiado
+1. Un fichero [`LICENSE`](#adding-licenses-to-the-license-file) conteniendo los términos bajo los que el paquete es licensiado
 1. Documentación de la API para todas las APIs públicas (mira abajo para más detalles)
 
 ### Documentación de API
@@ -204,6 +204,61 @@ Si quieres generar documentación de la API localmente en tu máquina de desarro
    `%FLUTTER_ROOT%\bin\cache\dart-sdk\bin\dartdoc` (en Windows)
 
 Para consejos sobre como escribir la documentación de la API, mira [Effective Dart: Documentation]({{site.dart-site}}/guides/language/effective-dart/documentation).
+
+### Añadir licencias al fichero LICENSE
+
+Cada licencia individual dentro del fichero LICENSE deben separarse por una 
+de 80 guiones.
+
+Si un fichero de LICENSE contiene más de una licensia de componente, cada 
+licencia de componente debe empezar con el nombre del paquete al que se aplica 
+esta licencia de componente, con cada nombre de paquete en su propia linea, y la 
+lista de nombres de paquetes separadas del texto de la licencia actual por una línea 
+en blanco. (Los paquete deben coincidir con el nombre del paquete en pub. Por
+ejemplo, un paquete puede contener código de múltiples fuentes de terceros, y 
+debe incluir una licencia para cada uno.)
+
+Good:
+```
+package_1
+
+<some license text>
+
+--------------------------------------------------------------------------------
+package_2
+
+<some license text>
+```
+
+Also good:
+```
+package_1
+
+<some license text>
+
+--------------------------------------------------------------------------------
+package_1
+package_2
+
+<some license text>
+```
+
+Bad:
+```
+<some license text>
+
+--------------------------------------------------------------------------------
+<some license text>
+```
+
+Also bad:
+```
+package_1
+
+<some license text>
+--------------------------------------------------------------------------------
+<some license text>
+```
 
 ## Publicando paquetes {#publish}
 

@@ -20,6 +20,9 @@ para móviles, pero tiene un sistema de plugin para comunicarse con (iOS y Andro
 que no sean de interfaz de usuario. Si eres un experto en desarrollo iOS, no tienes que 
 volver a aprenderlo todo para usar Flutter.
 
+Flutter también hace un gran número de adaptaciones en el framework por ti 
+cuando se ejecuta en iOS. Para un listado, mira [Adaptaciones de Plataforma](/docs/resources/platform-adaptations).
+
 Este documento puede ser utilizado como un cookbook, puedes saltar entre sus secciones y 
 encontrar las preguntas que son más relevantes a tus necesidades.
 
