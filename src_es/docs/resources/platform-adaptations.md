@@ -244,7 +244,7 @@ en *Android*.
 
 ### Volver arriba
 
-En **iOS**, tocando la barra de estado del SO provoca que el controlodar de scroll principal 
+En **iOS**, tocando la barra de estado del SO provoca que el controlador de scroll principal 
 haga scroll hacia la posición superior. No hay un compartamiento equivalente en **Android**.
 
 <div class="container">
@@ -467,7 +467,7 @@ suelta.
 Con **Material en Android**, arrastrar mientras se mantiene la presión larga expande 
 las palabras seleccionadas.
 
-Con **Material en iOS** o cuando se usa **Cupertino**, arrstrar mientras se mantiene la 
+Con **Material en iOS** o cuando se usa **Cupertino**, arrastrar mientras se mantiene la 
 presión larga mueve el cursor.
 
 <div class="container">

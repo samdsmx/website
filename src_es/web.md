@@ -11,7 +11,7 @@ incrustar en el navegador e implementar en cualquier servidor web.
 Puedes utilizar todas las funcionalidades de Flutter,
 y no necesitas un plug-in para el navegador.
 
-Flutter para web esta actualmente disponoble como technical preview.
+Flutter para web esta actualmente disponible como technical preview.
 
 Revisa el [repositorio](https://github.com/flutter/flutter_web)
 para las instrucciones sobre como empezar.
@@ -40,7 +40,7 @@ sea valioso en muchos escenarios. Por ejemplo:
   complemantaria a una aplicación web existente.
 
 * **Contenido interactivo incrustado.** Flutter proporciona un poderoso entorno 
-  para crear ricos componentes , basados en datos, que pueden ser facilmente 
+  para crear ricos componentes ,basados en datos, que pueden ser facilmente 
   alojados en una web existente. Ya sea para visualización de datos, una herramienta 
   online como un cofigurador para coches, o un gráfico incrustado, Flutter puede 
   proporcionar un enfoque de desarrollo productivo para contenido web incrustrado.
