@@ -14,7 +14,7 @@ herramientas en línea de comando. De cualquier manera, recomendamos utilizar al
 plugin para una mejor experiencia. Con nuestros plugins de edición, podrás auto completar código, 
 sintaxis resaltada, asistencia al editar widgets, apoyo para ejecutar & depurar, y más. 
 
-Siga los siguientes pasos para agregar un complemento al editor para Androind Studio, IntelliJ 
+Siga los siguientes pasos para agregar un complemento al editor para Android Studio, IntelliJ 
 o VS Code. Si quiere utilizar un editor diferente, está bien, simplemente salte al 
 [siguiente paso: crear y ejecutar tu primer app](/docs/get-started/test-drive).
 
@@ -37,12 +37,12 @@ o VS Code. Si quiere utilizar un editor diferente, está bien, simplemente salte
 
 Android Studio ofrece una experiencia completa e integrada del IDE para Flutter. 
 
-   * [Android Studio]({{site.android-dev}}/studio/index.html), version 3.0 o superior.
+   * [Android Studio]({{site.android-dev}}/studio/index.html), versión 3.0 o superior.
 
 Otra opción puede ser utilizar IntelliJ:
 
-   * [IntelliJ IDEA Community](https://www.jetbrains.com/idea/download/), version 2017.1 o superior.
-   * [IntelliJ IDEA Ultimate](https://www.jetbrains.com/idea/download/), version 2017.1 o superior.
+   * [IntelliJ IDEA Community](https://www.jetbrains.com/idea/download/), versión 2017.1 o superior.
+   * [IntelliJ IDEA Ultimate](https://www.jetbrains.com/idea/download/), versión 2017.1 o superior.
 
 ### Instalar los plugins de Flutter y Dart
 
@@ -70,7 +70,7 @@ VS Code es un editor ligero con Flutter, asistencia al ejecutar y depurar.
   1. Inicie VS Code
   1. Llame **View>Command Palette...**
   1. Teclee 'install', y seleccione la acción **'Extensions: Install Extension'**
-  1. Introduzca `flutter` en el campo de busqueda, seleccione 'Flutter' en la lista, 
+  1. Introduzca `flutter` en el campo de búsqueda, seleccione 'Flutter' en la lista, 
      y presione **Install**
 
 ## Valida tu configuración con Flutter Doctor
