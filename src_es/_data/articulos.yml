@@ -1,3 +1,57 @@
+- name: "Creando fondo Parallax en Flutter."
+  description: >
+    16 Mayo 2019 por Carlos Millán
+  logo_src: 
+  learn_more_link: https://medium.com/comunidad-flutter/creando-fondo-parallax-en-flutter-2a9794109bb2
+
+- name: "Uso del Tema Oscuro en Flutter."
+  description: >
+    16 Mayo 2019 por Rurick M. Poisot
+  logo_src: 
+  learn_more_link: https://medium.com/comunidad-flutter/uso-del-tema-oscuro-en-flutter-cf0771f0db2f
+
+- name: "Anunciando Dart 2.3: Optimizado para construir Interfaces de Usuario."
+  description: >
+    13 Mayo 2019 por Carlos Millán
+  logo_src: 
+  learn_more_link: https://medium.com/comunidad-flutter/anunciando-dart-2-3-optimizado-para-construir-interfaces-de-usuario-b3cce25c23ec
+
+- name: "Flutter para la Web."
+  description: >
+    11 Mayo 2019 por Eduardo CQ
+  logo_src: 
+  learn_more_link: https://medium.com/comunidad-flutter/flutter-para-la-web-91d8b217ad35
+
+- name: "Construya UI’s Responsivas en Flutter."
+  description: >
+    10 Mayo 2019 por Carlos Millán
+  logo_src: 
+  learn_more_link: https://medium.com/comunidad-flutter/construya-uis-responsivas-en-flutter-f528d16b50a4
+
+- name: "Decodificando FutureBuilder."
+  description: >
+    4 Mayo 2019 por Carlos Millán
+  logo_src: 
+  learn_more_link: https://medium.com/comunidad-flutter/decodificando-futurebuilder-b2248b4a5207
+
+- name: "Arquitectura Flutter-ScopedModel, una guía completa para la arquitectura del mundo real."
+  description: >
+    25 Abril 2019 por Carlos Millán
+  logo_src: 
+  learn_more_link: https://medium.com/comunidad-flutter/arquitectura-flutter-scopedmodel-una-gu%C3%ADa-completa-para-la-arquitectura-del-mundo-real-7301285e0d0d
+
+- name: "ScopedModel | App de Contador de Puntajes usando ScopedModel, otra manera de gestionar el estado de tu App en Flutter."
+  description: >
+    22 Abril 2019 por Carlos Millán
+  logo_src: 
+  learn_more_link: https://medium.com/comunidad-flutter/scopedmodel-app-de-contador-de-puntajes-usando-scopedmodel-forma-de-adminstraci%C3%B3n-de-estado-en-90f48a869f0e
+
+- name: "Google Maps en Flutter."
+  description: >
+    20 Abril 2019 por Eduardo CQ
+  logo_src: 
+  learn_more_link: https://medium.com/comunidad-flutter/google-maps-en-flutter-98bedecb528b
+
 - name: "Usando Pencil para hacer los MockUps de tus Apps."
   description: >
     19 Abril 2019 por Rurick M. Poisot
