@@ -9,10 +9,10 @@ velocidad.
 
 Las pruebas automatizadas se dividen en pocas categorías:
 
-- Un [_unit test_](#unit-tests) prueba una sola función, método o clase. 
-- Un [_widget test_](#widget-tests) (en otros frameworks de UI se refieren a ellas como
+* Un [_unit test_](#unit-tests) prueba una sola función, método o clase. 
+* Un [_widget test_](#widget-tests) (en otros frameworks de UI se refieren a ellas como
   _component test_) prueba un único widget. 
-- Un [_integration test_](#integration-tests)
+* Un [_integration test_](#integration-tests)
   prueba una app completa o una gran parte de la app.
   
 En términos generales, una aplicación bien probada tiene muchas pruebas unitarias y de widgets, seguidas por 

@@ -5,9 +5,12 @@ prev:
   path: /docs/development/data-and-backend/state-mgmt/simple
 ---
 
-La gestión del Estado es un tema complejo. Si sientes que algunas de tus preguntas no han sido contestadas, o que el enfoque descrito en estas páginas no es viable para tus casos de uso, probablemente tengas razón.
+La gestión del Estado es un tema complejo. Si sientes que algunas de tus preguntas no 
+han sido contestadas, o que el enfoque descrito en estas páginas no es viable para tus 
+casos de uso, probablemente tengas razón.
 
-Obtén más información en los siguientes enlaces, muchos de los cuales han sido aportados por la comunidad de Flutter:
+Obtén más información en los siguientes enlaces, muchos de los cuales han sido 
+aportados por la comunidad de Flutter:
 
 ## Vista general
 
@@ -23,11 +26,26 @@ Obtén más información en los siguientes enlaces, muchos de los cuales han sid
 * [Gestión de estado básico en Google Flutter]({{site.medium}}/@agungsurya/basic-state-management-in-google-flutter-6ee73608f96d),
   por Agung Surya
 
-## InheritedWidget &amp; Scoped model
+## InheritedWidget &amp; InheritedModel 
 
+* [Documentación sobre InheritedWidget](https://api.flutter.dev/flutter/widgets/InheritedWidget-class.html)
+* [Manejo del estado en una aplicación Flutter con InheritedWidgets]({{site.flutter-medium}}/managing-flutter-application-state-with-inheritedwidgets-1140452befe1),
+  por Hans Muller
+* [Inheriting Widgets](https://medium.com/@mehmetf_71205/inheriting-widgets-b7ac56dbbeb1),
+  por Mehmet Fidanboylu
 * [Usando Inherited Widgets efectivamente en 
 Flutter](https://ericwindmill.com/posts/inherited_widget/),
   por Eric Windmill
+* [Widget - State - Context - 
+  InheritedWidget](https://www.didierboelens.com/2018/06/widget---state---context---inheritedwidget/),
+  por Didier Bolelens
+
+## Provider &amp; Scoped Model
+
+* [Paquete Provider]({{site.pub-pkg}}/provider)
+* [Paquete Scoped Model]({{site.pub-pkg}}/scoped_model)
+* [Manejo de estado simple]({{site.url}}/docs/development/data-and-backend/state-mgmt/simple),
+  la página previa en esta sección
 * [Podrías no necesitar Redux: La edición de Flutter](https://proandroiddev.com/you-might-not-need-redux-the-flutter-edition-9c11eba006d7), por Ryan Edge
 * [Gestión de estado con el patrón scoped model en el 
 framework Flutter de Dart](https://www.youtube.com/watch?v=-MCeWP3rgI0), 
@@ -37,10 +55,6 @@ parte 1](https://www.youtube.com/watch?v=j-27MZwRbFw),
 un video por MTechViral
 * [Gestión de estado&mdash;scoped model en 
 Flutter](https://www.youtube.com/watch?v=Oql5bU-Uvso)
-* [Scoped model package]({{site.pub-pkg}}/scoped_model)
-* [Widget - State - Context - 
-InheritedWidget](https://www.didierboelens.com/2018/06/widget---state---context---inheritedwidget/), 
-por Didier Bolelens
 
 ## Redux
 
@@ -68,3 +82,8 @@ por Hillel Coren
 
 * [MobX.dart, Manejo de estado para tus aplicaciones Dart y Flutter](https://github.com/mobxjs/mobx.dart)
 * [Como empezar con MobX.dart](https://mobx.pub/getting-started)
+* [Flutter: Manejo de estado con Mobx](https://developer.school/posts/flutter-state-management-with-mobx/) por Paul Halliday
+
+## Provider
+
+* [Como empezar con Provider](https://developer.school/posts/flutter-provider-and-bloc-in-5-minutes/) por Paul Halliday

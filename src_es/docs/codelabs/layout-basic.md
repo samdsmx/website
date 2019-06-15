@@ -1,426 +1,432 @@
 ---
-title: "Codelab: Basic Flutter layout"
-description: "A codelab that uses DartPad2 to teach Flutter layout concepts."
+title: "Codelab: Layout básicos en Flutter"
+description: "Un codelab que usa DartPad2 para enseñar los conceptos de layout de Flutter."
 ---
 
 {{site.alert.note}}
-  This codelab is being used to test out some new features of
-  DartPad! You may encounter bugs,
-  malapropisms, annoyances, and other general weirdness.
-  If that happens, please take a moment to
-  [file a bug on GitHub](https://github.com/dart-lang/dart-pad/issues/new).
-  Feature requests and suggestions are also greatly appreciated.
+  Este codelab se está utilizando para probar algunas nuevas características de DartPad! Puedes encontrar fallos,
+  malapropismos, molestias, y otras rarezas.
+  Si esto ocurre, por favor toma un momento para 
+  [reportar un bug en GitHub](https://github.com/dart-lang/dart-pad/issues/new).
+  Requerimientos de características y sugerencias también son muy apreciadas.
 {{site.alert.end}}
 
 {{site.alert.note}}
-  This codelab is currently being developed and tested
-  with Chrome. There may be (in the short term) features that
-  work in some browsers and not others. If you encounter
-  any, please feel free to file bugs using the link above.
+  Este codelab actualmente ha sido desarrollado y probado con Chrome. Puede haber características (en el corto plazo) que funcionen en unos navegadores, pero no en otros. Si encuentras alguna, por favor siéntete libre de 
+  [archivar un bug en GitHub](https://github.com/flutter/flutter/issues/new),
+  etiquetando el issue con `platform-web`.
 {{site.alert.end}}
 
-`Row` and `Column` are two very important widgets in the Flutter universe.
-Want to put a `Text` widget with a label next to another `Text`
-widget with the corresponding value?  Use a `Row`.
-Want to present multiple pairs of labels and values?
-That's a `Column` of `Row`s. Forms with several fields,
-icons next to menu choices, buttons next to
-search bars, these are all places where `Row`s and `Column`s are used,
+`Row` y `Column` son dos widgets muy importantes en el universo Flutter.
+¿Quieres poner un widget `Text` con una etiqueta junto a otro widget `Text` con el valor correspondiente? Usa un `Row`.
+¿Quieres presentar múltiples parejas etiquetas y valores?
+Esto es un `Column` de `Row`s. Formularios con multitud de campos,
+iconos al lado de opciones de menu, botones junto a barras de búsqueda, todos estos son lugares donde son usados `Row`s y `Column`s.
 
-This codelab walks you through how `Row`s and `Column`s work.
-Because they're so similar, once you're done learning about 
-`Row`s, the codelab mostly shows you how all the same concepts apply
-to `Column`s. There are inline editors
-along the way so you can play around and test your knowledge.
+Este codelab te enseña como funcionan `Row`s y `Column`s.
+Como estos son muy similares, una vez hayas aprendido sobre las 
+`Row`s, el codelab principalmente te muestra como los mismos conceptos se aplican 
+a las `Column`s. Hay editores en linea en el camino
+para que puedas jugar y probar tus conocimientos.
 
-### Start with a Row and some children
+### Empieza con un Row y algunos hijos
 
-The whole point of a `Row` or `Column` is to contain
-other widgets, known as children. In a `Row`, children
-are arranged horizontally from first to last in accordance
-with text direction. If your device is set to
-English or another left-to-right language, it starts from the left.
-If you're using Arabic or another right-to-left language, it starts
-on the right and moves left.
+El objetivo de un `Row` o `Column` es contener 
+otros widgets, conocidos como hijos. En un `Row`, los hijos 
+son organizados horizontalmente desde el primero hasta el último de acuerdo 
+con la dirección de texto. Si tu dispositivo está configurado en 
+Español u otro lenguaje de escritura de izquierda a derecha, empieza por la izquierda.
+Si estas usando Árabe u otro lenguaje de escritura de derecha a izquierda, empieza 
+en la derecha y se añaden hacia la izquierda.
 
-#### Code example
+#### Ejemplo de Código
 
-Below is a widget called `MyWidget` that builds a single `Row`.
-Try adding three `BlueBox` widgets to its list of children.
+Abajo hay un widget llamado `MyWidget` que construye una única `Row`.
+Prueba a añadir tres widgets `BlueBox` a su lista de hijos.
 
 <iframe src="https://dartpad.dartlang.org/experimental/embed-new.html?id=76e993732820ef908ea8424744b9996d&fw=true" width="100%" height="400px"></iframe>
 
-### Main axis size
+### Tamaño del eje principal
 
-The main axis of a `Row` is the horizontal one (for
-`Column`s, it's the vertical axis). Each `Row` has a
-property called `mainAxisSize` that determines how much space
-it should take along that axis. By default,
-`mainAxisSize` is set to `MainAxisSize.max`, which
-causes a `Row` to take up all the available horizontal
-space. You can use `MainAxisSize.min` to direct a `Row`
-widget to take up as little space as possible.
+El eje principal de un `Row` es el horizontal (para las 
+`Column`s, es el eje vertical). Cada `Row` tiene una 
+propiedad llamada `mainAxisSize` que determina cuanto espacio 
+debe tomar a lo largo de este eje. Por defecto,
+`mainAxisSize` está fijado en `MainAxisSize.max`, lo cual 
+provoca que un `Row` tome todo el espacio 
+horizontal disponible. Puedes usar `MainAxisSize.min` para indicar a un 
+widget `Row` que tome el menor espacio posible.
 
-#### Code example
+#### Ejemplo de código
 
-Here's the example you just finished. Try setting the `Row`'s
-`mainAxisSize` property to `MainAxisSize.min` and see what happens.
+Aquí está el ejemplo que acaba de terminar. Prueba a fijar la propiedad `mainAxisSize` de `Row` a `MainAxisSize.min` y observa lo que ocurre.
 
 <iframe src="https://dartpad.dartlang.org/experimental/embed-new.html?id=9ac4ade5961150a27d3e547b667c8037&fw=true" width="100%" height="400px"></iframe>
 
-### Main axis alignment
+### Alineación en el eje principal
 
-If you've set the `mainAxisSize` of a `Row` to the minimum,
-there won't be any extra room beyond what the children use.
-If you've set it to `max`, though, the `Row` may have some
-additional space lying around.  You can use the `mainAxisAlignment`
-property to control how the `Row` aligns its children within that space.
+Si has fijado el `mainAxisSize` de un `Row` al mínimo,
+no habrá ningún espacio adicional que los hijos puedan usar.
+Si lo has fijado en `max`, sin embargo, el `Row` puede tener algun espacio adicional que usar. 
+Puedes usar la propiedad `mainAxisAlignment` para controlar como el `Row` alinea sus hijos entre 
+este espacio.
 
-There are six different values available in the `MainAxisAlignment` enum:
+Hay seis valores diferentes disponibles en el 
+enum `MainAxisAlignment`:
 
 * `MainAxisAligment.start`<br>
-   Place all children as close to the start of the `Row` as possible
-   (for left-to-right rows, this is the left side).
+   Coloca todos los hijos tan cerca del inicio del 
+   `Row` como sea posible
+   (para filas izquierda-a-derecha, este es el lado izquierdo).
 
 * `MainAxisAligment.end`<br>
-  Place all children as close to the end of the `Row` as possible.
+  Coloca todos lo hijos tan cerca del final del `Row` 
+  como sea posible.
 
 * `MainAxisAligment.center`<br>
-  Group the children together in the center of the `Row`.
+  Agrupa los hijos en el centro del `Row`.
 
 * `MainAxisAligment.spaceBetween`<br>
-  Any extra space is divided evenly and used to make gaps between the children.
+  Cualquier espacio extra es divido en partes iguales 
+  y usado para hacer separaciones entre los hijos.
 
 * `MainAxisAligment.spaceEvenly`<br>
-  Just like `spaceBetween`, except the spots before the first child
-  and after the last one also count as gaps.
+  Parecido a `spaceBetween`, excepto que cuenta el espacio 
+  antes del primer hijo y despues del último 
+  también como separaciones.
 
 * `MainAxisAligment.spaceAround`<br>
-  Just like `spaceEvenly`, only the first and last gaps get 50% of the
-  amount used between children.
+  Parecido a `spaceEvenly`, solo que en la primera y última separación solo 
+  toma el 50% de la cantidad de espacio usada entre los hijos.
 
-#### Code example
+#### Ejemplo de código
 
-The row below has its `mainAxisAlignment` set to start. Try changing it to the
-other values and re-running the code to see how things move around.
+El `Row` de abajo tiene su `mainAxisAlignment` fijado a 
+start. Prueba a cambiarlo a los otros valores 
+y volver a ejecutar el código para ver como las 
+cosas se mueven.
 
 <iframe src="https://dartpad.dartlang.org/experimental/embed-new.html?id=0c97de625a9aa5c3194f9eecbd73ec1a&fw=true" width="100%" height="400px"></iframe>
-### Cross axis alignment
 
-The cross axis for `Row` widgets is the vertical axis,
-and you can use the `crossAxisAlignment` property to
-control how children are positioned vertically.
-The default value is `CrossAxisAlignment.center`,
-but there are five options in total:
+### Alineación en el eje tranversal
+
+El eje transversal para los widgets `Row` es el eje vertical, 
+y puedes usar la propiedad `crossAxisAlignment` 
+para controlar como los hijos son posicionados verticalmente.
+El valro por defecto es `CrossAxisAlignment.center`,
+pero hay cinco opciones en total:
 
 * `CrossAxisAlignment.start`<br>
-  Children are aligned at the start of the `Row`'s vertical space
-  (by default, the top is considered to be the start,
-  though you can change that via the `verticalDirection` propert).
+  Los hijos son alineados al inicio del espacio 
+  vertical del `Row`
+  (por defecto, la parte superior se considera 
+  el inicio,
+  sin embargo puedes cambiar esto con la propiedad 
+  `verticalDirection`).
 
 * `CrossAxisAlignment.end`<br>
-  Children are aligned at the end of the `Row`'s
-  vertical space (by default, that means the bottom).
+  Los hijos son alineados al final del espacio vertical 
+  del `Row` (por defecto, esto significa la parte de abajo).
 
 * `CrossAxisAlignment.center`<br>
-  Children are centered with respect to the vertical axis.
+  Los hijos son centrados respecto al eje vertical.
 
 * `CrossAxisAlignment.stretch`<br>
-  Children are forced to have the same height as the
-  `Row` itself, filling all the vertical space.
+  Los hijos son forzados a tener la misma altura que el 
+  `Row`, rellenado todo el espacio vertical.
 
 * `CrossAxisAlignment.baseline`<br>
-  Children are aligned by their baselines (more on this one below).
+  Los hijos son alineados por sus lineas base (se explica más adelante).
 
-#### Code example
+#### Ejemplo de código
 
-This `Row` has two small children and one big one. Its
-`crossAxisAlignment` property is set to center, the default.
-Try changing it to the other values and re-running the code to
-see how things move around.
+Este `Row` tiene dos hijos pequeños y uno más grande. Su 
+propiedad `crossAxisAlignment` esta fijada a center, el valor por defecto.
+Pruebas a cambiarlo a los otros valores y re-ejecuta el 
+código para ver como las cosas se mueven.
 
-A word of warning: `CrossAxisAlignment.baseline` requires
-that another property be set as well, so you
-will see an error if you try that one.
-Don't worry, though&mdash;it's covered in the next section.
+Advertencia: `CrossAxisAlignment.baseline` requiere
+que otra propiedad sea fijada también, verás 
+un error si lo intentas.
+No te preocupes, esto se verá en la siguiente sección.
 
 <iframe src="https://dartpad.dartlang.org/experimental/embed-new.html?id=610aa31bbd09c90b5cede790bb6c3854&fw=true" width="100%" height="400px"></iframe>
 
-### Baseline alignment
+### Alineación con linea base
 
-Sometimes it's handy to align widgets containing text not by their
-overall bounds, but by the baselines used by their characters.
-That's what `CrossAxisAlignment.baseline` is for. You
-can use it in combination with a `Row`'s `textBaseline`
-property (which indicates which baseline to use) to align a
-`Row`'s children along their baselines.
+Algunas veces es práctico alinear widgets que 
+contienen texto no por sus límites generales, 
+sino por la linea base usada por sus carácteres.
+Esto es lo que hace `CrossAxisAlignment.baseline`. Puedes 
+usar esto en combinación con la propiedad `textBaseline` de `Row` (que indica que linea base usar) para alinear 
+los hijos del `Row` a lo largo de sus lineas base.
 
-Note that if you set a `Row`'s `crossAxisAlignment` property
-to baseline without setting `textBaseline` at the same
-time, your widgets will fail to build.
+Si fijas la propiedad `crossAxisAlignment` de `Row` 
+a baseline sin fijar `textBaseline` al mismo tiempo, 
+tus widgets fallarán al construirse.
 
-#### Code example
+#### Ejemplo de código
 
-This row contains three `Text` widgets with different font
-sizes. Try changing the `crossAxisAlignment`
-property to `baseline`, and experiment with different
-values for `textBaseline` as well (there's an enum called
-`TextBaseline` that contains the valid baseline values).
+Este `Row` contiene tres widgets `Text` con diferentes tamaños de fuente. Prueba a cambiar la propiedad 
+ `crossAxisAlignment` a `baseline`, y experimenta con los 
+ diferentes valores para `textBaseline` también (hay un enum llamado `TextBaseline` que contiene los valores 
+ validos para baseline).
 
 <iframe src="https://dartpad.dartlang.org/experimental/embed-new.html?id=8c4a0571b161755c8d9235df947d268e&fw=true" width="100%" height="400px"></iframe>
 
-### Flexible children
+### Hijos flexibles
 
-So far, all the widgets used as children in examples have
-had a fixed size. It's possible, though, for a
-`Row` to have children that flex,
-and adapt to the available space. In order to
-understand how this works,
-it's best to take a look at how `Row`s size themselves and
-their children:
+Hasta aquí, todos los widgets hijos usados en los ejemplos 
+han tenido un tamaño fijo. Sin embargo, es posible, 
+para un `Row` tener hijos flexibles,
+que se adapten al espacio disponible. Para entender 
+como funciona esto, es mejor echar un vistazo a 
+como un `Row` se dimensiona a si mismo y a sus hijos:
 
-1. First, the `Row` asks all of its children with fixed
-   sizes how big they'd like to be.
-1. Next, it calculates the remaining space in its main
-   axis (horizontal).
-1. Then it divides up that remaining space among its
-   flexible children according to their flex factors.
-   The flexible children can use some or all of the space
-   they're offered.
-1. At that point, the `Row knows how big all of its
-   children are, and can align them using the same axis
-   size and alignment properties you've seen so far.
+1. Primero, el `Row` pregunta a todos sus hijos con tamaño 
+   fijo como de grandes les gustaría ser.
+1. A continuación, calcula el espacio restante en su 
+   eje principal (horizontal).
+1. Entonces divide este espacio restante entre sus hijos 
+   flexibles de acuerdo a sus factores flex.
+   Los hijos flexibles pueden usar algo o todo el espacio disponible que se les ofrece.
+1. En este punto, el `Row` conoce de granes son todos sus 
+   hijos, y puede alinearlos usando las propiedades de 
+   tamaño del eje y alineación que viste anteriormente.
 
-Most widgets are considered to be of a fixed size.
-You can change that by wrapping them in a `Flexible`
-widget. `Flexibles` have two important properties:
-a `flex` factor that determines how much of the remaining
-space they get in comparison to other `Flexibles`,
-and a `fit` property that determines whether their child
-is forced to take up all the extra space it's offered.
+La mayoría de los widgets son considerados para tener 
+un tamaño fijo.
+Puedes cambiar esto envolviéndolos en un widget `Flexible`. 
+Los `Flexibles` tiene dos propiedades importantes:
+un factor `flex` que determina cuanto del espacio disponible debe tomar 
+en comparación con los otros `Flexibles`, 
+y una propiedad `fit` que determina si su hijo se ve 
+forzado a tomar todo el espacio extra que se le ofrece.
 
-#### Code example
+#### Ejemplo de código
 
-Try wrapping the middle box in this row with a `Flexible`
-widget that has a `flex` factor of 1 and its `fit`
-property set to `FlexFit.loose`. Afterward,
-try changing the fit to tight and see what happens.
+Prueba a envolver la caja central en este `Row` 
+con un widget `Flexible` que tenga un factor `flex` de 1 
+y una propiedad `fit` fijada en `FlexFit.loose`. 
+Después, prueba a cambiar la propiedad fit a tight y observa lo que ocurre.
 
-This combination (a `flex` factor of 1 and a tight `fit`)
-is so popular, there's a whole widget just to make
-using them easier: `Expanded`.
+Esta combinación (un factor `flex` de 1 y un `fit` tight)
+es muy popular, hay un widget específico para facilitar su uso: `Expanded`.
 
 <iframe src="https://dartpad.dartlang.org/experimental/embed-new.html?id=c7ba00c50151ab2e5c0c2194686fef93&fw=true" width="100%" height="400px"></iframe>
 
-### Flex factors
+### Factores Flex
 
-If more than one child of a `Row` or `Column` has a
-flexible size, the available space is allotted to them according to their
-`flex` factors. Each child gets space in proportion to their flex
-factor divided by the total of all the flex factors of all children:
+Si más de un hijo de un `Row` o `Column` tiene un 
+tamaño flexible, el espacio disponible se le asigna de acuerdo a sus 
+factores `flex`. Cada hijo toma espacio en proporción 
+a su factor flex, dividido por el total los factores 
+flex de todos los hijos:
 
 <!-- skip -->
 ```dart
 remainingSpace * (flex / totalOfAllFlexValues)
 ```
 
-For example, if there are two children with flex factors of 1,
-each gets half of the available space. If there
-are two children with flex factors of 1 and another child
-with a flex factor of 2, the first two
-children each get a quarter of the available space,
-and the other child gets half.
+Por ejemplo, si hay dos hijos con factor flex de 1,
+cada uno toma la mitad del espacio disponible. Si tiene 
+dos hijos con factor flex de 1 y otro hijo con factor flex de 2, 
+los dos primeros hijos toman cada uno un cuarto del espacio disponible, y el otro hijo toma la mitad.
 
-#### Code example
+#### Ejemplo de código
 
-In this example, all three of the `Row`'s children are `Flexible`.
-Try changing their `flex` values and
-re-running the code to see how the widgets' sizes adjust.
+En este ejemplo, los tres hijos del `Row` son `Flexible`.
+Prueba a cambiar sus valores `flex` y 
+re-ejecuta el código para ver como el tamaño de los widgets se ajusta.
 
 <iframe src="https://dartpad.dartlang.org/experimental/embed-new.html?id=4ab5409b566272c8f2cd28feddb0a995&fw=true" width="100%" height="400px"></iframe>
 
-### What happens if you run out of space?
+### ¿Qué ocurre si te quedas sin espacio?
 
-As you just saw, when a `Row` asks one of its `Flexible`
-children how big it wants to be, it gives the child
-a max width based on its `flex` factor. However,
-fixed-size children get no such restriction. This is so
-they can determine their own intrinsic size.
+Como acabas de ver, cuando un `Row` pregunta a uno de sus hijos `Flexible`
+como de grande quiere ser, le da al hijo el tamaño 
+máximo basado en su factor `flex`. Sin embargo, 
+los hijos de tamaño fijo, no tienen esta restricción. 
+Esto es para que pueden determinar su propio tamaño intrínseco.
 
-One side effect is that there's nothing stopping a fixed-size
-child from declaring itself to be bigger than the `Row` can support.
-When that happens, a flex overflow results. You can
-fix it by changing the child widget so that it chooses a smaller size,
-or by using a scrolling widget.
+Un efecto secundario de esto es que no hay nada 
+que impida a un hijo de tamaño fijo declararse a sí mismo 
+para ser mayor de lo que el `Row` puede soportar.
+Cuando esto ocurre, ocurre un desbordamiento. Puedes 
+corregir esto cambiando el widget hijo para que tenga 
+un tamaño menor, o usando un widget de scroll.
 
-#### Code example
+#### Ejemplo de código
 
-The `Row` below contains a single widget that's way too wide to fit. Run the
-code as-is to see what happens, then try modifying the width of the
-`Container` to make it fit.
+El `Row` siguiente contiene un único hijo que es demasiado 
+ancho para ajustarse. Ejecuta el código como está para 
+ver lo que ocurre, entonces prueba a modificar el 
+ancho del `Container` para hacer que se ajuste.
 
 <iframe src="https://dartpad.dartlang.org/experimental/embed-new.html?id=5a59d93119dc5b6eb1725235fde137cf&fw=true" width="100%" height="400px"></iframe>
 
-### Try using SizedBox to make space
+### Prueba a usar SizedBox para hacer espacio
 
-If you need a specific amount of space between two children of a
-`Row`, an easy way to do it is by sticking a `SizedBox` of the
-appropriate width in between.
+Si necesitas una cantidad específica de espacio entre dos hijos 
+de un `Row`, una manera fácil de hacerlo es pegar un 
+`SizedBox` del ancho apropiado entre ellos.
 
-#### Code example
+#### Ejemplo de código
 
-Trying making some space between these two list items by placing a
-`SizedBox` with a `width` of 100 between them.
+Prueba a hacer algo de espacio entre esta lista de dos items colocando un 
+`SizedBox` con un `width` de 100 entre ellos.
 
 <iframe src="https://dartpad.dartlang.org/experimental/embed-new.html?id=0c3e1ce8177a2f0cc8e2275d5260b348&fw=true" width="100%" height="400px"></iframe>
 
-### Spacers expand to make space
+### Los Spacers se expande para hacer espacio
 
-`Spacers` are another convenient way to make space between
-items in a `Row`.  They're flexible, and expand to fill any
-leftover space.
+Los `Spacers` son otra manera conveniente para crear espacio entre los items en un `Row`. 
+Estos son flexibles, y se expanden para rellenar cualquier espacio sobrante.
 
-#### Code example
+#### Ejemplo de código
 
-Try adding a `Spacer` in between the first and second children of the
-`Row` below.
+Prueba a añadir un `Spacer` entre el primer y el segundo hijo del 
+`Row` aquí abajo.
 
 <iframe src="https://dartpad.dartlang.org/experimental/embed-new.html?id=dd68c1eb491e7a22a2ceb4127d78e504&fw=true" width="100%" height="400px"></iframe>
 
-### Wait, wasn't I going to learn about Columns, too?
+### Espera, ¿no iba aprender también sobre Columns?
 
-Surprise, you already have! `Row`s and `Column`s do the
-same job, just in different dimensions. The main
-axis of a `Row` is horizontal, and the main axis of a
-`Column` is vertical, but they both size and position their
-children in the same way. They even share a base class,
-`Flex`, so everything you've learned about `Row`s
-applies to `Column`s as well!
+Sorpresa, ¡ya lo tienes! `Row`s y `Column`s hacen el 
+mismo trabajo, solo que en dimensiones diferentes. El eje 
+principal de un `Row` es horizontal, y el eje principal de un 
+`Column` es vertical, pero ámbos dimensionan y posicionan 
+sus hijos de la misma manera. Comparten una clase base,
+`Flex`, por tanto todo lo que has aprendido sobre los  `Row` 
+es aplicable también a los `Column`.
 
-#### Code example
+#### Ejemplo de código
 
-Here's a `Column` with some children of various sizes and its most important
-properties set. Try fiddling around with them and you'll see that the
-`Column` works like a vertical `Row.
+Aquí hay un `Column` con algunos hijos de varios tamaños y 
+con sus propiedades más importantes configuradas. 
+Intenta juguetear con ellos y verás que 
+`Column` funciona como un `Row` vertical.
 
 <iframe src="https://dartpad.dartlang.org/experimental/embed-new.html?id=6cafe7beab954e72fed2fd2393a29f6c&fw=true" width="100%" height="400px"></iframe>
 
-### Putting it all together
+### Poniéndolo todo junto
 
-Now that you're versed in `Row`s, `Column`s, and the
-important properties of both, you're ready to practice
-putting them together to build interfaces. The next few
-examples guide you through the construction
-of a business card display.
+Ahora que estas versado en los `Row`, los `Column`, y las 
+propiedades importantes de ambos, estas preparado para practicar 
+poniéndolo todo junto para construir interfaces. 
+Los siguientes ejemplos te guían para construir y 
+mostrar una tarjeta de empresa.
 
-#### Code example
+#### Ejemplo de código
 
-Every business card needs a name and a title, so start with that.
+Cada tarjeta de empresa necesita un nombre y un título, por tanto empieza con esto.
 
-* Add a `Column` widget
-* Add two text widgets to the `Column`'s list of children:
-  * The first should be a name (a short one is easier to
-    fit into the small window) and use the `headline` style:
+* Añade un widget `Column`
+* Añade dos widget de texto a la lista de hijos del 
+  `Column`:
+  * El primero debe ser un nombre (una corta es más fácil 
+    de encajar en una ventana pequeña) y usa el estilo 
+    `headline`:
 
 <!-- skip -->
 ```dart
 style: Theme.of(context).textTheme.headline<br>
 ```
 
-  * The second text widget should say 'Experienced App Developer`
-    and use the default style (leave the `style` property out entirely).
+  * El segundo widget de texto debe decir 'Experienced App Developer`
+    y usa el estilo por defecto (obvia totalmente la propiedad `style`).
 
-* Set the `Column`'s `crossAxisAlignment` to start, so
-  that the text widgets are start-aligned rather than centered.
+* Fija el `crossAxisAlignment` del `Column` a start, por    esto los widgets de texto son alineados al 
+  inicio mejor que centrados.
 
-* Set the `Column`'s `mainAxisSize` to `MainAxisSize.min`,
-  so the card won't expand to the full height of the window.
+* Fija el `mainAxisSize` del `Column` a `MainAxisSize.min`,
+  con esto la tarjeta no se expandirá hasta el alto total de la ventana.
 
 <iframe src="https://dartpad.dartlang.org/experimental/embed-new.html?id=5e7e9352bca878f446d4347f324e2f63&fw=true&split=60" width="100%" height="800px"></iframe>
 
-Business cards often have an icon or logo in the top-left corner,
-so the next step is to add one to yours. Start by wrapping the
-`Column` you just created with a `Row` widget:
+Las tarjetas de empresa a menudo tienen un icono o logo en la esquina superior izquierda,
+entonces el siguiente paso es añadir una por ti. Empieza con envolver el 
+`Column` que creaste con un widget `Row`:
 
 <!-- skip -->
 ```dart
 Row(
   children: [
-    Column( … ), // <- This should be the Column you made in the previous step
+    Column( … ), // <- Este debe ser el Column que creaste en el paso previo
   ],
 );
 ```
 
-Now you can add the `Icon`:
+Ahora puedes añadir el `Icon`:
 
-* Above your `Column` in the `Row`'s list of children,
-  add a `Padding` widget.
-  * Set its `padding` to `const EdgeInsets.all(8)`.
-  * For the child of the `Padding` widget, use an `Icon`.
-    * You can use any icon resource you want, though `Icons.account_circle`
-      works nicely.
-    * Set the `Icon`'s `size`.
+* Encime de tu `Column` en la lista de hijos del `Row`,
+  añade un widget `Padding`.
+  * Fija este `padding` a `const EdgeInsets.all(8)`.
+  * Para el hijo del widget `Padding`, usa un `Icon`.
+    * Puedes usar el recurso de icono que quieras, pero  `Icons.account_circle`
+      funciona bien.
+    * Fija el `size` del `Icon`.
 
 <iframe src="https://dartpad.dartlang.org/experimental/embed-new.html?id=684e599476eef2ec4b4508e6b2186c03&fw=true&split=60" width="100%" height="800px"></iframe>
 
-Your first `Row` is now complete! There are two more to go, though,
-and you need a `Column` to put them in.
-Wrap your `Row` with a `Column` widget so that it looks like this:
+¡Tu primera `Row` esta ahora completa! Aún hay dos cosas más que hacer, 
+y necesitas un `Column` para ponerlas en él.
+Envuelve tu `Row` con un widget `Column` para que se vea así:
 
 <!-- skip -->
 ```dart
  Column(
    children: [
-     Row( … ), // <- This should be the Row with your Icon and Text widgets.
+     Row( … ), // <- Este debe ser el Row con tu Icon y los widgets Text.
    ],
  );
 ```
 
-Then, finish up your new `Column` with these steps:
+Entonces, finaliza tu nuevo `Column` con estos pasos:
 
-* Set the `Column`'s mainAxisSize to min
-  * Otherwise it'll expand to fill the screen!
+* Fija el mainAxisSize del `Column` a min
+  * ¡De otro modo este se expandirá para rellenar toda la pantalla!
 
-* Set the `Column`'s `crossAxisAlignment` to stretch
-  * This makes all of its children full-width
+* Fija el `crossAxisAlignment` del `Column` a stretch
+  * Esto hace a todos sus hijos ocupar todo el ancho.
 
-* Add more widgets below your `Row` in the `Column`'s
-  list of children:
-  * A `SizedBox` with a height of 8
-    * An empty `Row` (no children or other properties)
-    * A `SizedBox` with a height of 16
-    * Another empty `Row`
+* Añade los hijos de abajo a tu `Row` en la lista de 
+  hijos del `Column`:
+  * Un `SizedBox` con un alto de 8
+    * Un `Row` vacio (sin hijos ni otras propiedades)
+    * Un `SizedBox` con un alto de 16
+    * Otro `Row` vacio
 
 <iframe src="https://dartpad.dartlang.org/experimental/embed-new.html?id=19ead6db4f42ce112fc0a7d2e0922466&fw=true&split=60" width="100%" height="800px"></iframe>
 
-There are just a few steps to go now. Next up is the second row.
-Add the following to its list of children:
+Aunque quedan unos pocos pasos para seguir. A continuación la segunda fila.
+Añade lo siguiente a su lista de hijos:
 
-* A `Text` widget with a street address like '123 Main Street'
-* A `Text` widget with a phone number like '800-123-1234'
+* Un widget `Text` con una dirección como '123 Main Street'
+* Un widget `Text` con un número de telefono como '800-123-1234'
 
-If you run the code at this point, you'll see that the two `Text`
-widgets are placed right up against each other rather than at
-opposite ends of the `Row`, which isn't right.
-You can fix this by setting the `Row`'s `mainAxisAlignment`
-property to `spaceBetween`, which puts any extra space between
-the two `Text` widgets.
+Si ejecutas el código en este punto, verás que los
+dos widgets `Text` son ubicados uno contra otro en lugar de en 
+los extremos opuestos de la fila del `Row`, lo cual no es correcto.
+Puedes arreglar esto fijando la propiedad `mainAxisAlignment` del `Row` a `spaceBetween`, que 
+pone algo de espacio extra entre los dos widgets `Text`.
 
 <iframe src="https://dartpad.dartlang.org/experimental/embed-new.html?id=e6e07bbe96255b762163cf3e40906944&fw=true&split=60" width="100%" height="800px"></iframe>
 
-The last step is to get those icons in place at the bottom of the card:
+El último paso es colocar estos iconos en su lugar 
+en la parte de abajo de la tarjeta:
 
-* Add four `Icon` widgets to the last `Row`'s list of
-  children. You can use whichever icon resources you
-  like, but these would be a good way to show that your
-  imaginary developer focuses on accessibility,
-  fast development, and multi-platform apps:
+* Añade cuatro widgets `Icon` a la lista de hijos del 
+  último `Row` children. Puedes usar cualquier recurso de icono que te guste, 
+  pero esta sería una buena manera de mostrar que su desarrollador 
+  imaginario se en enfoca en accesibilidad,
+  desarrollo rápido, y apps multiplataforma:
   * `Icons.accessibility`
   * `Icons.timer`
   * `Icons.phone_android`
   * `Icons.phone_iphone`
 
-* Set the `Row`'s `mainAxisAlignment` property to
+* Fija la propiedad `mainAxisAlignment` del `Row` a
   `MainAxisAlignment.spaceAround`
 
 <iframe src="https://dartpad.dartlang.org/experimental/embed-new.html?id=2234a5ccada200eb1e018b12fa95d57d&fw=true&split=60" width="100%" height="800px"></iframe>

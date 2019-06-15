@@ -14,7 +14,7 @@ description: How to develop Flutter apps in Android Studio or other IntelliJ pro
 
 ## Instalación y configuración
 
-Sigue las instrucciones de [Configura un Editor](/get-started/editor?ide=androidstudio)
+Sigue las instrucciones de [Configura un Editor](/docs/get-started/editor?tab=androidstudio)
 para instalar los plugins Dart y Flutter.
 
 ### Actualizando los plugins<a name="updating"/>
@@ -123,7 +123,7 @@ específicos de Flutter en el lado derecho de la barra de herramientas.
 
 Flutter ofrece el mejor ciclo de desarrollo de su clase, permitiéndote ver 
 el efecto de tus cambios casi instantáneamente con la función de "hot reload". Mira
-[Usando Hot reloads](../hot-reload/) para más detalles.
+[Usando Hot reloads](hot-reload) para más detalles.
 
 ## Depuración avanzada
 
@@ -135,40 +135,107 @@ ventana de la herramienta Flutter Inspector usando 'View> Tool Windows> Flutter 
 ![Flutter Inspector Window]({% asset tools/android-studio/visual-debugging.png @path %})
 
 Esto ofrece muchas herramientas de depuración; para detalles sobre estas mira
-[Depuranado Apps en Flutter](/docs/testing/debugging).
+[Depurando Apps en Flutter][].
 
-* **Toggle Select Widget Mode**: Selecciona un widget en el dispositivo para inspeccionarlo en el
+* **Enable Select Widget Mode**: Selecciona un widget en el dispositivo para inspeccionarlo en el
   [Flutter Inspector](/docs/development/tools/inspector).
-* **Toggle Debug Paint**: Agregue sugerencias de depuración visual a la presentación que muestra 
-  bordes, relleno, alineación y espaciadores.
+* **Refresh widget info**: Recarga la información del widget actual.
+* **Show/hide Performance Overlay**: Mostrar gráficos de rendimiento para los hilos de la GPU y la CPU.
 * **Toggle Platform Mode**: Alternar entre renderizado para Android o iOS.
-* **Toggle Performance Overlay**: Mostrar gráficos de rendimiento para los hilos de la GPU y la CPU.
-* **Open Timeline View**: Analiza la actividad de la aplicación mientras se ejecuta.
-* **Open Observatory**: Un perfilador para aplicaciones Dart.
+* **Show Debug Paint**: Agregue sugerencias de depuración visual a la presentación que muestra 
+  bordes, relleno, alineación y espaciadores.
+* **Show paint baselines**: Provoca que cada RenderBox pinte una linea en cada una 
+  de sus lineas bases de texto.
+* **Enable slow animations**: Ralentiza las animaciones para permitir la inspección 
+  visual.
 
 También disponible en el menú de acciones adicionales:
 
-* **Show Paint Baselines**: Hace que cada RenderBox dibuje una línea en su 
-  línea base.
-* **Enable Repaint Rainbow**: Muestra colores rotativos en las capas cuando vuelva a pintar.
-* **Enable Slow Animations**: Reduce la velocidad de las animaciones para permitir la inspección visual.
-* **Hide Debug Banner**: Ocultar el banner 'debug' incluso cuando se ejecuta una compilación de depuración.
+* **Show Repaint Rainbow**: Muestra colores rotativos en las capas cuando repinta.
+* **Hide Debug Mode Banner**: Ocultar el banner 'debug' incluso cuando se ejecuta una compilación de depuración.
+* **Highlight nodes displayed in both trees**: En el inspector, resalta 
+  los nodos que se muestran tanto en los detalles como en resumen del árbol.
 
+### Ver datos de rendimiento
 
-### Depurando con Observatory
+Para ver los datos de rendimiento, incluyendo la información de reconstrucción de widget,
+inicia la app en modo **Debug**, y entonces abre la Performance tool window
+usando **View > Tool Windows > Flutter Performance**.
 
-Observatory es una herramienta adicional de depuración y creación de perfiles presentada 
-con una interfaz de usuario basada en html. Para detalles vea la [página 
-Observatory](https://dart-lang.github.io/observatory/).
+![Flutter performance window]({% asset tools/android-studio/widget-rebuild-info.png @path %})
 
-Para abrir Observatory:
+Para ver las estadísticas sobre que widgets son reconstruidos, y con que frecuencia,
+haz clic en **Show widget rebuild information** en el panel **Performance**.
+La cuenta exacta de reconstrucciones para este frame se muestra en la 
+segunda columna por la derecha. Para un alto número de reconstrucciones, se muestra 
+un círculo amarillo girando. La columna más a la derecha muestra cuantas 
+veces fue reconstruido un widget desde que se entró en la pantalla actual.
+Para widgets que no son reconstruidos, se muestra un círculo gris sólido.
+En otro caso, se muestra un círculo gris girando.
 
- 1. Ejecute su aplicación en modo de depuración.
- 1. Seleccione la acción 'open observatory' del panel Depurar.
- 1. Haz click en **Stopwatch icon**:<br>
-    ![Debugging panel]({% asset tools/android-studio/debug-panel.png @path %}){:width="700px"}
+{{site.alert.secondary}}
+  La app mostrada en esta captura de pantalla ha sido diseñada para dar 
+  un mal rendimiento, y el 'rebuild profiler' te da una pista 
+  sobre que esta ocurriendo en el frame que puede estar causando 
+  mal rendimiento. El 'widget rebuild profiler' no es una herramienta de 
+  diagnóstico, por si sola, sobre mal rendimiento.
+{{site.alert.end}}
+
+El propósito de esta funcionalidad es hacerte consciente cuando los 
+widgets son reconstruidos&mdash;puede que no te des cuenta de que esto 
+está sucediendo mirando el código. Si los widgets se están reconstruyendo 
+de una manera que no esperabas,
+es una señal probable, que deberías refacorizar tu código fragmentando 
+los métodos build grandes en múltiples widgets.
+
+Esta heramienta puede ayudarte a depurar al menos cuatro problemas 
+comunes de rendimiento:
+
+1. La pantalla completa (o partes grandes de ella) son construidos con un 
+   único StatefulWidget, causando la construcción innecesasria del interfaz de usuario. 
+   Sepáralo en widgers más pequeños con funciones `build()` más pequeñas.
+
+1. Los widgets fuera de la pantalla se están reconstruyendo. Esto puede suceder, por ejemplo,
+   cuando un ListView está anidado en un Column alto que se extiende fuera de la pantalla.
+   O cuando RepaintBoundary no esta configurada para una lista que se extiende fuera 
+   de la pantalla, causando que la lista entera se vuelva a dibujar.
+
+1. La función `build()` para un AnimatedBuilder dibuja un subárbol que 
+   no necesita ser animado, causando la reconstrucción innecesaria de objetos 
+   estáticos.
+
+1. Un widget Opacity es colocado innecesariamente alto en el árbol de widget.
+   O, una animación Opacity se cre manipulando directamente la propiedad 
+   opacity de un widget Opacity, provocando que el propio widget
+   y su subárbol sean reconstruidos.
+
+Puedes hacer clic en una linea en la tabla para navegar a la linea en 
+la fuente donde se crea el widget. A medida que se ejecuta el código,
+los iconos giratorios también se muestran en el panel de código para ayudarte 
+a visualizar que reconstrucciones están ocurriendo.
+
+Fíjate que el hecho de que se produzcan numerosas reconstrucciones no indica necesariamente un problema.
+Normalmente solo deberías preocuparte por las excesivas reconstrucciones si ya 
+has ejecutado la app en modo perfilado y verificado que el rendimiento 
+no es el que esperas.
+
+Y recuerda, _la información de reconstrucción está solo disponible en un 
+build de tipo debug_. Pruena el rendimineto de la ap en un dispositivo real con 
+un perfil de tipo build, pero depura los problemas de rendimiento en un 
+build de tipo debug.
+
+### Depurar con Dart DevTools
+
+Dart DevTools son un conjunto de herramientas de depuración y perfilado presentada 
+en un interfaz de usuario basado en html. DevTools reemplaza la anterior herramienta 
+de perfilado basada en navegador, Observatory.
+
+DevTools está aíun en desarrollo pero disponible para previsualización. Para 
+instrucciones de instalación y como empezar, mira las [DevTools' docs][].
 
 ## Consejos de edición para el código Flutter
+
+Si tienes consejos adicionales que debemos compartir, por favor [háznoslo saber][]!
 
 ### Asistencias y soluciones rápidas
 
@@ -197,9 +264,9 @@ lugar de un widget individual.
 #### Asistencia para convertir child a children
 Cambiar un argumento child a un argumento children, y ajustar el valor del argumento en una lista.
 
-### Plantillas en vivo
+### Live templates
 
-Las plantillas en vivo se pueden usar para acelerar la entrada a estructuras de código 
+Los Live templates se pueden usar para acelerar la entrada a estructuras de código 
 típicas. Se invocan al escribir su 'prefijo' y luego seleccionarlo en la ventana de 
 finalización del código:
 
@@ -250,12 +317,47 @@ tu sesión de depuración:
 (si estás en una sesión de ejecución) o en el botón Depurar (si estás en una sesión de depuración), 
 o haga clic y haz clic en el botón 'recargar en caliente'.
 
+## Editar código Android en Android Studio con soporte completo del IDE {#android-ide}
+
+Abrir el directorio del proyecto Flutter no expone todos los ficheros Android 
+al IDE. Las apps Flutter contienen un subdirectorio llamado `android`. Si abres 
+este subdirectorio como un proyecto separado en Android Studio, el IDE 
+permitirá editar y refactorizar todos los ficheros Android (como los scripts Gradle) con soporte completo.
+
+Si ya tienes abierto un proyecto completo como una app Flutter en in Android
+Studio, hay dos maneras equivalentes de abrir los ficheros Android por su cuenta 
+para editar en el IDE. Antes de probar esto, asegúrate que tienes la última version 
+de Android Studio y plugins de Flutter.
+
+* En la ["project view"][], debes ver un subdirectorio inmediatamente bajo el raiz 
+  de tu app flutter llamado `android`. Haz clic derecho en él,
+  entonces selecciona **Flutter > Open Android module in Android Studio**.
+* O, puedes abrir cualquier fichero dentro del subdirectorio `android` para 
+  editar. Deberías entonces ver un banner "Flutter commands" en la parte superior del 
+  editor con un link etiquetado **Open for Editing in Android Studio**.
+  Haz click en este link.
+
+Para ámbas opciones, Android Studio te da la opción de usar una ventana separada o 
+de reemplazar la ventana existente con el nuevo proyecto. Cualquier opción es buena.
+
+Si no tienes ya abierto el proyecto Flutter en Android studio,
+puedes abrir los ficheros Android como su propio proyecto desde inicio:
+
+1. Haz clic en **Open an existing Android Studio Project** en la pantalla de bienvenida,
+   o **File > Open** si Android Studio ya está abierto.
+2. Abre el subdirectorio `android` bajo el raiz de la app flutter. Por
+   ejemplo si el proyecto se llama `flutter_app`, abre `flutter_app/android`.
+
+Si no has ejecutado la app Flutter todavía, verás un reporte de error de compilación en Android Studio cuando abres el proyecto `android`. Ejecuta `flutter pub get` en 
+el directorio raíz de la app y recompila el proyecto seleccionando **Build > Make**
+para corregir esto.
+
 ## Edición de código de Android en IntelliJ IDEA {#edit-android-code}
 
 Para habilitar la edición del código de Android en IntelliJ IDEA, debes configurar la ubicación 
 del SDK de Android:
 
-1. En Preferences->Plugins, habilita **Android Support** si aún no lo has hecho.
+1. En **Preferences > Plugins**, habilita **Android Support** si aún no lo has hecho.
 1. Clic Derecho en la carpeta **android** en la vista Project, y selecciona **Open
 Module Settings**.
 1. En la pestaña **Sources**, localiza el campo **Language level**, y selecciona nivel '8'
@@ -268,25 +370,20 @@ SDK de Android. Asegúrate de seleccionar un SDK de Android que coincida con el 
 
 ## Consejos y trucos
 
-* [Flutter IDE cheat sheet, MacOS 
-version](/docs/resources/Flutter-IntelliJ-cheat-sheet-MacOS.pdf)
-* [Flutter IDE cheat sheet, Windows & Linux 
-version](/docs/resources/Flutter-IntelliJ-cheat-sheet-WindowsLinux.pdf)
+* [Flutter IDE cheat sheet, MacOS version][]
+* [Flutter IDE cheat sheet, Windows & Linux version][]
 
 ## Solución de problemas
 
 ### Problemas conocidos y comentarios
 
 Los problemas conocidos importantes que pueden afectar a tu experiencia están documentados en 
-el archivo [README del 
-plugin de Flutter]({{site.repo.flutter}}-intellij/blob/master/README.md).
+el archivo [README del plugin de Flutter][].
 
 Todos los errores conocidos se siguen en los issue trackers:
 
-* Plugin de Flutter: [GitHub issue
-  tracker]({{site.repo.flutter}}-intellij/issues).
-* Dart plugin: [JetBrains
-  YouTrack](https://youtrack.jetbrains.com/issues?q=%23dart%20%23Unresolved).
+* Plugin de Flutter: [GitHub issue tracker][].
+* Dart plugin: [JetBrains YouTrack][].
 
 Todos los comentarios son bien recibidos, tanto sobre errores/problemas como sobre solicitudes de 
 funciones. Antes de presentar nuevos problemas, por favor:
@@ -295,6 +392,15 @@ funciones. Antes de presentar nuevos problemas, por favor:
 * Asegúrese de tener [actualizado](#updating) la versión más reciente del 
 plugin.
 
-Cuando presente nuevos problemas, incluya el resultado de 
-[`flutter doctor`](https://flutter-es.io/bug-reports/#provide-some-flutter-diagnostics).
+Cuando presente nuevos problemas, incluya el resultado de [`flutter doctor`][].
 
+[DevTools' docs]: https://flutter.github.io/devtools
+[GitHub issue tracker]: {{site.repo.flutter}}-intellij/issues
+[JetBrains YouTrack]: https://youtrack.jetbrains.com/issues?q=%23dart%20%23Unresolved
+[`flutter doctor`]: /docs/resources/bug-reports#provide-some-flutter-diagnostics
+[Flutter IDE cheat sheet, MacOS version]: /docs/resources/Flutter-IntelliJ-cheat-sheet-MacOS.pdf
+[Flutter IDE cheat sheet, Windows & Linux version]: /docs/resources/Flutter-IntelliJ-cheat-sheet-WindowsLinux.pdf
+[Depurando Apps en Flutter]: /docs/testing/debugging
+[README del plugin de Flutter]: {{site.repo.flutter}}-intellij/blob/master/README.md
+["project view"]: {{site.android-dev}}/studio/projects/#ProjectView
+[háznoslo saber]: {{site.github}}/flutter/website/issues/new

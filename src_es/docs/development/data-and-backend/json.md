@@ -250,7 +250,7 @@ dev_dependencies:
   json_serializable: ^2.0.0
 ```
 
-Ejecuta `flutter packages get` dentro de la carpeta raíz de tu proyecto (o haz clic
+Ejecuta `flutter pub get` dentro de la carpeta raíz de tu proyecto (o haz clic
 en **Packages Get** en tu editor) para hacer estas nuevas dependencias disponibles 
 en tu proyecto.
 
@@ -324,7 +324,7 @@ Hay dos maneras de ejecutar el auto-generador de código.
 
 #### Auto-generación de código una única vez
 
-Ejecutando `flutter packages pub run build_runner build` en la raíz del proyecto,
+Ejecutando `flutter pub run build_runner build` en la raíz del proyecto,
 generas el código de serialización JSON para tus modelos, siempre que sea necesario.
 Esto desencadena una única compilación que pasa por los ficheros fuente, elige los 
 relevantes, y genera el código de serialización necesario para ellos.
@@ -337,7 +337,7 @@ manualmente cada vez que haces cambios en tus clases modelo.
 Un _watcher_ hace nuestro proceso de auto-generación de código más conveniente. Este 
 observa cambios en los ficheros de nuestro proyecto y compila automáticamente los 
 archivos necesarios cuando se necesita. Inicia el watcher ejecutando 
-`flutter packages pub run build_runner watch` en la raíz del proyecto.
+`flutter pub run build_runner watch` en la raíz del proyecto.
 
 Es seguro ejecutar el watcher una vez y dejarlo funcionando en segundo plano.
 
@@ -381,4 +381,3 @@ sobre dart:mirrors en Flutter]({{site.github}}/flutter/flutter/issues/1150)
 [JsonCodec]: {{site.dart.api}}/{{site.dart.sdk.channel}}/dart-convert/JsonCodec-class.html
 [reflexión]: https://en.wikipedia.org/wiki/Reflection_(computer_programming)
 [tree shaking]: https://en.wikipedia.org/wiki/Tree_shaking
-

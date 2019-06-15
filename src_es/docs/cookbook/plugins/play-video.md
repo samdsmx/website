@@ -76,7 +76,7 @@ Ahora que tienes el complemento `video_player` instalado con los permisos correc
 
 Antes de poder reproducir videos, tambien debe `inicializar` el controlador. Esto establece la conexión al vídeo y preparará el controlador para la reproducción.
 
-Para crear una inicialización del `VideoPlayerController`, por favor:
+Para crear e inicializar el `VideoPlayerController`, por favor:
 
   1. Crea una clase `StatefulWidget` con una clase `State` 
   2. Agrega una variable a la clase `State` para almacenar el `VideoPlayerController`

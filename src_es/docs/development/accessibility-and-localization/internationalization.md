@@ -25,7 +25,7 @@ MaterialApp, ya que la mayoría de las aplicaciones están escritas de esta mane
 Las aplicaciones escritas en términos de la clase de más bajo nivel WidgetsApp 
 también pueden ser internacionalizadas usando la mismas clases y lógica.
 
-<aside class="alert alert-info" markdown="1">
+{{site.alert.secondary}}
   <h4 class="no_toc">Ejemplos de apps internacionalizadas</h4>
 
 Si quieres empezar primero leyendo el código de una app Flutter internacionalizada, 
@@ -39,7 +39,7 @@ herramienta intl de Dart.](#dart-tools)
 mínima]({{site.github}}/flutter/website/tree/master/src/_includes/code/internationalization/minimal/)
 * [Internacionalización basada en el 
 paquete `intl`]({{site.github}}/flutter/website/tree/master/src/_includes/code/internationalization/intl/)
-</aside>
+{{site.alert.end}}
 
 ## Configura una app internacionalizada: el paquete flutter<wbr>_localizations
 
@@ -75,7 +75,7 @@ MaterialApp(
  supportedLocales: [
     const Locale('en'), // Inglés
     const Locale('es'), // Español
-    const Locale('zh'), // Chino
+    const Locale.fromSubtags(languageCode: 'zh'), // Chino *Mira Localizaciones avanzadas más abajo*
     // ... otras regiones que la app soporte
   ],
   // ...
@@ -84,6 +84,9 @@ MaterialApp(
 
 Las aplicaciones basadas en WidgetsApp son similares excepto en que no necesita el 
 `GlobalMaterialLocalizations.delegate`.
+
+El constructor completo `Locale.fromSubtags` se prefiere porque soporta scriptCode,
+aunque el constructor predeterminado `Locale` sigue siendo perfectamente válido.
 
 Los elementos de la lista `localizationsDelegates` son factorías que producen 
 colecciones de valores localizados. `GlobalMaterialLocalizations.delegate`
@@ -95,6 +98,44 @@ de widgets.
 Más información sobre estas propiedades de la app, los tipos de que dependen, 
 y como las aplicaciones internacionalizadas en Flutter son normalmente 
 estructuradas, puedes encontrarla abajo.
+
+<a name="advanced-locale"></a>
+## Definición de localizaciones avanzadas
+
+Algunos lenguajes con múltiples variantes requieren más que sólo un código de lenguaje para diferenciarse apropiadamente.
+
+Por ejemplo, la diferenciación completa de todas las variantes de Chino requieren especificar 
+el código de lenguaje, el código de escritura, y el código de país. Esto es debido a la existencia de escritura 
+simplificada y tradicional, así como las diferencias regionales en la manera en que los caracteres son 
+escritos dentro del mismo tipo de escritura.
+
+Con el fin de expresar plenamente cada variante del Chino para los códigos de país `CN`,
+`TW`, y `HK`, la lista de localizaciones soportadas debería incluir:
+
+{% prettify dart %}
+// Soporte completo Chino para CN, TW, y HK
+supportedLocales: [
+  const Locale.fromSubtags(languageCode: 'zh'), // Chino genérico 'zh'
+  const Locale.fromSubtags(languageCode: 'zh', scriptCode: 'Hans'), // Chino genérico simplificado 'zh_Hans'
+  const Locale.fromSubtags(languageCode: 'zh', scriptCode: 'Hant'), // Chino generico tradicional 'zh_Hant'
+  const Locale.fromSubtags(languageCode: 'zh', scriptCode: 'Hans', countryCode: ), // 'zh_Hans_CN'
+  const Locale.fromSubtags(languageCode: 'zh', scriptCode: 'Hant', countryCode: ), // 'zh_Hant_TW'
+  const Locale.fromSubtags(languageCode: 'zh', scriptCode: 'Hant', countryCode: ), // 'zh_Hant_HK'
+],
+{% endprettify %}
+
+Esta completa definición explicita asegurará que tu app puede distinguir entre ellos y proporcionar 
+el contenido localizado totalmente matizado para todas las combinaciones de estos códigos de país. Si la localización 
+preferida de tu usuario no está especificada, entonces la coincidencia más cercana será usada en su lugar,
+que probablemente contendrá diferencias a lo que el usuario espera. Flutter sólo resolverá las 
+localizaciones definidas en `supportedLocales`. Flutter proporciona códigos de escritura diferenciados para el contenido 
+localizado para los idiomas comúnmente usados. Mira
+[`Localizations`]({{site.api}}/flutter/widgets/WidgetsApp/supportedLocales.html) para ver como 
+las localizaciones soportadas y las preferidas son resueltas.
+
+Aunque el Chino es el ejemplo principal, otros lenguajes como el 
+francés (FR_fr, FR_ca, etc)
+también deben ser totalmente diferenciados para una localización más matizada.
 
 <a name="tracking-locale"></a>
 ## Rastrea la región: La clase Locale y el widget Localizations
@@ -489,7 +530,7 @@ Recompilar `l10n/messages_all.dart` requiere dos pasos.
    `l10n/intl_messages.arb` desde `lib/main.dart`:
 
   ```terminal
-    $ flutter packages pub run intl_translation:extract_to_arb --output-dir=lib/l10n lib/main.dart
+    $ flutter pub run intl_translation:extract_to_arb --output-dir=lib/l10n lib/main.dart
   ```
 
   El fichero `intl_messages.arb` es un mapa en formato JSON con una entrada por
@@ -504,7 +545,7 @@ Recompilar `l10n/messages_all.dart` requiere dos pasos.
    `intl_messages_all.dart`, el cual importa todo los ficheros de mensajes:
 
     ```terminal
-    $ flutter packages pub run intl_translation:generate_from_arb \
+    $ flutter pub run intl_translation:generate_from_arb \
         --output-dir=lib/l10n --no-use-deferred-loading \
         lib/main.dart lib/l10n/intl_*.arb
     ```

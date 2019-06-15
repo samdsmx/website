@@ -53,14 +53,14 @@ contenido especializado:
 * `lib/hello.dart`:
    - El código Dart para el paquete.
 * `test/hello_test.dart`:
-   - Los [test unitarios](/docs/testing#unit-testing) para el paquete.
+   - Los [test unitarios](/docs/testing#unit-tests) para el paquete.
 
 ### Paso 2: Implementa el paquete
 
 Para paquetes Dart puros, simplemente añade la funcionalidad dentro del fichero 
 main dentro de `lib/<package name>.dart`, o en múltiples ficheros en el directorio `lib`.
 
-Para probar el paquete, añade [test unitarios](/docs/testing#unit-testing)
+Para probar el paquete, añade [test unitarios](/docs/testing#unit-tests)
 en el directorio `test`.
 
 Para detalles adicionales sobre como organizar 
@@ -272,13 +272,14 @@ Antes de publicar, asegúrate de revisar el `pubspec.yaml`, `README.md`, y
 A continuación, ejecuta el comando dry-run para ver si todos los análisis pasan correctamente:
 
 ```terminal
-$ flutter packages pub publish --dry-run
+$ flutter pub pub publish --dry-run
 ```
+(Fijate en la redundancia `pub pub`, que es necesaria mientras el [issue #33302)(https://github.com/flutter/flutter/issues/33302) es resuelto).
 
 Finalmente, ejecuta el comando actual para publicar:
 
 ```terminal
-$ flutter packages pub publish
+$ flutter pub publish
 ```
 
 Para detales sobre publicación, 
@@ -330,58 +331,3 @@ Pod::Spec.new do |s|
 ```
 Ahora puedes hacer `#import "UrlLauncherPlugin.h"` y acceder a la clase `UrlLauncherPlugin` 
 en el código fuente en `hello/ios/Classes`.
-
-### Resolución de conflictos
-
-Supón que quieres usar `algun_paquete` y `otro_paquete` en tu paquete `hello`, y ambos dependen de 
-`url_launcher`, pero en diferentes versiones. Entonces tenemos un conflicto 
-en potencia. La mejor manera de evitar 
-esto para el autor del paquete es usar los [rangos de 
-versiones]({{site.dart-site}}/tools/pub/dependencies#version-constraints)
-antes que versiones especificas cuando especificamos las dependencias.
-
-```yaml
-dependencies:
-  url_launcher: ^0.4.2    # Bien, cualquiera 0.4.x with x >= 2 valdrá.
-  image_picker: '0.1.1'   # No tan bien, solo 0.1.1 valdrá.
-```
-
-Si `algun_paquete` declara las dependencias anteriores y `otro_paquete` declara una dependencia con 
-`url_launcher` compatible, como `'0.4.5'` o `^0.4.0`, `pub` podrá resolver este problema automáticamente. 
-Algo similar se aplica a las dependencias específicas de plataforma, en paquetes de plugin, 
-en [Gradle modules][]
-y/o [CocoaPods][].
-
-Incluso si `algun_paquete` y `otro_paquete` declaran versiones incompatibles para 
-`url_launcher`, aún puede ser que estos usen `url_launcher` de maneras compatibles. 
-Entonces el conflicto puede resolverse agregando una sobrescritura 
-de dependencia al fichero `pubspec.yaml` en `hello`, forzando a usar una versión en 
-particular:
-
-Forzando el uso de la versión `0.4.3` de `url_launcher` en `hello/pubspec.yaml`:
-
-```yaml
-dependencies:
-  some_package:
-  other_package:
-dependency_overrides:
-  url_launcher: '0.4.3'
-```
-
-Si la dependencia conflictiva no es en sí misma un paquete, sino una biblioteca específica de Android 
-como `guava`, la declaración de sobrescritura de dependencia debe ser añadida en cambio, a la lógica de compilado de 
-Gradle en su lugar.
-
-Forzando el uso de la versión `23.0` de `guava` en `hello/android/build.gradle`:
-
-```groovy
-configurations.all {
-    resolutionStrategy {
-        force 'com.google.guava:guava:23.0-android'
-    }
-}
-```
-
-Cocoapods no ofrece actualmente la funcionalidad de sobrescritura de dependencias.
-[CocoaPods]: https://guides.cocoapods.org/syntax/podspec.html#dependency
-[Gradle modules]: https://docs.gradle.org/current/userguide/introduction_dependency_management.html

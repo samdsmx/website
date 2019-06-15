@@ -29,7 +29,7 @@ dev_dependencies:
 {{site.alert.warning}}
 No uses los comandos `pub get` o `pub upgrade` para administrar las dependencias 
 de tu apps Flutter.
-En su lugar, usa `flutter packages get` o `flutter packages upgrade`.
+En su lugar, usa `flutter pub get` o `flutter pub upgrade`.
 Si quieres usar pub manualmente, puedes ejecutarlo directamente configurando la 
 variable de entorno `FLUTTER_ROOT`.
 {{site.alert.end}}
@@ -86,13 +86,13 @@ puedes descargar este desde el [Flutter SDK archive][].
 
 Si has modificado tu fichero `pubspec.yaml` o quieres acutalizar 
 solo los paquetes de los que depende tu app (en lugar de ambos, los paquetes 
-y el propio Flutter), entonces usa uno de los comandos `flutter packages`.
+y el propio Flutter), entonces usa uno de los comandos `flutter pub`.
 
 Para obtener todas las dependencias listadas en el fichero `pubspec.yaml`,
 sin actualizaciones innecesarias, usa el comando `get`:
 
 ```terminal
-$ flutter packages get
+$ flutter pub get
 ```
 
 Para actualizar a la _última versión compatibles_ de 
@@ -100,7 +100,7 @@ todas las dependencias listadas en el fichero `pubspec.yaml`,
 usa el comando `upgrade`:
 
 ```terminal
-$ flutter packages upgrade
+$ flutter pub upgrade
 ```
 
 

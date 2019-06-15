@@ -678,8 +678,8 @@ dependencies:
   google_sign_in: ^3.0.3
 ```
 
-2. Instala el paquete desde la línea de comando usando `flutter packages get`.
-Si usas un IDE, este a menudo ejecuta `flutter packages get` por ti, o puede que te pida 
+2. Instala el paquete desde la línea de comando usando `flutter pub get`.
+Si usas un IDE, este a menudo ejecuta `flutter pub get` por ti, o puede que te pida 
 que lo hagas.
 3. Importa el paquete en el código de tu app como se muestra a continuación:
 

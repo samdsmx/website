@@ -41,7 +41,7 @@ To add a package 'css_colors' to an app:
      `css_colors:` under `dependencies`.
 
 1. Install it
-   * From the terminal: Run `flutter packages get`<br/>
+   * From the terminal: Run `flutter pub get`<br/>
    **OR**
    * From Android Studio/IntelliJ: Click 'Packages Get' in the action
      ribbon at the top of `pubspec.yaml`
@@ -64,6 +64,62 @@ tab available on any package page on Pub is a handy reference for these
 steps.
 
 For a complete example, see [CSS Colors example](#css-example) below.
+
+### Conflict resolution
+
+Suppose you want to use `some_package` and `other_package` in your app `counter`
+(or your own package), and both of these depend on `url_launcher`, but
+in different versions. Then we have a potential conflict. The best way to avoid this
+is for package authors to use [version
+ranges]({{site.dart-site}}/tools/pub/dependencies#version-constraints)
+rather than specific versions when specifying dependencies.
+
+```yaml
+dependencies:
+  url_launcher: ^0.4.2    # Good, any 0.4.x with x >= 2 will do.
+  image_picker: '0.1.1'   # Not so good, only 0.1.1 will do.
+```
+
+If `some_package` declares the dependencies above and `other_package`
+declares a compatible  `url_launcher` dependency like `'0.4.5'` or `^0.4.0`,
+`pub` is able to resolve the issue automatically. Similar
+remarks apply to plugin packages' platform-specific dependencies on
+[Gradle modules][] and/or [CocoaPods][].
+
+Even if `some_package` and `other_package` declare incompatible versions for
+`url_launcher`, it may still be that they actually use `url_launcher` in
+compatible ways. Then the conflict can be dealt with by adding
+a dependency override declaration to the `pubspec.yaml` file in `counter`,
+forcing the use of a particular version.
+
+Forcing the use of `url_launcher` version `0.4.3` in `counter/pubspec.yaml`:
+
+```yaml
+dependencies:
+  some_package:
+  other_package:
+dependency_overrides:
+  url_launcher: '0.4.3'
+```
+
+If the conflicting dependency is not itself a package,
+but an Android-specific library like `guava`, the dependency override
+declaration must be added to Gradle build logic instead.
+
+Forcing the use of `guava` version `23.0` in `counter/android/build.gradle`:
+
+```groovy
+configurations.all {
+    resolutionStrategy {
+        force 'com.google.guava:guava:23.0-android'
+    }
+}
+```
+
+CocoaPods does not currently offer dependency override functionality.
+
+[CocoaPods]: https://guides.cocoapods.org/syntax/podspec.html#dependency
+[Gradle modules]: https://docs.gradle.org/current/userguide/introduction_dependency_management.html
 
 ## Developing new packages
 
@@ -108,16 +164,16 @@ guide]({{site.dart-site}}/tools/pub/versioning).
 
 ### Updating package dependencies
 
-When you run `flutter packages get` ('Packages Get' in IntelliJ) for
+When you run `flutter pub get` ('Packages Get' in IntelliJ) for
 the first time after adding a package, Flutter saves the concrete package
 version found in the `pubspec.lock`
 [lockfile]({{site.dart-site}}/tools/pub/glossary#lockfile).
 This ensures that you get the same version again if you, or another
-developer on your team, run `flutter packages get`.
+developer on your team, run `flutter pub get`.
 
 If you want to upgrade to a new version of the package,
 for example to use new features in that package, run
-`flutter packages upgrade` ('Upgrade dependencies'
+`flutter pub upgrade` ('Upgrade dependencies'
 in IntelliJ). This retrieves the highest available version of the package
 that is allowed by the version constraint you have specified in
 `pubspec.yaml`.
@@ -191,7 +247,7 @@ To use this package:
      css_colors: ^1.0.0
    ```
 
-1. Run `flutter packages get` in the terminal, or click 'Packages get' in
+1. Run `flutter pub get` in the terminal, or click 'Packages get' in
    IntelliJ
 
 1. Open `lib/main.dart` and replace its full contents with:
@@ -252,7 +308,7 @@ To use this plugin:
      url_launcher: ^0.4.1
    ```
 
-1. Run `flutter packages get` in the terminal, or click 'Packages get' in
+1. Run `flutter pub get` in the terminal, or click 'Packages get' in
    IntelliJ
 
 1. Open `lib/main.dart` and replace its full contents with:

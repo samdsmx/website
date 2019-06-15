@@ -493,7 +493,7 @@ Flutter y depurando en Flutter:
 [Flutter API]: {{site.api}}
 [UIKit]: https://developer.apple.com/documentation/uikit
 [MainThread]: {{site.android-dev}}/reference/android/support/annotation/MainThread
-[Test de integración]: /docs/testing#integration-testing
+[Test de integración]: /docs/testing#integration-tests
 [Notas de la Arquitectua.]: {{site.github}}/flutter/engine/wiki#architecture-notes
 [Widget inspector]: /docs/development/tools/inspector
 [Flutter Inspector talk]: https://www.youtube.com/watch?v=JIcmJNT9DNI
@@ -515,4 +515,3 @@ Flutter y depurando en Flutter:
 [¿Porqué Flutter usa Dart?]: https://hackernoon.com/why-flutter-uses-dart-dd635a054ebf
 [Dart DevTools]: https://flutter.github.io/devtools
 [DevTools' docs]: https://flutter.github.io/devtools
-

@@ -15,12 +15,13 @@ el widget reconstruye su descripción, que el framework difiere de la descripci�
 anterior para determinar los cambios mínimos necesarios en el árbol de renderizado
 subyacente para la transición de un estado al siguiente.
 
-<aside id="note" class="alert alert-info" markdown="1">
-**Nota:** Si quieres conocer mejor a Flutter sumergiéndote en algo de código,
-echa un vistazo a
-[Construcción de layouts en Flutter](/tutorials/layout/) y
-[Agregar interactividad a su aplicación Flutter](/tutorials/interactive/).
-</aside>
+{{site.alert.note}}
+  Si quieres conocer mejor a Flutter sumergiéndote en algo de código,
+  echa un vistazo a [Codelab Layout 
+  Básico](/docs/codelabs/layout-basics), [Construyendo Layouts en
+  Flutter](/docs/development/ui/layout), y [Añadir Interactividad
+  a tu App Flutter](/docs/development/ui/interactive).
+{{site.alert.end}}
 
 ## Hola Mundo
 
@@ -204,11 +205,13 @@ El widget `MyScaffold` organiza a sus hijos en una columna vertical. En la
 parte superior de la columna se coloca una instancia de `MyAppBar`, pasándole un
 widget [Text]({{api}}/widgets/Text-class.html) para usarlo como su título. Pasar 
 widgets como argumentos de widgets es una técnica muy poderosa que te 
-permite crear widgets genéricos que pueden ser reutilizados en una amplia variedad
-de formas. Finalmente, `MyScaffold` utiliza un [Expanded]({{api}}/widgets/Expanded-class.html) 
-para rellenar el espacio restante con su cuerpo, que consiste en un mensaje centrado.
+permite crear widgets genéricos que pueden ser reutilizados en 
+una amplia variedad de formas. Finalmente, `MyScaffold` 
+utiliza un [Expanded]({{api}}/widgets/Expanded-class.html) 
+para rellenar el espacio restante con su cuerpo, 
+que consiste en un mensaje centrado.
 
-Más información: [Layouts](/docs/development/ui/widgets/layout)
+Para más información, mira [Layouts](/docs/development/ui/widgets/layout)
 
 ## Utilizando Material Components
 
@@ -267,12 +270,13 @@ class TutorialHome extends StatelessWidget {
 }
 ```
 
-Ahora que hemos cambiado de `MyAppBar` y `MyScaffold` a los widgets
+Ahora que el código ha cambiado de `MyAppBar` y `MyScaffold` a los widgets
 [AppBar]({{api}}/material/AppBar-class.html) y
-[Scaffold]({{api}}/material/Scaffold-class.html) de `material.dart`, 
-nuestra aplicación se está empezando a ver un poco más Material. Por ejemplo, 
-la barra de aplicaciones tiene una sombra y el texto hereda automáticamente 
-el estilo correcto. También hemos agregado un botón de acción flotante por añadidura.
+[Scaffold]({{api}}/material/Scaffold-class.html), 
+de `material.dart`, 
+la aplicación se está empezando a ver un poco más Material. 
+Por ejemplo, la barra de aplicaciones tiene una sombra y el texto hereda automáticamente 
+el estilo correcto. También se añade acción flotante.
 
 Note que estamos pasando de nuevo los widgets como argumentos a otros widgets. El widget
 [Scaffold]({{api}}/material/Scaffold-class.html) toma un número de widgets diferentes 
@@ -285,14 +289,14 @@ para el [leading]({{api}}/material/AppBar-class.html#leading) y los
 lo largo de todo el framework y es algo que podría considerar al diseñar 
 sus propios widgets.
 
-Más información: [Componentes Material](/docs/development/ui/widgets/material)
+Para más información, mira [Componentes Material](/docs/development/ui/widgets/material).
 
-<aside id="note" class="alert alert-info" markdown="1">
-**Nota:** Material es uno de los dos paquetes de diseño incluidos con Flutter. Para un  
-diseño más centrado en iOS, mira [Componentes Cupertino](/docs/development/ui/widgets/cupertino)
-los cuales tienen su propio set de [CupertinoApp]({{api}}/cupertino/CupertinoApp-class.html), 
-[CupertinoNavigationBar]({{api}}/cupertino/CupertinoNavigationBar-class.html) etc.
-</aside>
+{{site.alert.note}}
+  Material es uno de los dos paquetes de diseño incluidos con Flutter. Para un  
+  diseño más centrado en iOS, mira el paquete [Componentes Cupertino](/docs/development/ui/widgets/cupertino)
+  los cuales tienen su propio set de [CupertinoApp]({{api}}/cupertino/CupertinoApp-class.html), y 
+  [CupertinoNavigationBar]({{api}}/cupertino/CupertinoNavigationBar-class.html) etc.
+{{site.alert.end}}
 
 
 ## Manejar gestos
@@ -342,14 +346,14 @@ callbacks opcionales para otros widgets. Por ejemplo, los widgets
 [IconButton]({{api}}/material/IconButton-class.html),
 [RaisedButton]({{api}}/material/RaisedButton-class.html), y
 [FloatingActionButton]({{api}}/material/FloatingActionButton-class.html) 
-tienen [onPressed]({{api}}/material/RaisedButton-class.html#onPressed)
+tienen [onPressed()]({{api}}/material/RaisedButton-class.html#onPressed)
 callbacks que se activan cuando el usuario toca el widget.
 
-Mas información: [Gestos en Flutter](/docs/development/ui/advanced/gestures)
+Para más información, mira: [Gestos en Flutter](/docs/development/ui/advanced/gestures)
 
 ## Cambiar los widgets en respuesta a las entradas
 
-Hasta ahora, solo hemos usado widgets sin estado. Los widgets sin estado
+Hasta ahora, esta página solo ha usado widgets stateless. Los widgets sin estado
 reciben argumentos de su widget padre, que son almacenados en propiedades
 [final]({{site.dart-site}}/guides/language/language-tour#final-and-const).
 Cuando en un widget es invocado el método
@@ -381,8 +385,8 @@ class _CounterState extends State<Counter> {
       // Esta llamada a setState le dice al framework Flutter que
       // algo ha cambiado en este State, lo que hace que se vuelva a ejecutar
       // el método build a continuación para que la pantalla pueda reflejar los
-      // valores actualizados. Si cambiamos _counter sin llamar
-      // setState(), entonces el método build no sería llamado de nuevo,
+      // valores actualizados. Si cambias _counter sin llamar
+      // setState(), entonces el método build no será llamado de nuevo,
       // así que aparentará no haber ocurrido nada.
       _counter++;
     });
@@ -479,17 +483,17 @@ class _CounterState extends State<Counter> {
 }
 ```
 
-Nótese cómo creamos dos nuevos widgets sin estado, separando limpiamente
+Nótese la creación de dos nuevos stateless widgets, separando limpiamente
 las responsabilidades de _mostrar_ el contador (CounterDisplay) y _cambiar_
 el contador (CounterIncrementor).
 Aunque el resultado neto es el mismo que el ejemplo anterior, la separación de
 responsabilidades permite encapsular una mayor complejidad en los widgets individuales
 manteniendo al mismo tiempo la simplicidad en el padre.
 
-Más information:
+Para más información, mira:
 
-- [StatefulWidget]({{api}}/widgets/StatefulWidget-class.html)
-- [State.setState]({{api}}/widgets/State/setState.html)
+* [StatefulWidget]({{api}}/widgets/StatefulWidget-class.html)
+* [State.setState]({{api}}/widgets/State/setState.html)
 
 ## Juntando todo
 
@@ -607,9 +611,10 @@ class _ShoppingListState extends State<ShoppingList> {
 
   void _handleCartChanged(Product product, bool inCart) {
     setState(() {
-      // Cuando un usuario cambia lo que hay en el carrito, necesitamos cambiar _shoppingCart
-      // dentro de una llamada setState para activar un rebuild. El framework entonces llama a
-      // build, abajo, que actualiza la apariencia visual de la aplicación.
+      // Cuando un usuario cambia lo que hay en el carrito, necesitas cambiar 
+      //_shoppingCart dentro de una llamada setState para activar un rebuild.
+      // El framework entonces llama a build, abajo, 
+      // que actualiza la apariencia visual de la aplicación.
 
       if (inCart)
         _shoppingCart.add(product);
@@ -656,7 +661,7 @@ La clase `ShoppingList` extiende de
 [StatefulWidget]({{api}}/widgets/StatefulWidget-class.html),
 lo que significa que este widget almacena estado mutable. Cuando el widget `ShoppingList`
 se inserta por primera vez en el árbol, el framework llama a la función
-[createState]({{api}}/widgets/StatefulWidget-class.html#createState)
+[createState()]({{api}}/widgets/StatefulWidget-class.html#createState)
 para crear una nueva instancia de `_ShoppingListState` para asociar
 con esa ubicación en el árbol. (Note que típicamente nombramos subclases de
 [State]({{api}}/widgets/State-class.html) con
@@ -673,22 +678,21 @@ reconstruye con el nuevo valor del [widget]({{api}}/widgets/State-class.html#wid
 Si desea ser notificado cuando cambie la propiedad
 [widget]({{api}}/widgets/State-class.html#widget)
 puede anular la función 
-[didUpdateWidget]({{api}}/widgets/State-class.html#didUpdateWidget),
-que se pasa por `oldWidget` para que puedas comparar el widget antiguo
+[didUpdateWidget()]({{api}}/widgets/State-class.html#didUpdateWidget),
+que se pasa como `oldWidget` para que puedas comparar el widget antiguo
 con el actual [widget]({{api}}/widgets/State-class.html#widget).
 
 Cuando se maneja el callback `onCartChanged`, el `_ShoppingListState` muta su
 estado interno agregando o quitando un producto de `_shoppingCart`. Para
 indicar al framework que cambia su estado interno, envuelve esas llamadas
-en una llamada [setState]({{api}}/widgets/State-class.html#setState).
-Llamando [setState]({{api}}/widgets/State-class.html#setState)
-marca este widget como sucio y lo programa para que sea reconstruido la próxima vez
-que tu aplicación necesite actualizar la pantalla. Si te olvidas de llamar
-[setState]({{api}}/widgets/State-class.html#setState)
-cuando se modifica el estado interno de un widget, el framework no sabrá que tu
-widget está sucio y podría no llamar a la función
-[build]({{api}}/widgets/StatelessWidget/build.html), lo que significa que es 
-posible que la interfaz de usuario no se actualice para reflejar el estado cambiado.
+en una llamada [setState()]({{api}}/widgets/State-class.html#setState).
+Llamando setState marca este widget como sucio y lo programa para 
+que sea reconstruido la próxima vez que tu aplicación necesite actualizar la pantalla. 
+Si te olvidas de llamar setState cuando se modifica el estado interno 
+de un widget, el framework no sabrá que tu widget está sucio y podría no 
+llamar a la función [build()]({{api}}/widgets/StatelessWidget/build.html), 
+lo que significa que es posible que la interfaz de usuario no se actualice 
+para reflejar el estado cambiado.
 
 Gestionando el estado de esta manera, no es necesario escribir código separado
 para crear y actualizar widgets hijo. En su lugar, simplemente implementa la función
@@ -702,30 +706,30 @@ StatefulWidget, el framework inserta el nuevo objeto de estado en el árbol y
 luego llama [initState]({{api}}/widgets/State-class.html#initState) en el 
 objeto de estado. Una subclase de [State]({{api}}/widgets/State-class.html) puedes
 sobreescribir [initState]({{api}}/widgets/State-class.html#initState) para hacer 
-el trabajo que debe suceder solo una vez. Por ejemplo, puedes sobreescribir
+el trabajo que debe suceder solo una vez. Por ejemplo, sobreescribir
 [initState]({{api}}/widgets/State-class.html#initState)
 para configurar animaciones o suscribirse a los servicios de la plataforma. Implementaciones de
 [initState]({{api}}/widgets/State-class.html#initState)
 deben comenzar llamando [super.initState]({{api}}/widgets/State-class.html#initState).
 
 Cuando un objeto de estado ya no es necesario, el framework llama
-[dispose]({{api}}/widgets/State-class.html#dispose) en el objeto de estado. Puedes 
-subreescribir la función [dispose]({{api}}/widgets/State-class.html#dispose)
+[dispose]({{api}}/widgets/State-class.html#dispose) en el objeto de estado.  
+Sobreescribir la función [dispose]({{api}}/widgets/State-class.html#dispose)
 para realizar tareas de limpieza. Por ejemplo, puedes sobreescribir
 [dispose]({{api}}/widgets/State-class.html#dispose) para cancelar timers o 
 darse de baja de los servicios de la plataforma. Las implementaciones de
 [dispose]({{api}}/widgets/State-class.html#dispose) típicamente terminan llamando a
 [super.dispose]({{api}}/widgets/State-class.html#dispose).
 
-Más información: [State]({{api}}/widgets/State-class.html)
+Para más información, mira: [State]({{api}}/widgets/State-class.html).
 
 ## Keys
 
-Puedes usar llaves para controlar que los widgets del framework coinciden con
+Usa keys para controlar que los widgets del framework coinciden con
 otros widgets cuando un widget se reconstruye. Por defecto, el framework coincide
 widgets en la construcción actual y anterior de acuerdo con su
 [runtimeType]({{api}}/widgets/Widget-class.html#runtimeType) y el orden en que 
-aparecen. Con las llaves, el framework requiere que los dos widgets tengan 
+aparecen. Con keys, el framework requiere que los dos widgets tengan 
 la misma [key]({{api}}/widgets/Widget-class.html#key) así como el mismo
 [runtimeType]({{api}}/widgets/Widget-class.html#runtimeType).
 
@@ -744,15 +748,16 @@ widget. Por ejemplo, el widget `ShoppingList`, que construye solo las instancias
    los widgets hijo stateful permanecen unidos a la misma entrada semántica en lugar
    de la entrada, en la misma posición numérica dentro del viewport.
 
-Más información: [Key API]({{api}}/foundation/Key-class.html)
+Para más información, mira [Key API]({{api}}/foundation/Key-class.html)-
 
-## Llaves globales
+## Global Keys
 
-Puedes utilizar llaves globales para identificar de forma única los widgets hijos. Las llaves 
-globales deben ser globalmente únicas en toda la jerarquía de widgets, a diferencia de las llaves 
+Usa global keys para identificar de forma única los widgets hijos. Las global keys 
+deben ser globalmente únicas en toda la jerarquía de widgets, a diferencia de las llaves 
 locales que sólo necesitan ser únicas entre hermanos. Debido a que son globalmente únicos, se 
 puede usar una llave global para recuperar el estado asociado con un widget.
 
-Más información: [GlobalKey API]({{api}}/widgets/GlobalKey-class.html)
+Para más información, mira 
+[GlobalKey API]({{api}}/widgets/GlobalKey-class.html).
 
 [runApp()]: {{api}}/widgets/runApp.html

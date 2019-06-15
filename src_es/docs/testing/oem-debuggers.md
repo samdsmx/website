@@ -223,7 +223,7 @@ class _MyHomePageState extends State<MyHomePage> {
 
   @override
   Widget build(BuildContext context) {
-    String toLaunch = 'https://flutter.io';
+    String toLaunch = 'https://flutter.dev';
     return Scaffold(
       appBar: AppBar(
         title: Text(widget.title),
@@ -260,7 +260,7 @@ class _MyHomePageState extends State<MyHomePage> {
 {% endprettify %}
 
 * Añade la dependencia `url_launcher` al fichero pubspec,
-  y ejecuta flutter packages get:
+  y ejecuta flutter pub get:
 
 {% prettify yaml %}
 name: flutter_app
@@ -286,10 +286,10 @@ dev_dependencies:
   indique **Connected**.
   (Esto puede tomar un minuto la primera vez pero es más rápido en los siguientes
    lanzamientos.) La app contiene dos botones: 1) **Launch in browser**
-   abre flutter.io en el navegador predeterminado de tu teléfono y 2) **Launch
-   in app** abre flutter.io dentro de tu app.
+   abre flutter.dev en el navegador predeterminado de tu teléfono y 2) **Launch
+   in app** abre flutter.dev dentro de tu app.
 
-  {% asset 'testing/debugging/oem/launch-flutter-io.png' alt='captura de pantalla conteniendo dos botones para abrir flutter.io' %}
+  {% asset 'testing/debugging/oem/launch-flutter-dev.png' alt='captura de pantalla conteniendo dos botones para abrir flutter.io' %}
 
 * Haz clic en el botón **Attach debugger to Android process** (
   {% asset 'testing/debugging/oem/attach-process-button.png' alt='se ve como un rectángulo con un pequeño escarabajo verde sobrepuesto' %} )
@@ -308,7 +308,7 @@ dev_dependencies:
    (o <strong>com.<em>company</em>.<em>app_name</em></strong>)
    process for the Motorola Moto G.
 
-  {% asset 'testing/debugging/oem/choose-process-dialog.png' alt='captura de pantalla conteniendo dos botones para abrir flutter.io' %}
+  {% asset 'testing/debugging/oem/choose-process-dialog.png' alt='captura de pantalla conteniendo dos botones para abrir flutter.dev' %}
 
 *  En el panel debug, deberías ahora ver un tab para **Android Debugger**.
 

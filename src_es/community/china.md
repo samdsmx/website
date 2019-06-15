@@ -53,7 +53,7 @@ $ flutter doctor
 
 Después de estos pasos, deberías porder continuar
 [configurando Flutter](/docs/get-started/editor) normalmente.
-Desde aquí cuando, los paquetes sean obtenidos por `flutter packages get` serán 
+Desde aquí cuando, los paquetes sean obtenidos por `flutter pub get` serán 
 descargados desde `flutter-io.cn` en cualquier terminal en la que `PUB_HOSTED_URL`
 y `FLUTTER_STORAGE_BASE_URL` estén configurados.
 

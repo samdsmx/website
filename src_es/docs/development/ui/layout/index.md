@@ -308,7 +308,7 @@ ofrecen una variedad de constantes para controlar la alineación.
   necesitas actualizar el fichero pubspec para acceder a estas&mdash;este
   ejemplo usa `Image.asset` para mostrar imágenes. Para más información,
   mira este ejemplo de [fichero 
-  pubspec.yaml]({{examples}}/layout/row/pubspec.yaml),
+  pubspec.yaml]({{examples}}/layout/row_column/pubspec.yaml),
   o [Añadir assets e imágenes en Flutter](/docs/development/ui/assets-and-images).
   No necesitas hacer esto si estas referenciando imágenes online usando 
   `Image.network`.

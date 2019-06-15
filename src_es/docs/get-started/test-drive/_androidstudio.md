@@ -25,14 +25,20 @@ el cual contiene una app demo sencilla que utiliza [Material Components][].
  1. Clic en el **Run icon** en la barra de herramientas, seleccionar **Run > Run** del menú.
 
 {% capture save_changes -%}
-  : invoke **Save All**, or click **Hot Reload**
+  : invoca **Save All**, o haz clic en **Hot Reload**
   <i class="material-icons align-bottom">offline_bolt</i>.
   {% comment %} O, como una alternativa:
     {% asset 'get-started/hot-reload-button.png' alt='looks like a lightning bolt' %}.
   {% endcomment -%}
 {% endcapture %}
 
+{% capture ide_profile -%}
+  invocar el menu **Run > Profile** en el IDE, o
+{% endcapture %}
+
 {% include_relative _try-hot-reload.md save_changes=save_changes %}
+{% include run-profile.md ide_profile=ide_profile %}
+
 
 [Main IntelliJ toolbar]: {% asset tools/android-studio/main-toolbar.png @path %}
 [Managing AVDs]: {{site.android-dev}}/studio/run/managing-avds

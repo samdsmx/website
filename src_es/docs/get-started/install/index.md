@@ -8,6 +8,12 @@ toc: false
 
 Selecciona el sistema operativo en el que estes instalando Flutter:
 
+{{site.alert.note}}
+  **¿Estas en Chrome OS?**
+
+  Si es así, !mira la [documentación de instalación de Flutter en Chrome!](/docs/get-started/install/chromeos)
+{{site.alert.end}}
+
 <div class="card-deck mb-8">
 {% for os in site.os-list %}
   <a class="card" href="/get-started/install/{{os | downcase}}">

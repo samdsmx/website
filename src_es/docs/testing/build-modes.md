@@ -7,7 +7,7 @@ La herramienta Flutter admite tres modos al compilar su aplicación
 y un modo si encabezados para pruebas. 
 Este documento explica los tres modos y le dice cuándo usar cada uno de ellos.
 Para obtener más información sobre las pruebas sin modo, consulte 
-[Pruebas Unitarias.](/docs/testing#unit-testing)
+[Pruebas Unitarias.](/docs/testing#unit-tests)
 
 Eliges el modo de compilación dependiendo de dónde te encuentres en el el 
 ciclo de desarrollo. ¿Estás depurando tu código?, 

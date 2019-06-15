@@ -608,14 +608,14 @@ flutter:
     - assets/background.png
 ```
 
-The `assets` subsection specifies files that should be included with the app.
-Each asset is identified by an explicit path relative to the `pubspec.yaml`
+The `assets` subsection specifies files that should be included with the app.
+Each asset is identified by an explicit path relative to the `pubspec.yaml`
 file, where the asset file is located. The order in which the assets are
-declared does not matter. The actual directory used (`assets` in this case) does
+declared does not matter. The actual directory used (`assets` in this case) does
 not matter. However, while assets can be placed in any app directory, it's a
 best practice to place them in the `assets` directory.
 
-During a build, Flutter places assets into a special archive called the *asset
+During a build, Flutter places assets into a special archive called the *asset
 bundle*, which apps read from at runtime. When an asset’s path is specified in
 the assets section of `pubspec.yaml`, the build process looks for any files with
 the same name in adjacent subdirectories. These files are also included in the
@@ -678,8 +678,8 @@ dependencies:
   google_sign_in: ^3.0.3
 ```
 
-2. Install the package from the command line by using `flutter packages get`.
-   If using an IDE, it often runs `flutter packages get` for you, or it might
+2. Install the package from the command line by using `flutter pub get`.
+   If using an IDE, it often runs `flutter pub get` for you, or it might
    prompt you to do so.
 3. Import the package into your app code as shown below:
 
@@ -703,14 +703,14 @@ In Flutter, you build your UI out of widgets that describe what their view
 should look like given their current configuration and state.
 
 Widgets are often composed of many small, single-purpose widgets that are nested
-to produce powerful effects. For example, the Container widget consists of
+to produce powerful effects. For example, the Container widget consists of
 several widgets responsible for layout, painting, positioning, and sizing.
-Specifically, the `Container` widget includes the `LimitedBox`,
-`ConstrainedBox`, `Align`, `Padding`, `DecoratedBox`, and `Transform` widgets.
+Specifically, the `Container` widget includes the `LimitedBox`,
+`ConstrainedBox`, `Align`, `Padding`, `DecoratedBox`, and `Transform` widgets.
 Rather than subclassing `Container` to produce a customized effect, you can
 compose these and other simple widgets in new and unique ways.
 
-The `Center` widget is another example of how you can control the layout. To
+The `Center` widget is another example of how you can control the layout. To
 center a widget, wrap it in a `Center` widget and then use layout
 widgets for alignment, row, columns, and grids. These layout widgets do not have
 a visual representation of their own. Instead, their sole purpose is to control
@@ -1029,8 +1029,8 @@ and [colors]({{site.api}}/flutter/material/Colors-class.html).
 Icon(Icons.lightbulb_outline, color: Colors.redAccent)
 ```
 
-When using the `Icons` class, make sure to set `uses-material-design: true` in
-the project's `pubspec.yaml` file. This ensures that
+When using the `Icons` class, make sure to set `uses-material-design: true` in
+the project's `pubspec.yaml` file. This ensures that
 the `MaterialIcons` font, which displays the icons, is included in your app.
 {% prettify dart %}
 name: my_awesome_application
@@ -1039,7 +1039,7 @@ flutter: [[highlight]]uses-material-design: true[[/highlight]]
 
 Flutter's [Cupertino (iOS-style)](/docs/development/ui/widgets/cupertino) package provides high
 fidelity widgets for the current iOS design language. To use the `CupertinoIcons`
-font, add a dependency for `cupertino_icons` in your project's  `pubspec.yaml` file.
+font, add a dependency for `cupertino_icons` in your project's  `pubspec.yaml` file.
 
 ```yaml
 name: my_awesome_application
@@ -1518,7 +1518,7 @@ screen.
 
 In Android, new screens are new Activities. In iOS, new screens are new
 ViewControllers. In Flutter, screens are just Widgets! And to navigate to new
-screens in Flutter, use the Navigator widget.
+screens in Flutter, use the Navigator widget.
 
 ### How do I navigate between screens?
 
@@ -1662,7 +1662,7 @@ A `TabController` is required to coordinate the tab selection between a `TabBar`
 and a `TabBarView`. The `TabController` constructor `length` argument is the total
 number of tabs. A `TickerProvider` is required to trigger the notification whenever
 a frame triggers a state change. The `TickerProvider` is `vsync`. Pass the
-`vsync: this` argument to the `TabController` constructor whenever you create
+`vsync: this` argument to the `TabController` constructor whenever you create
 a new `TabController`.
 
 The [TickerProvider]({{site.api}}/flutter/scheduler/TickerProvider-class.html)
@@ -1800,7 +1800,7 @@ To listen for and respond to gestures, Flutter supports taps, drags, and
 scaling. The gesture system in Flutter has two separate layers. The first layer
 includes raw pointer events, which describe the location and movement of
 pointers, (such as touches, mice, and styli movements), across the screen. The
-second layer includes gestures, which describe semantic actions that consist of
+second layer includes gestures, which describe semantic actions that consist of
 one or more pointer movements.
 
 ### How do I add a click or press listeners to a widget?
@@ -1900,7 +1900,7 @@ see the [GestureDetector class][].
 ## Making HTTP network requests
 
 Fetching data from the internet is common for most apps. And in Flutter,
-the `http` package provides the simplest way to fetch data from the internet.
+the `http` package provides the simplest way to fetch data from the internet.
 
 ### How do I fetch data from API calls?
 
@@ -1965,7 +1965,7 @@ _getIPAddress() async {
 Text fields allow users to type text into your app so they can be used to build
 forms, messaging apps, search experiences, and more. Flutter provides two
 core text field widgets:
-[TextField]({{site.api}}/flutter/material/TextField-class.html) and
+[TextField]({{site.api}}/flutter/material/TextField-class.html) and
 [TextFormField]({{site.api}}/flutter/material/TextFormField-class.html).
 
 ### How do I use text field widgets?
@@ -2124,9 +2124,9 @@ if (Theme.of(context).platform == TargetPlatform.iOS) {
 
 ## Debugging
 
-Before running your applications, verify your code with `flutter analyze`. The
-Flutter analyzer (which is a wrapper around the `dartanalyzer` tool) examines
-your code and helps identify possible issues. If you’re using a Flutter-enabled
+Before running your applications, verify your code with `flutter analyze`. The
+Flutter analyzer (which is a wrapper around the `dartanalyzer` tool) examines
+your code and helps identify possible issues. If you’re using a Flutter-enabled
 IDE, this occurs automatically.
 
 ### How do I access the in-app developer menu?

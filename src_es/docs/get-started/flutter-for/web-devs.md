@@ -114,7 +114,9 @@ Los ejemplos CSS utilizan los colores equivalentes en hexadecimal de la Material
     ),
     width: 320.0,
     height: 240.0,
-[[highlight]]    color: Colors.grey[300],[[/highlight]]
+    [[highlight]]decoration: BoxDecoration(
+      color: Colors.grey[300],
+    ),[[/highlight]]
   );
 {% endprettify %}
 </div>
