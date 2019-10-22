@@ -9,7 +9,7 @@ puedes usar el comando `flutter` para actualizar tu SDK de Flutter
 y los paquetes que dependen de él.
 
 
-## Confiura una sola vez
+## Configura una sola vez
 
 Para que el comando `flutter` funciones correctamente,
 el fichero `pubspec.yaml` de tu app debe requerir el SDK de Flutter.
