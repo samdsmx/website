@@ -206,7 +206,7 @@ En las más complejas, tendrás multitud de modelos, y por tanto muchos
 , pero es una clase sencilla para trabajar con ella.)
 
 En nuestro ejemplo de aplicación de compras, queremos gestionar el estado del carro en 
-un `ChangeNotifier`. Creamos una nueva clase que extiende lo extiende como esta:
+un `ChangeNotifier`. Creamos una nueva clase que extiende de ChangeNotifier como esta:
 
 <?code-excerpt "state_mgmt/simple/lib/src/provider.dart (model)" replace="/ChangeNotifier/[!$&!]/g;/notifyListeners/[!$&!]/g"?>
 ```dart
@@ -421,7 +421,7 @@ reconstruya cuando `notifyListeners` sea llamado.
 
 Puedes [revisar el 
 ejemplo]({{site.github}}/filiph/samples/tree/provider-shopper/provider_shopper)
-covierto en este artículo. Si quieres algo más simple,
+ en este artículo. Si quieres algo más simple,
 puedes ver como la sencilla app Counter se ve cuando se [construye con 
 `provider`](https://github.com/flutter/samples/tree/master/provider_counter).
 
