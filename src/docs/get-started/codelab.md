@@ -270,8 +270,10 @@ packages, on the [Pub site]({{site.pub}}/flutter).
 ### Problems?
 {:.no_toc}
 
-If your app is not running correctly, look for typos. If needed,
-use the code at the following links to get back on track.
+If your app is not running correctly, look for typos.
+If you want to try some of Flutter's debugging tools,
+check out the [DevTools][] suite of debugging and profiling tools.
+If needed, use the code at the following links to get back on track.
 
 * [pubspec.yaml]({{code-url}}/startup_namer/step2_use_package/pubspec.yaml)
 * [lib/main.dart]({{code-url}}/startup_namer/step2_use_package/lib/main.dart)
@@ -383,10 +385,10 @@ a child inside the existing `MyApp` stateless widget.
 
   **Reloading...<br>
   Some program elements were changed during reload but did not run when
-  the view was reassembled; you may need to restart the app (by pressing "R")
+  the view was reassembled; you might need to restart the app (by pressing "R")
   for the changes to have an effect.**
 
-  It may be a false positive, but restarting ensures that your changes
+  It might be a false positive, but restarting ensures that your changes
   are reflected in the app's UI.
 {{site.alert.end}}
 
@@ -394,8 +396,10 @@ a child inside the existing `MyApp` stateless widget.
 ### Problems?
 {:.no_toc}
 
-If your app is not running correctly, you can use the code
-at the following link to get back on track.
+If your app is not running correctly, look for typos.
+If you want to try some of Flutter's debugging tools,
+check out the [DevTools][] suite of debugging and profiling tools.
+If needed, use the code at the following link to get back on track.
 
 * [lib/main.dart]({{code-url}}/startup_namer/step3_stateful_widget/lib/main.dart)
 
@@ -464,7 +468,7 @@ lazily, on demand.
         and places each suggestion into a `ListTile` row. For even rows, the
         function adds a `ListTile` row for the word pairing. For odd rows, the
         function adds a `Divider` widget to visually separate the entries. Note
-        that the divider may be difficult to see on smaller devices.
+        that the divider might be difficult to see on smaller devices.
      2. Add a one-pixel-high divider widget before each row in the `ListView`.
      3. The expression `i ~/ 2` divides `i` by 2 and returns an integer result.
         For example: 1, 2, 3, 4, 5 becomes 0, 1, 1, 2, 2. This calculates the
@@ -549,8 +553,10 @@ lazily, on demand.
 ### Problems?
 {:.no_toc}
 
-If your app is not running correctly, you can use the code at the following link
-to get back on track.
+If your app is not running correctly, look for typos.
+If you want to try some of Flutter's debugging tools,
+check out the [DevTools][] suite of debugging and profiling tools.
+If needed, use the code at the following link to get back on track.
 
 * [lib/main.dart]({{code-url}}/startup_namer/step4_infinite_list/lib/main.dart)
 
@@ -585,3 +591,7 @@ where you add the following functionality:
 * Implement navigation to a new route by adding a new screen
   containing the saved favorites.
 * Modify the theme color, making an all-white app.
+
+
+
+[DevTools]: /docs/development/tools/devtools

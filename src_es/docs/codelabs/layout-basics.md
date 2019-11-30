@@ -1,19 +1,22 @@
 ---
 title: "Codelab: Layout básicos en Flutter"
 description: "Un codelab que usa DartPad2 para enseñar los conceptos de layout de Flutter."
+toc: false
 ---
 
 {{site.alert.note}}
-  Este codelab se está utilizando para probar algunas nuevas características de DartPad! Puedes encontrar fallos,
-  malapropismos, molestias, y otras rarezas.
-  Si esto ocurre, por favor toma un momento para 
-  [reportar un bug en GitHub](https://github.com/dart-lang/dart-pad/issues/new).
-  Requerimientos de características y sugerencias también son muy apreciadas.
+  El editor embebido usa una versión experimental de DartPad.
+  Si encuentras un bug en DartPad o tienes sugerencias para DartPad, 
+  por favor [crea un DartPad 
+  issue](https://github.com/dart-lang/dart-pad/issues/new) 
+  haciendo click en el icono de bug en la parte superior derecha de esta página.
 {{site.alert.end}}
 
 {{site.alert.note}}
-  Este codelab actualmente ha sido desarrollado y probado con Chrome. Puede haber características (en el corto plazo) que funcionen en unos navegadores, pero no en otros. Si encuentras alguna, por favor siéntete libre de 
-  [archivar un bug en GitHub](https://github.com/flutter/flutter/issues/new),
+  Este codelab actualmente ha sido desarrollado y probado 
+  con Chrome. Puede haber características (en el corto plazo) que 
+  funcionen en unos navegadores, pero no en otros. Si encuentras alguna, por favor siéntete libre de 
+  [crear un DartPad issue](https://goo.gle/flutter_web_issue),
   etiquetando el issue con `platform-web`.
 {{site.alert.end}}
 
@@ -44,7 +47,7 @@ en la derecha y se añaden hacia la izquierda.
 Abajo hay un widget llamado `MyWidget` que construye una única `Row`.
 Prueba a añadir tres widgets `BlueBox` a su lista de hijos.
 
-<iframe src="https://dartpad.dartlang.org/experimental/embed-new.html?id=76e993732820ef908ea8424744b9996d&fw=true" width="100%" height="400px"></iframe>
+<iframe src="https://dartpad.dev/experimental/embed-new-flutter.html?id=76e993732820ef908ea8424744b9996d&fw=true" width="100%" height="400px"></iframe>
 
 ### Tamaño del eje principal
 
@@ -61,13 +64,13 @@ widget `Row` que tome el menor espacio posible.
 
 Aquí está el ejemplo que acaba de terminar. Prueba a fijar la propiedad `mainAxisSize` de `Row` a `MainAxisSize.min` y observa lo que ocurre.
 
-<iframe src="https://dartpad.dartlang.org/experimental/embed-new.html?id=9ac4ade5961150a27d3e547b667c8037&fw=true" width="100%" height="400px"></iframe>
+<iframe src="https://dartpad.dev/experimental/embed-new-flutter.html?id=9ac4ade5961150a27d3e547b667c8037&fw=true" width="100%" height="400px"></iframe>
 
 ### Alineación en el eje principal
 
 Si has fijado el `mainAxisSize` de un `Row` al mínimo,
 no habrá ningún espacio adicional que los hijos puedan usar.
-Si lo has fijado en `max`, sin embargo, el `Row` puede tener algun espacio adicional que usar. 
+Si lo has fijado en `max`, sin embargo, el `Row` puede tener algún espacio adicional que usar. 
 Puedes usar la propiedad `mainAxisAlignment` para controlar como el `Row` alinea sus hijos entre 
 este espacio.
 
@@ -106,7 +109,7 @@ start. Prueba a cambiarlo a los otros valores
 y volver a ejecutar el código para ver como las 
 cosas se mueven.
 
-<iframe src="https://dartpad.dartlang.org/experimental/embed-new.html?id=0c97de625a9aa5c3194f9eecbd73ec1a&fw=true" width="100%" height="400px"></iframe>
+<iframe src="https://dartpad.dev/experimental/embed-new-flutter.html?id=0c97de625a9aa5c3194f9eecbd73ec1a&fw=true" width="100%" height="400px"></iframe>
 
 ### Alineación en el eje tranversal
 
@@ -150,7 +153,7 @@ que otra propiedad sea fijada también, verás
 un error si lo intentas.
 No te preocupes, esto se verá en la siguiente sección.
 
-<iframe src="https://dartpad.dartlang.org/experimental/embed-new.html?id=610aa31bbd09c90b5cede790bb6c3854&fw=true" width="100%" height="400px"></iframe>
+<iframe src="https://dartpad.dev/experimental/embed-new-flutter.html?id=610aa31bbd09c90b5cede790bb6c3854&fw=true" width="100%" height="400px"></iframe>
 
 ### Alineación con linea base
 
@@ -172,7 +175,7 @@ Este `Row` contiene tres widgets `Text` con diferentes tamaños de fuente. Prueb
  diferentes valores para `textBaseline` también (hay un enum llamado `TextBaseline` que contiene los valores 
  validos para baseline).
 
-<iframe src="https://dartpad.dartlang.org/experimental/embed-new.html?id=8c4a0571b161755c8d9235df947d268e&fw=true" width="100%" height="400px"></iframe>
+<iframe src="https://dartpad.dev/experimental/embed-new-flutter.html?id=8c4a0571b161755c8d9235df947d268e&fw=true" width="100%" height="400px"></iframe>
 
 ### Hijos flexibles
 
@@ -213,7 +216,7 @@ Después, prueba a cambiar la propiedad fit a tight y observa lo que ocurre.
 Esta combinación (un factor `flex` de 1 y un `fit` tight)
 es muy popular, hay un widget específico para facilitar su uso: `Expanded`.
 
-<iframe src="https://dartpad.dartlang.org/experimental/embed-new.html?id=c7ba00c50151ab2e5c0c2194686fef93&fw=true" width="100%" height="400px"></iframe>
+<iframe src="https://dartpad.dev/experimental/embed-new-flutter.html?id=c7ba00c50151ab2e5c0c2194686fef93&fw=true" width="100%" height="400px"></iframe>
 
 ### Factores Flex
 
@@ -239,7 +242,7 @@ En este ejemplo, los tres hijos del `Row` son `Flexible`.
 Prueba a cambiar sus valores `flex` y 
 re-ejecuta el código para ver como el tamaño de los widgets se ajusta.
 
-<iframe src="https://dartpad.dartlang.org/experimental/embed-new.html?id=4ab5409b566272c8f2cd28feddb0a995&fw=true" width="100%" height="400px"></iframe>
+<iframe src="https://dartpad.dev/experimental/embed-new-flutter.html?id=4ab5409b566272c8f2cd28feddb0a995&fw=true" width="100%" height="400px"></iframe>
 
 ### ¿Qué ocurre si te quedas sin espacio?
 
@@ -263,7 +266,7 @@ ancho para ajustarse. Ejecuta el código como está para
 ver lo que ocurre, entonces prueba a modificar el 
 ancho del `Container` para hacer que se ajuste.
 
-<iframe src="https://dartpad.dartlang.org/experimental/embed-new.html?id=5a59d93119dc5b6eb1725235fde137cf&fw=true" width="100%" height="400px"></iframe>
+<iframe src="https://dartpad.dev/experimental/embed-new-flutter.html?id=5a59d93119dc5b6eb1725235fde137cf&fw=true" width="100%" height="400px"></iframe>
 
 ### Prueba a usar SizedBox para hacer espacio
 
@@ -276,7 +279,7 @@ de un `Row`, una manera fácil de hacerlo es pegar un
 Prueba a hacer algo de espacio entre esta lista de dos items colocando un 
 `SizedBox` con un `width` de 100 entre ellos.
 
-<iframe src="https://dartpad.dartlang.org/experimental/embed-new.html?id=0c3e1ce8177a2f0cc8e2275d5260b348&fw=true" width="100%" height="400px"></iframe>
+<iframe src="https://dartpad.dev/experimental/embed-new-flutter.html?id=0c3e1ce8177a2f0cc8e2275d5260b348&fw=true" width="100%" height="400px"></iframe>
 
 ### Los Spacers se expande para hacer espacio
 
@@ -288,7 +291,7 @@ Estos son flexibles, y se expanden para rellenar cualquier espacio sobrante.
 Prueba a añadir un `Spacer` entre el primer y el segundo hijo del 
 `Row` aquí abajo.
 
-<iframe src="https://dartpad.dartlang.org/experimental/embed-new.html?id=dd68c1eb491e7a22a2ceb4127d78e504&fw=true" width="100%" height="400px"></iframe>
+<iframe src="https://dartpad.dev/experimental/embed-new-flutter.html?id=dd68c1eb491e7a22a2ceb4127d78e504&fw=true" width="100%" height="400px"></iframe>
 
 ### Espera, ¿no iba aprender también sobre Columns?
 
@@ -307,7 +310,7 @@ con sus propiedades más importantes configuradas.
 Intenta juguetear con ellos y verás que 
 `Column` funciona como un `Row` vertical.
 
-<iframe src="https://dartpad.dartlang.org/experimental/embed-new.html?id=6cafe7beab954e72fed2fd2393a29f6c&fw=true" width="100%" height="400px"></iframe>
+<iframe src="https://dartpad.dev/experimental/embed-new-flutter.html?id=6cafe7beab954e72fed2fd2393a29f6c&fw=true" width="100%" height="400px"></iframe>
 
 ### Poniéndolo todo junto
 
@@ -333,7 +336,7 @@ Cada tarjeta de empresa necesita un nombre y un título, por tanto empieza con e
 style: Theme.of(context).textTheme.headline<br>
 ```
 
-  * El segundo widget de texto debe decir 'Experienced App Developer`
+  * El segundo widget de texto debe decir `Experienced App Developer`
     y usa el estilo por defecto (obvia totalmente la propiedad `style`).
 
 * Fija el `crossAxisAlignment` del `Column` a start, por    esto los widgets de texto son alineados al 
@@ -342,7 +345,7 @@ style: Theme.of(context).textTheme.headline<br>
 * Fija el `mainAxisSize` del `Column` a `MainAxisSize.min`,
   con esto la tarjeta no se expandirá hasta el alto total de la ventana.
 
-<iframe src="https://dartpad.dartlang.org/experimental/embed-new.html?id=5e7e9352bca878f446d4347f324e2f63&fw=true&split=60" width="100%" height="800px"></iframe>
+<iframe src="https://dartpad.dev/experimental/embed-new-flutter.html?id=5e7e9352bca878f446d4347f324e2f63&fw=true&split=60" width="100%" height="800px"></iframe>
 
 Las tarjetas de empresa a menudo tienen un icono o logo en la esquina superior izquierda,
 entonces el siguiente paso es añadir una por ti. Empieza con envolver el 
@@ -365,9 +368,9 @@ Ahora puedes añadir el `Icon`:
   * Para el hijo del widget `Padding`, usa un `Icon`.
     * Puedes usar el recurso de icono que quieras, pero  `Icons.account_circle`
       funciona bien.
-    * Fija el `size` del `Icon`.
+    * Fija el `size` del `Icon` a 50.
 
-<iframe src="https://dartpad.dartlang.org/experimental/embed-new.html?id=684e599476eef2ec4b4508e6b2186c03&fw=true&split=60" width="100%" height="800px"></iframe>
+<iframe src="https://dartpad.dev/experimental/embed-new-flutter.html?id=684e599476eef2ec4b4508e6b2186c03&fw=true&split=60" width="100%" height="800px"></iframe>
 
 ¡Tu primera `Row` esta ahora completa! Aún hay dos cosas más que hacer, 
 y necesitas un `Column` para ponerlas en él.
@@ -384,7 +387,7 @@ Envuelve tu `Row` con un widget `Column` para que se vea así:
 
 Entonces, finaliza tu nuevo `Column` con estos pasos:
 
-* Fija el mainAxisSize del `Column` a min
+* Fija el `mainAxisSize` del `Column` a min
   * ¡De otro modo este se expandirá para rellenar toda la pantalla!
 
 * Fija el `crossAxisAlignment` del `Column` a stretch
@@ -397,7 +400,7 @@ Entonces, finaliza tu nuevo `Column` con estos pasos:
     * Un `SizedBox` con un alto de 16
     * Otro `Row` vacio
 
-<iframe src="https://dartpad.dartlang.org/experimental/embed-new.html?id=19ead6db4f42ce112fc0a7d2e0922466&fw=true&split=60" width="100%" height="800px"></iframe>
+<iframe src="https://dartpad.dev/experimental/embed-new-flutter.html?id=19ead6db4f42ce112fc0a7d2e0922466&fw=true&split=60" width="100%" height="800px"></iframe>
 
 Aunque quedan unos pocos pasos para seguir. A continuación la segunda fila.
 Añade lo siguiente a su lista de hijos:
@@ -411,7 +414,7 @@ los extremos opuestos de la fila del `Row`, lo cual no es correcto.
 Puedes arreglar esto fijando la propiedad `mainAxisAlignment` del `Row` a `spaceBetween`, que 
 pone algo de espacio extra entre los dos widgets `Text`.
 
-<iframe src="https://dartpad.dartlang.org/experimental/embed-new.html?id=e6e07bbe96255b762163cf3e40906944&fw=true&split=60" width="100%" height="800px"></iframe>
+<iframe src="https://dartpad.dev/experimental/embed-new-flutter.html?id=e6e07bbe96255b762163cf3e40906944&fw=true&split=60" width="100%" height="800px"></iframe>
 
 El último paso es colocar estos iconos en su lugar 
 en la parte de abajo de la tarjeta:
@@ -429,4 +432,4 @@ en la parte de abajo de la tarjeta:
 * Fija la propiedad `mainAxisAlignment` del `Row` a
   `MainAxisAlignment.spaceAround`
 
-<iframe src="https://dartpad.dartlang.org/experimental/embed-new.html?id=2234a5ccada200eb1e018b12fa95d57d&fw=true&split=60" width="100%" height="800px"></iframe>
+<iframe src="https://dartpad.dev/experimental/embed-new-flutter.html?id=2234a5ccada200eb1e018b12fa95d57d&fw=true&split=60" width="100%" height="800px"></iframe>

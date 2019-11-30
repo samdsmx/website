@@ -82,12 +82,13 @@ when pushing new code changes. This provides timely feedback on whether the code
 changes work as expected and do not introduce bugs.
 
 For information on running tests on various continuous integration services,
-please see the following: 
+see the following: 
 
-* [Continuous Delivery using fastlane with
-  Flutter](/docs/deployment/fastlane-cd/)
+* [Continuous delivery using fastlane with
+  Flutter](/docs/deployment/cd#fastlane)
 * [Test Flutter apps on
   Travis]({{site.flutter-medium}}/test-flutter-apps-on-travis-3fd5142ecd8c)
+* [Test Flutter apps on Cirrus](https://cirrus-ci.org/examples/#flutter)
 * [GitLab Continuous Integration
   (GitLab CI/CD)](https://docs.gitlab.com/ee/ci/README.html#doc-nav).
   You'll need to create and configure a `.gitlab-ci.yml` file. You can 

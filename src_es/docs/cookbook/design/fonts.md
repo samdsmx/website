@@ -1,26 +1,38 @@
 ---
-title: Uso de fuentes personalizadas
-short-title: Fuentes personalizadas
+title: Uso una fuente personalizada
 description: Cómo usar fuentes personalizadas
+prev:
+  title: Usar themes para compartir colores y estilos de fuente
+  path: /docs/cookbook/design/themes
+next:
+  title: Trabajar con tabs
+  path: /docs/cookbook/design/tabs
 ---
 
-Si bien Android e iOS ofrecen fuentes de sistema de alta calidad, una de las solicitudes más comunes de los diseñadores es ¡utilizar fuentes personalizadas!. Por ejemplo, podemos tener una fuente personalizada de nuestro diseñador o descargar una fuente de 
+Aunque Android e iOS ofrecen fuentes de sistema de alta calidad, 
+una de las solicitudes más comunes de los diseñadores es utilizar fuentes personalizadas. 
+Por ejemplo, puedes tener una fuente personalizada de nuestro diseñador 
+o quizás has descargado una fuente de 
 [Google Fonts](https://fonts.google.com/).
 
-Flutter funciona de fábrica con fuentes personalizadas. Podemos aplicar fuentes en una aplicación completa o en Widgets individuales. 
-
-## Instrucciones
+Flutter trabaja con fuentes personalizadas y puedes aplicar una 
+fuente personalizada a toda la app o a widgets individuales.
+Esta receta crea una app que usa fuentes personalizadas 
+con los siguientes pasos:
 
   1. Importa los archivos de fuentes
   2. Declara la fuente en `pubspec.yaml`
   3. Establece una fuente como predeterminada 
-  4. Usa una fuente en un Widget específico
+  4. Usa una fuente en un widget específico
   
 ## 1. Importa los archivos de fuentes
 
-Para trabajar con una fuente, necesitamos importar los archivos de fuente al proyecto. Es una práctica común colocar los archivos de fuentes en una carpeta de `fonts` o `assets` en la raíz de un proyecto Flutter. 
+Para trabajar con una fuente, necesitamos importar los archivos de fuente al proyecto. 
+Es una práctica común colocar los archivos de fuentes en una carpeta de `fonts` o `assets` 
+en la raíz de un proyecto Flutter. 
 
-Por ejemplo, si queremos importar los archivos de fuentes Raleway y Roboto Mono a nuestro proyecto, la estructura de la carpeta se vería así:
+Por ejemplo, si queremos importar los archivos de fuentes Raleway y Roboto Mono 
+a nuestro proyecto, la estructura de la carpeta podría verse así:
 
 ```
 awesome_app/
@@ -31,10 +43,10 @@ awesome_app/
     RobotoMono-Bold.ttf
 ```
 
-## 2. Declara la fuente en `pubspec.yaml`
+## 2. Declara la fuente en pubspec
 
-Ahora que tenemos una fuente para trabajar, necesitamos decirle a Flutter dónde encontrarla. 
-Podemos hacerlo incluyendo una definición de fuente en `pubspec.yaml`.
+Ahora que has identificado una fuente, dile a Flutter dónde encontrarla. 
+Puedes hacerlo incluyendo una definición de fuente en `pubspec.yaml`.
 
 ```yaml
 flutter:
@@ -53,19 +65,27 @@ flutter:
 
 ### definiciones de opciones de `pubspec.yaml` 
 
-La `family` determina el nombre de la fuente que podemos usar en la propiedad
+La `family` determina el nombre de la fuente que podemos 
+usar en la propiedad
 [`fontFamily`](https://docs.flutter.io/flutter/painting/TextStyle/fontFamily.html)
-de un objeto [`TextStyle`](https://docs.flutter.io/flutter/painting/TextStyle-class.html).
+de un objeto 
+[`TextStyle`](https://docs.flutter.io/flutter/painting/TextStyle-class.html).
 
 El `asset` es una ruta al archivo de fuente, relativa al archivo `pubspec.yaml` .
-Estos archivos contienen los contornos de los glifos en la fuente. Al construir nuestra aplicación, estos archivos se incluyen en el paquete de asset de nuestra aplicación.
+Estos archivos contienen los contornos de los glifos en la fuente. 
+Al construir la app, estos archivos se incluyen en el paquete de asset de la app.
 
-Una sola fuente puede hacer referencia a muchos archivos diferentes con diferentes pesos y estilos de contorno:
+Una sola fuente puede hacer referencia a muchos archivos diferentes 
+con diferentes pesos y estilos de contorno:
 
-  * La propiedad `weight` especifica el peso de los contornos en el archivo como un múltiplo entero de 100 entre 100 y 900. Estos valores corresponden al 
+  * La propiedad `weight` especifica el peso de los contornos en el 
+    archivo como un múltiplo entero de 100 entre 100 y 900. 
+    Estos valores corresponden al 
     [`FontWeight`](https://docs.flutter.io/flutter/dart-ui/FontWeight-class.html)
-    y se pueden utilizar en la propiedad  [`fontWeight`](https://docs.flutter.io/flutter/painting/TextStyle/fontWeight.html)
-    de un objeto [`TextStyle`](https://docs.flutter.io/flutter/painting/TextStyle-class.html).
+    y se pueden utilizar en la propiedad 
+    [`fontWeight`](https://docs.flutter.io/flutter/painting/TextStyle/fontWeight.html)
+    de un objeto 
+    [`TextStyle`](https://docs.flutter.io/flutter/painting/TextStyle-class.html).
 
   * La propiedad `style` especifica si los contornos del archivo son `italic` o `normal`. Estos valores corresponden al 
     [`FontStyle`](https://docs.flutter.io/flutter/dart-ui/FontStyle-class.html)
@@ -74,7 +94,7 @@ Una sola fuente puede hacer referencia a muchos archivos diferentes con diferent
 
 ## 3. Establece una fuente como predeterminada 
 
-Tenemos dos opciones sobre cómo aplicar fuentes al texto: como fuente predeterminada o sólo dentro de Widgets específicos.
+Tenemos dos opciones sobre cómo aplicar fuentes al texto: como fuente predeterminada o sólo dentro de widgets específicos.
 
 Para usar una fuente por defecto, podemos establecer la propiedad `fontFamily` como parte del 
  `theme` de las aplicaciones. El valor que proporcionamos a `fontFamily` debe coincidir con el nombre de `family` declarado en el `pubspec.yaml`. 
@@ -83,20 +103,22 @@ Para usar una fuente por defecto, podemos establecer la propiedad `fontFamily` c
 ```dart
 MaterialApp(
   title: 'Custom Fonts',
-  // Establecer Raleway como la fuente predeterminada de la aplicación
+  // Establecer Raleway como la fuente predeterminada de la aplicación.
   theme: ThemeData(fontFamily: 'Raleway'),
   home: MyHomePage(),
 );
 ```
 
-Para obtener más información sobre temas, por favor consulta la receta ["Usar Themes para compartir estilos de fuentes y colores"](/docs/cookbook/design/themes/).
+Para obtener más información sobre temas, mira la receta 
+["Usar Themes para compartir estilos de fuentes y colores"](/docs/cookbook/design/themes/).
 
-## 4. Usa una fuente en un Widget específico
+## 4. Usa una fuente en un widget específico
 
-Si queremos aplicar la fuente a un Widget específico, como un Widget de `Text` , 
-podemos proporcionar un [`TextStyle`](https://docs.flutter.io/flutter/painting/TextStyle-class.html) al Widget.
+Si queremos aplicar la fuente a un widget específico, como un Widget de `Text` , 
+podemos proporcionar un [`TextStyle`](https://docs.flutter.io/flutter/painting/TextStyle-class.html) al widget.
 
-En este ejemplo, aplicaremos la fuente RobotoMono a un único Widget de  `Text`. Una vez más, la `fontFamily` debe coincidir con el nombre `family` que declaramos en 
+En este ejemplo, aplicaremos la fuente RobotoMono a un único widget de  `Text`. 
+Una vez más, la `fontFamily` debe coincidir con el nombre `family` que declaramos en 
 `pubspec.yaml`. 
 
 <!-- skip -->
@@ -110,7 +132,9 @@ Text(
 ### Estilo de texto
 
 Si un objeto [`TextStyle`](https://docs.flutter.io/flutter/painting/TextStyle-class.html)
-especifica un peso o estilo para el que no existe un archivo de fuente exacto, el motor utiliza uno de los archivos más genéricos para la fuente e intenta extrapolar los contornos para el peso y estilo solicitados.  
+especifica un peso o estilo para el que no existe un archivo de fuente exacto, 
+el motor utiliza uno de los archivos más genéricos para la fuente e intenta 
+extrapolar los contornos para el peso y estilo solicitados.  
 
 ## Ejemplo completo
 
@@ -159,7 +183,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       title: 'Custom Fonts',
-      // Establecer Raleway como la fuente predeterminada de la aplicación
+      // Establecer Raleway como la fuente predeterminada de la aplicación.
       theme: ThemeData(fontFamily: 'Raleway'),
       home: MyHomePage(),
     );
@@ -170,10 +194,10 @@ class MyHomePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      // AppBar utilizará la fuente Raleway predeterminada de la aplicación
+      // AppBar utilizará la fuente Raleway predeterminada de la aplicación.
       appBar: AppBar(title: Text('Custom Fonts')),
       body: Center(
-        // Este Widget de texto usará la fuente RobotoMono
+        // Este Widget de texto usará la fuente RobotoMono.
         child: Text(
           'Roboto Mono sample',
           style: TextStyle(fontFamily: 'RobotoMono'),

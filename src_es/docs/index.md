@@ -88,7 +88,7 @@ revisa la serie de videos
 <iframe style="max-width: 100%" width="560" height="315" src="https://www.youtube.com/embed/vqPG1tU6-c0" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 [Boring Flutter Show playlist](https://www.youtube.com/watch?v=vqPG1tU6-c0&list=PLjxrf2q8roU28W3pXbISJbVA5REsA41Sx&index=3&t=9s)
 
-Quizas también encuentres estos documentos útiles:
+Podrías también encontrar útiles estos documentos:
 
 * [Usando paquetes](/docs/development/packages-and-plugins/using-packages)
 * [Añadir assets e imágenes](/docs/development/ui/assets-and-images)

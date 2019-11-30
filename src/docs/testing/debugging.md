@@ -265,7 +265,7 @@ widget's description.
 ### Rendering layer
 
 If you are trying to debug a layout issue, then the Widgets layer's
-tree may be insufficiently detailed. In that case, you can dump the
+tree might be insufficiently detailed. In that case, you can dump the
 rendering tree by calling
 [`debugDumpRenderTree()`]({{site.api}}/flutter/rendering/debugDumpRenderTree.html).
 As with `debugDumpApp()`, you can call this more or less any time
@@ -904,4 +904,3 @@ ulimit -S -n 2048
 If you use Travis or Cirrus for testing, increase the number of
 available file handlers that they can open by adding the same line to
 flutter/.travis.yml, or flutter/.cirrus.yml, respectively.
-

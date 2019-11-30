@@ -24,8 +24,10 @@
           permalink: /docs/get-started/flutter-for/web-devs
         - title: Flutter para Xamarin.Forms devs
           permalink: /docs/get-started/flutter-for/xamarin-forms-devs
+        - title: Introducción a UI declarativa
+        permalink: /docs/get-started/flutter-for/declarative
     - title: "Dart vision general"
-      permalink: https://www.dartlang.org/guides/language
+      permalink: https://www.dart.dev/guides/language
 
 - title: Ejemplos & tutoriales
   children:
@@ -140,8 +142,27 @@
           permalink: /docs/development/tools/android-studio
         - title: Visual Studio Code
           permalink: /docs/development/tools/vs-code
-        - title: Dart DevTools
-          permalink: https://flutter.github.io/devtools/
+        - title: DevTools
+          permalink: /docs/development/tools/devtools
+          children:
+            - title: Visión general
+              permalink: /docs/development/tools/devtools/overview
+            - title: Instalar en Android Studio / IntelliJ
+              permalink: /docs/development/tools/devtools/android-studio
+            - title: Instalar en VS Code
+              permalink: /docs/development/tools/devtools/vscode
+            - title: Instalar en línea de comandos
+              permalink: /docs/development/tools/devtools/cli
+            - title: Flutter inspector
+              permalink: /docs/development/tools/devtools/inspector
+            - title: Timeline view
+              permalink: /docs/development/tools/devtools/timeline
+            - title: Memory view
+              permalink: /docs/development/tools/devtools/memory
+            - title: Debugger
+              permalink: /docs/development/tools/devtools/debugger
+            - title: Logging view
+              permalink: /docs/development/tools/devtools/logging
         - title: Flutter SDK
           permalink: /docs/development/tools/sdk
           children:
@@ -153,15 +174,15 @@
           permalink: /docs/development/tools/hot-reload
         - title: Formatear el código
           permalink: /docs/development/tools/formatting
-        - title: Widget inspector
-          permalink: https://flutter.github.io/devtools/inspector
 
 - title: Pruebas & optimización
   permalink: /docs/testing
   children:
     - title: Depurar
       permalink: /docs/testing/debugging
-    - title: Usar depuradores OEM
+    - title: Depurar apps programáticamente
+      permalink: /docs/testing/code-debugging
+    - title: Usar un depurador OEM
       permalink: /docs/testing/oem-debuggers
     - title: Modos de compilación en Flutter
       permalink: /docs/testing/build-modes
@@ -183,8 +204,8 @@
       permalink: /docs/deployment/android
     - title: Build y release para iOS
       permalink: /docs/deployment/ios
-    - title: Despliegue continuo con fastlane
-      permalink: /docs/deployment/fastlane-cd
+    - title: Despliegue continuo
+      permalink: /docs/deployment/cd
 
 - title: Recursos
   children:

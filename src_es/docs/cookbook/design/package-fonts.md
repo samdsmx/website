@@ -1,19 +1,19 @@
 ---
-title: "Exportando fuentes de un paquete"
+title: Exportar fuentes de un paquete
 prev:
-  title: Displaying SnackBars
+  title: Mostrar un snackbars
   path: /docs/cookbook/design/snackbars
 next:
-  title: Updating the UI based on orientation
+  title: Actualizar el UI basado en la orientación
   path: /docs/cookbook/design/orientation
 ---
 
-En lugar de declarar una fuente como parte de una aplicación, podemos declarar una fuente como parte 
-de un paquete separado. Esta es una forma conveniente de compartir la misma fuente a través 
-de varios proyectos diferentes o para desarrolladores que publican sus paquetes en el 
-[sitio web de pub][].  
-
-## Instrucciones
+En lugar de declarar una fuente como parte de una app, 
+puedes declarar una fuente como parte de un paquete separado. 
+Esta es una forma conveniente de compartir la misma fuente a través 
+de varios proyectos diferentes, 
+o para desarrolladores que publican sus paquetes en el [sitio web de pub][].
+Esta receta sigue los siguientes pasos:
 
   1. Agrega una fuente a un paquete
   2. Agrega el paquete y la fuente a la aplicación
@@ -39,10 +39,10 @@ awesome_package/
 
 ## 2. Agrega el paquete y la fuente a la aplicación
 
-Ahora puedes consumir el paquete y usar las fuentes que proporciona. Esto implica 
-actualizar `pubspec.yaml` en el directorio raíz de la *app*. 
+Ahora puedes usar las fuentes en el paquete  
+actualizando `pubspec.yaml` en el directorio raíz de la *app*. 
 
-### Añade el paquete al proyecto
+### Añade el paquete a la app
 
 ```yaml
 dependencies:
@@ -51,11 +51,12 @@ dependencies:
 
 ### Declara los font assets
 
-Ahora que has importado el paquete, debes decirle a Flutter dónde encontrar 
+Ahora que has importado el paquete, dile a Flutter dónde encontrar 
 las fuentes del `awesome_package`.
 
-Para declarar las fuentes del paquete, debes prefijar la ruta a la fuente con 
-`packages/awesome_package`. Esto le indica a Flutter que busque en la carpeta 
+Para declarar las fuentes del paquete, prefija la ruta a la fuente con 
+`packages/awesome_package`. 
+Esto le indica a Flutter que busque en la carpeta 
 `lib` del paquete para la fuente.
 
 ```yaml
@@ -70,8 +71,8 @@ flutter:
 
 ## 3. Usa la fuente
 
-Puedes usar [`TextStyle`][]
-para cambiar la apariencia del texto. Para usar paquetes de fuentes, necesitas no sólo 
+Usa [`TextStyle`][] para cambiar la apariencia del texto. 
+Para usar paquetes de fuentes, necesitas no sólo 
 declarar qué fuente quieres usar, sino también declarar el `package` al que pertenece la fuente. 
 
 <!-- skip -->
@@ -141,7 +142,7 @@ class MyHomePage extends StatelessWidget {
       // AppBar usa la fuente Raleway predeterminada de la aplicación
       appBar: AppBar(title: Text('Package Fonts')),
       body: Center(
-        // Este widget de texto usala fuente RobotoMono
+        // Este widget de texto usala fuente RobotoMono.
         child: Text(
           'Using the Raleway font from the awesome_package',
           style: TextStyle(

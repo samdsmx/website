@@ -1,5 +1,5 @@
 ---
-title: "Focus en un campo de texto"
+title: Focus y campos de texto
 prev:
   title: Crea y da estilo a un campo de texto
   path: /docs/cookbook/forms/text-input
@@ -8,17 +8,17 @@ next:
   path: /docs/cookbook/forms/text-field-changes
 ---
 
-Cuando se selecciona un campo de texto y se acepta la entrada, se dice que tiene  "focus." 
+Cuando se selecciona un campo de texto y se acepta la entrada, se dice que tiene "focus." 
 En general, los usuarios pueden hacer focus a los campos de texto al tocarlos, y los 
 desarrolladores pueden hacer focus a los campos de texto usando las herramientas descritas en esta receta. 
 
 Administrar el focus, es una herramienta fundamental para crear formularios con un flujo 
-intuitivo. Por ejemplo, supongamos que tenemos una pantalla de búsqueda con un campo de 
-texto. Cuando el usuario navega hacia la pantalla de búsqueda, podemos hacer focus al campo 
+intuitivo. Por ejemplo, supongamos que tienes una pantalla de búsqueda con un campo de 
+texto. Cuando el usuario navega hacia la pantalla de búsqueda, puedes hacer focus al campo 
 de texto del término de búsqueda. Esto le permite al usuario comenzar a escribir tan pronto 
-como la pantalla esté visible, ¡sin necesidad de tocar manualmente en el campo de texto!
+como la pantalla esté visible, sin necesidad de tocar manualmente en el campo de texto.
 
-En esta receta, aprenderemos cómo hacer focus a un campo de texto tan pronto como sea 
+En esta receta, aprenderás cómo hacer focus a un campo de texto tan pronto como sea 
 visible, así como también a hacer focus a un campo de texto cuando se pulsa un botón.
 
 ## Focus a un campo de texto tan pronto como sea visible
@@ -38,12 +38,11 @@ Para obtener más información sobre el manejo de entradas y la creación de cam
 
 ## Focus a un campo de texto cuando se pulsa un botón
 
-En lugar de enfocar inmediatamente un campo de texto específico, es posible que necesitemos 
-hacer focus a un campo de texto en un momento posterior. En este ejemplo, veremos cómo hacer 
-focus a un campo de texto después de que el usuario pulsa un botón. En el mundo real, es 
+En lugar de enfocar inmediatamente un campo de texto específico, es posible que necesites 
+hacer focus a un campo de texto en un momento posterior. En el mundo real, es 
 posible que también se necesite hacer focus a un campo de texto específico en respuesta a una llamada de una api o a un error de validación.
-
-### Instrucciones
+En este ejemplo, verás cómo hacer focus a un campo de texto 
+después de que el usuario pulsa un botón usando los siguientes pasos: 
 
   1. Crea un `FocusNode`
   2. Pasa el `FocusNode` a un `TextField`
@@ -51,11 +50,11 @@ posible que también se necesite hacer focus a un campo de texto específico en 
 
 ### 1. Crea un `FocusNode`
 
-Primero, necesitaremos crear un [`FocusNode`]({{site.api}}/flutter/widgets/FocusNode-class.html).
-Utilizaremos el `FocusNode` para identificar un `TextField` específico en el "focus tree" de 
-Flutter. Esto nos permitirá hacer focus al `TextField` en los siguientes pasos.
+Primero, crea un [`FocusNode`]({{site.api}}/flutter/widgets/FocusNode-class.html).
+Usa el `FocusNode` para identificar un `TextField` específico en el "focus tree" de 
+Flutter. Esto te permite hacer focus al `TextField` en los siguientes pasos.
 
-Como los nodos focus son objetos de larga vida, debemos administrar el ciclo de vida 
+Como los nodos focus son objetos de larga vida, administra el ciclo de vida 
 usando una clase `State` . Para hacer esto, crea la instancia de `FocusNode` dentro del 
 método `initState` de una clase `State`, y límpia este dentro del 
 método `dispose`. 
@@ -92,7 +91,7 @@ class _MyCustomFormState extends State<MyCustomForm> {
 
   @override
   Widget build(BuildContext context) {
-    // Lo completaremos en el siguiente paso!
+    // Rellena esto en el siguiente paso.
   }
 }
 ```
@@ -118,7 +117,7 @@ class _MyCustomFormState extends State<MyCustomForm> {
 
 ### 3. Dale Focus al `TextField` cuando pulses un botón
 
-Finalmente, queremos hace focus al campo de texto cuando el usuario pulsa un botón de acción 
+Finalmente, haz focus al campo de texto cuando el usuario pulsa un botón de acción 
 flotante. Utilizaremos el método [`requestFocus`]({{site.api}}/flutter/widgets/FocusScopeNode/requestFocus.html) 
 para lograr esta tarea.
 

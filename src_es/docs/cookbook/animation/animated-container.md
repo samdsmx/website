@@ -1,5 +1,8 @@
 ---
 title: Anima las propiedades de un Container
+prev:
+  title: Animar una transición entra páginas
+  path: /docs/cookbook/animation/page-route-animation
 next:
   title: Efectos Fade in and out en un Widget
   path: /docs/cookbook/animation/opacity-animation
@@ -10,7 +13,9 @@ proporciona una manera conveniente de crer un widget con propiedades específica
 ancho, alto, color de fondo, padding, bordes, y más.
 
 Las animaciones simples a menudo implican cambiar estas propiedades a lo largo del tiempo.
-Por ejemplo, es posible que desees animar el color de fondo de gris a verde para indicar que el usuario ha seleccionado un elemento.
+Por ejemplo, 
+es posible que desees animar el color de fondo de gris a verde para indicar 
+que el usuario ha seleccionado un elemento.
 
 Para animar estas propiedades, Flutter proporciona el widget 
 [`AnimatedContainer`]({{site.api}}/flutter/widgets/AnimatedContainer-class.html). 
@@ -18,13 +23,11 @@ Al igual que el widget `Container`,` AnimatedContainer` te permite definir
 el ancho, la altura, los colores de fondo y más. Sin embargo, cuando el 
 `AnimatedContainer` se reconstruye con nuevas propiedades, automáticamente 
 se anima entre los valores antiguos y nuevos. En Flutter, 
-estos tipos de animaciones se conocen 
-como "animaciones implícitas".
+estos tipos de animaciones se conocen como "animaciones implícitas".
 
 Esta receta describe cómo usar un `AnimatedContainer` para animar el tamaño, 
-el color de fondo y el radio del borde cuando el usuario toca un botón.
-
-## Instrucciones
+el color de fondo y el radio del borde cuando el usuario toca un botón 
+usando los siguientes pasos:
 
   1. Crear un widget StatefulWidget con propiedades por defecto
   2. Construir un `AnimatedContainer` usando las propiedades
@@ -37,9 +40,9 @@ Para empezar, crea unas clases
 [`State`]({{site.api}}/flutter/widgets/State-class.html).
 Usa la clase State personalizada para definir las propiedades que necesitas cambiar a 
 lo largo del tiempo. En este ejemplo, esto incluye el ancho, alto, color, y radio del 
-borde. Además, también puedes definir el valor por defecto de cada propiedad.
+borde. También puedes definir el valor por defecto de cada propiedad.
 
-Estas propiedades deben pertenecer a una clase `State` personalizada para que 
+Estas propiedades pertenecen a una clase `State` personalizada para que 
 puedan actualizarse cuando el usuario toca un botón.
 
 <!-- skip -->
@@ -66,7 +69,7 @@ class _AnimatedContainerAppState extends State<AnimatedContainerApp> {
 
 ## 2. Construir un `AnimatedContainer` usando las propiedades
 
-A continuación, puedes crear el `AnimatedContainer` utilizando las propiedades 
+A continuación, crea el `AnimatedContainer` utilizando las propiedades 
 definidas en el paso anterior. Además, debes proporcionar una propiedad `duration` 
 que defina la duración de la animación.
 
@@ -91,15 +94,14 @@ AnimatedContainer(
 ## 3. Iniciar la animación reconstruyendo con nuevas propiedades
 
 Finalmente, inicia la animación reconstruyendo el `AnimatedContainer` con 
-nuevas propiedades. ¿Cómo desencadenar una reconstrucción? Cuando se trata de `StatefulWidgets`, 
-[`setState`] ({{site.api}}/flutter/widgets/State/setState.html) 
-es la solución.
+las nuevas propiedades. ¿Cómo desencadenar una reconstrucción? Usa el método 
+[`setState()`] ({{site.api}}/flutter/widgets/State/setState.html).
 
 Para este ejemplo, agrega un botón a la aplicación. Cuando el usuario toca el botón, actualiza 
 las propiedades con un nuevo ancho, alto, color de fondo y radio de borde 
-dentro de una llamada a `setState`.
+dentro de una llamada a `setState()`.
 
-En una aplicación real, la mayoría de las veces, realiza la transición entre valores fijos (por 
+En una aplicación real normalmente se realiza la transición entre valores fijos (por 
 ejemplo, de un fondo gris a verde). Para esta aplicación, genera nuevos valores cada vez que el 
 usuario toque el botón.
 

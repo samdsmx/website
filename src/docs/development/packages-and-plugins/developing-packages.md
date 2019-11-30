@@ -27,7 +27,7 @@ minimal package consists of:
 Packages can contain several kinds of content:
 
 * *Dart packages*: General packages written in Dart, for example the
-  [`path`]({{site.pub}}/packages/path) package. Some of these may
+  [`path`]({{site.pub}}/packages/path) package. Some of these might
   contain Flutter specific functionality and thus have a dependency on the
   Flutter framework, restricting their use to Flutter only, for example the
   [`fluro`]({{site.pub}}/packages/fluro) package.
@@ -275,7 +275,7 @@ Next, run the dry-run command to see if everything passes analysis:
 $ flutter pub pub publish --dry-run
 ```
 
-(Note the redundant `pub pub`, which is needed until [issue #33302)(https://github.com/flutter/flutter/issues/33302) is resolved).
+(Note the redundant `pub pub`, which is needed until [issue #33302](https://github.com/flutter/flutter/issues/33302) is resolved).
 
 Finally, run the actual publish command:
 

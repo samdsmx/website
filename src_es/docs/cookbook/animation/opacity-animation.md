@@ -8,14 +8,14 @@ next:
   path: /docs/cookbook/design/drawer
 ---
 
-Como desarrolladores de UI, a menudo necesitas mostrar y ocultar elementos en pantalla. Sin embargo, 
+Los desarrolladores de UI, a menudo necesitan mostrar y ocultar elementos en pantalla. Sin embargo, 
 los elementos que aparecen y desaparecen rápidamente de la pantalla pueden resultar molestos para los 
-usuarios finales. En su lugar, a los elementos les puedes aplicar un fade con una animación de 
+usuarios finales. En su lugar, 
+a los elementos les puedes aplicar un fade con una animación de 
 opacidad para crear una experiencia suave.
 
-En Flutter, puedes lograr esta tarea usando el widget[`AnimatedOpacity`][].
-
-## Instrucciones
+El widget [`AnimatedOpacity`][] hace fácil realizar animaciones 
+de opacidad. Esta receta usa los siguientes pasos:
 
   1. Muestra una cuadro para realizar el fade in and out
   2. Define un `StatefulWidget`
@@ -24,7 +24,7 @@ En Flutter, puedes lograr esta tarea usando el widget[`AnimatedOpacity`][].
   
 ## 1. Crea un cuadro para realizar el fade in and out
 
-Primero, necesitarás algo para realizar el fade in and out! En este ejemplo, dibujarás un cuadro 
+Primero, crea algo para realizar el fade in and out! Para este ejemplo, dibujarás un cuadro 
 verde en la pantalla.
 
 <!-- skip -->
@@ -44,7 +44,7 @@ visible o invisible. Para lograr esto, podemos usar un widget
 
 Un `StatefulWidget` es una clase que crea un objeto `State`. El objeto `State` 
 contiene algunos datos sobre tu aplicación y proporciona una forma de actualizar esos datos. 
-Cuando actualizas los datos, también puedes pedirle a Flutter que reconstruya tu UI con esos cambios.
+Cuando se actualizan los datos, también puedes pedirle a Flutter que reconstruya tu UI con esos cambios.
 
 En este caso, tendrás un dato: un booleano que representa si el botón es visible 
 o invisible. 
@@ -57,7 +57,7 @@ este código.
 <!-- skip -->
 ```dart
 // El trabajo de StatefulWidget es tomar algunos datos y crear una clase State.
-// En este caso, nuestro Widget toma un título y crea un _MyHomePageState.
+// En este caso, el widget toma un título y crea un _MyHomePageState.
 class MyHomePage extends StatefulWidget {
   final String title;
 
@@ -70,7 +70,7 @@ class MyHomePage extends StatefulWidget {
 // La clase State es responsable de dos cosas: mantener algunos datos que puedes 
 // actualizar y construir la UI usando esa información.
 class _MyHomePageState extends State<MyHomePage> {
-  // Si el recuadro verde debe ser visible o invisible
+  // Si el recuadro verde debe ser visible o invisible.
   bool _visible = true;
 
   @override
@@ -82,23 +82,23 @@ class _MyHomePageState extends State<MyHomePage> {
 
 ## 3. Muestra un botón que alterne la visibilidad
 
-Ahora que tienes algunos datos para determinar si el recuadro verde debe ser visible o invisible 
-necesitas una forma de actualizar esos datos. En este caso, si el cuadro está visible, queremos 
+Ahora que tienes algunos datos para determinar si el recuadro verde debe ser visible 
+necesitas una forma de actualizar esos datos. En este ejemplo, si el cuadro está visible, queremos 
 ocultarlo. Si la caja está oculta, querrás mostrarla.  
 
 Para lograrlo, mostrarás un botón. Cuando un usuario pulsa el botón, alternas el booleano de 
 verdadero a falso, o de falso a verdadero. Necesitas hacer este cambio usando 
-[`setState`][],
-que es un método de la clase `State`. Esto le permite a Flutter saber que necesita reconstruir el Widget.
+[`setState()`][],
+que es un método de la clase `State`. Esto llama a Flutter para que reconstruya el widget.
 
-Nota: Para obtener más información sobre cómo trabajar con las entradas del usuario, por favor consulta la sección 
+Nota: Para obtener más información sobre cómo trabajar con las entradas del usuario, zconsulta la sección 
 [Manejando Gestos](/docs/cookbook#gestures) del Cookbook.
 
 <!-- skip -->
 ```dart
 FloatingActionButton(
   onPressed: () {
-    // Asegúrate de llamar a setState Esto le dice a Flutter que reconstruya el
+    // Llama a setState Esto le dice a Flutter que reconstruya el
     // UI con los cambios!
     setState(() {
       _visible = !_visible;
@@ -111,24 +111,24 @@ FloatingActionButton(
 
 ## 4. Al cuadro, aplícale el Fade in and out
 
-Tienes un recuadro verde en la pantalla. Tienes un botón para alternar la visibilidad a verdadero o 
-falso. Entonces, ¿cómo aplicas el fade in and out al cuadro? 
+Tienes un recuadro verde en la pantalla y un botón para alternar la visibilidad a `true` o 
+`false`. Entonces, ¿cómo aplicas el fade in and out al cuadro? 
 Con un Widget [`AnimatedOpacity`][].
 
-El Widget `AnimatedOpacity` requiere tres argumentos:
+El widget `AnimatedOpacity` requiere tres argumentos:
 
   * `opacity`: Un valor de 0.0 (invisible) a 1.0 (completamente visible).
   * `duration`: Cuánto tiempo debe durar la animación para completar.
-  * `child`: El widget para animar. En nuestro caso, el cuadro verde.
+  * `child`: El widget para animar. En este caso, el cuadro verde.
 
 <!-- skip -->
 ```dart
 AnimatedOpacity(
-  // Si el Widget debe ser visible, anime a 1.0 (completamente visible). Si
-  // el Widget debe estar oculto, anime a 0.0 (invisible).
+  // Si el widget está visible, anima hasta 0.0 (invisible).
+  // Si el widget está oculto, anima hasta 1.0 (completamente visible).
   opacity: _visible ? 1.0 : 0.0,
   duration: Duration(milliseconds: 500),
-  // El cuadro verde debe ser el hijo de AnimatedOpacity
+  // El cuadro verde debe ser un hijo del widget AnimatedOpacity
   child: Container(
     width: 200.0,
     height: 200.0,
@@ -155,8 +155,8 @@ class MyApp extends StatelessWidget {
   }
 }
 
-// El trabajo de StatefulWidget es tomar algunos datos y crear una clase State.
-// En este caso, el Widget toma un título y crea un _MyHomePageState.
+// El trabajo de StatefulWidget es tomar datos y crear una clase State.
+// En este caso, el widget toma un título y crea un _MyHomePageState.
 class MyHomePage extends StatefulWidget {
   final String title;
 
@@ -169,7 +169,7 @@ class MyHomePage extends StatefulWidget {
 // La clase State es responsable de dos cosas: mantener algunos datos que puedas
 // actualizar y construir la UI usando esa información.
 class _MyHomePageState extends State<MyHomePage> {
-  // Si el recuadro verde debe ser visible o invisible
+  // Si el recuadro verde debe ser visible
   bool _visible = true;
 
   @override
@@ -180,11 +180,11 @@ class _MyHomePageState extends State<MyHomePage> {
       ),
       body: Center(
         child: AnimatedOpacity(
-          // Si el Widget debe ser visible, anime a 1.0 (completamente visible). Si
-          // el Widget debe estar oculto, anime a 0.0 (invisible).
+          // Si el widget está visible, anima hasta 0.0 (invisible).
+          // Si el widget está oculto, anima hasta 1.0 (completamente visible).
           opacity: _visible ? 1.0 : 0.0,
           duration: Duration(milliseconds: 500),
-          // El cuadro verde debe ser el hijo de AnimatedOpacity
+          // El cuadro verde debe ser un hijo del widget AnimatedOpacity
           child: Container(
             width: 200.0,
             height: 200.0,
@@ -194,7 +194,7 @@ class _MyHomePageState extends State<MyHomePage> {
       ),
       floatingActionButton: FloatingActionButton(
         onPressed: () {
-          // Asegúrate de llamar a setState. Esto le dice a Flutter que reconstruya el
+          // Llama a setState. Esto le dice a Flutter que reconstruya el
           // UI con los cambios!
           setState(() {
             _visible = !_visible;
@@ -212,4 +212,4 @@ class _MyHomePageState extends State<MyHomePage> {
 
 [`AnimatedOpacity`]: {{site.api}}/flutter/widgets/AnimatedOpacity-class.html
 [`StatefulWidget`]: {{site.api}}/flutter/widgets/StatefulWidget-class.html
-[`setState`]: {{site.api}}/flutter/widgets/State/setState.html
+[`setState()`]: {{site.api}}/flutter/widgets/State/setState.html

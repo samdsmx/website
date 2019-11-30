@@ -11,7 +11,7 @@ many other UI frameworks._
 ## Why a declarative UI?
 
 Frameworks from Win32 to web to Android and iOS typically use an imperative
-style of UI programming. This may be the style you’re most familiar
+style of UI programming. This might be the style you’re most familiar
 with&mdash;where you manually construct a full-functioned UI entity,
 such as a UIView or equivalent, and later mutate it using methods and
 setters when the UI changes.
@@ -41,12 +41,12 @@ ViewC c3 = new ViewC(...)
 b.add(c3)
 ```
 
-You may also need to replicate this configuration in the constructor of
-ViewB since the source of truth for the UI may outlive instance `b` itself.
+You might also need to replicate this configuration in the constructor of
+ViewB since the source of truth for the UI might outlive instance `b` itself.
 
 In the declarative style, view configurations (such as Flutter’s Widgets)
 are immutable and are only lightweight "blueprints". To change the UI,
-a Widget triggers a rebuild on itself (most commonly by calling `setState()`
+a widget triggers a rebuild on itself (most commonly by calling `setState()`
 on StatefulWidgets in Flutter) and constructs a new Widget subtree.
 
 <!-- skip -->
@@ -65,4 +65,3 @@ state of the layout) behind the scenes with RenderObjects.
 RenderObjects persist between frames and Flutter’s lightweight Widgets
 tell the framework to mutate the RenderObjects between states.
 The Flutter framework handles the rest.
-

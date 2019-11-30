@@ -1,5 +1,5 @@
 ---
-title: "Obtener el valor de un campo de texto"
+title: Obtener el valor de un campo de texto
 prev:
   title: Manejar los cambios en un campo de texto
   path: /docs/cookbook/forms/text-field-changes
@@ -8,10 +8,9 @@ next:
   path: /docs/cookbook/gestures/ripples
 ---
 
-En esta receta, veremos cómo recuperar el texto que un usuario ha escrito en un 
-campo de texto.
-
-## Instrucciones
+En esta receta, 
+aprende cómo recuperar el texto que un usuario ha escrito en un 
+campo de texto usando los siguientes pasos:
 
   1. Crea un `TextEditingController`
   2. Proporciona el `TextEditingController` a un `TextField`
@@ -19,17 +18,12 @@ campo de texto.
 
 ## 1. Crea un `TextEditingController`
 
-Para recuperar el texto que un usuario ha escrito en un campo de texto, necesitamos 
-crear un [`TextEditingController`]({{site.api}}/flutter/widgets/TextEditingController-class.html).
-Luego proporcionaremos `TextEditingController` a un `TextField` en los siguientes 
-pasos.
+Para recuperar el texto que un usuario ha escrito en un campo de texto, crea un [`TextEditingController`]({{site.api}}/flutter/widgets/TextEditingController-class.html) y 
+proporciónaselo a un `TextField` o `TextFormField`
 
-Una vez que se proporciona un `TextEditingController` a un `TextField` o `TextFormField`,
-podemos usarlo para recuperar el texto que un usuario ha digitado en ese campo de texto.
-
-Nota: También es importante hacer el `dispose` del `TextEditingController` cuando 
-hayamos terminado de usarlo. Esto asegurará que descartemos cualquier recurso utilizado 
-por el objeto.
+{{site.alert.secondary}}
+  **Important:** LLama a `dispose` del `TextEditingController` cuando hayas terminado de usarlo. Esto asegurará que descartemos cualquier recurso utilizado por el objeto.
+{{site.alert.end}}
 
 <!-- skip -->
 ```dart
@@ -42,8 +36,8 @@ class MyCustomForm extends StatefulWidget {
 // Define la clase State correspondiente. Esta clase contendrá los datos relacionados con
 // nuestro formulario.
 class _MyCustomFormState extends State<MyCustomForm> {
-  // Crea un controlador de texto. Lo usaremos para recuperar el valor actual
-  // del TextField!
+  // Crea un controlador de texto y úsalo para recuperar el valor actual
+  // del TextField.
   final myController = TextEditingController();
 
   @override
@@ -62,9 +56,8 @@ class _MyCustomFormState extends State<MyCustomForm> {
 
 ## 2. Proporciona el `TextEditingController` a un `TextField`
 
-Ahora que tenemos un `TextEditingController` para trabajar, tenemos que conectarlo a un 
-campo de texto específico. Para hacer esto, proporcionaremos el Widget `TextEditingController` 
-a un `TextField` o `TextFormField`  como propiedad del `controller` .
+Ahora que tienes un `TextEditingController`, conéctalo a un 
+campo de texto usando la propiedad `controller`:
 
 <!-- skip -->
 ```dart
@@ -75,19 +68,19 @@ TextField(
 
 ## 3. Muestra el valor actual del campo de texto
 
-Después de que hayamos proporcionado el `TextEditingController` a nuestro campo de texto, 
-¡podemos empezar a leer valores! Usaremos el método [`text`]({{site.api}}/flutter/widgets/TextEditingController/text.html) 
+Después de que hayas proporcionado el `TextEditingController` al 
+campo de texto, empezamos a leer valores. Usa el método [`text`]({{site.api}}/flutter/widgets/TextEditingController/text.html) 
 proporcionado por el `TextEditingController` para recuperar el String de texto 
-que el usuario haya digitado en el campo de texto.
+que el usuario haya ingresado en el campo de texto.
 
-En este ejemplo, mostraremos un cuadro de diálogo de alerta con el valor 
+El siguiente código muestra un cuadro de diálogo de alerta con el valor 
 actual del campo de texto cuando el usuario pulsa un botón de acción flotante.  
 
 <!-- skip -->
 ```dart
 FloatingActionButton(
   // Cuando el usuario pulsa el botón, muestra un diálogo de alerta con el
-  // texto que el usuario ha digitado en nuestro campo de texto.
+  // texto que el usuario ha ingresado en nuestro campo de texto.
   onPressed: () {
     return showDialog(
       context: context,
@@ -131,8 +124,8 @@ class MyCustomForm extends StatefulWidget {
 // Define la clase State correspondiente. Esta clase contendrá los datos relacionados con
 // nuestro formulario.
 class _MyCustomFormState extends State<MyCustomForm> {
-  // Crea un controlador de texto. Lo usaremos para recuperar el valor actual
-  // del TextField!
+  // Crea un controlador de texto y úsalo para recuperar el valor actual
+  // del TextField.
   final myController = TextEditingController();
 
   @override

@@ -1,5 +1,5 @@
 ---
-title: Dart SDK
+title: Dart SDK overview
 description: Dart libraries and command-line tools.
 js:
 - url: /tools/sdk/archive/assets/install.js
@@ -7,8 +7,13 @@ js:
 ---
 
 The Dart SDK has the libraries and command-line tools that you need to develop
-Dart apps. To learn about other tools you can use for Dart development, see
-[Dart Tools](/tools).
+Dart web, command-line, and server apps. To get the Dart SDK, see [Get Dart](/get-dart).
+
+If you're developing only mobile apps,
+then you don't need the Dart SDK; just [install Flutter.][flutter]
+
+To learn about other tools you can use for Dart development, see
+the [Dart tools]({{site.dartlang}}/tools) page.
 
 <aside class="alert alert-info" markdown="1">
   **Note:** This site's documentation and examples use
@@ -17,67 +22,33 @@ Dart apps. To learn about other tools you can use for Dart development, see
   of the **Dart SDK**.
 </aside>
 
-## Install the SDK {#install}
-
-As the following instructions show,
-you can use a package manager
-to easily install and update the Dart SDK.
-Alternatively, you can
-[build the SDK from source][] or
-[download the SDK as a zip file](/tools/sdk/archive).
-{% comment %}
-NOTE to editors: Keep the zip file link as the last thing in the paragraph,
-so it's easy to find (but not more tempting than package managers).
-{% endcomment %}
-
-<aside class="alert alert-warning" markdown="1">
-  {% if site.data.pkg-vers.SDK.channel == 'dev' -%}
-  **Important:**
-  The **Dart 2** SDK is available from the **dev channel** only.
-  {% endif %}
-
-  {% include_relative archive/_sdk-terms.md %}
-</aside>
-
-<ul class="tabs__top-bar">
-  <li class="tab-link current" data-tab="tab-sdk-install-windows">Windows</li>
-  <li class="tab-link" data-tab="tab-sdk-install-linux">Linux</li>
-  <li class="tab-link" data-tab="tab-sdk-install-mac">Mac</li>
-</ul>
-<div id="tab-sdk-install-windows" class="tabs__content current" markdown="1">
-{% include_relative _windows.md %}
-</div>
-<div id="tab-sdk-install-linux" class="tabs__content" markdown="1">
-{% include_relative _linux.md %}
-</div>
-<div id="tab-sdk-install-mac" class="tabs__content" markdown="1">
-{% include_relative _mac.md %}
-</div>
-
-## What's in the SDK
+## What's in the Dart SDK
 
 The Dart SDK includes a `lib` directory for the [Dart libraries][] and a `bin`
 directory that has these command-line tools:
 
 <div class="row">
   <div class="col-lg-6" markdown="1">
-  [dart]({{site.dartlang}}/dart-vm)
+  [dart]({{site.dartlang}}/server)
   : The standalone VM
 
-  [dart2js]({{site.webdev}}/tools/dart2js)
+  [dart2aot & dartaotruntime]({{site.dartlang}}/tools/dart2aot)
+  : Tools for compiling Dart code to native x64 machine code
+
+  [dart2js]({{site.dartlang}}/tools/dart2js)
   : The Dart-to-JavaScript compiler (used only for web development)
 
-  [dartanalyzer](https://github.com/dart-lang/sdk/tree/master/pkg/analyzer_cli#dartanalyzer)
+  [dartanalyzer]({{site.dartlang}}/tools/dartanalyzer)
   : The static analyzer
-
-  [dartdevc]({{site.webdev}}/tools/dartdevc)
+  </div><div class="col-lg-6" markdown="1">
+  [dartdevc]({{site.dartlang}}/tools/dartdevc)
   : The Dart development compiler
   (used only for web development)
-  </div><div class="col-lg-6" markdown="1">
-  [dartdoc](https://github.com/dart-lang/dartdoc#dartdoc)
+
+  [dartdoc]({{site.dartlang}}/tools/dartdoc)
   : The API documentation generator
 
-  [dartfmt](https://github.com/dart-lang/dart_style#readme)
+  [dartfmt]({{site.dartlang}}/tools/dartfmt)
   : The Dart code formatter
 
   [pub]({{site.dartlang}}/tools/pub)
@@ -87,36 +58,6 @@ directory that has these command-line tools:
 
 For more information about the SDK, see its
 [README file.](https://github.com/dart-lang/sdk/blob/master/README.dart-sdk)
-
-## About release channels and version strings
-
-The Dart SDK has two release channels:
-
-* **stable** channel: **stable releases**,
-  updated no more frequently than every 6 weeks;
-  currently `[calculating]`{:.editor-build-rev-stable}.
-* **dev** channel: **pre-releases**, usually updated 1/week;
-  currently `[calculating]`{:.editor-build-rev-dev}.
-
-<aside class="alert alert-warning" markdown="1">
-  **Warning:**
-  To give you early access to new features and fixes,
-  dev channel releases are not as heavily tested as the stable release.
-</aside>
-
-
-**Stable** channel releases of the Dart SDK have version strings like `1.24.3` and `2.0.0`.
-They consist of dot-separated integers, with no hyphens or letters.
-
-**Dev** channel releases of the Dart SDK (pre-releases)
-have additional characters, starting with a hyphen (`-`).
-For example, Dart 2 pre-releases have version numbers starting with
-`2.0.0-dev` such as `2.0.0-dev.69.5`.
-
-For more information, see the [Dart 2 page.][Dart 2]
-
-[SDK constraints]: /tools/pub/pubspec#sdk-constraints
-[semantic versioning]: http://semver.org/
 
 ## Filing bugs and feature requests
 
@@ -133,4 +74,5 @@ Here are some handy searches:
 [Dart 2]: {{site.dartlang}}/dart-2
 [build the SDK from source]: https://github.com/dart-lang/sdk/wiki/Building
 [Dart libraries]: {{site.dartlang}}/guides/libraries/library-tour
+[flutter]: https://flutter.dev/docs/get-started/install
 [site SDK version]: {{site.dart_api}}/{{site.data.pkg-vers.SDK.channel}}/{{site.data.pkg-vers.SDK.vers}}/index.html

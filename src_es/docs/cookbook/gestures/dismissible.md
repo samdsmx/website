@@ -1,5 +1,5 @@
 ---
-title: "Implementando Deslizar para Descartar"
+title: Implementando Deslizar para Descartar
 rev:
   title: Manejando Gestos Tap
   path: /docs/cookbook/gestures/handling-taps

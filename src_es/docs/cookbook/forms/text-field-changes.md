@@ -1,5 +1,5 @@
 ---
-title: "Manejando cambios en un campo de texto"
+title: Manejando cambios en un campo de texto
 prev:
   title: Centra el foco en un Text Field
   path: /docs/cookbook/forms/focus
@@ -8,13 +8,13 @@ next:
   path: /docs/cookbook/forms/retrieve-input
 ---
 
-En algunos casos, puede ser útil ejecutar una función callback cada vez que cambia el texto 
-en un campo de texto. Por ejemplo, es posible que deseemos crear una pantalla de búsqueda 
-con la funcionalidad de autocompletar. En este caso, quisiéramos actualizar los 
+En algunos casos, es útil ejecutar una función callback cada vez que cambia el texto 
+en un campo de texto. Por ejemplo, es posible que desees crear una pantalla de búsqueda 
+con la funcionalidad de autocompletar que actualice los 
 resultados a medida que el usuario escribe.
 
-¿Cómo podemos ejecutar una función callback cada vez que cambia el texto? Con Flutter, 
-tenemos dos opciones:
+¿Cómo puedes ejecutar una función callback cada vez que cambia el texto? 
+Con Flutter, tienes dos opciones:
 
   1. Proporciona un callback `onChanged` a un `TextField`
   2. Usa un `TextEditingController`
@@ -48,22 +48,18 @@ como propiedad del
 [`controller`]({{site.api}}/flutter/material/TextField/controller.html)
 de `TextField` o de un `TextFormField`.
 
-Para recibir una notificación cuando el texto cambie, podemos escuchar al controlador usando 
+Para ser notificado cuando el texto cambie, escucha al controlador usando 
 su método 
-[`addListener`]({{site.api}}/flutter/foundation/ChangeNotifier/addListener.html).
+[`addListener`]({{site.api}}/flutter/foundation/ChangeNotifier/addListener.html) usando los siguientes pasos:
 
-### Instrucciones
-
-  - Crea un `TextEditingController`
-  - Proporciona el `TextEditingController` a un `TextField`
-  - Crea una función para imprimir el último valor
-  - Escucha al controlador por cambios
+  1. Crea un `TextEditingController`
+  2. Conecta el `TextEditingController` a un `TextField`
+  3. Crea una función para imprimir el último valor
+  4. Escucha al controlador por cambios
 
 ### Crea un `TextEditingController`
 
-Primero, necesitaremos crear un `TextEditingController`. En los pasos siguientes, 
-suministraremos el `TextEditingController` a un `TextField`. Una vez que hayamos 
-conectado estas dos clases juntas, podremos escuchar los cambios en el campo de texto.
+Crea un `TextEditingController`:
 
 <!-- skip -->
 ```dart
@@ -94,13 +90,17 @@ class _MyCustomFormState extends State<MyCustomForm> {
 }
 ```
 
-Nota: Por favor recuerda hacer el `dispose` al `TextEditingController` cuando ya no sea necesario. 
-Esto asegurará que descartemos cualquier recurso utilizado por el objeto.
+{{site.alert.note}}
+  Recuerda llamar al método `dispose` del `TextEditingController` 
+  cuando ya no sea necesario. Esto asegurará que descartemos 
+  cualquier recurso utilizado por el objeto.
+{{site.alert.end}}
 
-### Proporciona el `TextEditingController` a un `TextField`
+### Conecta el `TextEditingController` a un `TextField`
 
-Para funcionar, el `TextEditingController` se debe suministrar a un 
-`TextField` o a un `TextFormField`. Una vez que está conectado, podemos comenzar a escuchar los 
+Suministra el `TextEditingController` a un 
+`TextField` o a un `TextFormField`. Una vez has conectado estas dos 
+clases juntas, puedes empezar a escuchar los 
 cambios en el campo de texto. 
 
 <!-- skip -->
@@ -112,9 +112,8 @@ TextField(
 
 ### Crea una función para imprimir el último valor
 
-Ahora, necesitaremos una función que debería ejecutarse cada vez que cambie el texto. En este 
-ejemplo, crearemos un método que imprime el valor actual del campo 
-de texto.
+Necesitas una función para ejecutar cada vez que cambie el texto. 
+Crea un método en la clase `_MyCustomFormState` que imprima el valor actual del campo de texto.
 
 Este método vivirá dentro de nuestra clase `_MyCustomFormState` .
 
@@ -128,10 +127,10 @@ _printLatestValue() {
 ### Escucha al controlador por cambios
 
 Finalmente, tenemos que escuchar el `TextEditingController` y ejecutar el método 
-`_printLatestValue`  cada vez que el texto cambie. Utilizaremos el método 
-[`addListener`]({{site.api}}/flutter/foundation/ChangeNotifier/addListener.html)  para lograr esta tarea.
+`_printLatestValue()`  cada vez que el texto cambie. Utilizaremos el método 
+[`addListener`]({{site.api}}/flutter/foundation/ChangeNotifier/addListener.html)  para este propósito.
 
-En este ejemplo, comenzaremos a escuchar los cambios cuando se inicializa la clase 
+Comienza a escuchar los cambios cuando se inicializa la clase 
 `_MyCustomFormState` , y dejaremos de escuchar cuando se elimine 
 `_MyCustomFormState` .
 
@@ -175,8 +174,8 @@ class MyCustomForm extends StatefulWidget {
 // Define una clase de estado correspondiente. Esta clase contendrá los datos relacionados
 // con nuestro formulario.
 class _MyCustomFormState extends State<MyCustomForm> {
-  // Crea un controlador de texto. Lo usaremos para recuperar el valor actual
-  // del TextField!
+  // Crea un controlador de texto y úsalo para recuperar el valor actual
+  // del TextField.
   final myController = TextEditingController();
 
   @override

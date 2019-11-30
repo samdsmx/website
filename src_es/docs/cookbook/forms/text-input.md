@@ -1,5 +1,5 @@
 ---
-title: "Crear y dar estilo a un campo de texto"
+title: Crear y dar estilo a un campo de texto
 prev:
   title: Construir un formulario con validación
   path: /docs/cookbook/forms/validation
@@ -8,11 +8,13 @@ next:
   path: /docs/cookbook/forms/focus
 ---
 
-Los campos de texto permiten a los usuarios escribir texto en nuestras aplicaciones. Los campos de texto 
-se pueden usar para crear formularios, aplicaciones de mensajería, experiencias de búsqueda ¡y más! En 
-esta receta, exploraremos cómo crear y diseñar campos de texto.
+Los campos de texto permiten a los usuarios escribir texto en una app. 
+Estos se usan para crear formularios, 
+enviar mensajes, crear experiencias de búsqueda, y más. 
+En esta receta, explora cómo crear y dar estilo a campos de texto.
 
-Flutter proporciona dos campos de texto: [`TextField`]({{site.api}}/flutter/material/TextField-class.html) 
+Flutter proporciona dos campos de texto: 
+[`TextField`]({{site.api}}/flutter/material/TextField-class.html) 
 y [`TextFormField`]({{site.api}}/flutter/material/TextFormField-class.html).
 
 ## `TextField`
@@ -20,8 +22,9 @@ y [`TextFormField`]({{site.api}}/flutter/material/TextFormField-class.html).
 [`TextField`]({{site.api}}/flutter/material/TextField-class.html)
 es el widget de entrada de texto más comúnmente utilizado.
 
-Por defecto, un `TextField` está decorado con un subrayado. Podemos agregar una etiqueta, un icono, un 
-hint de texto en línea, y un texto de error al suministrar un
+Por defecto, un `TextField` está decorado con un subrayado. 
+Podemos agregar una etiqueta, un icono, un 
+texto de ayuda en línea, y un texto de error al suministrar un
 [`InputDecoration`]({{site.api}}/flutter/material/InputDecoration-class.html) 
 como la propiedad [`decoration`]({{site.api}}/flutter/material/TextField/decoration.html) del 
 `TextField`. Para eliminar por completo la decoración (incluido el subrayado y el espacio reservado 
@@ -33,7 +36,7 @@ explícitamente.
 TextField(
   decoration: InputDecoration(
     border: InputBorder.none,
-    hintText: 'Please enter a search term'
+    hintText: 'Enter a search term'
   ),
 );
 ```
@@ -56,5 +59,5 @@ TextFormField(
 );
 ```
 
-Para obtener más información sobre la validación de entrada, por favor consulta la receta 
+Para más información sobre la validación de entrada, mira la receta 
 [Construyendo un formulario con validaciones](/docs/cookbook/forms/validation/).

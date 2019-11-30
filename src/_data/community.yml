@@ -42,11 +42,11 @@
     - name: flutter-dev
       url: https://groups.google.com/forum/#!forum/flutter-dev
 
-- name: "@flutter.io"
+- name: "@flutter.dev"
   description: >
     Follow the Flutter team in real-time with information on new features, upcoming events, and more.
   logo_src: community/logo-twitter.png
-  learn_more_link: https://twitter.com/flutterio
+  learn_more_link: https://twitter.com/flutterdev
 
 - name: Medium
   description: >
@@ -83,3 +83,9 @@
     Sign up to participate in the UX research plan and have a front row seat into the progression of Flutter.
   logo_src: community/logo-google-forms.png
   learn_more_link: https://docs.google.com/forms/d/e/1FAIpQLSe0i4De809KXVCdljGKrjMj3lxhuzbuFKCtY5PEQPCYtGxFMg/viewform
+
+- name: Hashnode
+  description: >
+    Read and write Flutter-related posts, participate in Flutter discussions or ask questions about working with Flutter.
+  logo_src: community/logo-hashnode.png
+  learn_more_link: https://hashnode.com/n/flutter

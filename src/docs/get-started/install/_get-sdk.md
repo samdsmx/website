@@ -45,7 +45,8 @@
 
     The `flutter` tool downloads platform-specific development binaries as
     needed. For scenarios where pre-downloading these artifacts is preferable
-    (e.g., hermetic build environments, intermittent network availability), iOS
+    (for example, in hermetic build environments,
+    or with intermittent network availability), iOS
     and Android binaries can be downloaded ahead of time by running:
 
     ```terminal
@@ -72,8 +73,8 @@ $ flutter doctor
 
 This command checks your environment and displays a report to the terminal
 window. The Dart SDK is bundled with Flutter; it is not necessary to install
-Dart separately. Check the output carefully for other software you may need to
-install or further tasks to perform (shown in **bold** text).
+Dart separately. Check the output carefully for other software you might
+need to install or further tasks to perform (shown in **bold** text).
 
 For example:
 

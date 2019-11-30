@@ -33,7 +33,8 @@ below.
 
 ### Entry point
 
-JavaScript doesn't have a pre-defined entry function—you define the entry point.
+JavaScript doesn't have a pre-defined entry
+function&mdash;you define the entry point.
 
 ```js
 // JavaScript
@@ -59,7 +60,7 @@ To print to the console in Dart, use `print()`.
 
 ```js
 // JavaScript
-console.log("Hello world!");
+console.log('Hello world!');
 ```
 
 <!-- skip -->
@@ -73,9 +74,10 @@ Try it out in
 
 ### Variables
 
-Dart is type safe—it uses a combination of static type checking and runtime
-checks to ensure that a variable’s value always matches the variable’s static
-type. Although types are mandatory, some type annotations are optional because
+Dart is type safe&mdash;it uses a combination of static type checking
+and runtime checks to ensure that a variable’s value always matches
+the variable’s static type. Although types are mandatory,
+some type annotations are optional because
 Dart performs type inference.
 
 #### Creating and assigning variables
@@ -87,7 +89,7 @@ typed or the type system must infer the proper type automatically.
 
 ```js
 // JavaScript
-var name = "JavaScript";
+var name = 'JavaScript';
 ```
 
 <!-- skip -->
@@ -108,9 +110,9 @@ System]({{site.dart-site}}/guides/language/sound-dart).
 
 In JavaScript, uninitialized variables are `undefined`.
 
-In Dart, uninitialized variables have an initial value of `null`. Because
-numbers are objects in Dart, even uninitialized variables with numeric types
-have the value `null`.
+In Dart, uninitialized variables have an initial value of `null`.
+Because numbers are objects in Dart, even uninitialized variables with
+numeric types have the value `null`.
 
 ```js
 // JavaScript
@@ -138,11 +140,11 @@ In JavaScript, values of 1 or any non-null objects are treated as true.
 // JavaScript
 var myNull = null;
 if (!myNull) {
-  console.log("null is treated as false");
+  console.log('null is treated as false');
 }
 var zero = 0;
 if (!zero) {
-  console.log("0 is treated as false");
+  console.log('0 is treated as false');
 }
 ```
 In Dart, only the boolean value `true` is treated as true.
@@ -165,8 +167,8 @@ Try it out in
 
 ### Functions
 
-Dart and JavaScript functions are generally similar. The primary difference is
-the declaration.
+Dart and JavaScript functions are generally similar.
+The primary difference is the declaration.
 
 ```js
 // JavaScript
@@ -206,32 +208,53 @@ objects to handle this.
 
 ```js
 // JavaScript
-_getIPAddress = () => {
-  const url="https://httpbin.org/ip";
-  return fetch(url)
-    .then(response => response.json())
-    .then(responseJson => {
-      console.log(responseJson.origin);
-    })
-    .catch(error => {
-      console.error(error);
-    });
-};
+class Example {
+  _getIPAddress() {
+    const url = 'https://httpbin.org/ip';
+    return fetch(url)
+      .then(response => response.json())
+      .then(responseJson => {
+        const ip = responseJson.origin;
+        return ip;
+      });
+  }
+}
+
+function main() {
+  const example = new Example();
+  example
+    ._getIPAddress()
+    .then(ip => console.log(ip))
+    .catch(error => console.error(error));
+}
+
+main();
 ```
 
 <!-- skip -->
 ```dart
 // Dart
-_getIPAddress() {
-  final url = 'https://httpbin.org/ip';
-  HttpRequest.request(url).then((value) {
-      print(json.decode(value.responseText)['origin']);
-  }).catchError((error) => print(error));
+import 'dart:convert';
+import 'package:http/http.dart' as http;
+
+class Example {
+  Future<String> _getIPAddress() {
+    final url = 'https://httpbin.org/ip';
+    return http.get(url).then((response) {
+      String ip = jsonDecode(response.body)['origin'];
+      return ip;
+    });
+  }
+}
+
+main() {
+  final example = new Example();
+  example
+      ._getIPAddress()
+      .then((ip) => print(ip))
+      .catchError((error) => print(error));
 }
 ```
-
-Try it out in
-[DartPad]({{site.dartpad}}/5a0017d09b6823d0248d965b93133e2e).
 
 For more information, see the documentation on
 [Futures]({{site.dart-site}}/tutorials/language/futures).
@@ -240,46 +263,72 @@ For more information, see the documentation on
 
 The `async` function declaration defines an asynchronous function.
 
-In JavaScript, the `async` function returns a `Promise`. The `await` operator is
-used to wait for a `Promise`.
+In JavaScript, the `async` function returns a `Promise`.
+The `await` operator is used to wait for a `Promise`.
 
 ```js
 // JavaScript
-async _getIPAddress() {
-  const url="https://httpbin.org/ip";
-  const response = await fetch(url);
-  const json = await response.json();
-  const data = await json.origin;
-  console.log(data);
+class Example {
+  async _getIPAddress() {
+    const url = 'https://httpbin.org/ip';
+    const response = await fetch(url);
+    const responseJson = await response.json();
+    const ip = responseJson.origin;
+    return ip;
+  }
 }
+
+async function main() {
+  const example = new Example();
+  try {
+    const ip = await example._getIPAddress();
+    console.log(ip);
+  } catch (error) {
+    console.error(error);
+  }
+}
+
+main();
 ```
 
-In Dart, an `async` function returns a `Future`, and the body of the function is
-scheduled for execution later. The `await` operator is used to wait for a
-`Future`.
+In Dart, an `async` function returns a `Future`,
+and the body of the function is scheduled for execution later.
+The `await` operator is used to wait for a `Future`.
 
 <!-- skip -->
 ```dart
 // Dart
-_getIPAddress() async {
-  final url = 'https://httpbin.org/ip';
-  var request = await HttpRequest.request(url);
-  String ip = json.decode(request.responseText)['origin'];
-  print(ip);
+import 'dart:convert';
+import 'package:http/http.dart' as http;
+
+class Example {
+  Future<String> _getIPAddress() async {
+    final url = 'https://httpbin.org/ip';
+    final response = await http.get(url);
+    String ip = jsonDecode(response.body)['origin'];
+    return ip;
+  }
+}
+
+main() async {
+  final example = new Example();
+  try {
+    final ip = await example._getIPAddress();
+    print(ip);
+  } catch (error) {
+    print(error);
+  }
 }
 ```
 
-Try it out in
-[DartPad]({{site.dartpad}}/04bb4334985107cddcd021322398c918).
-
-For more information, see the documentation for [`async` and
-`await`]({{site.dart-site}}/guides/language/language-tour#asynchrony-support).
+For more information, see the documentation for [async and await][].
 
 ## The basics
+
 ### How do I create a Flutter app?
 
-To create an app using React Native, you would run `create-react-native-app`
-from the command line.
+To create an app using React Native,
+you would run `create-react-native-app` from the command line.
 
 {% prettify %}
 $ create-react-native-app <projectname>
@@ -287,9 +336,9 @@ $ create-react-native-app <projectname>
 
 To create an app in Flutter, do one of the following:
 
+* Use an IDE with the Flutter and Dart plugins installed.
 * Use the `flutter create` command from the command line. Make sure that the
   Flutter SDK is in your PATH.
-* Use an IDE with the Flutter and Dart plugins installed.
 
 {% prettify %}
 $ flutter create <projectname>
@@ -303,16 +352,18 @@ and iOS devices.
 ### How do I run my app?
 
 In React Native, you would run `npm run` or `yarn run` from the project
- directory.
+directory.
 
- You can run Flutter apps in a couple of ways:
+You can run Flutter apps in a couple of ways:
 
- * Use `flutter run` from the project's root directory.
- * Use the "run" option in an IDE with the Flutter and Dart plugins.
+* Use the "run" option in an IDE with the Flutter and Dart plugins.
+* Use `flutter run` from the project's root directory.
 
- Your app runs on a connected device, the iOS simulator, or the Android emulator.
+Your app runs on a connected device, the iOS simulator,
+or the Android emulator.
 
-For more information, see the Flutter [Getting Started](/docs/get-started) documentation.
+For more information, see the Flutter [Getting Started](/docs/get-started)
+documentation.
 
 ### How do I import widgets?
 
@@ -320,11 +371,15 @@ In React Native, you need to import each required component.
 
 ```js
 //React Native
-import React from "react";
-import { StyleSheet, Text, View } from "react-native";
+import React from 'react';
+import { StyleSheet, Text, View } from 'react-native';
 ```
 
-In Flutter, to use widgets from the Material Design library, import the `material.dart` package. To use iOS style widgets, import the Cupertino library. To use a more basic widget set, import the Widgets library. Or, you can write your own widget library and import that.
+In Flutter, to use widgets from the Material Design library,
+import the `material.dart` package. To use iOS style widgets,
+import the Cupertino library. To use a more basic widget set,
+import the Widgets library.
+Or, you can write your own widget library and import that.
 
 <!-- skip -->
 ```dart
@@ -345,8 +400,8 @@ implements the render method by returning a view component.
 
 ```js
 // React Native
-import React from "react";
-import { StyleSheet, Text, View } from "react-native";
+import React from 'react';
+import { StyleSheet, Text, View } from 'react-native';
 
 export default class App extends React.Component {
   render() {
@@ -361,14 +416,17 @@ export default class App extends React.Component {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: "#fff",
-    alignItems: "center",
-    justifyContent: "center"
+    backgroundColor: '#fff',
+    alignItems: 'center',
+    justifyContent: 'center'
   }
 });
 ```
 
-In Flutter, you can create an identical "Hello world!" app using the `Center` and `Text` widgets from the core widget library. The `Center` widget becomes the root of the widget tree and has one child, the `Text` widget.
+In Flutter, you can create an identical "Hello world!" app using the
+`Center` and `Text` widgets from the core widget library.
+The `Center` widget becomes the root of the widget tree and has one child,
+the `Text` widget.
 
 <!-- skip -->
 ```dart
@@ -445,14 +503,15 @@ class MyApp extends StatelessWidget {
 ```
 
 
-The following images show "Hello world!" built from Material Design widgets. You get more functionality for free than in the basic "Hello world!" app.
+The following images show "Hello world!" built from Material Design widgets.
+You get more functionality for free than in the basic "Hello world!" app.
 
 {% include android-ios-figure-pair.md image="react-native/hello-world.png" alt="Hello world app" %}
 
 When writing an app, you'll use two types of widgets:
 [StatelessWidget]({{site.api}}/flutter/widgets/StatelessWidget-class.html) or
  [StatefulWidget]({{site.api}}/flutter/widgets/StatefulWidget-class.html).
-A StatelessWidget is just what it sounds like—a
+A StatelessWidget is just what it sounds like&mdash;a
  widget with no state. A StatelessWidget is created once, and never changes its
   appearance. A StatefulWidget dynamically changes state based on data
    received, or user input.
@@ -468,7 +527,8 @@ and widgets allows you to reuse the components within the app.
 
 ### How do I create reusable components?
 
-In React Native, you would define a class to create a reusable component and then use
+In React Native,
+you would define a class to create a reusable component and then use
 `props` methods to set or return properties and values of the selected elements.
 In the example below, the `CustomCard` class is defined and then used inside a
 parent class.
@@ -558,7 +618,7 @@ Flutter app.
 ```dart
 // Dart
 void main(){
- print("Hello, this is the main function.");
+ print('Hello, this is the main function.');
 }
 ```
 
@@ -590,9 +650,10 @@ When you create a new Flutter project, it builds the following directory structu
 
 ### Where do I put my resources and assets and how do I use them?
 
-A Flutter resource or asset is a file that is bundled and deployed with your app
-and is accessible at runtime. Flutter apps can include the following asset
-types:
+A Flutter resource or asset is a file that is bundled and deployed
+with your app and is accessible at runtime.
+Flutter apps can include the following asset types:
+
 * Static data such as JSON files
 * Configuration files
 * Icons and images (JPEG, PNG, GIF, Animated GIF, WebP, Animated WebP, BMP,
@@ -626,7 +687,7 @@ In React Native, you would add a static image by placing the image file in a
 source code directory and referencing it.
 
 ```js
-<Image source={require("./my-icon.png")} />
+<Image source={require('./my-icon.png')} />
 ```
 
 In Flutter, add a static image to your app using the `AssetImage` class in a
@@ -791,8 +852,8 @@ In React Native, canvas components aren't present so third party libraries like 
 ```js
 // React Native
 handleCanvas = canvas => {
-  const ctx = canvas.getContext("2d");
-  ctx.fillStyle = "skyblue";
+  const ctx = canvas.getContext('2d');
+  ctx.fillStyle = 'skyblue';
   ctx.beginPath();
   ctx.arc(75, 75, 50, 0, 2 * Math.PI);
   ctx.fillRect(150, 100, 300, 300);
@@ -866,9 +927,9 @@ components in a column, you would specify a prop such as:
 <View
   style={%raw%}{{
     flex: 1,
-    flexDirection: "column",
-    justifyContent: "space-between",
-    alignItems: "center"
+    flexDirection: 'column',
+    justifyContent: 'space-between',
+    alignItems: 'center'
   }}{%endraw%}
 >
 ```
@@ -940,7 +1001,7 @@ Stack(
   children: <Widget>[
     CircleAvatar(
       backgroundImage: NetworkImage(
-        "https://avatars3.githubusercontent.com/u/14101776?v=4"),
+        'https://avatars3.githubusercontent.com/u/14101776?v=4'),
     ),
     Container(
       decoration: BoxDecoration(
@@ -971,7 +1032,7 @@ components.
 ```js
 // React Native
 <View style={styles.container}>
-  <Text style={%raw%}{{ fontSize: 32, color: "cyan", fontWeight: "600" }}{%endraw%}>
+  <Text style={%raw%}{{ fontSize: 32, color: 'cyan', fontWeight: '600' }}{%endraw%}>
     This is a sample text
   </Text>
 </View>
@@ -979,9 +1040,9 @@ components.
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: "#fff",
-    alignItems: "center",
-    justifyContent: "center"
+    backgroundColor: '#fff',
+    alignItems: 'center',
+    justifyContent: 'center'
   }
 });
 ```
@@ -1123,13 +1184,16 @@ widget takes a `ThemeData` in its `data` parameter and applies the
   }
 ```
 
-## State Management
+## State management
 
 State is information that can be read synchronously when a widget is built
 or information that might change during the lifetime of a widget.
 To manage app state in Flutter, use a
 [StatefulWidget]({{site.api}}/flutter/widgets/StatefulWidget-class.html)
 paired with a State object.
+
+For more information on ways to approach managing state in Flutter,
+see [State management][].
 
 ### The StatelessWidget
 
@@ -1154,7 +1218,7 @@ of stateless widgets which subclass
 // Flutter
 import 'package:flutter/material.dart';
 
-void main() => runApp(MyStatelessWidget(text: "StatelessWidget Example to show immutable data"));
+void main() => runApp(MyStatelessWidget(text: 'StatelessWidget Example to show immutable data'));
 
 class MyStatelessWidget extends StatelessWidget {
   final String text;
@@ -1172,8 +1236,8 @@ class MyStatelessWidget extends StatelessWidget {
 }
 ```
 
-In the previous example, you used the constructor of the `MyStatelessWidget` class
-to pass the `text`, which is marked as `final`. This class extends
+In the previous example, you used the constructor of the `MyStatelessWidget`
+class to pass the `text`, which is marked as `final`. This class extends
  `StatelessWidget`&mdash;it contains immutable data.
 
 The `build` method of a stateless widget is typically called in only three
@@ -1380,7 +1444,7 @@ class CustomCard extends React.Component {
       <View>
         <Text> Card {this.props.index} </Text>
         <Button
-          title="Press"
+          title='Press'
           onPress={() => this.props.onPress(this.props.index)}
         />
       </View>
@@ -1390,7 +1454,7 @@ class CustomCard extends React.Component {
 class App extends React.Component {
 
   onPress = index => {
-    console.log("Card ", index);
+    console.log('Card ', index);
   };
 
   render() {
@@ -1461,8 +1525,8 @@ global to the app.
 
 ```js
 // React Native
-await AsyncStorage.setItem( "counterkey", json.stringify(++this.state.counter));
-AsyncStorage.getItem("counterkey").then(value => {
+await AsyncStorage.setItem( 'counterkey', json.stringify(++this.state.counter));
+AsyncStorage.getItem('counterkey').then(value => {
   if (value != null) {
     this.setState({ counter: value });
   }
@@ -1529,7 +1593,7 @@ and DrawerNavigator. Each provides a way to configure and define the screens.
 // React Native
 const MyApp = TabNavigator(
   { Home: { screen: HomeScreen }, Notifications: { screen: tabNavScreen } },
-  { tabBarOptions: { activeTintColor: "#e91e63" } }
+  { tabBarOptions: { activeTintColor: '#e91e63' } }
 );
 const SimpleApp = StackNavigator({
   Home: { screen: MyApp },
@@ -1627,7 +1691,7 @@ import { createBottomTabNavigator } from 'react-navigation';
 
 const MyApp = TabNavigator(
   { Home: { screen: HomeScreen }, Notifications: { screen: tabNavScreen } },
-  { tabBarOptions: { activeTintColor: "#e91e63" } }
+  { tabBarOptions: { activeTintColor: '#e91e63' } }
 );
 ```
 
@@ -1756,7 +1820,7 @@ Drawer(
     leading: Icon(Icons.change_history),
     title: Text('Screen2'),
     onTap: () {
-      Navigator.of(context).pushNamed("/b");
+      Navigator.of(context).pushNamed('/b');
     },
   ),
   elevation: 20.0,
@@ -1779,13 +1843,13 @@ Widget build(BuildContext context) {
         leading: Icon(Icons.change_history),
         title: Text('Screen2'),
         onTap: () {
-          Navigator.of(context).pushNamed("/b");
+          Navigator.of(context).pushNamed('/b');
         },
       ),
       elevation: 20.0,
     ),
     appBar: AppBar(
-      title: Text("Home"),
+      title: Text('Home'),
     ),
     body: Container(),
   );
@@ -1812,10 +1876,10 @@ the `Touchable` components.
 // React Native
 <TouchableOpacity
   onPress={() => {
-    console.log("Press");
+    console.log('Press');
   }}
   onLongPress={() => {
-    console.log("Long Press");
+    console.log('Long Press');
   }}
 >
   <Text>Tap or Long Press</Text>
@@ -1865,7 +1929,7 @@ to any widget by wrapping it in a
 GestureDetector(
   child: Scaffold(
     appBar: AppBar(
-      title: Text("Gestures"),
+      title: Text('Gestures'),
     ),
     body: Center(
       child: Column(
@@ -1910,7 +1974,7 @@ and then receive the response to get the data.
 ```js
 // React Native
 _getIPAddress = () => {
-  fetch("https://httpbin.org/ip")
+  fetch('https://httpbin.org/ip')
     .then(response => response.json())
     .then(responseJson => {
       this.setState({ _ipAddress: responseJson.origin });
@@ -1951,7 +2015,7 @@ _getIPAddress() async {
   var request = await httpClient.getUrl(url);
   var response = await request.close();
   var responseBody = await response.transform(utf8.decoder).join();
-  String ip = json.decode(responseBody)['origin'];
+  String ip = jsonDecode(responseBody)['origin'];
   setState(() {
     _ipAddress = ip;
   });
@@ -1999,7 +2063,7 @@ final TextEditingController _controller = TextEditingController();
 TextField(
   controller: _controller,
   decoration: InputDecoration(
-    hintText: 'Type something', labelText: "Text Field "
+    hintText: 'Type something', labelText: 'Text Field '
   ),
 ),
 RaisedButton(
@@ -2091,20 +2155,20 @@ void _submit() {
 ## Platform-specific code
 
 When building a cross-platform app, you want to re-use as much code as
-possible across platforms. However, scenarios may arise where it makes sense for
-the code to be different depending on the OS. This requires a separate
-implementation by declaring a specific platform.
+possible across platforms. However, scenarios might arise where it
+makes sense for the code to be different depending on the OS.
+This requires a separate implementation by declaring a specific platform.
 
 In React Native, the following implementation would be used:
 
 ```js
 // React Native
-if (Platform.OS === "ios") {
-  return "iOS";
-} else if (Platform.OS === "android") {
-  return "android";
+if (Platform.OS === 'ios') {
+  return 'iOS';
+} else if (Platform.OS === 'android') {
+  return 'android';
 } else {
-  return "not recognised";
+  return 'not recognised';
 }
 ```
 In Flutter, use the following implementation:
@@ -2112,22 +2176,50 @@ In Flutter, use the following implementation:
 ```dart
 // Flutter
 if (Theme.of(context).platform == TargetPlatform.iOS) {
-  return "iOS";
+  return 'iOS';
 } else if (Theme.of(context).platform == TargetPlatform.android) {
-  return "android";
+  return 'android';
 } else if (Theme.of(context).platform == TargetPlatform.fuchsia) {
-  return "fuchsia";
+  return 'fuchsia';
 } else {
-  return "not recognised ";
+  return 'not recognised ';
 }
 ```
 
 ## Debugging
 
-Before running your applications, verify your code with `flutter analyze`. The
-Flutter analyzer (which is a wrapper around the `dartanalyzer` tool) examines
-your code and helps identify possible issues. If you’re using a Flutter-enabled
-IDE, this occurs automatically.
+### What tools can I use to debug my app in Flutter?
+
+Use the [DevTools][] suite for debugging Flutter or Dart apps.
+
+DevTools includes support for profiling, examining the heap,
+inspecting the widget tree, logging diagnostics, debugging,
+observing executed lines of code, debugging memory leaks and memory
+fragmentation. For more information, see the
+[DevTools][] documentation.
+
+If you're using an IDE,
+you can debug your application using the IDE's debugger.
+
+### How do I perform a hot reload?
+
+Flutter’s Stateful Hot Reload feature helps you quickly and easily experiment,
+build UIs, add features, and fix bugs. Instead of recompiling your app
+every time you make a change, you can hot reload your app instantly.
+The app is updated to reflect your change,
+and the current state of the app is preserved.
+
+In React Native,
+the shortcut is ⌘R for the iOS Simulator and tapping R twice on
+Android emulators.
+
+In Flutter, If you are using IntelliJ IDE or Android Studio,
+you can select Save All (⌘s/ctrl-s), or you can click the
+Hot Reload button on the toolbar. If you
+are running the app at the command line using `flutter run`,
+type `r` in the Terminal window.
+You can also perform a full restart by typing `R` in the
+Terminal window.
 
 ### How do I access the in-app developer menu?
 
@@ -2153,61 +2245,6 @@ in the terminal window, or type the following shortcuts:
 | To quit| `q` ||
 {:.table.table-striped}
 </div>
-
-### How do I perform a hot reload?
-
-Flutter’s hot reload feature helps you quickly and easily experiment, build UIs,
-add features, and fix bugs. Instead of recompiling your app every time you make
-a change, you can hot reload your app instantly. The app is updated to reflect
-your change, and the current state of the app is preserved.
-
-In React Native, the shortcut is ⌘R for the iOS Simulator and tapping R twice on
-Android emulators.
-
-In Flutter, If you are using IntelliJ IDE or Android Studio, you can select Save
-All (⌘s/ctrl-s), or you can click the Hot Reload button on the toolbar. If you
-are running the app at the command line using `flutter run`, type `r` in the
-Terminal window. You can also perform a full restart by typing `R` in the
-Terminal window.
-
-### What tools can I use to debug my app in Flutter?
-
-There are several options and tools you can use when you need to debug your
-Flutter app.
-
-In addition to the Flutter analyzer, the
-[`Dart Observatory`](https://dart-lang.github.io/observatory/) is a tool used to
-profile and debug your Dart applications. If you started your application using
-`flutter run` in Terminal, you can open the web page at the Observatory URL
-printed to the terminal window, for example:  `http://127.0.0.1:8100/`.
-
-The Observatory includes support for profiling, examining the heap, observing
-executed lines of code, debugging memory leaks and memory fragmentation. For
-more information, see the
-[Observatory documentation](https://dart-lang.github.io/observatory/).
-Observatory is included for free when you download and install the Dart SDK.
-
-If you're using an IDE, you can debug your application using the IDE debugger.
-
-If you're using IntelliJ and Android Studio, you can use the Flutter Inspector.
- The Flutter Inspector makes it much easier to understand why your application
-  is rendering the way it does. It allows you to:
-* View the UI structure of your app as a tree of widgets
-* Select a point on your device or simulator and find the corresponding widget
- that rendered those pixels
-* View properties for individual widgets
-* Quickly identify layout issues and determine their cause
-
-The Flutter Inspector view can be opened from View > Tool Windows > Flutter
-Inspector. Content is shown only when an app is running.
-
-To inspect a specific widget, select the **Toggle inspect mode** action in the
-toolbar, then click on the desired widget on an attached phone or simulator. The
-widget is highlighted in your app’s UI. You’ll see the widget in the widget
-hierarchy in IntelliJ and the individual properties for that widget.
-
-For more information, see
-[Debugging Flutter Apps](/docs/testing/debugging).
 
 ## Animation
 
@@ -2368,7 +2405,7 @@ child: Dismissible(
 
 {% include android-ios-figure-pair.md image="react-native/card-swipe.gif" alt="Card swipe" class="border" %}
 
-## React Native and Flutter Widget equivalent components
+## React Native and Flutter widget equivalent components
 
 The following table lists commonly-used React Native components mapped to the
 corresponding Flutter widget and common widget properties.
@@ -2445,3 +2482,8 @@ corresponding Flutter widget and common widget properties.
 |                                                                                         | onChanged [required]                                                                                      | Called when the user selects a new value for the slider.                                                                                                                                                      |
 {:.table.table-striped}
 </div>
+
+
+[DevTools]: /docs/development/tools/devtools
+[State management]: /docs/development/data-and-backend/state-mgmt
+[async and await]: {{site.dart-site}}/guides/language/language-tour#asynchrony-support

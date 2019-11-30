@@ -72,7 +72,9 @@ Antes de empezar, aquí hay algunas notas:
   [instrucciones](https://github.com/flutter/flutter_web#) para más detalles.
 
 Ve al repositorio [flutter web](https://github.com/flutter/flutter_web)
-para empezar. Gracias por 
+para empezar. Revisa los 
+[ejemplos de Flutter para web](https://flutter.github.io/samples/).
+Gracias por 
 [enviar cualquier problema](https://goo.gle/flutter_web_issue) que encuentres.
 Tambien puedes escribirnos cualquier pregunta por chat en nuestro
 [canal Gitter](https://gitter.im/flutter/flutter_web).

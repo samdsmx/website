@@ -1,71 +1,75 @@
 ---
 title: Añadir un Drawer a la pantalla
 prev:
-  title: Efectos Fade in and out en un Widget
+  title: Efectos Fade in and out en un widget
   path: /docs/cookbook/animation/opacity-animation
 next:
-  title: Mostrando SnackBars
+  title: Mostrando un snackbar
   path: /docs/cookbook/design/snackbars
 ---
 
-En las aplicaciones que emplean Material Design, hay dos opciones principales de 
-navegación: tabs y drawers. Cuando no hay suficiente espacio para sostener las pestañas, 
+En las aplicaciones que usan Material Design, 
+hay dos opciones principales de navegación: tabs y drawers. 
+Cuando no hay suficiente espacio para sostener las pestañas, 
 los Drawers proporcionan una alternativa práctica. 
 
-En Flutter, podemos usar el Widget [`Drawer`]({{site.api}}/flutter/material/Drawer-class.html) 
-en combinación con un [`Scaffold`]({{site.api}}/flutter/material/Scaffold-class.html) para 
-¡crear un layout con un Material Design Drawer!
-
-## Instrucciones
+En Flutter, usa el widget 
+[`Drawer`]({{site.api}}/flutter/material/Drawer-class.html) 
+en combinación con un 
+[`Scaffold`]({{site.api}}/flutter/material/Scaffold-class.html) para 
+crear un layout con un Material Design Drawer.
+Esta receta usa los siguientes pasos:
 
   1. Crea un `Scaffold`
-  2. Agrega un drawer
+  2. Añade un drawer
   3. Añade elementos al Drawer
   4. Cierra el drawer programáticamente
   
 ## 1. Crea un `Scaffold`
 
-Para agregar un Drawer a nuestra app, necesitaremos envolverlo en un Widget 
-[Scaffold]({{site.api}}/flutter/material/Scaffold-class.html). El 
-Widget Scaffold proporciona una estructura visual consistente a las aplicaciones 
-que siguen las Directrices de Material Design. También admite componentes especiales de Material Design, como Drawers, AppBars, y SnackBars.
+Para añadir un drawer a la app, envuélvelo en un widget 
+[Scaffold]({{site.api}}/flutter/material/Scaffold-class.html). 
+El widget Scaffold proporciona una estructura visual consistente a las aplicaciones 
+que siguen las Directrices de Material Design. 
+También admite componentes especiales de Material Design, 
+como Drawers, AppBars, y SnackBars.
 
-En este caso, queremos crear un `Scaffold` con un `drawer`:
+En este ejemplo, queremos crear un `Scaffold` con un `drawer`:
 
 <!-- skip -->
 ```dart
 Scaffold(
-  drawer: // ¡Añadiremos nuestro Drawer aquí en el siguiente paso!
+  drawer: // Añade un Drawer aquí en el siguiente paso.
 );
 ```
 
 ## 2. Agrega un drawer
 
-Ahora podemos agregar un drawer a nuestro `Scaffold`. Un drawer puede ser 
+Ahora añade un drawer al `Scaffold`. Un drawer puede ser 
 cualquier Widget, pero a menudo es mejor utilizar el widget 
-`Drawer` de la 
-[biblioteca Material]({{site.api}}/flutter/material/material-library.html), 
+`Drawer` de la [biblioteca Material]({{site.api}}/flutter/material/material-library.html), 
 que se adhiere a las especificaciones de Material Design.
 
 <!-- skip -->
 ```dart
 Scaffold(
   drawer: Drawer(
-    child: // Poblaremos el Drawer en el siguiente paso!
+    child: // Rellenaremos el Drawer en el siguiente paso.
   )
 );
 ```
 
 ## 3. Añade elementos al Drawer
 
-Ahora que tenemos un `Drawer` en su lugar, ¡podemos agregarle contenido! En este ejemplo, usaremos un 
-[`ListView`]({{site.api}}/flutter/widgets/ListView-class.html). 
-Aunque podríamos usar un Widget `Column`, `ListView` es útil en esta situación, ya que permitirá 
+Ahora que tienes un `Drawer` en su lugar, añádele contenido. 
+Para este ejemplo, 
+usa un [`ListView`]({{site.api}}/flutter/widgets/ListView-class.html). 
+Aunque puedes usar un Widget `Column`, `ListView` es útil en esta situación, ya que permite 
 a los usuarios desplazarse por el drawer si el contenido ocupa más espacio del 
 que soporta la pantalla.
 
-Poblaremos `ListView` con un [`DrawerHeader`]({{site.api}}/flutter/material/DrawerHeader-class.html) 
-y dos Widgets [`ListTile`]({{site.api}}/flutter/material/ListTile-class.html). 
+Rellena el `ListView` con un [`DrawerHeader`]({{site.api}}/flutter/material/DrawerHeader-class.html) 
+y dos widgets [`ListTile`]({{site.api}}/flutter/material/ListTile-class.html). 
 Para obtener más información sobre 
 cómo trabajar con Listas, por favor consulta la 
 [recetas de Listas](/docs/cookbook#listas).
@@ -74,7 +78,7 @@ cómo trabajar con Listas, por favor consulta la
 ```dart
 Drawer(
   // Agrega un ListView al drawer. Esto asegura que el usuario pueda desplazarse
-  // a través de las opciones en el Drawer si no hay suficiente espacio vertical
+  // a través de las opciones en el drawer si no hay suficiente espacio vertical
   // para adaptarse a todo.
   child: ListView(
     // Importante: elimine cualquier padding del ListView.
@@ -89,14 +93,14 @@ Drawer(
       ListTile(
         title: Text('Item 1'),
         onTap: () {
-          // Actualiza el estado de la aplicación
+          // Actualiza el estado de la aplicación.
           // ...
         },
       ),
       ListTile(
         title: Text('Item 2'),
         onTap: () {
-          // Actualiza el estado de la aplicación
+          // Actualiza el estado de la aplicación.
           // ...
         },
       ),
@@ -107,21 +111,21 @@ Drawer(
 
 ## 4. Cierra el drawer programáticamente
 
-Después de que un usuario toca un elemento, a menudo queremos cerrar el drawer. ¿Cómo podemos lograr 
-esto? ¡Usando el [Navegador]({{site.api}}/flutter/widgets/Navigator-class.html)!
+Después de que un usuario toca un elemento, querrás cerrar el drawer. 
+Puedes hacer esto usando la clase 
+[Navigator]({{site.api}}/flutter/widgets/Navigator-class.html)!
 
-Cuando un usuario abre el Drawer, Flutter agregará el drawer a la pila 
-de navegación debajo de la cubierta. Por lo tanto, para cerrar el drawer, 
-podemos llamar a `Navigator.pop(context)`.  
+Cuando un usuario abre el drawer, Flutter agregará el drawer a la pila de navegación. 
+Por lo tanto, para cerrar el drawer, llama a `Navigator.pop(context)`.  
 
 <!-- skip -->
 ```dart
 ListTile(
   title: Text('Item 1'),
   onTap: () {
-    // Actualiza el estado de la aplicación
+    // Actualiza el estado de la aplicación.
     // ...
-    // Luego cierra el drawer 
+    // Luego cierra el drawer. 
     Navigator.pop(context);
   },
 ),
@@ -158,7 +162,7 @@ class MyHomePage extends StatelessWidget {
       body: Center(child: Text('My Page!')),
       drawer: Drawer(
         // Agrega un ListView al drawer. Esto asegura que el usuario pueda desplazarse
-        // a través de las opciones en el Drawer si no hay suficiente espacio vertical
+        // a través de las opciones en el drawer si no hay suficiente espacio vertical
         // para adaptarse a todo.
         child: ListView(
           // Importante: elimina cualquier padding del ListView.
@@ -197,4 +201,3 @@ class MyHomePage extends StatelessWidget {
 ```
 
 ![Drawer Demo](/images/cookbook/drawer.png){:.site-mobile-screenshot}
-
