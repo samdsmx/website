@@ -23,6 +23,7 @@ siguientes pasos:
   1. Construye un `GridView` con 2 columnas
   2. Usa un `OrientationBuilder` para cambiar el número de columnas
 
+
 ## 1. Construye un `GridView` con 2 columnas
 
 Primero, crea una lista de elementos para trabajar. 
